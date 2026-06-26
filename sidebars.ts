@@ -11,7 +11,7 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
  The sidebars can be generated from the filesystem, or explicitly defined here.
  */
 
-const projects = ['nui', 'nuicss', 'utils', 'locale', 'markon'] as const;
+const projects = ['nui', 'nuicss', 'utils', 'locale', 'markon', 'nid'] as const;
 
 const sidebars: SidebarsConfig = Object.fromEntries(
   projects.map((name) => [

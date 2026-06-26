@@ -164,20 +164,17 @@ const config: Config = {
       logo: {
         alt: 'Nofinite Logo',
         src: 'nofinite-logo.svg',
+        srcDark: 'nofinite-logo-white.svg',
         href: '/',
         target: '_self',
       },
       items: [
-        {
-          label: 'Docs',
-          items: [
-            { label: 'NUI', to: '/docs/nui' },
-            { label: 'NUI CSS', to: '/docs/nuicss' },
-            { label: 'Utils', to: '/docs/utils' },
-            { label: 'Locale', to: '/docs/locale' },
-            { label: 'Markon', to: '/docs/markon' },
-          ],
-        },
+        { label: 'NUI', to: '/docs/nui', position: 'left' },
+        { label: 'NUI CSS', to: '/docs/nuicss', position: 'left' },
+        { label: 'Utils', to: '/docs/utils', position: 'left' },
+        { label: 'Locale', to: '/docs/locale', position: 'left' },
+        { label: 'Markon', to: '/docs/markon', position: 'left' },
+        { label: 'NID (Nofinite Identity)', to: '/docs/nid', position: 'left' },
         {
           href: 'https://github.com/nofinitehq',
           label: 'GitHub',
