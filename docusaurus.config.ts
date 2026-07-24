@@ -170,7 +170,7 @@ const config: Config = {
       },
       items: [
         { label: 'NUI', to: '/docs/nui', position: 'left' },
-        { label: 'NUI CSS', to: '/docs/nuicss', position: 'left' },
+        { label: 'NUI CSS', to: '/docs/nuicss/v2', position: 'left' },
         { label: 'Utils', to: '/docs/utils', position: 'left' },
         { label: 'Locale', to: '/docs/locale', position: 'left' },
         { label: 'Markon', to: '/docs/markon', position: 'left' },
