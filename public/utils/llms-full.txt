@@ -1,0 +1,217 @@
+# PACKAGE: @nofinite/utils
+
+Shared TypeScript helpers, class name merge (cn), formatters, and custom hooks.
+
+You are using @nofinite/utils. Use `cn(...classes)` for conditional class joining.
+
+---
+
+
+
+### Document: utils/auth-and-crypto/page.mdx
+
+# Auth And Crypto
+
+Documentation for Auth And Crypto utilities.
+
+---
+
+
+### Document: utils/getting-started/installation/page.mdx
+
+---
+title: Installation
+sidebar_position: 1
+---
+
+# Getting Started
+
+This guide covers installation, required setup, and basic usage of `@nofinite/utils`.
+For an overview of the library’s goals and philosophy, see the Introduction.
+
+---
+
+## Installation
+
+Install the package using your preferred package manager.
+
+### npm
+
+```bash
+npm install @nofinite/utils
+```
+
+### yarn
+
+```bash
+yarn add @nofinite/utils
+```
+
+### pnpm
+
+```bash
+pnpm add @nofinite/utils
+```
+
+---
+
+
+### Document: utils/page.mdx
+
+---
+sidebar_position: 1
+title: Nofinite Utils
+---
+
+# Introduction
+
+Nofinite Utils is a lightweight, framework-agnostic utility library designed
+for modern TypeScript and JavaScript applications.
+
+It provides production-ready helpers for common backend and shared logic needs
+such as authentication, cryptography, environment handling, and messaging —
+with a strong focus on correctness, security, and long-term maintainability.
+
+---
+
+## Who is this for?
+
+Nofinite Utils is designed for:
+
+- Backend and full-stack engineers
+- Teams building Node.js, Next.js, or server-side applications
+- Projects that need secure, reusable primitives (OTP, JWT, hashing, env, email)
+- Organizations that value type safety and predictable behavior
+
+---
+
+## Design Philosophy
+
+The library is built around a small set of core principles:
+
+- **Security-first**: safe defaults for crypto, hashing, and tokens
+- **TypeScript-first**: strict typings with zero `any` leakage
+- **Minimal abstractions**: simple functions, no hidden magic
+- **Composable APIs**: small utilities that work well together
+- **Runtime-safe**: defensive handling of edge cases and failures
+
+---
+
+## What this library is
+
+- A collection of reusable utility functions
+- A shared foundation for backend and full-stack codebases
+- A secure alternative to copy-pasted utility snippets
+
+---
+
+## What this library is not
+
+- A framework or application layer
+- A replacement for business logic
+- A dependency-heavy toolbox with bloated APIs
+
+---
+
+## Runtime Compatibility
+
+Nofinite Utils works in:
+
+- Node.js (ESM-first)
+- Next.js (API routes, server actions, edge-safe where applicable)
+- Vite / Nx monorepos
+- Any TypeScript or modern JavaScript environment
+
+All utilities are tree-shakable and safe to use in server contexts.
+
+---
+
+## Production Readiness
+
+- TypeScript-first with generated declaration files
+- Tree-shakable ES modules
+- Defensive error handling
+- Stable APIs designed for long-term use
+- Tested with Vitest
+
+---
+
+## Next Steps
+
+- Continue to the **Getting Started** guide for installation and setup
+- Explore individual utility documentation (OTP, JWT, Passwords, Email, Env)
+- Review security and configuration best practices
+
+---
+
+
+### Document: utils/releases/page.mdx
+
+---
+title: Releases
+sidebar_position: 999
+---
+
+# @nofinite/utils — Initial Release (v0.1.0)
+
+**Release date:** 02 February 2026
+
+---
+
+## Overview
+
+This is the first public release of Nofinite Utils.
+
+Nofinite Utils is a lightweight, framework-agnostic utility library providing
+**production-ready helpers** for common backend and full‑stack needs such as
+authentication, security, identifiers, and environment handling.
+
+---
+
+## Included
+
+- OTP generation and verification (secure, hash-based)
+- Password hashing and verification (Argon2id)
+- JWT helpers with configurable algorithms and expiration
+- UUID v7 utilities (string + binary helpers)
+- Environment helpers (`isProd`, `isDev`, safe env access)
+- Email helpers (ZeptoMail integration)
+- Fully typed APIs with TypeScript support
+
+---
+
+## Design Goals
+
+- **Security-first** defaults
+- **Minimal API surface**
+- **Tree-shakable ES modules**
+- **Zero framework coupling**
+- **Explicit, readable utilities**
+
+---
+
+## Notes
+
+- This release establishes the public API surface.
+- All utilities are designed to work in Node.js environments.
+- Sensible defaults are provided, but most helpers are configurable.
+- APIs may evolve until a stable `v1.0.0`.
+
+---
+
+## Known Limitations
+
+- Email utilities rely on external providers (e.g. ZeptoMail).
+- JWT helpers currently focus on symmetric algorithms.
+- UUID utilities intentionally support **only UUID v7**.
+
+---
+
+
+### Document: utils/system-and-mail/page.mdx
+
+# System And Mail
+
+Documentation for System And Mail utilities.
+
+---

@@ -1,0 +1,154 @@
+# Rating
+
+A composable, accessible Rating component for modern React applications.
+
+```tsx
+import { Rating } from '@nofinite/nui';
+```
+
+---
+
+A visual input component that allows users to select a rating value using icons (typically stars). It supports controlled and uncontrolled modes, fractional selection, keyboard interaction, and custom icon rendering.
+
+---
+
+## Usage
+
+### Basic usage
+
+```tsx
+import { Rating } from '@nofinite/nui';
+export function Example() {
+  return <Rating defaultValue={3} />;
+}
+```
+
+### Controlled usage
+
+```tsx
+const [value, setValue] = useState(4);
+
+<Rating value={value} onChange={setValue} />;
+```
+
+### Half rating
+
+```tsx
+<Rating defaultValue={3.5} allowHalf />
+```
+
+### Read-only display
+
+```tsx
+<Rating value={4.2} readOnly />
+```
+
+### Custom icons
+
+```tsx
+<Rating icon={<HeartOutline />} iconFilled={<HeartFilled />} />
+```
+
+---
+
+---
+
+## Variants
+
+### Sizes
+
+```tsx
+<Rating size="sm" />
+<Rating size="md" />
+<Rating size="lg" />
+```
+
+**Available variants**
+
+- sm
+- md
+- lg
+
+**Guidelines**
+
+- Use **sm** inside dense layouts (tables, cards)
+- Use **md** as default
+- Use **lg** for emphasis or hero sections
+
+---
+
+## States
+
+- Default
+- Hover preview (temporary fill during pointer move)
+- Focus visible (keyboard focus ring)
+- Read-only
+- Disabled
+- Fractional display
+- Controlled vs uncontrolled value
+
+---
+
+## Keyboard Interaction
+
+| Key                   | Behavior                          |
+| --------------------- | --------------------------------- |
+| ArrowRight / ArrowUp  | Increase rating (step = 1 or 0.5) |
+| ArrowLeft / ArrowDown | Decrease rating                   |
+| Home                  | Set to minimum (0)                |
+| End                   | Set to maximum                    |
+
+Component uses `role="slider"` semantics.
+
+---
+
+## Accessibility
+
+- Uses **slider pattern** with:
+
+  - `aria-valuemin`
+  - `aria-valuemax`
+  - `aria-valuenow`
+  - `aria-disabled`
+  - `aria-readonly`
+
+- Keyboard operable
+- Focus visible outline
+- Tab navigation disabled when readOnly or disabled
+
+---
+
+## Design Tokens
+
+| Token                | Usage                |
+| -------------------- | -------------------- |
+| --space-1        | Gap between icons    |
+| --font-sans      | Typography           |
+| --color-primary  | Focus ring           |
+| --border-default | Empty icon color     |
+| --color-warning  | Filled icon color    |
+| --radius-sm      | Focus outline radius |
+
+---
+
+## Best Practices
+
+### Do
+
+- Use half rating when precision matters (reviews)
+- Use readOnly for aggregated scores
+- Keep max ≤ 10 to avoid cognitive overload
+- Use custom icons for domain-specific ratings
+
+### Don’t
+
+- Use rating as the only feedback control for critical flows
+- Combine disabled and readOnly simultaneously unless intentional
+- Allow fractional ratings without clear visual affordance
+- Overuse large size in dense UI contexts
+
+---
+
+## API Reference
+
+<PropsTable name="Rating" />

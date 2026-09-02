@@ -1,0 +1,49 @@
+# Carousel
+
+A fully accessible, token-driven Carousel component built with strict WAI-ARIA compliance.
+
+```tsx
+import { Carousel } from '@nofinite/nui';
+```
+
+---
+
+## Usage
+
+### Basic Example
+
+```tsx
+import { Carousel } from '@nofinite/nui';
+
+<Carousel />
+```
+
+---
+
+## API Reference
+
+<PropsTable name="Carousel" />
+
+---
+
+## Design Tokens & Theming
+
+In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
+
+| Token | Usage |
+| --- | --- |
+| `--bg-surface` | Default surface background |
+| `--bg-subtle` | Hover and muted background |
+| `--fg-default` | Primary text color |
+| `--fg-muted` | Secondary text color |
+| `--border-default` | Default border color |
+| `--color-primary` | Primary brand emphasis |
+| `--radius-md` | Border radius |
+
+---
+
+## Accessibility & Guidelines
+
+- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).
+- **Keyboard Navigation:** Adheres to strict WAI-ARIA standards.
+- **Screen Reader Support:** Includes semantic roles and live regions where appropriate.

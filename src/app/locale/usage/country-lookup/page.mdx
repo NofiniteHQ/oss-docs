@@ -1,0 +1,44 @@
+---
+title: Country Lookup
+sidebar_position: 1
+---
+
+Nofinite Locale provides simple helper functions to retrieve country information.
+
+## Lookup by ISO Code or Dial Code
+
+### JavaScript / TypeScript
+
+```ts
+import { getCountryByCode, getCountryByDialCode } from '@nofinite/locale';
+
+// Lookup by ISO-2 code (case-insensitive)
+const india = getCountryByCode('IN');
+
+// Lookup by dial code
+const indiaAlt = getCountryByDialCode('+91');
+// or
+const indiaAlt2 = getCountryByDialCode('91');
+
+console.log(india);
+```
+
+**Returned object structure:**
+
+```ts
+{
+  name: "India",
+  iso2: "IN",
+  dialCode: "+91"
+}
+```
+
+### HTML (CDN)
+
+```html
+<script>
+  const country = NofiniteLocale.getCountryByCode('IN');
+  console.log(country.name);
+  console.log(country.dialCode);
+</script>
+```

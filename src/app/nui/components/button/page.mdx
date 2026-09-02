@@ -1,0 +1,174 @@
+# Button
+
+A composable, accessible Button component for modern React applications.
+
+```tsx
+import { Button } from '@nofinite/nui';
+```
+
+---
+
+A polymorphic, accessible, and composable action component designed for primary interactions. Supports visual variants, sizes, loading states, icons, and router integration via slot-based polymorphism.
+
+---
+
+## Usage
+
+### Basic usage
+
+```tsx id="btn1"
+import { Button } from '@nofinite/nui';
+
+<Button>Click me</Button>;
+```
+
+### Variants
+
+```tsx id="btn2"
+<Button variant="default">Default</Button>
+<Button variant="primary">Primary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="danger">Danger</Button>
+```
+
+### Sizes
+
+```tsx id="btn3"
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+<Button size="icon">⭐</Button>
+```
+
+### With icons
+
+```tsx id="btn4"
+<Button iconLeft={<FaPlus />}>Create</Button>
+<Button iconRight={<FaArrowRight />} variant="primary">Continue</Button>
+```
+
+### Loading state
+
+```tsx id="btn5"
+<Button isLoading>Processing</Button>
+```
+
+### Polymorphic usage (Next.js Link)
+
+```tsx id="btn6"
+<Button asChild variant="primary">
+  <NextLink href="/dashboard">Go to Dashboard</NextLink>
+</Button>
+```
+
+---
+
+---
+
+## Variants
+
+### Visual variants
+
+- Default (secondary surface)
+- Primary (brand emphasis)
+- Outline (border only)
+- Ghost (minimal UI)
+- Danger (destructive action)
+- Link (text-like action)
+
+### Size variants
+
+- Small (compact UI)
+- Medium (default)
+- Large (emphasis)
+- Icon (square button)
+
+**Guidelines**
+
+- Use primary for main CTA
+- Use danger only for destructive actions
+- Use ghost for dense UI toolbars
+- Use outline for secondary emphasis
+- Use icon size for icon-only actions
+
+---
+
+## States
+
+- Default
+- Hover
+- Focus-visible
+- Disabled
+- Loading (spinner replaces left icon)
+
+---
+
+## Keyboard Interaction
+
+| Key       | Behavior           |
+| --------- | ------------------ |
+| Enter     | Activates button   |
+| Space     | Activates button   |
+| Tab       | Focus navigation   |
+| Shift+Tab | Reverse navigation |
+
+---
+
+## Accessibility
+
+- Native button semantics preserved
+- Automatic disabled state when loading
+- `aria-hidden` spinner prevents duplicate announcements
+- Focus-visible ring for keyboard navigation
+- Supports polymorphic rendering while preserving semantics
+- Compatible with screen readers
+
+---
+
+## Design Tokens
+
+| Token                | Usage                |
+| -------------------- | -------------------- |
+| --bg-surface     | Default background   |
+| --bg-subtle      | Hover background     |
+| --border-default | Outline border       |
+| --border-hover   | Outline hover border |
+| --color-primary      | Primary background   |
+| --color-primary-hover      | Primary hover        |
+| --color-danger   | Danger background    |
+| --radius-md      | Border radius        |
+| --font-sans      | Typography           |
+| text-xs        | Small size text      |
+| text-sm        | Medium size text     |
+| text-base      | Large size text      |
+| --space-2        | Icon spacing         |
+| --space-3        | Small padding        |
+| --space-4        | Medium padding       |
+| --space-6        | Large padding        |
+
+---
+
+## Best Practices
+
+### Do
+
+- Use loading state for async actions
+- Provide accessible labels for icon-only buttons
+- Use asChild for router links
+- Keep icon alignment consistent
+- Use primary variant sparingly for emphasis
+
+### Don’t
+
+- Use danger variant for non-destructive actions
+- Place multiple primary buttons in the same section
+- Use icon-only buttons without aria-label
+- Override disabled state during loading
+- Nest interactive elements inside button content
+
+---
+
+## API Reference
+
+<PropsTable name="Button" />

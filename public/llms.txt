@@ -1,0 +1,13 @@
+# Nofinite Open Source Documentation Index
+
+Welcome to the LLM index for Nofinite Open-Source libraries.
+
+## Package Documentation
+- [NUI Component Library (/nui)](/nui/llms.txt): Accessible, composable React UI primitives with strict semantic design tokens.
+- [Nuicss Design Token & Utility Engine (/nuicss)](/nuicss/llms.txt): Semantic CSS utility framework and runtime-less design token engine.
+- [Locale Utilities & Country Data (/locale)](/locale/llms.txt): Lightweight localization, country lookups, dialing codes, and flag utilities.
+- [Markon Markdown Parser & Renderer (/markon)](/markon/llms.txt): High-speed AST-based Markdown and MDX processing toolkit.
+- [Nofinite Shared Utilities (/utils)](/utils/llms.txt): Shared TypeScript helpers, class name merge (cn), formatters, and custom hooks.
+
+## Global Bundles
+- [Unified Ecosystem Bundle (All Packages)](/llms-full.txt)

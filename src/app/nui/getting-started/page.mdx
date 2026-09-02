@@ -1,0 +1,168 @@
+# Getting Started with NUI
+
+Everything you need to install, configure, and build with the `@nofinite/nui` component library.
+
+---
+
+## Introduction
+
+NUI is a lightweight, performance-first React UI component library designed for building accessible, highly customizable design systems and enterprise web applications.
+
+- **Performance-first**: Minimal runtime overhead, optimized rendering, and zero-bloat primitives.
+- **Composable APIs**: Low-level building blocks that can be combined freely without restrictive abstractions.
+- **Semantic Theming**: Native dark mode and full design token control via `@nofinite/nuicss`.
+- **Accessibility by Default**: Strict WAI-ARIA compliance, focus rings, and full keyboard navigation.
+
+---
+
+## Installation
+
+Install `@nofinite/nui` and its peer dependencies using your package manager of choice:
+
+```bash
+# npm
+npm install @nofinite/nui @nofinite/nuicss
+
+# pnpm
+pnpm add @nofinite/nui @nofinite/nuicss
+
+# yarn
+yarn add @nofinite/nui @nofinite/nuicss
+
+# bun
+bun add @nofinite/nui @nofinite/nuicss
+```
+
+---
+
+## Root Provider Setup
+
+NUI uses a root `NUIProvider` to manage global theme context, portals, and toast notifications. We recommend creating a dedicated `Providers` component.
+
+### 1. Create a Providers File
+
+Create `app/providers.tsx` (for Next.js App Router) or `src/providers.tsx` (for Vite / SPA):
+
+```tsx
+'use client';
+
+import React from 'react';
+import { NUIProvider, ToastProvider, DialogProvider } from '@nofinite/nui';
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <NUIProvider defaultTheme="system">
+      <ToastProvider>
+        <DialogProvider />
+        {children}
+      </ToastProvider>
+    </NUIProvider>
+  );
+}
+```
+
+### 2. Wrap Your Root Layout
+
+#### Next.js (App Router)
+
+Inside `app/layout.tsx`:
+
+```tsx
+import { Providers } from './providers';
+import '@nofinite/nui/styles.css';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="nui-reset antialiased bg-page text-default min-h-screen">
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+```
+
+#### Vite / React SPA
+
+Inside `src/main.tsx` or `src/App.tsx`:
+
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { Providers } from './providers';
+import '@nofinite/nui/styles.css';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <Providers>
+      <App />
+    </Providers>
+  </React.StrictMode>
+);
+```
+
+---
+
+## Theming & Dark Mode
+
+NUI includes a theme engine that syncs with OS preferences and persists user choices.
+
+### Using the `useTheme` Hook
+
+```tsx
+'use client';
+
+import React from 'react';
+import { useTheme, Button } from '@nofinite/nui';
+
+export function ThemeSwitcher() {
+  const { theme, resolved, setTheme } = useTheme();
+
+  return (
+    <div className="flex items-center gap-2">
+      <span className="text-sm text-muted">Active: {resolved}</span>
+      <Button size="sm" variant={theme === 'light' ? 'primary' : 'outline'} onClick={() => setTheme('light')}>
+        Light
+      </Button>
+      <Button size="sm" variant={theme === 'dark' ? 'primary' : 'outline'} onClick={() => setTheme('dark')}>
+        Dark
+      </Button>
+      <Button size="sm" variant={theme === 'system' ? 'primary' : 'outline'} onClick={() => setTheme('system')}>
+        System
+      </Button>
+    </div>
+  );
+}
+```
+
+---
+
+## TypeScript CSS Import Notice
+
+If importing CSS files causes a TypeScript error (`Cannot find module '*.css'`), ensure you have a `global.d.ts` declaration in your project:
+
+```ts
+// global.d.ts
+declare module '*.css';
+```
+
+And verify your `tsconfig.json` includes declaration files:
+
+```json
+{
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"]
+}
+```
+
+---
+
+## Next Steps
+
+- Explore all 68 primitives in the [Component Reference](/nui/components/button).
+- Learn about semantic design tokens in the [Nuicss Documentation](/nuicss).
+- Read about polymorphic rendering with the `asChild` prop on [Button](/nui/components/button) and [Link](/nui/components/link).

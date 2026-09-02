@@ -1,0 +1,2965 @@
+{
+  "Accordion": [
+    {
+      "name": "data",
+      "description": "Array of items for Smart Default mode",
+      "required": false,
+      "type": "AccordionItem[]",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultOpenId",
+      "description": "ID of the item that should be open by default",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "multiple",
+      "description": "If true, allows multiple accordion panels to remain open simultaneously",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Alert": [
+    {
+      "name": "variant",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "info"
+    },
+    {
+      "name": "title",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "closable",
+      "description": "Determines if the close icon button is rendered",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "onClose",
+      "description": "Callback fired when the close button is clicked. \nNote: The component is controlled; it does not unmount itself.",
+      "required": false,
+      "type": "(() => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "asChild",
+      "description": "Renders the component using its child element",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    }
+  ],
+  "Attachment": [
+    {
+      "name": "filename",
+      "description": "",
+      "required": true,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "filesize",
+      "description": "",
+      "required": true,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "filetype",
+      "description": "",
+      "required": true,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "src",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "isLoading",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    }
+  ],
+  "Avatar": [
+    {
+      "name": "src",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "alt",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "name",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "size",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "shape",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "circle"
+    },
+    {
+      "name": "status",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": null
+    },
+    {
+      "name": "fallbackIcon",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "loading",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    }
+  ],
+  "AvatarGroup": [
+    {
+      "name": "max",
+      "description": "Maximum number of avatars to display before truncating",
+      "required": false,
+      "type": "number",
+      "defaultValue": "3"
+    },
+    {
+      "name": "size",
+      "description": "Size passed down to all nested Avatar components",
+      "required": false,
+      "type": "any",
+      "defaultValue": "md"
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    }
+  ],
+  "Badge": [
+    {
+      "name": "count",
+      "description": "Displays a numerical count inside the badge",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "max",
+      "description": "The maximum number to display before showing a '+' (e.g., 99+)",
+      "required": false,
+      "type": "number",
+      "defaultValue": "99"
+    },
+    {
+      "name": "variant",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "default"
+    },
+    {
+      "name": "size",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "pill",
+      "description": "Rounds the edges to create a pill shape",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "dot",
+      "description": "Renders a small, empty circular indicator instead of text",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "href",
+      "description": "If provided, renders the badge as an <a> tag",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onClick",
+      "description": "If provided, renders the badge as a <button> tag",
+      "required": false,
+      "type": "MouseEventHandler<HTMLElement>",
+      "defaultValue": null
+    },
+    {
+      "name": "iconLeft",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "iconRight",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "asChild",
+      "description": "Renders the component using its child element",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    }
+  ],
+  "BadgeGroup": [
+    {
+      "name": "max",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "3"
+    }
+  ],
+  "Breadcrumbs": [
+    {
+      "name": "data",
+      "description": "Array of items for Smart Default mode",
+      "required": false,
+      "type": "BreadcrumbItem[]",
+      "defaultValue": null
+    },
+    {
+      "name": "maxItems",
+      "description": "The maximum number of items to display before truncating the middle path. Default: 5",
+      "required": false,
+      "type": "number",
+      "defaultValue": "5"
+    },
+    {
+      "name": "separator",
+      "description": "The visual separator between items. Default: '›'",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": "›"
+    }
+  ],
+  "Button": [
+    {
+      "name": "variant",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "default"
+    },
+    {
+      "name": "size",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "isLoading",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "iconLeft",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "iconRight",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "asChild",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Calendar": [
+    {
+      "name": "mode",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": null
+    },
+    {
+      "name": "value",
+      "description": "",
+      "required": false,
+      "type": "string | DateRange",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "",
+      "required": false,
+      "type": "string | DateRange",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((v: string) => void) | ((v: DateRange) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "minDate",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "maxDate",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "locale",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultMonth",
+      "description": "",
+      "required": false,
+      "type": "Date",
+      "defaultValue": null
+    }
+  ],
+  "Card": [
+    {
+      "name": "clickable",
+      "description": "If true, makes the card interactive via mouse and keyboard (Enter/Space)",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "hover",
+      "description": "If true, adds a shadow elevation effect on hover",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Carousel": [
+    {
+      "name": "showArrows",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    },
+    {
+      "name": "showDots",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    },
+    {
+      "name": "itemWidth",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "100%"
+    },
+    {
+      "name": "gap",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "1rem"
+    },
+    {
+      "name": "align",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "start"
+    },
+    {
+      "name": "autoPlay",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "interval",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "3000"
+    },
+    {
+      "name": "loop",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Checkbox": [
+    {
+      "name": "checked",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultChecked",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "indeterminate",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((checked: boolean) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "label",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    }
+  ],
+  "Chip": [
+    {
+      "name": "removable",
+      "description": "If true, renders a trailing 'X' button that triggers onRemove",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "selected",
+      "description": "Controls the visual and ARIA active state of the chip",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "iconLeft",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "iconRight",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "size",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "onRemove",
+      "description": "Callback fired when the 'X' button is clicked",
+      "required": false,
+      "type": "(() => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "onSelect",
+      "description": "Callback fired when the main body of the chip is clicked or activated via keyboard",
+      "required": false,
+      "type": "(() => void)",
+      "defaultValue": null
+    }
+  ],
+  "Clipboard": [
+    {
+      "name": "value",
+      "description": "",
+      "required": true,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "timeout",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "2000"
+    },
+    {
+      "name": "hideIcon",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "CodeBlock": [
+    {
+      "name": "language",
+      "description": "",
+      "required": true,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onLanguageChange",
+      "description": "",
+      "required": false,
+      "type": "((lang: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "code",
+      "description": "",
+      "required": true,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "readOnlyLanguage",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Collapsible": [
+    {
+      "name": "defaultOpen",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "isOpen",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "onToggle",
+      "description": "",
+      "required": false,
+      "type": "((isOpen: boolean) => void)",
+      "defaultValue": null
+    }
+  ],
+  "CollapsibleTrigger": [],
+  "CollapsibleContent": [],
+  "ColorPicker": [
+    {
+      "name": "value",
+      "description": "The currently selected color in hex format",
+      "required": false,
+      "type": "string",
+      "defaultValue": "#000000"
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when a color is selected",
+      "required": false,
+      "type": "((color: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "presets",
+      "description": "Array of hex colors to show in the preset grid",
+      "required": false,
+      "type": "string[]",
+      "defaultValue": "[\r\n  '#000000', '#52525b', '#a1a1aa', '#ffffff',\r\n  '#ef4444', '#f97316', '#f59e0b', '#84cc16', '#22c55e', '#14b8a6', '#06b6d4', '#3b82f6', '#6366f1', '#a855f7', '#d946ef', '#f43f5e',\r\n  '#7f1d1d', '#7c2d12', '#78350f', '#3f6212', '#14532d', '#134e4a', '#164e63', '#1e3a8a', '#312e81', '#581c87', '#701a75'\r\n]"
+    },
+    {
+      "name": "showCustom",
+      "description": "Whether to show the native color picker input for custom colors",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    },
+    {
+      "name": "disabled",
+      "description": "Disable the color picker",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "icon",
+      "description": "Custom icon to display on the trigger button. Defaults to Palette.",
+      "required": false,
+      "type": "LucideIcon",
+      "defaultValue": null
+    },
+    {
+      "name": "variant",
+      "description": "Visual variant for the trigger button. 'default' is a form input, 'icon' is a compact toolbar button.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "default"
+    },
+    {
+      "name": "showText",
+      "description": "Show the hex text in the default variant",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    },
+    {
+      "name": "showSwatch",
+      "description": "Show the color swatch circle in the default variant",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    },
+    {
+      "name": "showIcon",
+      "description": "Show the palette icon in the default variant",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    }
+  ],
+  "Combobox": [
+    {
+      "name": "data",
+      "description": "",
+      "required": true,
+      "type": "ComboboxOption[]",
+      "defaultValue": null
+    },
+    {
+      "name": "value",
+      "description": "Controlled value of the combobox",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "Initial uncontrolled value",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when an option is selected",
+      "required": false,
+      "type": "((value: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "placeholder",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Select..."
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "emptyMessage",
+      "description": "Message displayed when filtering returns zero results",
+      "required": false,
+      "type": "string",
+      "defaultValue": "No results found"
+    },
+    {
+      "name": "filter",
+      "description": "Custom filter function. Defaults to simple substring matching on the label.",
+      "required": false,
+      "type": "((input: string, option: ComboboxOption) => boolean)",
+      "defaultValue": null
+    },
+    {
+      "name": "leftIcon",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "rightIcon",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "renderOption",
+      "description": "Custom renderer for the entire option row",
+      "required": false,
+      "type": "((option: ComboboxOption, active: boolean) => ReactNode)",
+      "defaultValue": null
+    },
+    {
+      "name": "renderOptionIcon",
+      "description": "Custom renderer strictly for the option's icon",
+      "required": false,
+      "type": "((option: ComboboxOption) => ReactNode)",
+      "defaultValue": null
+    }
+  ],
+  "ContextMenu": [
+    {
+      "name": "items",
+      "description": "",
+      "required": true,
+      "type": "ContextMenuItem[]",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "asChild",
+      "description": "* If true, the ContextMenu will not wrap children in a <div>.\nInstead, it clones the child and directly attaches the onContextMenu event.\nChild MUST be a valid single React Element.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "DatePicker": [
+    {
+      "name": "value",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((v: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "minDate",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "maxDate",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "placeholder",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Select date"
+    },
+    {
+      "name": "name",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "locale",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "en-US"
+    },
+    {
+      "name": "id",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "formatDisplay",
+      "description": "",
+      "required": false,
+      "type": "((date: Date) => string)",
+      "defaultValue": null
+    }
+  ],
+  "DateRangePicker": [
+    {
+      "name": "value",
+      "description": "",
+      "required": false,
+      "type": "any",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "",
+      "required": false,
+      "type": "any",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((r: DateRange) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "minDate",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "maxDate",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "placeholder",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Pick range"
+    },
+    {
+      "name": "locale",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "en-US"
+    },
+    {
+      "name": "id",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "nameFrom",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "nameTo",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "formatDisplay",
+      "description": "",
+      "required": false,
+      "type": "((date: Date) => string)",
+      "defaultValue": null
+    }
+  ],
+  "Divider": [
+    {
+      "name": "orientation",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "horizontal"
+    }
+  ],
+  "Drawer": [
+    {
+      "name": "open",
+      "description": "Controls the open/closed state of the drawer",
+      "required": true,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "onClose",
+      "description": "Callback fired when the drawer requests to be closed (e.g., Escape key, outside click)",
+      "required": true,
+      "type": "() => void",
+      "defaultValue": null
+    },
+    {
+      "name": "position",
+      "description": "The edge of the screen the drawer attaches to. Defaults to 'right'",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "right"
+    },
+    {
+      "name": "disableEsc",
+      "description": "Prevents the drawer from closing when the Escape key is pressed",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "disableClickOutside",
+      "description": "Prevents the drawer from closing when a click occurs outside the content area",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "overlayClassName",
+      "description": "Custom class name applied to the backdrop overlay",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "title",
+      "description": "Optional title displayed at the top of the Drawer",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "description",
+      "description": "Optional description displayed below the title",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "hideCloseButton",
+      "description": "If true, hides the default close 'X' button",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "transitionDuration",
+      "description": "Transition duration in seconds. Defaults to 0.3",
+      "required": false,
+      "type": "number",
+      "defaultValue": "0.3"
+    }
+  ],
+  "Dropdown": [
+    {
+      "name": "data",
+      "description": "",
+      "required": false,
+      "type": "DropdownDataItem[]",
+      "defaultValue": null
+    },
+    {
+      "name": "align",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "start"
+    }
+  ],
+  "EmptyState": [
+    {
+      "name": "icon",
+      "description": "The icon or illustration to display at the top of the empty state.",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "title",
+      "description": "The main title describing the empty state.",
+      "required": true,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "description",
+      "description": "The descriptive text explaining what is missing or how to resolve it.",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "actions",
+      "description": "Call to action buttons or links.",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    }
+  ],
+  "FileUploader": [
+    {
+      "name": "value",
+      "description": "Controlled state for the selected files",
+      "required": false,
+      "type": "File[]",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "Uncontrolled initial state for the selected files",
+      "required": false,
+      "type": "File[]",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when the list of selected files changes",
+      "required": false,
+      "type": "((files: File[]) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "multiple",
+      "description": "Whether to allow multiple files to be selected. Defaults to false.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "accept",
+      "description": "A comma-separated list of allowed file extensions or MIME types (e.g., '.jpg, .png, application/pdf')",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "maxSize",
+      "description": "Maximum allowed file size in bytes",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "Custom class name applied to the root container",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "placeholder",
+      "description": "Custom text or element displayed inside the dropzone (Primary Title)",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "description",
+      "description": "Secondary text or description below the placeholder",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "Disables the dropzone and prevents file selection",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "FormItem": [],
+  "FormLabel": [],
+  "FormControl": [],
+  "FormDescription": [],
+  "FormMessage": [],
+  "FormField": [],
+  "HoverCard": [
+    {
+      "name": "openDelay",
+      "description": "Delay in milliseconds before the card opens. Defaults to 200ms.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "200"
+    },
+    {
+      "name": "closeDelay",
+      "description": "Delay in milliseconds before the card closes. Defaults to 300ms.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "300"
+    }
+  ],
+  "HoverCard.Trigger": [],
+  "HoverCard.Content": [
+    {
+      "name": "placement",
+      "description": "Preferred placement of the card relative to the trigger. Defaults to 'bottom'",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "bottom"
+    },
+    {
+      "name": "offset",
+      "description": "Gap in pixels between the trigger and the card. Defaults to 8px.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "12"
+    },
+    {
+      "name": "hideArrow",
+      "description": "If true, hides the directional arrow pointing to the trigger.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Image": [
+    {
+      "name": "fallbackSrc",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "fallback",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    }
+  ],
+  "Input": [
+    {
+      "name": "label",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "description",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "error",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "inputSize",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "leftIcon",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "rightIcon",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "rightIconClassName",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "wrapperClassName",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    }
+  ],
+  "Kbd": [],
+  "Container": [
+    {
+      "name": "size",
+      "description": "The maximum width bounds for the container. Defaults to 'lg'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "lg"
+    },
+    {
+      "name": "asChild",
+      "description": "Merges props into the immediate child when true, allowing polymorphic rendering",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Flex": [
+    {
+      "name": "direction",
+      "description": "Defines the flex-direction. Defaults to 'row'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "row"
+    },
+    {
+      "name": "align",
+      "description": "Defines the align-items cross-axis behavior. Defaults to 'stretch'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "stretch"
+    },
+    {
+      "name": "justify",
+      "description": "Defines the justify-content main-axis behavior. Defaults to 'start'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "start"
+    },
+    {
+      "name": "wrap",
+      "description": "Defines the flex-wrap behavior. Defaults to 'nowrap'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "nowrap"
+    },
+    {
+      "name": "gap",
+      "description": "The gap between flex items. Accepts numbers (px) or valid CSS strings. Defaults to 0.",
+      "required": false,
+      "type": "string | number",
+      "defaultValue": "0"
+    }
+  ],
+  "Stack": [
+    {
+      "name": "align",
+      "description": "Defines the align-items cross-axis behavior. Defaults to 'stretch'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "stretch"
+    },
+    {
+      "name": "wrap",
+      "description": "Defines the flex-wrap behavior. Defaults to 'nowrap'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "nowrap"
+    },
+    {
+      "name": "justify",
+      "description": "Defines the justify-content main-axis behavior. Defaults to 'start'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "start"
+    },
+    {
+      "name": "gap",
+      "description": "The gap between flex items. Accepts numbers (px) or valid CSS strings. Defaults to 0.",
+      "required": false,
+      "type": "string | number",
+      "defaultValue": "0"
+    }
+  ],
+  "HStack": [
+    {
+      "name": "align",
+      "description": "Defines the align-items cross-axis behavior. Defaults to 'stretch'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "stretch"
+    },
+    {
+      "name": "wrap",
+      "description": "Defines the flex-wrap behavior. Defaults to 'nowrap'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "nowrap"
+    },
+    {
+      "name": "justify",
+      "description": "Defines the justify-content main-axis behavior. Defaults to 'start'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "start"
+    },
+    {
+      "name": "gap",
+      "description": "The gap between flex items. Accepts numbers (px) or valid CSS strings. Defaults to 0.",
+      "required": false,
+      "type": "string | number",
+      "defaultValue": "0"
+    }
+  ],
+  "Grid": [
+    {
+      "name": "columns",
+      "description": "Number of fixed columns, or responsive auto algorithms. Defaults to 'auto-fit'.",
+      "required": false,
+      "type": "number | \"auto-fit\" | \"auto-fill\"",
+      "defaultValue": "auto-fit"
+    },
+    {
+      "name": "gap",
+      "description": "The gap between grid items. Accepts numbers (px) or valid CSS strings. Defaults to 16.",
+      "required": false,
+      "type": "string | number",
+      "defaultValue": "16"
+    },
+    {
+      "name": "minColWidth",
+      "description": "The minimum width a column can shrink to before wrapping. Used with auto-fit/fill. Defaults to '250px'.",
+      "required": false,
+      "type": "string",
+      "defaultValue": "250px"
+    }
+  ],
+  "Link": [
+    {
+      "name": "variant",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "default"
+    },
+    {
+      "name": "underline",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "hover"
+    },
+    {
+      "name": "isExternal",
+      "description": "Automatically applies `target=\"_blank\"` and `rel=\"noopener noreferrer\"` for external routing security.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "asChild",
+      "description": "* Polymorphic Prop: When true, delegates rendering to its child.\nCrucial for integrating with framework routers like Next.js `<Link>` or React Router.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "MegaMenu": [],
+  "Modal": [
+    {
+      "name": "open",
+      "description": "",
+      "required": true,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "onClose",
+      "description": "",
+      "required": true,
+      "type": "() => void",
+      "defaultValue": null
+    },
+    {
+      "name": "title",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "description",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "labelledById",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "describedById",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "disableClickOutside",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "disableEsc",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "initialFocusRef",
+      "description": "",
+      "required": false,
+      "type": "RefObject<HTMLElement | null>",
+      "defaultValue": null
+    },
+    {
+      "name": "overlayClassName",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "hideCloseButton",
+      "description": "Hides the 'X' close button in the top right corner.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "MultiSelect": [
+    {
+      "name": "options",
+      "description": "Array of available options",
+      "required": true,
+      "type": "MultiSelectOption[]",
+      "defaultValue": null
+    },
+    {
+      "name": "value",
+      "description": "Controlled state for selected values",
+      "required": false,
+      "type": "string[]",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "Uncontrolled initial state for selected values",
+      "required": false,
+      "type": "string[]",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when the selection changes",
+      "required": false,
+      "type": "((value: string[]) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "placeholder",
+      "description": "Text displayed when no options are selected",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Select multiple..."
+    },
+    {
+      "name": "name",
+      "description": "Name attribute applied to hidden inputs for native form submission",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "error",
+      "description": "Toggles error styling",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "maxTags",
+      "description": "Number of tags to render before collapsing into a summary string (e.g., \"3 selected\")",
+      "required": false,
+      "type": "number",
+      "defaultValue": "3"
+    }
+  ],
+  "useTheme": [],
+  "NUIProvider": [
+    {
+      "name": "defaultTheme",
+      "description": "The default theme if nothing is in local storage. Defaults to 'system'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "system"
+    },
+    {
+      "name": "storageKey",
+      "description": "The local storage key used to persist the theme preference. Defaults to 'nui-theme'.",
+      "required": false,
+      "type": "string",
+      "defaultValue": "nui-theme"
+    }
+  ],
+  "NumberInput": [],
+  "Pagination": [
+    {
+      "name": "page",
+      "description": "The current active page number (1-indexed)",
+      "required": true,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "total",
+      "description": "The total number of pages available",
+      "required": true,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when a new page is selected",
+      "required": true,
+      "type": "(page: number) => void",
+      "defaultValue": null
+    },
+    {
+      "name": "siblings",
+      "description": "Number of page links to show on each side of the current page. Defaults to 1.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "1"
+    },
+    {
+      "name": "className",
+      "description": "Custom class name applied to the root navigation element",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "Disables all interaction with the pagination controls",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "PasswordInput": [],
+  "PinInput": [
+    {
+      "name": "length",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "4"
+    },
+    {
+      "name": "value",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": ""
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((value: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "onComplete",
+      "description": "",
+      "required": false,
+      "type": "((value: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "mask",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "autoFocus",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "placeholder",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "○"
+    },
+    {
+      "name": "type",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "numeric"
+    },
+    {
+      "name": "otp",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "size",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    }
+  ],
+  "Popover": [
+    {
+      "name": "defaultOpen",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Popover.Trigger": [],
+  "Popover.Content": [
+    {
+      "name": "placement",
+      "description": "Preferred placement of the popover relative to the trigger. Defaults to 'bottom'",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "bottom"
+    },
+    {
+      "name": "offset",
+      "description": "Gap in pixels between the trigger and the popover. Defaults to 8px.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "8"
+    },
+    {
+      "name": "showArrow",
+      "description": "Whether to show a directional arrow pointing to the trigger. Defaults to false for modern aesthetic.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Popover.Close": [],
+  "Progress": [
+    {
+      "name": "value",
+      "description": "The current progress value",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "max",
+      "description": "The maximum possible value. Defaults to 100.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "100"
+    },
+    {
+      "name": "indeterminate",
+      "description": "Forces the progress bar into an animated indeterminate state",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "size",
+      "description": "The visual height of the progress bar. Defaults to 'md'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "variant",
+      "description": "The semantic color variant. Defaults to 'default'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "default"
+    },
+    {
+      "name": "label",
+      "description": "WAI-ARIA hidden label for screen readers. Defaults to 'Progress'.",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Progress"
+    }
+  ],
+  "RadioGroup": [
+    {
+      "name": "value",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((value: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "name",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "orientation",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "vertical"
+    }
+  ],
+  "Rating": [
+    {
+      "name": "value",
+      "description": "Controlled state value",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "Uncontrolled initial value",
+      "required": false,
+      "type": "number",
+      "defaultValue": "0"
+    },
+    {
+      "name": "max",
+      "description": "The maximum possible rating. Determines how many icons to render. Defaults to 5.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "5"
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when a rating is selected",
+      "required": false,
+      "type": "((value: number) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "icon",
+      "description": "Custom React node for the empty state",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": "(\r\n <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\" strokeLinecap=\"round\" strokeLinejoin=\"round\" aria-hidden=\"true\">\r\n <polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon>\r\n </svg>\r\n)"
+    },
+    {
+      "name": "iconFilled",
+      "description": "Custom React node for the filled state",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": "(\r\n <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" fill=\"currentColor\" stroke=\"currentColor\" strokeWidth=\"2\" strokeLinecap=\"round\" strokeLinejoin=\"round\" aria-hidden=\"true\">\r\n <polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon>\r\n </svg>\r\n)"
+    },
+    {
+      "name": "size",
+      "description": "Size variant",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "readOnly",
+      "description": "Makes the rating strictly decorative",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "disabled",
+      "description": "Disables interactions and applies a muted style",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "allowHalf",
+      "description": "Enables fractional half-step selections (e.g., 3.5 stars)",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Resizable": [
+    {
+      "name": "direction",
+      "description": "The flex layout direction. Defaults to 'horizontal'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "horizontal"
+    },
+    {
+      "name": "onLayout",
+      "description": "Callback fired when the user completes a resize action, providing an array of panel sizes (percentages)",
+      "required": false,
+      "type": "((sizes: number[]) => void)",
+      "defaultValue": null
+    }
+  ],
+  "ScrollArea": [
+    {
+      "name": "orientation",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "vertical"
+    }
+  ],
+  "SegmentedControl": [
+    {
+      "name": "options",
+      "description": "",
+      "required": true,
+      "type": "SegmentedControlOption[]",
+      "defaultValue": null
+    },
+    {
+      "name": "value",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((value: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "name",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "size",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "fullWidth",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Select": [
+    {
+      "name": "data",
+      "description": "Array of available options",
+      "required": true,
+      "type": "SelectOption[]",
+      "defaultValue": null
+    },
+    {
+      "name": "value",
+      "description": "Controlled state value",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "Uncontrolled initial value",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when an option is selected",
+      "required": false,
+      "type": "((value: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "placeholder",
+      "description": "Text displayed when no option is selected",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Select..."
+    },
+    {
+      "name": "name",
+      "description": "Name attribute applied to the hidden input for native form submission",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "error",
+      "description": "Applies error styling to the trigger button",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Skeleton": [
+    {
+      "name": "size",
+      "description": "The predefined height mapping for the skeleton",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "width",
+      "description": "Explicit width override (supports numbers as px, or strings like '100%')",
+      "required": false,
+      "type": "string | number",
+      "defaultValue": null
+    },
+    {
+      "name": "height",
+      "description": "Explicit height override (supports numbers as px, or strings like '50px')",
+      "required": false,
+      "type": "string | number",
+      "defaultValue": null
+    },
+    {
+      "name": "animated",
+      "description": "Enables or disables the sweeping shimmer animation. Defaults to true.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    },
+    {
+      "name": "circle",
+      "description": "Forces the skeleton into a perfect circle, ignoring the size height",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "ariaHidden",
+      "description": "Hides the element from screen readers. Defaults to true (recommended).",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    }
+  ],
+  "Slider": [
+    {
+      "name": "min",
+      "description": "The minimum allowed value. Defaults to 0.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "0"
+    },
+    {
+      "name": "max",
+      "description": "The maximum allowed value. Defaults to 100.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "100"
+    },
+    {
+      "name": "step",
+      "description": "The interval between valid values. Defaults to 1.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "1"
+    },
+    {
+      "name": "value",
+      "description": "The controlled value of the slider.",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "The initial uncontrolled value of the slider.",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when the value changes.",
+      "required": false,
+      "type": "((value: number) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "Disables the slider and prevents interaction.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "Spinner": [
+    {
+      "name": "size",
+      "description": "The predefined size of the spinner. Defaults to 'md'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "variant",
+      "description": "The color theme variant. Defaults to 'primary'.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "primary"
+    },
+    {
+      "name": "label",
+      "description": "WAI-ARIA label read by screen readers. Defaults to 'Loading...'.",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Loading..."
+    }
+  ],
+  "StatCard": [
+    {
+      "name": "label",
+      "description": "",
+      "required": true,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "value",
+      "description": "",
+      "required": true,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "icon",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "trend",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": null
+    },
+    {
+      "name": "trendValue",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "trendLabel",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "isLoading",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "info",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "progressValue",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "progressMax",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "100"
+    },
+    {
+      "name": "accent",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "default"
+    },
+    {
+      "name": "sparklineData",
+      "description": "",
+      "required": false,
+      "type": "number[]",
+      "defaultValue": null
+    }
+  ],
+  "Stepper": [
+    {
+      "name": "data",
+      "description": "Array of steps. Can be simple strings or rich objects.",
+      "required": true,
+      "type": "(string | StepItem)[]",
+      "defaultValue": null
+    },
+    {
+      "name": "active",
+      "description": "The 0-based index of the currently active step.",
+      "required": true,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when a step is clicked.",
+      "required": false,
+      "type": "((index: number) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "disableFuture",
+      "description": "Prevents the user from clicking on steps that come after the currently active one.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "orientation",
+      "description": "The orientation of the stepper",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "horizontal"
+    }
+  ],
+  "Switch": [
+    {
+      "name": "checked",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultChecked",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((checked: boolean) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "label",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "description",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "name",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "value",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "size",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "md"
+    },
+    {
+      "name": "wrapperClassName",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    }
+  ],
+  "Table.Header": [],
+  "Table.Body": [],
+  "Table.Row": [],
+  "Table.Head": [],
+  "Table.Cell": [],
+  "Table": [
+    {
+      "name": "columns",
+      "description": "Array of column configuration objects",
+      "required": false,
+      "type": "TableColumn<T>[]",
+      "defaultValue": null
+    },
+    {
+      "name": "data",
+      "description": "Array of data objects to render",
+      "required": false,
+      "type": "T[]",
+      "defaultValue": null
+    },
+    {
+      "name": "rowKey",
+      "description": "A unique identifier for each row (string/number key, or a function that returns a string)",
+      "required": false,
+      "type": "string | number | symbol | ((row: T) => string)",
+      "defaultValue": null
+    },
+    {
+      "name": "emptyText",
+      "description": "Text or React Node to display when the data array is empty",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "ref",
+      "description": "",
+      "required": false,
+      "type": "Ref<HTMLTableElement>",
+      "defaultValue": null
+    }
+  ],
+  "Tabs": [
+    {
+      "name": "value",
+      "description": "Controlled state value representing the active tab",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "Uncontrolled initial value",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when the active tab changes",
+      "required": false,
+      "type": "((value: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "data",
+      "description": "Data array for Smart Mode mapping",
+      "required": false,
+      "type": "TabDataItem[]",
+      "defaultValue": null
+    }
+  ],
+  "Textarea": [
+    {
+      "name": "showCount",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "autoGrow",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "true"
+    },
+    {
+      "name": "error",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "name": "helperId",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    }
+  ],
+  "Timeline": [
+    {
+      "name": "data",
+      "description": "Array of items for Smart Default mode",
+      "required": false,
+      "type": "TimelineItem[]",
+      "defaultValue": null
+    },
+    {
+      "name": "orientation",
+      "description": "",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "vertical"
+    },
+    {
+      "name": "hideLine",
+      "description": "If true, hides the connecting lines between all nodes",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "TimePicker": [
+    {
+      "name": "value",
+      "description": "Standard HTML5 time format: HH:mm (24-hour format internally)",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "Uncontrolled default time",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when a time segment is selected",
+      "required": false,
+      "type": "((v: string) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "clockType",
+      "description": "12-hour or 24-hour clock formatting. Defaults to 12.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "12"
+    },
+    {
+      "name": "minuteStep",
+      "description": "Step interval for the minute column. Defaults to 1.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "1"
+    },
+    {
+      "name": "placeholder",
+      "description": "Placeholder text when empty",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Select time"
+    },
+    {
+      "name": "name",
+      "description": "Name attribute for the hidden input (for native forms)",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "Disables the time picker trigger",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "TimeRangePicker": [
+    {
+      "name": "value",
+      "description": "Controlled time range object",
+      "required": false,
+      "type": "TimeRange",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "Uncontrolled default time range object",
+      "required": false,
+      "type": "TimeRange",
+      "defaultValue": null
+    },
+    {
+      "name": "onChange",
+      "description": "Callback fired when either the start or end time changes",
+      "required": false,
+      "type": "((v: TimeRange) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "clockType",
+      "description": "Uses 12-hour or 24-hour clock formatting. Defaults to 12.",
+      "required": false,
+      "type": "enum",
+      "defaultValue": "12"
+    },
+    {
+      "name": "minuteStep",
+      "description": "Step interval for the minute column. Defaults to 1.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "1"
+    },
+    {
+      "name": "placeholder",
+      "description": "Placeholder text displayed when no range is selected",
+      "required": false,
+      "type": "string",
+      "defaultValue": "Select time range"
+    },
+    {
+      "name": "nameFrom",
+      "description": "Name attribute applied to the \"from\" hidden input for native forms",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "nameTo",
+      "description": "Name attribute applied to the \"to\" hidden input for native forms",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "Disables the picker entirely",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": "false"
+    }
+  ],
+  "ToastProvider": [],
+  "Tooltip": [
+    {
+      "name": "label",
+      "description": "The text or content displayed inside the tooltip",
+      "required": true,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "children",
+      "description": "The trigger element. Must be a single valid React Element (like a button)",
+      "required": true,
+      "type": "ReactElement<unknown, string | JSXElementConstructor<any>>",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "Additional CSS classes for the tooltip container",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "delay",
+      "description": "Delay in milliseconds before showing the tooltip on hover/focus. Defaults to 200.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "200"
+    },
+    {
+      "name": "offset",
+      "description": "Distance in pixels between the tooltip and the trigger. Defaults to 8.",
+      "required": false,
+      "type": "number",
+      "defaultValue": "8"
+    }
+  ],
+  "TransferList": [
+    {
+      "name": "options",
+      "description": "",
+      "required": true,
+      "type": "TransferListOption[]",
+      "defaultValue": null
+    },
+    {
+      "name": "value",
+      "description": "",
+      "required": false,
+      "type": "string[]",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultValue",
+      "description": "",
+      "required": false,
+      "type": "string[]",
+      "defaultValue": "[]"
+    },
+    {
+      "name": "onChange",
+      "description": "",
+      "required": false,
+      "type": "((value: string[]) => void)",
+      "defaultValue": null
+    },
+    {
+      "name": "leftTitle",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": "Available"
+    },
+    {
+      "name": "rightTitle",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": "Selected"
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    }
+  ],
+  "TreeContext": [],
+  "TreeView": [
+    {
+      "name": "data",
+      "description": "",
+      "required": false,
+      "type": "TreeNode[]",
+      "defaultValue": null
+    },
+    {
+      "name": "selectedId",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "defaultExpandedIds",
+      "description": "",
+      "required": false,
+      "type": "string[]",
+      "defaultValue": "[]"
+    },
+    {
+      "name": "onSelect",
+      "description": "",
+      "required": false,
+      "type": "((id: string, node: any) => void)",
+      "defaultValue": null
+    }
+  ],
+  "TreeView.Item": [
+    {
+      "name": "id",
+      "description": "",
+      "required": true,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "label",
+      "description": "",
+      "required": true,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "icon",
+      "description": "",
+      "required": false,
+      "type": "ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": null
+    },
+    {
+      "name": "level",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "1"
+    },
+    {
+      "name": "tabIndex",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    }
+  ],
+  "VideoPlayer": [
+    {
+      "name": "url",
+      "description": "",
+      "required": true,
+      "type": "string",
+      "defaultValue": null
+    },
+    {
+      "name": "className",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": null
+    }
+  ],
+  "VirtualList": [
+    {
+      "name": "items",
+      "description": "Array of data items to render",
+      "required": true,
+      "type": "T[]",
+      "defaultValue": null
+    },
+    {
+      "name": "height",
+      "description": "Height of the scrollable viewport in pixels. If omitted, it will automatically size to its container.",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "itemHeight",
+      "description": "Fixed height for each row in pixels. Defaults to 40.",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "overscan",
+      "description": "Extra rows to render above and below the viewport to prevent white flashes during fast scrolling",
+      "required": false,
+      "type": "number",
+      "defaultValue": null
+    },
+    {
+      "name": "keyExtractor",
+      "description": "Extracts a unique React key for each item. Crucial for stable rendering during sorts/filters!",
+      "required": false,
+      "type": "((item: T, index: number) => string | number)",
+      "defaultValue": null
+    },
+    {
+      "name": "renderItem",
+      "description": "The render function for the row",
+      "required": true,
+      "type": "(item: T, index: number) => ReactNode",
+      "defaultValue": null
+    },
+    {
+      "name": "ref",
+      "description": "",
+      "required": false,
+      "type": "ForwardedRef<VirtualListHandle>",
+      "defaultValue": null
+    }
+  ],
+  "Watermark": [
+    {
+      "name": "text",
+      "description": "The text to display. Can be an array for multi-line watermarks.",
+      "required": true,
+      "type": "string | string[]",
+      "defaultValue": null
+    },
+    {
+      "name": "opacity",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "0.05"
+    },
+    {
+      "name": "rotate",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "-20"
+    },
+    {
+      "name": "gap",
+      "description": "The spacing between watermark instances",
+      "required": false,
+      "type": "number",
+      "defaultValue": "120"
+    },
+    {
+      "name": "fontSize",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "16"
+    },
+    {
+      "name": "color",
+      "description": "",
+      "required": false,
+      "type": "string",
+      "defaultValue": "currentColor"
+    },
+    {
+      "name": "zIndex",
+      "description": "",
+      "required": false,
+      "type": "number",
+      "defaultValue": "10"
+    }
+  ]
+}

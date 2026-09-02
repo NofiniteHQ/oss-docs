@@ -1,0 +1,10 @@
+# @nofinite/locale Documentation
+
+Lightweight localization, country lookups, dialing codes, and flag utilities.
+
+## Resources
+- [Full @nofinite/locale Context Bundle](/locale/llms-full.txt)
+- [Nofinite Ecosystem Index](/llms.txt)
+
+## Guidelines
+You are using @nofinite/locale for localization, currencies, and country lookups.

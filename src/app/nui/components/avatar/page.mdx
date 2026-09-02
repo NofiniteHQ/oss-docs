@@ -1,0 +1,196 @@
+# Avatar
+
+A composable, accessible Avatar component for modern React applications.
+
+```tsx
+import { Avatar } from '@nofinite/nui';
+```
+
+---
+
+A flexible and accessible avatar component for representing users or entities with **images, initials, or fallback icons**. Supports multiple sizes, shapes, status indicators, loading states, and grouping.
+
+---
+
+## Usage
+
+### Basic Avatar
+
+```tsx
+import { Avatar } from '@nofinite/nui';
+
+<Avatar src="https://example.com/avatar.jpg" alt="John Doe" />;
+```
+
+### Avatar with initials fallback
+
+```tsx
+<Avatar name="John Doe" />
+```
+
+### Avatar with custom fallback icon
+
+```tsx
+<Avatar name="John Doe" fallbackIcon={<svg>...</svg>} />
+```
+
+### Avatar with status
+
+```tsx
+<Avatar name="Jane Smith" status="online" />
+```
+
+### Loading Avatar
+
+```tsx
+<Avatar loading />
+```
+
+---
+
+## AvatarGroup
+
+Groups multiple avatars into a compact stack. Shows an excess counter (`+n`) if more avatars exist than `max`.
+
+```tsx
+import { Avatar, AvatarGroup } from '@nofinite/nui';
+
+<AvatarGroup max={3} size="md">
+  <Avatar name="Alice" />
+  <Avatar name="Bob" />
+  <Avatar name="Charlie" />
+  <Avatar name="Diana" /> {/* Will appear as "+1" */}
+</AvatarGroup>;
+```
+
+---
+
+---
+
+## Sizes
+
+The `size` prop controls the avatar’s width, height, and font-size for initials/fallback icons.
+
+| Size | Dimensions |
+| ---- | ---------- |
+| `sm` | 32×32px    |
+| `md` | 40×40px    |
+| `lg` | 56×56px    |
+| `xl` | 72×72px    |
+
+---
+
+## Shapes
+
+The `shape` prop controls the border radius.
+
+| Shape     | Description              |
+| --------- | ------------------------ |
+| `circle`  | Full round avatar        |
+| `rounded` | Slightly rounded corners |
+| `square`  | Sharp square corners     |
+
+---
+
+## Status Indicator
+
+Add a small status dot to represent user state.
+
+| Status    | Description        |
+| --------- | ------------------ |
+| `online`  | Active / available |
+| `offline` | Offline / inactive |
+| `busy`    | Do not disturb     |
+| `away`    | Away from keyboard |
+
+> Status appears as a small colored dot at the bottom-right of the avatar. `aria-label` is automatically applied for accessibility.
+
+---
+
+## Loading State
+
+When `loading` is `true`:
+
+- Shows a **skeleton shimmer** instead of image or initials.
+- Sets `cursor: wait`.
+- Hides the content to avoid flicker.
+- Helpful for asynchronous avatar loading or user data fetching.
+
+---
+
+## Fallback Behavior
+
+Avatar displays content in the following order:
+
+1. Image (`src`) if available and not errored.
+2. User initials (`name`) if image is missing.
+3. `fallbackIcon` if initials are not available.
+4. Default placeholder icon.
+
+---
+
+## Accessibility
+
+- `role="img"` is applied to the root.
+- `aria-label` uses `alt` → `name` → `"Avatar"` as fallback.
+- Status indicator uses `role="status"` and `aria-label` for screen readers.
+- Loading avatars do not announce image content.
+- AvatarGroup is purely visual; individual avatars retain accessibility props.
+
+---
+
+## Design Tokens / Theming
+
+You can customize Avatar appearance using CSS variables:
+
+```css
+:root {
+  /* Sizes & radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  /* Colors */
+  --bg-subtle: #f3f4f6;
+  --bg-page: #ffffff;
+  --bg-muted: #e5e7eb;
+  --fg-subtle: #6b7280;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --amber-500: #d97706;
+  --slate-400: #94a3b8;
+
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+}
+```
+
+---
+
+## Best Practices
+
+### Do
+
+- Provide `alt` text whenever possible for screen readers.
+- Use initials or fallback icons if image is not available.
+- Keep avatars small in groups for compact UI.
+
+### Don’t
+
+- Rely solely on color to indicate status.
+- Place critical info inside avatars.
+- Use large groups (>5) without grouping (`AvatarGroup`) and excess counters.
+
+---
+
+## API Reference
+
+<PropsTable name="Avatar" />

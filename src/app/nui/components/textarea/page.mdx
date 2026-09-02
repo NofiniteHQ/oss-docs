@@ -1,0 +1,195 @@
+# Textarea
+
+A composable, accessible Textarea component for modern React applications.
+
+```tsx
+import { Textarea } from '@nofinite/nui';
+```
+
+---
+
+A controlled/uncontrolled multiline input supporting **auto-growing height**, **character counting**, **error state**, and robust accessibility semantics. Designed for form-heavy interfaces with dynamic content entry.
+
+---
+
+## Usage
+
+### Basic usage
+
+```tsx id="r7f9c2"
+import { Textarea } from '@nofinite/nui';
+
+<Textarea placeholder="Write your message..." />
+```
+
+### Controlled usage
+
+```tsx id="1yd0ab"
+const [value, setValue] = useState("");
+
+<Textarea
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+/>
+```
+
+### Auto-grow textarea
+
+```tsx id="q7p2v1"
+<Textarea autoGrow placeholder="Auto resizing textarea" />
+```
+
+### Character counter with max length
+
+```tsx id="3wx91j"
+<Textarea maxLength={200} showCount />
+```
+
+### Error state
+
+```tsx id="2i0z0c"
+<Textarea error helperId="desc-error" />
+<p id="desc-error">This field is required</p>
+```
+
+### Disabled and read-only
+
+```tsx id="5tpp9x"
+<Textarea disabled />
+<Textarea readOnly value="Static content" />
+```
+
+---
+
+---
+
+## Variants
+
+### Growth variants
+
+```tsx id="i2bc4l"
+<Textarea autoGrow />
+<Textarea autoGrow={false} />
+```
+
+### Counter variants
+
+```tsx id="plz0d6"
+<Textarea showCount />
+<Textarea showCount maxLength={120} />
+```
+
+### Validation variants
+
+```tsx id="c0xy7s"
+<Textarea error />
+<Textarea required />
+```
+
+### Control mode variants
+
+```tsx id="9y5p4m"
+<Textarea defaultValue="uncontrolled" />
+<Textarea value="controlled" />
+```
+
+**Available variants**
+
+* Auto-grow textarea
+* Manual resize textarea
+* Character counter textarea
+* Max-length limited textarea
+* Error state textarea
+* Disabled textarea
+* Read-only textarea
+* Controlled textarea
+* Uncontrolled textarea
+
+**Guidelines**
+
+* Use autoGrow for chat, comments, and message inputs
+* Disable autoGrow for structured forms
+* Pair error state with helper text
+* Avoid large maxLength values with autoGrow
+* Keep counter visible for strict character limits
+
+---
+
+## States
+
+* Default
+* Hover
+* Focus-visible
+* Disabled
+* Read-only
+* Error
+* Auto-growing
+* Counter visible
+
+---
+
+## Keyboard Interaction
+
+* Standard textarea typing behavior
+* Enter inserts newline
+* Tab navigates form order
+* Shift + Tab moves backward
+* Screen readers announce error and helper text
+
+---
+
+## Accessibility
+
+* Native textarea semantics
+* `aria-invalid` when error
+* `aria-describedby` links helper text
+* Counter marked `aria-hidden`
+* Preserves scroll position during auto-grow
+* Supports required + disabled semantics
+
+---
+
+## Design Tokens
+
+| Token                | Usage         |
+| -------------------- | ------------- |
+| --bg-surface     | Background    |
+| --bg-muted       | Disabled bg   |
+| --bg-subtle      | Read-only bg  |
+| --fg-default     | Text          |
+| --fg-muted       | Counter       |
+| --fg-disabled    | Disabled text |
+| --border-default | Border        |
+| --border-hover   | Hover border  |
+| --color-primary  | Focus border  |
+| --color-danger   | Error border  |
+| --brand-100      | Focus ring    |
+| --radius-md      | Radius        |
+| --space-*        | Spacing       |
+| --font-sans      | Typography    |
+
+---
+
+## Best Practices
+
+### Do
+
+* Use autoGrow for conversational UI
+* Combine maxLength + counter for constrained inputs
+* Attach helper text via helperId
+* Keep textarea responsive for long content
+* Validate on blur for better UX
+
+### Don’t
+
+* Use autoGrow for extremely large inputs
+* Hide error messaging from screen readers
+* Mount multiple counters for same input
+* Force manual resize when autoGrow active
+* Use placeholder as primary label
+
+---
+
+## API Reference
+
+<PropsTable name="Textarea" />
