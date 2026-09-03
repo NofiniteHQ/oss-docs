@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Drawer } from '@nofinite/nui';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -19,8 +19,41 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Active package detection
-  const currentPackage = PACKAGES.find(p => pathname.startsWith(`/${p.id}`)) || PACKAGES[0];
+  // Active package detection using exact segment boundary
+  const currentPkgId = pathname.split('/').filter(Boolean)[0] || 'nui';
+  const currentPackage = PACKAGES.find(p => p.id === currentPkgId) || PACKAGES[0];
+
+  // Helper to find which section contains the currently active route
+  const findActiveSectionId = (items: NavItem[]): string | null => {
+    for (const item of items) {
+      if (item.children && item.children.length > 0) {
+        if (item.href === pathname) return item.id;
+        const hasChild = item.children.some(child => {
+          if (child.href === pathname) return true;
+          if (child.children?.some(sub => sub.href === pathname)) return true;
+          return false;
+        });
+        if (hasChild) return item.id;
+      }
+    }
+    const firstWithChildren = items.find(i => i.children && i.children.length > 0);
+    return firstWithChildren ? firstWithChildren.id : null;
+  };
+
+  // Single-open accordion state: only one section/version is open at a time
+  const [openSectionId, setOpenSectionId] = useState<string | null>(() => findActiveSectionId(navData));
+
+  // Keep open section synchronized when navigating
+  useEffect(() => {
+    const activeSec = findActiveSectionId(navData);
+    if (activeSec) {
+      setOpenSectionId(activeSec);
+    }
+  }, [pathname, navData]);
+
+  const toggleSection = (sectionId: string) => {
+    setOpenSectionId(prev => (prev === sectionId ? null : sectionId));
+  };
 
   // Flatten nav data to find prev/next links
   const flatNav: { id: string; label: string; href: string }[] = [];
@@ -44,33 +77,110 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
   const activeItem = flatNav.find(item => item.href === pathname);
 
   const renderNavList = (isMobile = false) => (
-    <nav className="flex flex-col gap-6 py-2 pr-2">
+    <nav className="flex flex-col gap-2 py-2 pr-2">
       {navData.map((item) => {
-        if (item.children && item.children.length > 0) {
+        const hasChildren = item.children && item.children.length > 0;
+
+        if (hasChildren) {
+          const isOpen = openSectionId === item.id;
+
           return (
-            <div key={item.id} className="flex flex-col gap-1.5">
-              <h4 className="text-[11px] font-bold uppercase tracking-wider text-muted px-3 py-0.5">
-                {item.label}
-              </h4>
-              <div className="flex flex-col gap-0.5">
-                {item.children.map((child) => {
-                  const isActive = pathname === child.href;
-                  return (
+            <div key={item.id} className="flex flex-col">
+              {/* Accordion Trigger Header */}
+              <button
+                type="button"
+                onClick={() => toggleSection(item.id)}
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-xs font-bold uppercase tracking-wider transition-colors group cursor-pointer ${
+                  isOpen ? 'text-default bg-subtle/50' : 'text-muted hover:text-default hover:bg-subtle/30'
+                }`}
+                aria-expanded={isOpen}
+              >
+                <span className="truncate">{item.label}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`transition-transform duration-200 text-muted group-hover:text-default flex-shrink-0 ${
+                    isOpen ? 'rotate-90' : ''
+                  }`}
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+
+              {/* Collapsible Accordion Content */}
+              {isOpen && (
+                <div className="flex flex-col gap-0.5 pl-2 border-l border-default/60 ml-3.5 my-1">
+                  {item.href && (
                     <Link
-                      key={child.id}
-                      href={child.href || '#'}
+                      href={item.href}
                       onClick={() => isMobile && setMobileMenuOpen(false)}
                       className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
-                        isActive
+                        pathname === item.href
                           ? 'bg-subtle text-primary font-semibold shadow-xs'
                           : 'text-muted hover:text-default hover:bg-subtle/50'
                       }`}
                     >
-                      <span className="truncate">{child.label}</span>
+                      <span className="truncate">Introduction</span>
                     </Link>
-                  );
-                })}
-              </div>
+                  )}
+
+                  {item.children!.map((child) => {
+                    const hasSubChildren = child.children && child.children.length > 0;
+
+                    if (hasSubChildren) {
+                      return (
+                        <div key={child.id} className="flex flex-col gap-1 mt-2 mb-1">
+                          <span className="text-[11px] font-semibold text-muted/80 uppercase tracking-wider px-3 py-1">
+                            {child.label}
+                          </span>
+                          <div className="flex flex-col gap-0.5 pl-2">
+                            {child.children!.map((sub) => {
+                              const isSubActive = pathname === sub.href;
+                              return (
+                                <Link
+                                  key={sub.id}
+                                  href={sub.href || '#'}
+                                  onClick={() => isMobile && setMobileMenuOpen(false)}
+                                  className={`px-3 py-1.5 rounded-md text-xs transition-all ${
+                                    isSubActive
+                                      ? 'bg-subtle text-primary font-semibold shadow-xs'
+                                      : 'text-muted hover:text-default hover:bg-subtle/50'
+                                  }`}
+                                >
+                                  <span className="truncate">{sub.label}</span>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    }
+
+                    const isActive = pathname === child.href;
+                    return (
+                      <Link
+                        key={child.id}
+                        href={child.href || '#'}
+                        onClick={() => isMobile && setMobileMenuOpen(false)}
+                        className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
+                          isActive
+                            ? 'bg-subtle text-primary font-semibold shadow-xs'
+                            : 'text-muted hover:text-default hover:bg-subtle/50'
+                        }`}
+                      >
+                        <span className="truncate">{child.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           );
         }
@@ -83,7 +193,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
             onClick={() => isMobile && setMobileMenuOpen(false)}
             className={`px-3 py-2 rounded-md text-sm transition-all ${
               isActive
-                ? 'bg-subtle text-primary font-bold'
+                ? 'bg-subtle text-primary font-bold shadow-xs'
                 : 'text-muted hover:text-default hover:bg-subtle/50'
             }`}
           >
@@ -138,7 +248,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
               <span className="text-[11px] font-bold uppercase tracking-wider text-muted px-2">Ecosystem</span>
               <div className="flex flex-wrap gap-1.5 px-1">
                 {PACKAGES.map((pkg) => {
-                  const isPkgActive = pathname.startsWith(`/${pkg.id}`);
+                  const isPkgActive = currentPkgId === pkg.id;
                   return (
                     <Link
                       key={pkg.id}

@@ -10,11 +10,6 @@ You are using @nofinite/markon for syntax parsing and document conversion.
 
 ### Document: markon/getting-started/cdn/page.mdx
 
----
-title: CDN Usage
-sidebar_position: 3
----
-
 # CDN Usage
 
 Load the Markon bundle directly from the CDN.
@@ -63,11 +58,6 @@ The CDN build exposes a global function named `JSMarkon`.
 
 ### Document: markon/getting-started/installation/page.mdx
 
----
-title: Installation
-sidebar_position: 1
----
-
 # Installation
 
 This page covers how to install `@nofinite/markon` in your project.
@@ -110,11 +100,6 @@ No additional peer dependencies are required.
 
 ### Document: markon/getting-started/setup/page.mdx
 
----
-title: Setup
-sidebar_position: 2
----
-
 # Setup
 
 This page explains how to set up Markon in a React application.
@@ -147,11 +132,6 @@ export function Example() {
 
 
 ### Document: markon/page.mdx
-
----
-sidebar_position: 1
-title: Nofinite Markon
----
 
 # Introduction
 
@@ -236,11 +216,6 @@ No additional configuration is required for supported environments.
 
 ### Document: markon/releases/page.mdx
 
----
-title: Releases
-sidebar_position: 999
----
-
 # @nofinite/markon — v1.1.1
 
 **Release date:** 01 February 2024
@@ -284,11 +259,6 @@ This release of `@nofinite/markon` represents the most recent published version 
 
 
 ### Document: markon/usage/markon-syntax/page.mdx
-
----
-title: Markon Syntax
-sidebar_position: 1
----
 
 # Markon Syntax
 

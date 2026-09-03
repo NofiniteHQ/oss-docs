@@ -12149,11 +12149,6 @@ Rules:
 
 ### Document: nuicss/v1/architecture/page.mdx
 
----
-title: Architecture
-sidebar_position: 5
----
-
 # NUI CSS Architecture
 
 NUI CSS is designed as a **zero-configuration utility framework powered by design tokens**.
@@ -12360,11 +12355,6 @@ This architecture enables fast adoption, predictable styling, and flexible desig
 
 ### Document: nuicss/v1/getting-started/installation/page.mdx
 
----
-title: Installation
-sidebar_position: 1
----
-
 # Installation
 
 This guide explains how to install and start using **NUI CSS** in your project.
@@ -12514,11 +12504,6 @@ Continue to the **Setup** guide to integrate NUI CSS into your project.
 
 ### Document: nuicss/v1/getting-started/setup/page.mdx
 
----
-title: Setup
-sidebar_position: 2
----
-
 # Setup
 
 NUI CSS requires **no configuration**.
@@ -12617,11 +12602,6 @@ Explore the **Utilities** documentation to learn about layout, spacing, and sizi
 
 ### Document: nuicss/v1/page.mdx
 
----
-sidebar_position: 1
-title: NUI CSS
----
-
 # Introduction
 
 NUI CSS is a zero-configuration utility CSS framework designed for modern web applications.
@@ -12712,11 +12692,6 @@ Continue to the **Getting Started** guide to install and start using NUI CSS.
 
 
 ### Document: nuicss/v1/theming/page.mdx
-
----
-title: Theming & Tokens
-sidebar_position: 4
----
 
 # Theming & Design Tokens
 
@@ -12921,11 +12896,6 @@ By modifying tokens, developers can customize the entire framework without editi
 
 
 ### Document: nuicss/v1/utilities/flex/page.mdx
-
----
-title: Flexbox
-sidebar_position: 2
----
 
 # Flexbox Utilities
 
@@ -13193,11 +13163,6 @@ These utilities map directly to CSS Flexbox properties and enable flexible layou
 
 ### Document: nuicss/v1/utilities/layout/page.mdx
 
----
-title: Layout
-sidebar_position: 1
----
-
 # Layout Utilities
 
 Layout utilities control how elements are displayed in the document flow.
@@ -13374,11 +13339,6 @@ These utilities map directly to the CSS `display` property.
 
 
 ### Document: nuicss/v1/utilities/prefixed/page.mdx
-
----
-title: Prefixed Utilities
-sidebar_position: 5
----
 
 # Prefixed Utilities
 
@@ -13563,11 +13523,6 @@ Choose the mode that best fits your project architecture.
 
 
 ### Document: nuicss/v1/utilities/sizing/page.mdx
-
----
-title: Sizing
-sidebar_position: 4
----
 
 # Sizing Utilities
 
@@ -13782,11 +13737,6 @@ These utilities map directly to CSS width and height properties.
 
 
 ### Document: nuicss/v1/utilities/spacing/page.mdx
-
----
-title: Spacing
-sidebar_position: 3
----
 
 # Spacing Utilities
 
@@ -14198,11 +14148,6 @@ These utilities map directly to spacing CSS properties.
 
 ### Document: nuicss/v2/architecture/page.mdx
 
----
-sidebar_position: 4
-title: Architecture
----
-
 # JIT Engine Architecture
 
 NUI CSS v2.0 is powered by a high-performance Just-in-Time (JIT) CSS generator. Unlike frameworks that ship thousands of precompiled CSS rules, NUI CSS analyzes your code and generates exactly the CSS you need.
@@ -14242,11 +14187,6 @@ Configuration is resolved automatically via `jiti`, allowing you to write your `
 
 
 ### Document: nuicss/v2/installation/page.mdx
-
----
-sidebar_position: 2
-title: Installation
----
 
 # Installation
 
@@ -14358,11 +14298,6 @@ export default {
 
 ### Document: nuicss/v2/page.mdx
 
----
-sidebar_position: 1
-title: Introduction
----
-
 # Introduction to NUI CSS v2.0
 
 NUI CSS v2.0 is a next-generation, on-demand utility CSS framework designed for modern web applications. 
@@ -14411,17 +14346,12 @@ NUI CSS v2.0 ships with robust integrations for:
 
 ## Next Steps
 
-Head over to the **[Installation](./installation.md)** guide to get started with the new v2.0 engine!
+Head over to the **[Installation](./installation)** guide to get started with the new v2.0 engine!
 
 ---
 
 
 ### Document: nuicss/v2/theming/page.mdx
-
----
-sidebar_position: 3
-title: Theming & Configuration
----
 
 # Theming NUI CSS
 
@@ -14482,11 +14412,6 @@ This is the recommended way to handle highly reusable components while maintaini
 
 ### Document: nuicss/v2/utilities/backgrounds-borders/page.mdx
 
----
-sidebar_position: 5
-title: Backgrounds & Borders
----
-
 # Backgrounds & Borders
 
 Utilities for controlling element backgrounds and border styles.
@@ -14545,11 +14470,6 @@ Control the border color. Functions exactly like background and text colors.
 
 
 ### Document: nuicss/v2/utilities/components/page.mdx
-
----
-sidebar_position: 7
-title: Semantic Components
----
 
 # Semantic Components
 
@@ -14611,11 +14531,6 @@ These definitions are instantly compiled and expanded by the JIT engine when you
 
 
 ### Document: nuicss/v2/utilities/effects/page.mdx
-
----
-sidebar_position: 6
-title: Effects & Filters
----
 
 # Effects & Filters
 
@@ -14720,11 +14635,6 @@ NUI CSS provides built-in interactive animations with embedded `@keyframes`.
 
 ### Document: nuicss/v2/utilities/flex-grid/page.mdx
 
----
-sidebar_position: 2
-title: Flexbox & Grid
----
-
 # Flexbox & Grid
 
 NUI CSS provides all standard flexbox and CSS grid primitives for building robust 1D and 2D layouts.
@@ -14823,11 +14733,6 @@ Control the gutters between grid and flexbox items.
 
 ### Document: nuicss/v2/utilities/layout/page.mdx
 
----
-sidebar_position: 1
-title: Layout & Sizing
----
-
 # Layout & Sizing
 
 NUI CSS provides a comprehensive set of utilities for controlling the display, positioning, and dimensions of your elements.
@@ -14915,11 +14820,6 @@ Set the height of an element.
 
 ### Document: nuicss/v2/utilities/spacing/page.mdx
 
----
-sidebar_position: 3
-title: Spacing
----
-
 # Spacing
 
 NUI CSS provides a predictable spacing scale for padding and margin based on a 4px `0.25rem` multiplier.
@@ -14968,11 +14868,6 @@ If you need a specific spacing value that doesn't exist in the design system, us
 
 
 ### Document: nuicss/v2/utilities/typography/page.mdx
-
----
-sidebar_position: 4
-title: Typography
----
 
 # Typography
 
@@ -15062,10 +14957,7 @@ You are using @nofinite/locale for localization, currencies, and country lookups
 
 ### Document: locale/getting-started/cdn/page.mdx
 
----
-title: CDN Usage
-sidebar_position: 2
----
+# CDN Usage
 
 If you are not using a build system, Nofinite Locale can be used directly via CDN.
 
@@ -15085,10 +14977,7 @@ If you are not using a build system, Nofinite Locale can be used directly via CD
 
 ### Document: locale/getting-started/installation/page.mdx
 
----
-title: Installation
-sidebar_position: 1
----
+# Installation
 
 Install the package using your preferred package manager.
 
@@ -15110,11 +14999,6 @@ yarn add @nofinite/locale
 
 ### Document: locale/page.mdx
 
----
-sidebar_position: 1
-title: Nofinite Locale
----
-
 # Nofinite Locale
 
 Nofinite Locale is a lightweight utility library that provides country metadata, international dialing codes, and CSS-based flags for web applications.
@@ -15134,11 +15018,6 @@ It is designed to work with modern JavaScript frameworks as well as plain HTML e
 
 
 ### Document: locale/releases/page.mdx
-
----
-title: Releases
-sidebar_position: 999
----
 
 # @nofinite/locale — v1.0.0
 
@@ -15175,10 +15054,7 @@ Initial stable release of `@nofinite/locale`.
 
 ### Document: locale/usage/country-lookup/page.mdx
 
----
-title: Country Lookup
-sidebar_position: 1
----
+# Country Lookup
 
 Nofinite Locale provides simple helper functions to retrieve country information.
 
@@ -15225,10 +15101,7 @@ console.log(india);
 
 ### Document: locale/usage/flags/page.mdx
 
----
-title: Flags
-sidebar_position: 2
----
+# Flags
 
 Country flags are provided as SVGs through CSS classes.
 
@@ -15300,11 +15173,6 @@ You are using @nofinite/markon for syntax parsing and document conversion.
 
 ### Document: markon/getting-started/cdn/page.mdx
 
----
-title: CDN Usage
-sidebar_position: 3
----
-
 # CDN Usage
 
 Load the Markon bundle directly from the CDN.
@@ -15353,11 +15221,6 @@ The CDN build exposes a global function named `JSMarkon`.
 
 ### Document: markon/getting-started/installation/page.mdx
 
----
-title: Installation
-sidebar_position: 1
----
-
 # Installation
 
 This page covers how to install `@nofinite/markon` in your project.
@@ -15400,11 +15263,6 @@ No additional peer dependencies are required.
 
 ### Document: markon/getting-started/setup/page.mdx
 
----
-title: Setup
-sidebar_position: 2
----
-
 # Setup
 
 This page explains how to set up Markon in a React application.
@@ -15437,11 +15295,6 @@ export function Example() {
 
 
 ### Document: markon/page.mdx
-
----
-sidebar_position: 1
-title: Nofinite Markon
----
 
 # Introduction
 
@@ -15526,11 +15379,6 @@ No additional configuration is required for supported environments.
 
 ### Document: markon/releases/page.mdx
 
----
-title: Releases
-sidebar_position: 999
----
-
 # @nofinite/markon — v1.1.1
 
 **Release date:** 01 February 2024
@@ -15574,11 +15422,6 @@ This release of `@nofinite/markon` represents the most recent published version 
 
 
 ### Document: markon/usage/markon-syntax/page.mdx
-
----
-title: Markon Syntax
-sidebar_position: 1
----
 
 # Markon Syntax
 
@@ -15807,11 +15650,6 @@ Documentation for Auth And Crypto utilities.
 
 ### Document: utils/getting-started/installation/page.mdx
 
----
-title: Installation
-sidebar_position: 1
----
-
 # Getting Started
 
 This guide covers installation, required setup, and basic usage of `@nofinite/utils`.
@@ -15845,11 +15683,6 @@ pnpm add @nofinite/utils
 
 
 ### Document: utils/page.mdx
-
----
-sidebar_position: 1
-title: Nofinite Utils
----
 
 # Introduction
 
@@ -15934,11 +15767,6 @@ All utilities are tree-shakable and safe to use in server contexts.
 
 
 ### Document: utils/releases/page.mdx
-
----
-title: Releases
-sidebar_position: 999
----
 
 # @nofinite/utils — Initial Release (v0.1.0)
 

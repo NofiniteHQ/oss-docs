@@ -1,18 +1,24 @@
 [
   {
-    "title": "Include Styles and Script (locale)",
+    "title": "CDN Usage",
+    "description": "If you are not using a build system, Nofinite Locale can be used directly via CDN.",
+    "href": "/locale/getting-started/cdn",
+    "pkg": "locale"
+  },
+  {
+    "title": "Include Styles and Script (CDN Usage)",
     "description": "```html",
     "href": "/locale/getting-started/cdn#include-styles-and-script",
     "pkg": "locale"
   },
   {
-    "title": "pnpm",
-    "description": "",
+    "title": "Installation",
+    "description": "Install the package using your preferred package manager.",
     "href": "/locale/getting-started/installation",
     "pkg": "locale"
   },
   {
-    "title": "Package Managers (pnpm)",
+    "title": "Package Managers (Installation)",
     "description": "```bash",
     "href": "/locale/getting-started/installation#package-managers",
     "pkg": "locale"
@@ -54,13 +60,25 @@
     "pkg": "locale"
   },
   {
-    "title": "Lookup by ISO Code or Dial Code (locale)",
+    "title": "Country Lookup",
+    "description": "Nofinite Locale provides simple helper functions to retrieve country information.",
+    "href": "/locale/usage/country-lookup",
+    "pkg": "locale"
+  },
+  {
+    "title": "Lookup by ISO Code or Dial Code (Country Lookup)",
     "description": "",
     "href": "/locale/usage/country-lookup#lookup-by-iso-code-or-dial-code",
     "pkg": "locale"
   },
   {
-    "title": "Import Styles (locale)",
+    "title": "Flags",
+    "description": "Country flags are provided as SVGs through CSS classes.",
+    "href": "/locale/usage/flags",
+    "pkg": "locale"
+  },
+  {
+    "title": "Import Styles (Flags)",
     "description": "",
     "href": "/locale/usage/flags#import-styles",
     "pkg": "locale"

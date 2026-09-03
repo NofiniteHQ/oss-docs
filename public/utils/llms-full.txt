@@ -19,11 +19,6 @@ Documentation for Auth And Crypto utilities.
 
 ### Document: utils/getting-started/installation/page.mdx
 
----
-title: Installation
-sidebar_position: 1
----
-
 # Getting Started
 
 This guide covers installation, required setup, and basic usage of `@nofinite/utils`.
@@ -57,11 +52,6 @@ pnpm add @nofinite/utils
 
 
 ### Document: utils/page.mdx
-
----
-sidebar_position: 1
-title: Nofinite Utils
----
 
 # Introduction
 
@@ -146,11 +136,6 @@ All utilities are tree-shakable and safe to use in server contexts.
 
 
 ### Document: utils/releases/page.mdx
-
----
-title: Releases
-sidebar_position: 999
----
 
 # @nofinite/utils — Initial Release (v0.1.0)
 

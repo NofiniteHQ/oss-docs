@@ -10,6 +10,7 @@ export interface NavItem {
 
 function formatLabel(name: string): string {
   if (name === 'getting-started') return 'Getting Started';
+  if (/^v\d+$/i.test(name)) return name.toUpperCase();
   return name.split('-').map(word => word === 'and' ? 'and' : word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
@@ -38,6 +39,18 @@ function buildTree(dirPath: string, basePath: string): NavItem[] {
     items.sort((a, b) => {
       if (a.id === 'getting-started') return -1;
       if (b.id === 'getting-started') return 1;
+
+      // Sort version directories in descending order (e.g. V2 before V1)
+      const isVerA = /^v\d+/i.test(a.id);
+      const isVerB = /^v\d+/i.test(b.id);
+      if (isVerA && isVerB) {
+        const numA = parseInt(a.id.replace(/\D/g, ''), 10);
+        const numB = parseInt(b.id.replace(/\D/g, ''), 10);
+        return numB - numA;
+      }
+      if (isVerA) return -1;
+      if (isVerB) return 1;
+
       return a.label.localeCompare(b.label);
     });
     

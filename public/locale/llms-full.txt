@@ -10,10 +10,7 @@ You are using @nofinite/locale for localization, currencies, and country lookups
 
 ### Document: locale/getting-started/cdn/page.mdx
 
----
-title: CDN Usage
-sidebar_position: 2
----
+# CDN Usage
 
 If you are not using a build system, Nofinite Locale can be used directly via CDN.
 
@@ -33,10 +30,7 @@ If you are not using a build system, Nofinite Locale can be used directly via CD
 
 ### Document: locale/getting-started/installation/page.mdx
 
----
-title: Installation
-sidebar_position: 1
----
+# Installation
 
 Install the package using your preferred package manager.
 
@@ -58,11 +52,6 @@ yarn add @nofinite/locale
 
 ### Document: locale/page.mdx
 
----
-sidebar_position: 1
-title: Nofinite Locale
----
-
 # Nofinite Locale
 
 Nofinite Locale is a lightweight utility library that provides country metadata, international dialing codes, and CSS-based flags for web applications.
@@ -82,11 +71,6 @@ It is designed to work with modern JavaScript frameworks as well as plain HTML e
 
 
 ### Document: locale/releases/page.mdx
-
----
-title: Releases
-sidebar_position: 999
----
 
 # @nofinite/locale — v1.0.0
 
@@ -123,10 +107,7 @@ Initial stable release of `@nofinite/locale`.
 
 ### Document: locale/usage/country-lookup/page.mdx
 
----
-title: Country Lookup
-sidebar_position: 1
----
+# Country Lookup
 
 Nofinite Locale provides simple helper functions to retrieve country information.
 
@@ -173,10 +154,7 @@ console.log(india);
 
 ### Document: locale/usage/flags/page.mdx
 
----
-title: Flags
-sidebar_position: 2
----
+# Flags
 
 Country flags are provided as SVGs through CSS classes.
 

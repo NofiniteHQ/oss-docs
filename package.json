@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/extract_props.mjs && node scripts/build_registry.mjs && node scripts/build-search.mjs && next dev",
-    "build": "node scripts/extract_props.mjs && node scripts/build_registry.mjs && node scripts/generate_ai_docs.mjs && node scripts/build-search.mjs && next build",
+    "dev": "node scripts/clean_frontmatter.mjs && node scripts/extract_props.mjs && node scripts/build_registry.mjs && node scripts/build-search.mjs && next dev",
+    "build": "node scripts/clean_frontmatter.mjs && node scripts/extract_props.mjs && node scripts/build_registry.mjs && node scripts/generate_ai_docs.mjs && node scripts/build-search.mjs && next build",
     "start": "next start",
     "lint": "next lint"
   },

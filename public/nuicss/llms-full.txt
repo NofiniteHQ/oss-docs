@@ -13,11 +13,6 @@ Rules:
 
 ### Document: nuicss/v1/architecture/page.mdx
 
----
-title: Architecture
-sidebar_position: 5
----
-
 # NUI CSS Architecture
 
 NUI CSS is designed as a **zero-configuration utility framework powered by design tokens**.
@@ -224,11 +219,6 @@ This architecture enables fast adoption, predictable styling, and flexible desig
 
 ### Document: nuicss/v1/getting-started/installation/page.mdx
 
----
-title: Installation
-sidebar_position: 1
----
-
 # Installation
 
 This guide explains how to install and start using **NUI CSS** in your project.
@@ -378,11 +368,6 @@ Continue to the **Setup** guide to integrate NUI CSS into your project.
 
 ### Document: nuicss/v1/getting-started/setup/page.mdx
 
----
-title: Setup
-sidebar_position: 2
----
-
 # Setup
 
 NUI CSS requires **no configuration**.
@@ -481,11 +466,6 @@ Explore the **Utilities** documentation to learn about layout, spacing, and sizi
 
 ### Document: nuicss/v1/page.mdx
 
----
-sidebar_position: 1
-title: NUI CSS
----
-
 # Introduction
 
 NUI CSS is a zero-configuration utility CSS framework designed for modern web applications.
@@ -576,11 +556,6 @@ Continue to the **Getting Started** guide to install and start using NUI CSS.
 
 
 ### Document: nuicss/v1/theming/page.mdx
-
----
-title: Theming & Tokens
-sidebar_position: 4
----
 
 # Theming & Design Tokens
 
@@ -785,11 +760,6 @@ By modifying tokens, developers can customize the entire framework without editi
 
 
 ### Document: nuicss/v1/utilities/flex/page.mdx
-
----
-title: Flexbox
-sidebar_position: 2
----
 
 # Flexbox Utilities
 
@@ -1057,11 +1027,6 @@ These utilities map directly to CSS Flexbox properties and enable flexible layou
 
 ### Document: nuicss/v1/utilities/layout/page.mdx
 
----
-title: Layout
-sidebar_position: 1
----
-
 # Layout Utilities
 
 Layout utilities control how elements are displayed in the document flow.
@@ -1238,11 +1203,6 @@ These utilities map directly to the CSS `display` property.
 
 
 ### Document: nuicss/v1/utilities/prefixed/page.mdx
-
----
-title: Prefixed Utilities
-sidebar_position: 5
----
 
 # Prefixed Utilities
 
@@ -1427,11 +1387,6 @@ Choose the mode that best fits your project architecture.
 
 
 ### Document: nuicss/v1/utilities/sizing/page.mdx
-
----
-title: Sizing
-sidebar_position: 4
----
 
 # Sizing Utilities
 
@@ -1646,11 +1601,6 @@ These utilities map directly to CSS width and height properties.
 
 
 ### Document: nuicss/v1/utilities/spacing/page.mdx
-
----
-title: Spacing
-sidebar_position: 3
----
 
 # Spacing Utilities
 
@@ -2062,11 +2012,6 @@ These utilities map directly to spacing CSS properties.
 
 ### Document: nuicss/v2/architecture/page.mdx
 
----
-sidebar_position: 4
-title: Architecture
----
-
 # JIT Engine Architecture
 
 NUI CSS v2.0 is powered by a high-performance Just-in-Time (JIT) CSS generator. Unlike frameworks that ship thousands of precompiled CSS rules, NUI CSS analyzes your code and generates exactly the CSS you need.
@@ -2106,11 +2051,6 @@ Configuration is resolved automatically via `jiti`, allowing you to write your `
 
 
 ### Document: nuicss/v2/installation/page.mdx
-
----
-sidebar_position: 2
-title: Installation
----
 
 # Installation
 
@@ -2222,11 +2162,6 @@ export default {
 
 ### Document: nuicss/v2/page.mdx
 
----
-sidebar_position: 1
-title: Introduction
----
-
 # Introduction to NUI CSS v2.0
 
 NUI CSS v2.0 is a next-generation, on-demand utility CSS framework designed for modern web applications. 
@@ -2275,17 +2210,12 @@ NUI CSS v2.0 ships with robust integrations for:
 
 ## Next Steps
 
-Head over to the **[Installation](./installation.md)** guide to get started with the new v2.0 engine!
+Head over to the **[Installation](./installation)** guide to get started with the new v2.0 engine!
 
 ---
 
 
 ### Document: nuicss/v2/theming/page.mdx
-
----
-sidebar_position: 3
-title: Theming & Configuration
----
 
 # Theming NUI CSS
 
@@ -2346,11 +2276,6 @@ This is the recommended way to handle highly reusable components while maintaini
 
 ### Document: nuicss/v2/utilities/backgrounds-borders/page.mdx
 
----
-sidebar_position: 5
-title: Backgrounds & Borders
----
-
 # Backgrounds & Borders
 
 Utilities for controlling element backgrounds and border styles.
@@ -2409,11 +2334,6 @@ Control the border color. Functions exactly like background and text colors.
 
 
 ### Document: nuicss/v2/utilities/components/page.mdx
-
----
-sidebar_position: 7
-title: Semantic Components
----
 
 # Semantic Components
 
@@ -2475,11 +2395,6 @@ These definitions are instantly compiled and expanded by the JIT engine when you
 
 
 ### Document: nuicss/v2/utilities/effects/page.mdx
-
----
-sidebar_position: 6
-title: Effects & Filters
----
 
 # Effects & Filters
 
@@ -2584,11 +2499,6 @@ NUI CSS provides built-in interactive animations with embedded `@keyframes`.
 
 ### Document: nuicss/v2/utilities/flex-grid/page.mdx
 
----
-sidebar_position: 2
-title: Flexbox & Grid
----
-
 # Flexbox & Grid
 
 NUI CSS provides all standard flexbox and CSS grid primitives for building robust 1D and 2D layouts.
@@ -2687,11 +2597,6 @@ Control the gutters between grid and flexbox items.
 
 ### Document: nuicss/v2/utilities/layout/page.mdx
 
----
-sidebar_position: 1
-title: Layout & Sizing
----
-
 # Layout & Sizing
 
 NUI CSS provides a comprehensive set of utilities for controlling the display, positioning, and dimensions of your elements.
@@ -2779,11 +2684,6 @@ Set the height of an element.
 
 ### Document: nuicss/v2/utilities/spacing/page.mdx
 
----
-sidebar_position: 3
-title: Spacing
----
-
 # Spacing
 
 NUI CSS provides a predictable spacing scale for padding and margin based on a 4px `0.25rem` multiplier.
@@ -2832,11 +2732,6 @@ If you need a specific spacing value that doesn't exist in the design system, us
 
 
 ### Document: nuicss/v2/utilities/typography/page.mdx
-
----
-sidebar_position: 4
-title: Typography
----
 
 # Typography
 
