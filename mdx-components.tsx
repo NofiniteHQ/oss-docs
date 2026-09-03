@@ -29,6 +29,13 @@ function extractText(node: any): string {
   return '';
 }
 
+function cleanTableChildren(children: React.ReactNode): React.ReactNode {
+  return React.Children.toArray(children).filter((child) => {
+    if (typeof child === 'string' && child.trim() === '') return false;
+    return true;
+  });
+}
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   const slugify = (str: string) => {
     if (!str) return '';
@@ -123,18 +130,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     table: ({ children }) => (
       <div className="w-full overflow-x-auto mb-8 border border-default rounded-lg shadow-sm">
         <table className="w-full text-left border-collapse text-sm">
-          {children}
+          {cleanTableChildren(children)}
         </table>
       </div>
     ),
     thead: ({ children }) => (
-      <thead className="bg-subtle/50 border-b border-default">{children}</thead>
+      <thead className="bg-subtle/50 border-b border-default">{cleanTableChildren(children)}</thead>
     ),
     tbody: ({ children }) => (
-      <tbody className="divide-y divide-default bg-page">{children}</tbody>
+      <tbody className="divide-y divide-default bg-page">{cleanTableChildren(children)}</tbody>
     ),
     tr: ({ children }) => (
-      <tr className="transition-colors hover:bg-subtle/30">{children}</tr>
+      <tr className="transition-colors hover:bg-subtle/30">{cleanTableChildren(children)}</tr>
     ),
     th: ({ children }) => (
       <th className="px-4 py-3.5 font-semibold text-default whitespace-nowrap">{children}</th>
