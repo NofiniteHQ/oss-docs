@@ -87,7 +87,6 @@ const titleCase = (str) => {
 
 function sanitizeTokens(markdown) {
   let res = markdown;
-  // Replace all --nui-* legacy tokens with official nuicss v3 semantic tokens
   res = res.replace(/--nui-bg-surface/g, '--bg-surface');
   res = res.replace(/--nui-bg-subtle/g, '--bg-subtle');
   res = res.replace(/--nui-bg-page/g, '--bg-page');
@@ -153,13 +152,11 @@ function generateComponentMdx(compName, categoryKey) {
 
     // Cleanse frontmatter and existing props table in raw markdown
     let body = raw.replace(/^---[\s\S]*?---/, '');
-    body = body.replace(/^#\s+[^\n]+/m, ''); // remove top h1
-    body = body.replace(/^##\s+Props[\s\S]*?(?=^##\s+|^---|\Z)/gm, ''); // remove raw markdown props table
+    body = body.replace(/^#\s+[^\n]+/m, '');
+    body = body.replace(/^##\s+Props[\s\S]*?(?=^##\s+|^---|\Z)/gm, '');
 
-    // Sanitize tokens
     body = sanitizeTokens(body);
 
-    // Replace ```tsx id="..." blocks with clean fenced code blocks
     body = body.replace(/```tsx\s*(?:id="[^"]*")?\n([\s\S]*?)```/g, (match, codeString) => {
       const cleanCode = codeString.trim();
       return `\`\`\`tsx\n${cleanCode}\n\`\`\``;
@@ -172,6 +169,12 @@ ${description || `A composable, accessible ${titleCase(compName)} component for 
 \`\`\`tsx
 import { ${importName} } from '@nofinite/nui';
 \`\`\`
+
+---
+
+## Interactive Preview
+
+<Preview name="${compName}" />
 
 ---
 
@@ -194,6 +197,12 @@ A fully accessible, token-driven ${titleCase(compName)} component built with str
 \`\`\`tsx
 import { ${importName} } from '@nofinite/nui';
 \`\`\`
+
+---
+
+## Interactive Preview
+
+<Preview name="${compName}" />
 
 ---
 
@@ -248,13 +257,22 @@ import { ${importName} } from '@nofinite/nui';
 
 ---
 
+## Interactive Preview
+
+<Preview name="${compName}" />
+
+---
+
 ## API Reference
 
 <PropsTable name="${propsCompName}" />
 `;
   }
 
-  // Ensure props table is present
+  // Ensure preview and props table are present
+  if (!content.includes('<Preview')) {
+    content = content.replace(/(```tsx\nimport[^\n]+\n```)/, `$1\n\n---\n\n## Interactive Preview\n\n<Preview name="${compName}" />`);
+  }
   if (!content.includes('<PropsTable')) {
     content += `\n\n## API Reference\n\n<PropsTable name="${propsCompName}" />\n`;
   }
@@ -264,7 +282,7 @@ import { ${importName} } from '@nofinite/nui';
   const outDir = path.join(OUT_COMPONENTS_DIR, compName);
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'page.mdx'), content, 'utf-8');
-  console.log(`Generated component page (Nuicss v3 tokens): /nui/components/${compName}`);
+  console.log(`Generated component page with StackBlitz preview: /nui/components/${compName}`);
 }
 
 function generateCategoryHubs() {
@@ -328,7 +346,7 @@ ${catData.description}
 }
 
 function main() {
-  console.log('Regenerating all 68 component docs with Nuicss v3 semantic tokens...');
+  console.log('Regenerating all 68 component docs with StackBlitz interactive previews...');
   
   for (const [catKey, catData] of Object.entries(categories)) {
     for (const comp of catData.components) {
@@ -339,7 +357,7 @@ function main() {
   console.log('\nGenerating visual Category Hub pages...');
   generateCategoryHubs();
 
-  console.log('\nComponent pages regenerated with clean Nuicss v3 tokens!');
+  console.log('\nAll 68 component pages now equipped with interactive StackBlitz previews!');
 }
 
 main();

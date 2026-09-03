@@ -1,19 +1,26 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Drawer, Button } from '@nofinite/nui';
+import { Drawer } from '@nofinite/nui';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavItem } from '@/utils/nav';
 import { TableOfContents } from './TableOfContents';
 
+const PACKAGES = [
+  { id: 'nui', label: 'NUI', href: '/nui/getting-started' },
+  { id: 'nuicss', label: 'Nuicss', href: '/nuicss' },
+  { id: 'locale', label: 'Locale', href: '/locale' },
+  { id: 'utils', label: 'Utils', href: '/utils' },
+  { id: 'markon', label: 'Markon', href: '/markon' },
+];
+
 export function DocsLayout({ children, navData }: { children: React.ReactNode, navData: NavItem[] }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Extract the active page id from the pathname (e.g. /nui/components/button -> button)
-  const segments = pathname.split('/').filter(Boolean);
-  const selectedId = segments.length > 0 ? segments[segments.length - 1] : '';
+  // Active package detection
+  const currentPackage = PACKAGES.find(p => pathname.startsWith(`/${p.id}`)) || PACKAGES[0];
 
   // Flatten nav data to find prev/next links
   const flatNav: { id: string; label: string; href: string }[] = [];
@@ -37,7 +44,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
   const activeItem = flatNav.find(item => item.href === pathname);
 
   const renderNavList = (isMobile = false) => (
-    <nav className="flex flex-col gap-6 py-4 pl-1 pr-3">
+    <nav className="flex flex-col gap-6 py-2 pr-2">
       {navData.map((item) => {
         if (item.children && item.children.length > 0) {
           return (
@@ -89,32 +96,71 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
 
   return (
     <div className="w-full flex-1 flex flex-col bg-page">
-      {/* Mobile / Tablet Docs Top Sub-bar */}
-      <div className="md:hidden border-b border-default bg-surface/80 backdrop-blur-sm sticky top-16 z-40 px-4 py-2.5 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm text-muted">
-          <span className="font-semibold text-default">{activeItem?.label || 'Documentation'}</span>
-        </div>
-        <Button 
-          size="sm" 
-          variant="outline" 
+      {/* Mobile & Tablet Left-Aligned Sub-bar (Industry Standard) */}
+      <div className="md:hidden border-b border-default bg-surface/90 backdrop-blur-sm sticky top-16 z-40 px-4 py-2.5 flex items-center justify-between">
+        <button
+          type="button"
           onClick={() => setMobileMenuOpen(true)}
-          className="flex items-center gap-1.5 text-xs h-8 px-2.5"
+          className="flex items-center gap-2.5 text-default hover:text-primary transition-colors focus:outline-none group"
+          aria-label="Open documentation navigation"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-          Docs Menu
-        </Button>
+          <div className="w-8 h-8 rounded-md bg-subtle border border-default flex items-center justify-center group-hover:border-primary/50 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="4" x2="20" y1="12" y2="12"/>
+              <line x1="4" x2="20" y1="6" y2="6"/>
+              <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          </div>
+          <div className="flex items-center gap-1.5 text-sm font-semibold truncate text-default">
+            <span>{activeItem?.label || 'Documentation'}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted opacity-60">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </div>
+        </button>
+
+        <span className="text-[11px] font-mono uppercase tracking-wider text-muted bg-subtle px-2 py-1 rounded border border-default">
+          {currentPackage.label}
+        </span>
       </div>
 
       <div className="flex flex-1 w-full max-w-[1536px] mx-auto">
-        {/* Mobile / Tablet Drawer */}
+        {/* Unified Mobile / Tablet Drawer */}
         <Drawer
           open={mobileMenuOpen}
           onClose={() => setMobileMenuOpen(false)}
           position="left"
-          title="Documentation"
+          title="Navigation"
         >
-          <div className="h-full w-full overflow-y-auto px-2 py-4">
-            {renderNavList(true)}
+          <div className="h-full w-full overflow-y-auto px-2 py-4 flex flex-col gap-4">
+            {/* Package Switcher Bar */}
+            <div className="flex flex-col gap-2 pb-4 border-b border-default">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-muted px-2">Ecosystem</span>
+              <div className="flex flex-wrap gap-1.5 px-1">
+                {PACKAGES.map((pkg) => {
+                  const isPkgActive = pathname.startsWith(`/${pkg.id}`);
+                  return (
+                    <Link
+                      key={pkg.id}
+                      href={pkg.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`text-xs px-2.5 py-1.5 rounded-md font-semibold transition-colors ${
+                        isPkgActive
+                          ? 'bg-primary text-primary-fg shadow-xs'
+                          : 'bg-subtle text-muted hover:text-default hover:bg-subtle/80'
+                      }`}
+                    >
+                      {pkg.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Document Navigation Tree */}
+            <div className="flex-1">
+              {renderNavList(true)}
+            </div>
           </div>
         </Drawer>
 
@@ -142,7 +188,9 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-primary transition-colors mt-2 sm:mt-0 font-medium"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+                  </svg>
                   Edit this page on GitHub
                 </a>
               </div>

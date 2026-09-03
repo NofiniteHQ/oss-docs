@@ -1,192 +1,170 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import { Button, Card, Badge } from "@nofinite/nui";
+import { Badge } from "@nofinite/nui";
+import { Logo } from "@/components/Logo";
 
 export default function Home() {
   const packages = [
     {
       id: 'nui',
       title: 'NUI',
-      desc: 'Highly accessible, headless UI components built for React.',
+      desc: 'Highly accessible, beautifully designed headless UI components built for modern React applications.',
       href: '/nui/getting-started',
-      version: 'v3.0.6',
-      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      version: 'v3.0.5',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>
+      )
     },
     {
       id: 'nuicss',
       title: 'Nuicss',
-      desc: 'A robust utility-first CSS framework powered by UnoCSS.',
+      desc: 'Semantic design token engine and utility-first CSS framework powered by the blazing fast UnoCSS compiler.',
       href: '/nuicss',
       version: 'v3.0.5',
-      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+        </svg>
+      )
+    },
+    {
+      id: 'markon',
+      title: 'Markon',
+      desc: 'High-speed AST-based Markdown and MDX parser and compiler for rich text editing and rendering.',
+      href: '/markon',
+      version: 'v0.0.1',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m18 16 4-4-4-4"/>
+          <path d="m6 8-4 4 4 4"/>
+          <path d="m14.5 4-5 16"/>
+        </svg>
+      )
     },
     {
       id: 'locale',
       title: 'Locale',
-      desc: 'Internationalization (i18n) toolkit for React ecosystems.',
+      desc: 'Lightweight localization, country lookups, ISO dialing codes, and flag utilities for React apps.',
       href: '/locale',
       version: 'v0.0.1',
-      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      )
     },
     {
       id: 'utils',
       title: 'Utils',
-      desc: 'Shared utilities and functional helpers for Nofinite packages.',
+      desc: 'Shared TypeScript helpers, class name merge (cn), DOM utilities, and functional hooks for Nofinite packages.',
       href: '/utils',
       version: 'v0.0.1',
-      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+      )
     }
   ];
 
   return (
-    <div className="w-full flex-1 flex flex-col bg-page text-default selection:bg-brand-500/30">
+    <div className="w-full flex-1 flex flex-col bg-page text-default">
       
       {/* Hero Section */}
-      <section className="w-full py-24 md:py-32 flex flex-col items-center justify-center relative overflow-hidden px-4 border-b border-default bg-subtle/30">
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at top, var(--un-border-default, #e5e7eb) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-        <div className="absolute top-[-100px] right-[-100px] -z-10 h-[400px] w-[400px] rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
-        
-        <div className="relative z-10 flex flex-col items-center w-full max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-center text-default leading-tight">
-            Ship software with <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-subtle">Unprecedented Velocity</span>.
+      <section className="w-full py-20 md:py-28 flex flex-col items-center justify-center relative overflow-hidden px-4 border-b border-default bg-subtle/30">
+        <div className="relative z-10 flex flex-col items-center w-full max-w-4xl text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-default bg-surface text-xs font-semibold text-muted mb-8 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            Nofinite Open Source Ecosystem v3.0
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-default leading-[1.15]">
+            Build software with <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-subtle">
+              Unprecedented Velocity
+            </span>.
           </h1>
-          <p className="text-xl text-muted text-center max-w-2xl leading-relaxed">
-            The definitive documentation hub for Nofinite's entire open-source ecosystem. Meticulously crafted components, styling engines, and utilities.
+
+          <p className="text-lg md:text-xl text-muted max-w-2xl leading-relaxed mb-8">
+            The documentation hub for Nofinite's open-source packages. Meticulously engineered React components, semantic design tokens, and utility toolkits.
           </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link 
+              href="/nui/getting-started"
+              className="px-6 py-3 rounded-lg bg-primary text-primary-fg font-semibold text-sm hover:bg-primary/90 transition-all shadow-sm hover:shadow-md"
+            >
+              Get Started with NUI →
+            </Link>
+            <Link 
+              href="/nuicss"
+              className="px-6 py-3 rounded-lg border border-default bg-surface text-default font-semibold text-sm hover:bg-subtle transition-all shadow-xs"
+            >
+              Explore Nuicss
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Bento Grid */}
-      <section className="w-full max-w-6xl mx-auto px-4 py-24">
-        <div className="mb-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">The Nofinite Ecosystem</h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">Purpose-built primitives designed to integrate seamlessly into your React applications.</p>
+      <section className="w-full max-w-6xl mx-auto px-4 py-20">
+        <div className="mb-14 text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight mb-3 text-default">Packages & Libraries</h2>
+          <p className="text-muted text-base max-w-xl mx-auto">Composability, strict design tokens, and zero runtime bloat across all packages.</p>
         </div>
         
-        <div className="flex flex-wrap justify-center gap-6">
-          {/* NUI */}
-          <Link href="/nui/getting-started" className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group focus:outline-none rounded-2xl block">
-            <Card hover className="h-full flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden bg-page shadow-sm hover:shadow-md dark:bg-white/[0.02] dark:border-white/10 dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-              <div className="absolute top-6 right-6 text-muted group-hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 -translate-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {packages.map((pkg) => (
+            <Link 
+              key={pkg.id} 
+              href={pkg.href} 
+              className="group flex flex-col p-6 rounded-xl border border-default bg-surface hover:border-primary/50 hover:shadow-md transition-all duration-200 relative"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-12 h-12 rounded-lg bg-subtle border border-default flex items-center justify-center text-default group-hover:bg-primary group-hover:text-primary-fg transition-colors">
+                  {pkg.icon}
+                </div>
+                <Badge variant="default" size="sm" className="font-mono bg-subtle border border-default text-xs">
+                  {pkg.version}
+                </Badge>
               </div>
-              <Card.Header className="p-8 pb-4">
-                <div className="w-14 h-14 rounded-xl bg-subtle flex items-center justify-center text-default mb-6 group-hover:bg-primary group-hover:text-primary-fg transition-colors shadow-sm border border-default dark:border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-                </div>
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-2xl font-bold tracking-tight text-default group-hover:text-primary transition-colors">NUI</h3>
-                  <Badge variant="default" size="sm" className="font-mono bg-subtle border border-default dark:border-white/10">v3.0.6</Badge>
-                </div>
-              </Card.Header>
-              <Card.Body className="p-8 pt-0 flex-1">
-                <p className="text-base text-muted leading-relaxed">
-                  Highly accessible, beautifully designed headless UI components built for React.
-                </p>
-              </Card.Body>
-            </Card>
-          </Link>
 
-          {/* Nuicss */}
-          <Link href="/nuicss" className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group focus:outline-none rounded-2xl block">
-            <Card hover className="h-full flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden bg-page shadow-sm hover:shadow-md dark:bg-white/[0.02] dark:border-white/10 dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-              <div className="absolute top-6 right-6 text-muted group-hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 -translate-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </div>
-              <Card.Header className="p-8 pb-4">
-                <div className="w-14 h-14 rounded-xl bg-subtle flex items-center justify-center text-default mb-6 group-hover:bg-primary group-hover:text-primary-fg transition-colors shadow-sm border border-default dark:border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                </div>
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-2xl font-bold tracking-tight text-default group-hover:text-primary transition-colors">Nuicss</h3>
-                </div>
-              </Card.Header>
-              <Card.Body className="p-8 pt-0 flex-1">
-                <p className="text-base text-muted leading-relaxed">
-                  A robust utility-first CSS framework powered by the blazing fast UnoCSS engine.
-                </p>
-              </Card.Body>
-            </Card>
-          </Link>
+              <h3 className="text-xl font-bold tracking-tight text-default group-hover:text-primary transition-colors mb-2">
+                {pkg.title}
+              </h3>
 
-          {/* Markon */}
-          <Link href="/markon" className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group focus:outline-none rounded-2xl block">
-            <Card hover className="h-full flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden bg-page shadow-sm hover:shadow-md dark:bg-white/[0.02] dark:border-white/10 dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-              <div className="absolute top-6 right-6 text-muted group-hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 -translate-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </div>
-              <Card.Header className="p-8 pb-4">
-                <div className="w-14 h-14 rounded-xl bg-subtle flex items-center justify-center text-default mb-6 group-hover:bg-primary group-hover:text-primary-fg transition-colors shadow-sm border border-default dark:border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-                </div>
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-2xl font-bold tracking-tight text-default group-hover:text-primary transition-colors">Markon</h3>
-                </div>
-              </Card.Header>
-              <Card.Body className="p-8 pt-0 flex-1">
-                <p className="text-base text-muted leading-relaxed">
-                  Advanced Markdown parser and compiler for rich text editing and rendering.
-                </p>
-              </Card.Body>
-            </Card>
-          </Link>
+              <p className="text-sm text-muted leading-relaxed flex-1 mb-4">
+                {pkg.desc}
+              </p>
 
-          {/* Locale */}
-          <Link href="/locale" className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group focus:outline-none rounded-2xl block">
-            <Card hover className="h-full flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden bg-page shadow-sm hover:shadow-md dark:bg-white/[0.02] dark:border-white/10 dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-              <div className="absolute top-6 right-6 text-muted group-hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 -translate-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <div className="flex items-center text-xs font-semibold text-primary gap-1 group-hover:translate-x-1 transition-transform">
+                <span>View Documentation</span>
+                <span>→</span>
               </div>
-              <Card.Header className="p-8 pb-4">
-                <div className="w-14 h-14 rounded-xl bg-subtle flex items-center justify-center text-default mb-6 group-hover:bg-primary group-hover:text-primary-fg transition-colors shadow-sm border border-default dark:border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-2xl font-bold tracking-tight text-default group-hover:text-primary transition-colors">Locale</h3>
-                </div>
-              </Card.Header>
-              <Card.Body className="p-8 pt-0 flex-1">
-                <p className="text-base text-muted leading-relaxed">
-                  Internationalization (i18n) toolkit for React ecosystems.
-                </p>
-              </Card.Body>
-            </Card>
-          </Link>
-          
-          {/* Utils */}
-          <Link href="/utils" className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group focus:outline-none rounded-2xl block">
-            <Card hover className="h-full flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden bg-page shadow-sm hover:shadow-md dark:bg-white/[0.02] dark:border-white/10 dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-              <div className="absolute top-6 right-6 text-muted group-hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 -translate-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </div>
-              <Card.Header className="p-8 pb-4">
-                <div className="w-14 h-14 rounded-xl bg-subtle flex items-center justify-center text-default mb-6 group-hover:bg-primary group-hover:text-primary-fg transition-colors shadow-sm border border-default dark:border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                </div>
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-2xl font-bold tracking-tight text-default group-hover:text-primary transition-colors">Utils</h3>
-                </div>
-              </Card.Header>
-              <Card.Body className="p-8 pt-0 flex-1">
-                <p className="text-base text-muted leading-relaxed">
-                  Shared utilities and functional helpers for Nofinite packages.
-                </p>
-              </Card.Body>
-            </Card>
-          </Link>
+            </Link>
+          ))}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="w-full border-t border-default py-12 mt-auto">
-        <div className="max-w-5xl mx-auto px-4 text-center text-muted text-sm flex flex-col md:flex-row items-center justify-between">
-          <p>© {new Date().getFullYear()} Nofinite. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="https://twitter.com/nofinitehq" className="hover:text-default transition-colors">Twitter</Link>
-            <Link href="https://github.com/NofiniteHQ" className="hover:text-default transition-colors">GitHub</Link>
-            <Link href="https://nofinite.com" className="hover:text-default transition-colors">Website</Link>
+      <footer className="w-full border-t border-default py-10 mt-auto bg-surface/50">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-muted text-sm">
+          <div className="flex items-center gap-2">
+            <Logo className="w-6 h-6 text-default" />
+            <span>© {new Date().getFullYear()} Nofinite. Open-source under MIT.</span>
+          </div>
+          <div className="flex items-center gap-6 font-medium">
+            <Link href="https://github.com/NofiniteHQ" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</Link>
+            <Link href="https://twitter.com/nofinitehq" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Twitter</Link>
+            <Link href="https://nofinite.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Website</Link>
           </div>
         </div>
       </footer>

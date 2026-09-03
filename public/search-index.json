@@ -258,6 +258,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Accordion)",
+    "description": "",
+    "href": "/nui/components/accordion#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Layout & Behavior (Accordion)",
     "description": "- Block-level, full-width by default.",
     "href": "/nui/components/accordion#layout-behavior",
@@ -273,6 +279,12 @@
     "title": "Alert",
     "description": "A composable, accessible Alert component for modern React applications.",
     "href": "/nui/components/alert",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Alert)",
+    "description": "",
+    "href": "/nui/components/alert#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -294,6 +306,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Attachment)",
+    "description": "",
+    "href": "/nui/components/attachment#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (Attachment)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/attachment#design-tokens-theming",
@@ -309,6 +327,12 @@
     "title": "Avatar",
     "description": "A composable, accessible Avatar component for modern React applications.",
     "href": "/nui/components/avatar",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Avatar)",
+    "description": "",
+    "href": "/nui/components/avatar#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -354,6 +378,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Badge)",
+    "description": "",
+    "href": "/nui/components/badge#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "BadgeGroup (Badge)",
     "description": "Groups multiple badges and optionally displays a `+n` overflow indicator.",
     "href": "/nui/components/badge#badgegroup",
@@ -375,6 +405,12 @@
     "title": "Breadcrumbs",
     "description": "A composable, accessible Breadcrumbs component for modern React applications.",
     "href": "/nui/components/breadcrumbs",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Breadcrumbs)",
+    "description": "",
+    "href": "/nui/components/breadcrumbs#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -402,6 +438,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Button)",
+    "description": "",
+    "href": "/nui/components/button#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Button)",
     "description": "| Key       | Behavior           |",
     "href": "/nui/components/button#keyboard-interaction",
@@ -411,6 +453,12 @@
     "title": "Calendar",
     "description": "A fully accessible, token-driven Calendar component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/calendar",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Calendar)",
+    "description": "",
+    "href": "/nui/components/calendar#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -429,6 +477,12 @@
     "title": "Card",
     "description": "A composable, accessible Card component for modern React applications.",
     "href": "/nui/components/card",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Card)",
+    "description": "",
+    "href": "/nui/components/card#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -462,6 +516,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Carousel)",
+    "description": "",
+    "href": "/nui/components/carousel#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (Carousel)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/carousel#design-tokens-theming",
@@ -480,6 +540,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Checkbox)",
+    "description": "",
+    "href": "/nui/components/checkbox#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens / Theming (Checkbox)",
     "description": "```css",
     "href": "/nui/components/checkbox#design-tokens-theming",
@@ -492,6 +558,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Chip)",
+    "description": "",
+    "href": "/nui/components/chip#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens / Theming (Chip)",
     "description": "```css id=\"1xjnt3\"",
     "href": "/nui/components/chip#design-tokens-theming",
@@ -501,6 +573,12 @@
     "title": "Clipboard",
     "description": "A fully accessible, token-driven Clipboard component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/clipboard",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Clipboard)",
+    "description": "",
+    "href": "/nui/components/clipboard#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -522,6 +600,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (CodeBlock)",
+    "description": "",
+    "href": "/nui/components/codeblock#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (CodeBlock)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/codeblock#design-tokens-theming",
@@ -537,6 +621,12 @@
     "title": "Collapsible",
     "description": "A fully accessible, token-driven Collapsible component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/collapsible",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Collapsible)",
+    "description": "",
+    "href": "/nui/components/collapsible#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -558,6 +648,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (ColorPicker)",
+    "description": "",
+    "href": "/nui/components/colorpicker#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (ColorPicker)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/colorpicker#design-tokens-theming",
@@ -576,6 +672,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Combobox)",
+    "description": "",
+    "href": "/nui/components/combobox#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens / Theming (Combobox)",
     "description": "```css",
     "href": "/nui/components/combobox#design-tokens-theming",
@@ -585,6 +687,12 @@
     "title": "Contextmenu",
     "description": "A composable, accessible Contextmenu component for modern React applications.",
     "href": "/nui/components/contextmenu",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Contextmenu)",
+    "description": "",
+    "href": "/nui/components/contextmenu#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -603,6 +711,12 @@
     "title": "DatePicker",
     "description": "A composable, accessible DatePicker component for modern React applications.",
     "href": "/nui/components/datepicker",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (DatePicker)",
+    "description": "",
+    "href": "/nui/components/datepicker#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -630,6 +744,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (DateRangePicker)",
+    "description": "",
+    "href": "/nui/components/daterangepicker#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Subcomponents (DateRangePicker)",
     "description": "None exposed.",
     "href": "/nui/components/daterangepicker#subcomponents",
@@ -651,6 +771,12 @@
     "title": "Dialog",
     "description": "A composable, accessible Dialog component for modern React applications.",
     "href": "/nui/components/dialog",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Dialog)",
+    "description": "",
+    "href": "/nui/components/dialog#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -684,6 +810,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Divider)",
+    "description": "",
+    "href": "/nui/components/divider#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (Divider)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/divider#design-tokens-theming",
@@ -699,6 +831,12 @@
     "title": "Drawer",
     "description": "A composable, accessible Drawer component for modern React applications.",
     "href": "/nui/components/drawer",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Drawer)",
+    "description": "",
+    "href": "/nui/components/drawer#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -729,6 +867,12 @@
     "title": "Dropdown",
     "description": "A composable, accessible Dropdown component for modern React applications.",
     "href": "/nui/components/dropdown",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Dropdown)",
+    "description": "",
+    "href": "/nui/components/dropdown#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -768,6 +912,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (EmptyState)",
+    "description": "",
+    "href": "/nui/components/emptystate#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (EmptyState)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/emptystate#design-tokens-theming",
@@ -783,6 +933,12 @@
     "title": "FileUploader",
     "description": "A composable, accessible FileUploader component for modern React applications.",
     "href": "/nui/components/fileuploader",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (FileUploader)",
+    "description": "",
+    "href": "/nui/components/fileuploader#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -822,6 +978,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Form)",
+    "description": "",
+    "href": "/nui/components/form#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (Form)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/form#design-tokens-theming",
@@ -837,6 +999,12 @@
     "title": "HoverCard",
     "description": "A composable, accessible HoverCard component for modern React applications.",
     "href": "/nui/components/hovercard",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (HoverCard)",
+    "description": "",
+    "href": "/nui/components/hovercard#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -876,6 +1044,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Image)",
+    "description": "",
+    "href": "/nui/components/image#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (Image)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/image#design-tokens-theming",
@@ -891,6 +1065,12 @@
     "title": "Input",
     "description": "A composable, accessible Input component for modern React applications.",
     "href": "/nui/components/input",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Input)",
+    "description": "",
+    "href": "/nui/components/input#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -924,6 +1104,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Kbd)",
+    "description": "",
+    "href": "/nui/components/kbd#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (Kbd)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/kbd#design-tokens-theming",
@@ -939,6 +1125,12 @@
     "title": "Layout",
     "description": "A composable, accessible Layout component for modern React applications.",
     "href": "/nui/components/layout",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Layout)",
+    "description": "",
+    "href": "/nui/components/layout#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -972,6 +1164,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Link)",
+    "description": "",
+    "href": "/nui/components/link#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Link)",
     "description": "| Key         | Behavior             |",
     "href": "/nui/components/link#keyboard-interaction",
@@ -981,6 +1179,12 @@
     "title": "MegaMenu",
     "description": "A composable, accessible MegaMenu component for modern React applications.",
     "href": "/nui/components/megamenu",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (MegaMenu)",
+    "description": "",
+    "href": "/nui/components/megamenu#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1014,6 +1218,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Modal)",
+    "description": "",
+    "href": "/nui/components/modal#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Shapes / Modes (Modal)",
     "description": "**Interaction modes**",
     "href": "/nui/components/modal#shapes-modes",
@@ -1044,6 +1254,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (MultiSelect)",
+    "description": "",
+    "href": "/nui/components/multiselect#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (MultiSelect)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/multiselect#design-tokens-theming",
@@ -1059,6 +1275,12 @@
     "title": "NUIProvider",
     "description": "A fully accessible, token-driven NUIProvider component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/nuiprovider",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (NUIProvider)",
+    "description": "",
+    "href": "/nui/components/nuiprovider#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1080,6 +1302,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (NumberInput)",
+    "description": "",
+    "href": "/nui/components/numberinput#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (NumberInput)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/numberinput#design-tokens-theming",
@@ -1095,6 +1323,12 @@
     "title": "Pagination",
     "description": "A composable, accessible Pagination component for modern React applications.",
     "href": "/nui/components/pagination",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Pagination)",
+    "description": "",
+    "href": "/nui/components/pagination#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1116,6 +1350,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (PasswordInput)",
+    "description": "",
+    "href": "/nui/components/passwordinput#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (PasswordInput)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/passwordinput#design-tokens-theming",
@@ -1134,6 +1374,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (PinInput)",
+    "description": "",
+    "href": "/nui/components/pininput#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (PinInput)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/pininput#design-tokens-theming",
@@ -1149,6 +1395,12 @@
     "title": "Popover",
     "description": "A composable, accessible Popover component for modern React applications.",
     "href": "/nui/components/popover",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Popover)",
+    "description": "",
+    "href": "/nui/components/popover#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1176,6 +1428,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Progress)",
+    "description": "",
+    "href": "/nui/components/progress#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Performance Characteristics (Progress)",
     "description": "The component uses **transform-based progress animation** instead of width changes:",
     "href": "/nui/components/progress#performance-characteristics",
@@ -1185,6 +1443,12 @@
     "title": "RadioGroup",
     "description": "A composable, accessible RadioGroup component for modern React applications.",
     "href": "/nui/components/radiogroup",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (RadioGroup)",
+    "description": "",
+    "href": "/nui/components/radiogroup#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1200,6 +1464,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Rating)",
+    "description": "",
+    "href": "/nui/components/rating#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Rating)",
     "description": "| Key                   | Behavior                          |",
     "href": "/nui/components/rating#keyboard-interaction",
@@ -1212,6 +1482,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Resizable)",
+    "description": "",
+    "href": "/nui/components/resizable#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Resizable)",
     "description": "| Key           | Behavior                           |",
     "href": "/nui/components/resizable#keyboard-interaction",
@@ -1221,6 +1497,12 @@
     "title": "ScrollArea",
     "description": "A fully accessible, token-driven ScrollArea component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/scrollarea",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (ScrollArea)",
+    "description": "",
+    "href": "/nui/components/scrollarea#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1242,6 +1524,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (SegmentedControl)",
+    "description": "",
+    "href": "/nui/components/segmentedcontrol#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Design Tokens & Theming (SegmentedControl)",
     "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/segmentedcontrol#design-tokens-theming",
@@ -1260,6 +1548,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Select)",
+    "description": "",
+    "href": "/nui/components/select#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Select)",
     "description": "| Key                      | Behavior                     |",
     "href": "/nui/components/select#keyboard-interaction",
@@ -1269,6 +1563,12 @@
     "title": "Skeleton",
     "description": "A composable, accessible Skeleton component for modern React applications.",
     "href": "/nui/components/skeleton",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Skeleton)",
+    "description": "",
+    "href": "/nui/components/skeleton#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1284,6 +1584,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Slider)",
+    "description": "",
+    "href": "/nui/components/slider#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Slider)",
     "description": "| Key                   | Behavior              |",
     "href": "/nui/components/slider#keyboard-interaction",
@@ -1296,9 +1602,21 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Spinner)",
+    "description": "",
+    "href": "/nui/components/spinner#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "StatCard",
     "description": "A fully accessible, token-driven StatCard component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/statcard",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (StatCard)",
+    "description": "",
+    "href": "/nui/components/statcard#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1320,6 +1638,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Stepper)",
+    "description": "",
+    "href": "/nui/components/stepper#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Sub-definitions (Stepper)",
     "description": "",
     "href": "/nui/components/stepper#sub-definitions",
@@ -1338,6 +1662,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Switch)",
+    "description": "",
+    "href": "/nui/components/switch#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Switch)",
     "description": "- Tab → focuses switch",
     "href": "/nui/components/switch#keyboard-interaction",
@@ -1347,6 +1677,12 @@
     "title": "Table",
     "description": "A composable, accessible Table component for modern React applications.",
     "href": "/nui/components/table",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Table)",
+    "description": "",
+    "href": "/nui/components/table#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1368,6 +1704,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Tabs)",
+    "description": "",
+    "href": "/nui/components/tabs#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Tabs)",
     "description": "- ArrowRight → next tab",
     "href": "/nui/components/tabs#keyboard-interaction",
@@ -1380,6 +1722,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Textarea)",
+    "description": "",
+    "href": "/nui/components/textarea#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Textarea)",
     "description": "* Standard textarea typing behavior",
     "href": "/nui/components/textarea#keyboard-interaction",
@@ -1389,6 +1737,12 @@
     "title": "Timeline",
     "description": "A fully accessible, token-driven Timeline component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/timeline",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Timeline)",
+    "description": "",
+    "href": "/nui/components/timeline#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1410,6 +1764,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (TimePicker)",
+    "description": "",
+    "href": "/nui/components/timepicker#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (TimePicker)",
     "description": "* Trigger opens popover via Enter / Space",
     "href": "/nui/components/timepicker#keyboard-interaction",
@@ -1422,6 +1782,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (TimeRangePicker)",
+    "description": "",
+    "href": "/nui/components/timerangepicker#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (TimeRangePicker)",
     "description": "- Trigger opens popover via Enter / Space",
     "href": "/nui/components/timerangepicker#keyboard-interaction",
@@ -1431,6 +1797,12 @@
     "title": "Toast",
     "description": "A composable, accessible Toast component for modern React applications.",
     "href": "/nui/components/toast",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Toast)",
+    "description": "",
+    "href": "/nui/components/toast#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1470,6 +1842,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (Tooltip)",
+    "description": "",
+    "href": "/nui/components/tooltip#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (Tooltip)",
     "description": "- Tab → focuses trigger element",
     "href": "/nui/components/tooltip#keyboard-interaction",
@@ -1479,6 +1857,12 @@
     "title": "TransferList",
     "description": "A fully accessible, token-driven TransferList component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/transferlist",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (TransferList)",
+    "description": "",
+    "href": "/nui/components/transferlist#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1500,6 +1884,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (TreeView)",
+    "description": "",
+    "href": "/nui/components/treeview#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (TreeView)",
     "description": "- ArrowUp / ArrowDown → navigate visible nodes",
     "href": "/nui/components/treeview#keyboard-interaction",
@@ -1509,6 +1899,12 @@
     "title": "VideoPlayer",
     "description": "A fully accessible, token-driven VideoPlayer component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/video",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (VideoPlayer)",
+    "description": "",
+    "href": "/nui/components/video#interactive-preview",
     "pkg": "nui"
   },
   {
@@ -1530,6 +1926,12 @@
     "pkg": "nui"
   },
   {
+    "title": "Interactive Preview (VirtualList)",
+    "description": "",
+    "href": "/nui/components/virtuallist#interactive-preview",
+    "pkg": "nui"
+  },
+  {
     "title": "Keyboard Interaction (VirtualList)",
     "description": "- Standard browser scrolling applies",
     "href": "/nui/components/virtuallist#keyboard-interaction",
@@ -1539,6 +1941,12 @@
     "title": "Watermark",
     "description": "A fully accessible, token-driven Watermark component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/watermark",
+    "pkg": "nui"
+  },
+  {
+    "title": "Interactive Preview (Watermark)",
+    "description": "",
+    "href": "/nui/components/watermark#interactive-preview",
     "pkg": "nui"
   },
   {
