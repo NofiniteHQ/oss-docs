@@ -288,12 +288,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Accordion)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/accordion#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Alert",
     "description": "A composable, accessible Alert component for modern React applications.",
     "href": "/nui/components/alert",
@@ -312,12 +306,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Alert)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/alert#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Attachment",
     "description": "A fully accessible, token-driven Attachment component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/attachment",
@@ -327,12 +315,6 @@
     "title": "Interactive Preview (Attachment)",
     "description": "",
     "href": "/nui/components/attachment#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Attachment)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/attachment#theming",
     "pkg": "nui"
   },
   {
@@ -384,12 +366,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Avatar)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/avatar#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Badge",
     "description": "A composable, accessible Badge component for modern React applications.",
     "href": "/nui/components/badge",
@@ -411,12 +387,6 @@
     "title": "Shapes (Badge)",
     "description": "- **Pill** – Fully rounded with `pill={true}`",
     "href": "/nui/components/badge#shapes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Badge)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/badge#theming",
     "pkg": "nui"
   },
   {
@@ -444,12 +414,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Breadcrumbs)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/breadcrumbs#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Button",
     "description": "A composable, accessible Button component for modern React applications.",
     "href": "/nui/components/button",
@@ -468,12 +432,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Button)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/button#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Calendar",
     "description": "A fully accessible, token-driven Calendar component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/calendar",
@@ -483,12 +441,6 @@
     "title": "Interactive Preview (Calendar)",
     "description": "",
     "href": "/nui/components/calendar#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Calendar)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/calendar#theming",
     "pkg": "nui"
   },
   {
@@ -528,12 +480,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Card)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/card#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Carousel",
     "description": "A fully accessible, token-driven Carousel component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/carousel",
@@ -543,12 +489,6 @@
     "title": "Interactive Preview (Carousel)",
     "description": "",
     "href": "/nui/components/carousel#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Carousel)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/carousel#theming",
     "pkg": "nui"
   },
   {
@@ -570,12 +510,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Checkbox)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/checkbox#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Chip",
     "description": "A composable, accessible Chip component for modern React applications.",
     "href": "/nui/components/chip",
@@ -588,12 +522,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Chip)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/chip#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Clipboard",
     "description": "A fully accessible, token-driven Clipboard component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/clipboard",
@@ -603,12 +531,6 @@
     "title": "Interactive Preview (Clipboard)",
     "description": "",
     "href": "/nui/components/clipboard#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Clipboard)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/clipboard#theming",
     "pkg": "nui"
   },
   {
@@ -630,12 +552,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (CodeBlock)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/codeblock#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Accessibility & Guidelines (CodeBlock)",
     "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
     "href": "/nui/components/codeblock#accessibility-guidelines",
@@ -651,12 +567,6 @@
     "title": "Interactive Preview (Collapsible)",
     "description": "",
     "href": "/nui/components/collapsible#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Collapsible)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/collapsible#theming",
     "pkg": "nui"
   },
   {
@@ -678,12 +588,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (ColorPicker)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/colorpicker#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Accessibility & Guidelines (ColorPicker)",
     "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
     "href": "/nui/components/colorpicker#accessibility-guidelines",
@@ -699,12 +603,6 @@
     "title": "Interactive Preview (Combobox)",
     "description": "",
     "href": "/nui/components/combobox#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Combobox)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/combobox#theming",
     "pkg": "nui"
   },
   {
@@ -732,12 +630,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Contextmenu)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/contextmenu#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "DatePicker",
     "description": "A composable, accessible DatePicker component for modern React applications.",
     "href": "/nui/components/datepicker",
@@ -762,12 +654,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (DatePicker)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/datepicker#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "DateRangePicker",
     "description": "A composable, accessible DateRangePicker component for modern React applications.",
     "href": "/nui/components/daterangepicker",
@@ -789,12 +675,6 @@
     "title": "Shapes / Modes (DateRangePicker)",
     "description": "**Modes**",
     "href": "/nui/components/daterangepicker#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (DateRangePicker)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/daterangepicker#theming",
     "pkg": "nui"
   },
   {
@@ -834,12 +714,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Dialog)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/dialog#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Divider",
     "description": "A fully accessible, token-driven Divider component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/divider",
@@ -849,12 +723,6 @@
     "title": "Interactive Preview (Divider)",
     "description": "",
     "href": "/nui/components/divider#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Divider)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/divider#theming",
     "pkg": "nui"
   },
   {
@@ -894,12 +762,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Drawer)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/drawer#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Dropdown",
     "description": "A composable, accessible Dropdown component for modern React applications.",
     "href": "/nui/components/dropdown",
@@ -936,12 +798,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Dropdown)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/dropdown#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "EmptyState",
     "description": "A fully accessible, token-driven EmptyState component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/emptystate",
@@ -951,12 +807,6 @@
     "title": "Interactive Preview (EmptyState)",
     "description": "",
     "href": "/nui/components/emptystate#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (EmptyState)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/emptystate#theming",
     "pkg": "nui"
   },
   {
@@ -1002,12 +852,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (FileUploader)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/fileuploader#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Form",
     "description": "A fully accessible, token-driven Form component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/form",
@@ -1017,12 +861,6 @@
     "title": "Interactive Preview (Form)",
     "description": "",
     "href": "/nui/components/form#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Form)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/form#theming",
     "pkg": "nui"
   },
   {
@@ -1068,12 +906,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (HoverCard)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/hovercard#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Image",
     "description": "A fully accessible, token-driven Image component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/image",
@@ -1083,12 +915,6 @@
     "title": "Interactive Preview (Image)",
     "description": "",
     "href": "/nui/components/image#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Image)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/image#theming",
     "pkg": "nui"
   },
   {
@@ -1128,12 +954,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Input)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/input#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Kbd",
     "description": "A fully accessible, token-driven Kbd component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/kbd",
@@ -1143,12 +963,6 @@
     "title": "Interactive Preview (Kbd)",
     "description": "",
     "href": "/nui/components/kbd#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Kbd)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/kbd#theming",
     "pkg": "nui"
   },
   {
@@ -1188,12 +1002,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Layout)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/layout#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Link",
     "description": "A composable, accessible Link component for modern React applications.",
     "href": "/nui/components/link",
@@ -1209,12 +1017,6 @@
     "title": "Keyboard Interaction (Link)",
     "description": "| Key         | Behavior             |",
     "href": "/nui/components/link#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Link)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/link#theming",
     "pkg": "nui"
   },
   {
@@ -1248,12 +1050,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (MegaMenu)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/megamenu#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Modal",
     "description": "A composable, accessible Modal component for modern React applications.",
     "href": "/nui/components/modal",
@@ -1284,12 +1080,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Modal)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/modal#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "MultiSelect",
     "description": "A fully accessible, token-driven MultiSelect component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/multiselect",
@@ -1299,12 +1089,6 @@
     "title": "Interactive Preview (MultiSelect)",
     "description": "",
     "href": "/nui/components/multiselect#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (MultiSelect)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/multiselect#theming",
     "pkg": "nui"
   },
   {
@@ -1326,12 +1110,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (NUIProvider)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/nuiprovider#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Accessibility & Guidelines (NUIProvider)",
     "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
     "href": "/nui/components/nuiprovider#accessibility-guidelines",
@@ -1347,12 +1125,6 @@
     "title": "Interactive Preview (NumberInput)",
     "description": "",
     "href": "/nui/components/numberinput#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (NumberInput)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/numberinput#theming",
     "pkg": "nui"
   },
   {
@@ -1386,12 +1158,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Pagination)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/pagination#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "PasswordInput",
     "description": "A fully accessible, token-driven PasswordInput component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/passwordinput",
@@ -1401,12 +1167,6 @@
     "title": "Interactive Preview (PasswordInput)",
     "description": "",
     "href": "/nui/components/passwordinput#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (PasswordInput)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/passwordinput#theming",
     "pkg": "nui"
   },
   {
@@ -1425,12 +1185,6 @@
     "title": "Interactive Preview (PinInput)",
     "description": "",
     "href": "/nui/components/pininput#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (PinInput)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/pininput#theming",
     "pkg": "nui"
   },
   {
@@ -1470,12 +1224,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Popover)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/popover#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Progress",
     "description": "A composable, accessible Progress component for modern React applications.",
     "href": "/nui/components/progress",
@@ -1491,12 +1239,6 @@
     "title": "Performance Characteristics (Progress)",
     "description": "The component uses **transform-based progress animation** instead of width changes:",
     "href": "/nui/components/progress#performance-characteristics",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Progress)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/progress#theming",
     "pkg": "nui"
   },
   {
@@ -1518,12 +1260,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (RadioGroup)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/radiogroup#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Rating",
     "description": "A composable, accessible Rating component for modern React applications.",
     "href": "/nui/components/rating",
@@ -1539,12 +1275,6 @@
     "title": "Keyboard Interaction (Rating)",
     "description": "| Key                   | Behavior                          |",
     "href": "/nui/components/rating#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Rating)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/rating#theming",
     "pkg": "nui"
   },
   {
@@ -1566,12 +1296,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Resizable)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/resizable#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "ScrollArea",
     "description": "A fully accessible, token-driven ScrollArea component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/scrollarea",
@@ -1581,12 +1305,6 @@
     "title": "Interactive Preview (ScrollArea)",
     "description": "",
     "href": "/nui/components/scrollarea#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (ScrollArea)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/scrollarea#theming",
     "pkg": "nui"
   },
   {
@@ -1605,12 +1323,6 @@
     "title": "Interactive Preview (SegmentedControl)",
     "description": "",
     "href": "/nui/components/segmentedcontrol#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (SegmentedControl)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/segmentedcontrol#theming",
     "pkg": "nui"
   },
   {
@@ -1638,12 +1350,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Select)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/select#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Skeleton",
     "description": "A composable, accessible Skeleton component for modern React applications.",
     "href": "/nui/components/skeleton",
@@ -1659,12 +1365,6 @@
     "title": "Helper Components (Skeleton)",
     "description": "",
     "href": "/nui/components/skeleton#helper-components",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Skeleton)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/skeleton#theming",
     "pkg": "nui"
   },
   {
@@ -1686,12 +1386,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Slider)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/slider#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Spinner",
     "description": "A composable, accessible Spinner component for modern React applications.",
     "href": "/nui/components/spinner",
@@ -1704,12 +1398,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Spinner)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/spinner#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "StatCard",
     "description": "A fully accessible, token-driven StatCard component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/statcard",
@@ -1719,12 +1407,6 @@
     "title": "Interactive Preview (StatCard)",
     "description": "",
     "href": "/nui/components/statcard#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (StatCard)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/statcard#theming",
     "pkg": "nui"
   },
   {
@@ -1758,12 +1440,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Stepper)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/stepper#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Switch",
     "description": "A composable, accessible Switch component for modern React applications.",
     "href": "/nui/components/switch",
@@ -1779,12 +1455,6 @@
     "title": "Keyboard Interaction (Switch)",
     "description": "- Tab → focuses switch",
     "href": "/nui/components/switch#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Switch)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/switch#theming",
     "pkg": "nui"
   },
   {
@@ -1812,12 +1482,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Table)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/table#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Tabs",
     "description": "A composable, accessible Tabs component for modern React applications.",
     "href": "/nui/components/tabs",
@@ -1833,12 +1497,6 @@
     "title": "Keyboard Interaction (Tabs)",
     "description": "- ArrowRight → next tab",
     "href": "/nui/components/tabs#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Tabs)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/tabs#theming",
     "pkg": "nui"
   },
   {
@@ -1860,12 +1518,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Textarea)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/textarea#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Timeline",
     "description": "A fully accessible, token-driven Timeline component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/timeline",
@@ -1875,12 +1527,6 @@
     "title": "Interactive Preview (Timeline)",
     "description": "",
     "href": "/nui/components/timeline#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Timeline)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/timeline#theming",
     "pkg": "nui"
   },
   {
@@ -1908,12 +1554,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (TimePicker)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/timepicker#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "TimeRangePicker",
     "description": "A composable, accessible TimeRangePicker component for modern React applications.",
     "href": "/nui/components/timerangepicker",
@@ -1929,12 +1569,6 @@
     "title": "Keyboard Interaction (TimeRangePicker)",
     "description": "- Trigger opens popover via Enter / Space",
     "href": "/nui/components/timerangepicker#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (TimeRangePicker)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/timerangepicker#theming",
     "pkg": "nui"
   },
   {
@@ -1980,12 +1614,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Toast)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/toast#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Tooltip",
     "description": "A composable, accessible Tooltip component for modern React applications.",
     "href": "/nui/components/tooltip",
@@ -2004,12 +1632,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (Tooltip)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/tooltip#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "TransferList",
     "description": "A fully accessible, token-driven TransferList component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/transferlist",
@@ -2019,12 +1641,6 @@
     "title": "Interactive Preview (TransferList)",
     "description": "",
     "href": "/nui/components/transferlist#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (TransferList)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/transferlist#theming",
     "pkg": "nui"
   },
   {
@@ -2052,12 +1668,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (TreeView)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/treeview#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "VideoPlayer",
     "description": "A fully accessible, token-driven VideoPlayer component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/video",
@@ -2067,12 +1677,6 @@
     "title": "Interactive Preview (VideoPlayer)",
     "description": "",
     "href": "/nui/components/video#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (VideoPlayer)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/video#theming",
     "pkg": "nui"
   },
   {
@@ -2100,12 +1704,6 @@
     "pkg": "nui"
   },
   {
-    "title": "Theming (VirtualList)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/virtuallist#theming",
-    "pkg": "nui"
-  },
-  {
     "title": "Watermark",
     "description": "A fully accessible, token-driven Watermark component built with strict WAI-ARIA compliance.",
     "href": "/nui/components/watermark",
@@ -2115,12 +1713,6 @@
     "title": "Interactive Preview (Watermark)",
     "description": "",
     "href": "/nui/components/watermark#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming (Watermark)",
-    "description": "This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.",
-    "href": "/nui/components/watermark#theming",
     "pkg": "nui"
   },
   {

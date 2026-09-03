@@ -985,12 +985,6 @@ ze for header and panel content         |
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -1122,12 +1116,6 @@ import { Alert } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -1166,12 +1154,6 @@ import { Attachment } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -1383,12 +1365,6 @@ ze Avatar appearance using CSS variables:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -1568,12 +1544,6 @@ import { Badge, BadgeGroup } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -1718,12 +1688,6 @@ Home › … › Parent › Current
 - Include excessive hierarchy levels without collapsing
 - Make the current page clickable
 - Hide critical navigation only inside ellipsis
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -1898,12 +1862,6 @@ ze text      |
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -1942,12 +1900,6 @@ import { Calendar } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2150,12 +2102,6 @@ Full-width separator for visual grouping.
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -2194,12 +2140,6 @@ import { Carousel } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2339,12 +2279,6 @@ const [checked, setChecked] = useState(false);
 - Rely solely on visual state without labels
 - Use indeterminate as a permanent state
 - Disable checkbox without explaining why interaction is blocked
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2497,12 +2431,6 @@ import { Chip } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -2541,12 +2469,6 @@ import { Clipboard } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2595,12 +2517,6 @@ import { CodeBlock } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## Accessibility & Guidelines
 
 - **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).
@@ -2646,12 +2562,6 @@ import { Collapsible } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## Accessibility & Guidelines
 
 - **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).
@@ -2694,12 +2604,6 @@ import { ColorPicker } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2872,12 +2776,6 @@ const [value, setValue] = useState("");
 * Hide essential information inside custom renderers
 * Disable keyboard navigation
 * Overload options with long content
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3071,12 +2969,6 @@ import { ContextMenu } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -3236,12 +3128,6 @@ Implemented semantics:
 - Disable without visual explanation
 - Use DatePicker for date ranges (create RangePicker)
 - Override popover positioning with custom CSS
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3424,12 +3310,6 @@ Implemented semantics:
 - Disable picker without explanation
 - Use for single-date selection (use DatePicker)
 - Override popover positioning manually
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3663,12 +3543,6 @@ This enables **headless toast invocation with React rendering**.
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -3707,12 +3581,6 @@ import { Divider } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3918,12 +3786,6 @@ Uses GPU-accelerated `transform` transitions.
 - Disable escape without strong reason
 - Mount heavy trees inside if frequent toggling
 - Stack multiple drawers without z-index management
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -4203,12 +4065,6 @@ Design characteristics:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -4247,12 +4103,6 @@ import { EmptyState } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -4475,12 +4325,6 @@ Potential caveat:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -4519,12 +4363,6 @@ import { Form } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -4764,12 +4602,6 @@ Potential caveat:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -4808,12 +4640,6 @@ import { Image } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -5029,12 +4855,6 @@ Potential caveat:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -5073,12 +4893,6 @@ import { Kbd } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -5352,12 +5166,6 @@ Potential caveats:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -5533,12 +5341,6 @@ import { Button } from '@nofinite/nui';
 - Use for button-like CTAs with backgrounds
 - Remove underline in dense paragraph navigation without other affordance
 - Use danger variant for non-destructive navigation
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -5783,12 +5585,6 @@ Tradeoffs:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -6023,12 +5819,6 @@ Tradeoffs:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -6067,12 +5857,6 @@ import { MultiSelect } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6121,12 +5905,6 @@ import { NUIProvider } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## Accessibility & Guidelines
 
 - **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).
@@ -6169,12 +5947,6 @@ import { NumberInput } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6337,12 +6109,6 @@ Generated item types:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -6381,12 +6147,6 @@ import { PasswordInput } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6432,12 +6192,6 @@ import { PinInput } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6654,12 +6408,6 @@ The component implements **adaptive overlay positioning**:
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -6818,12 +6566,6 @@ The component uses **transform-based progress animation** instead of width chang
 - Rely solely on color for status indication
 - Exceed max value without normalization
 - Overuse large progress bars in dense layouts
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7005,12 +6747,6 @@ Native browser radio semantics ensure **automatic roving focus and selection beh
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -7161,12 +6897,6 @@ Component uses `role="slider"` semantics.
 - Combine disabled and readOnly simultaneously unless intentional
 - Allow fractional ratings without clear visual affordance
 - Overuse large size in dense UI contexts
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7376,12 +7106,6 @@ Handles follow separator interaction pattern.
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -7420,12 +7144,6 @@ import { ScrollArea } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7471,12 +7189,6 @@ import { SegmentedControl } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7658,12 +7370,6 @@ z-dropdown     | Portal layering              |
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -7828,12 +7534,6 @@ import { Skeleton } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -7993,12 +7693,6 @@ const [value, setValue] = useState(50);
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -8142,12 +7836,6 @@ import { Spinner } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -8186,12 +7874,6 @@ import { StatCard } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8368,12 +8050,6 @@ import { Stepper } from '@nofinite/nui';
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -8533,12 +8209,6 @@ import { Switch } from '@nofinite/nui';
 - Hide consequences of toggling
 - Allow toggling when disabled state required
 - Use long descriptions that distract from action
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8751,12 +8421,6 @@ import { Table } from '@nofinite/nui';
 - Use heavy components inside cells unnecessarily
 - Rely on string sorting for numeric values
 - Hide important actions inside render without affordance
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8990,12 +8654,6 @@ const [tab, setTab] = useState('account');
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -9182,12 +8840,6 @@ const [value, setValue] = useState("");
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -9226,12 +8878,6 @@ import { Timeline } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -9414,12 +9060,6 @@ z-dropdown       | Popover layering |
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -9595,12 +9235,6 @@ z-dropdown       | Popover layering                     |
 - Use extremely narrow triggers with long `from → to` labels
 - Hide popover without focus restoration
 - Mix uncontrolled and controlled values inconsistently
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -9784,12 +9418,6 @@ interface ToastContextValue {
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -9941,12 +9569,6 @@ zontal padding       |
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -9985,12 +9607,6 @@ import { TransferList } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10178,12 +9794,6 @@ zontal padding / gap   |
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -10222,12 +9832,6 @@ import { VideoPlayer } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10411,12 +10015,6 @@ ze                  |
 
 ---
 
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
-
----
-
 ## API Reference
 
 ---
@@ -10455,12 +10053,6 @@ import { Watermark } from '@nofinite/nui';
 ## API Reference
 
 
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

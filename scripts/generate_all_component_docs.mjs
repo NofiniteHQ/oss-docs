@@ -155,6 +155,7 @@ function generateComponentMdx(compName, categoryKey) {
     body = body.replace(/^#\s+[^\n]+/m, '');
     body = body.replace(/^##\s+Props[\s\S]*?(?=^##\s+|^---|\Z)/gm, '');
     body = body.replace(/^##\s+Design Tokens[\s\S]*?(?=^##\s+|^---|\Z)/gmi, '');
+    body = body.replace(/^##\s+Theming[\s\S]*?(?=^##\s+|^---|\Z)/gmi, '');
 
     body = sanitizeTokens(body);
 
@@ -180,12 +181,6 @@ import { ${importName} } from '@nofinite/nui';
 ---
 
 ${body.trim()}
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [\`@nofinite/nuicss\`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -228,12 +223,6 @@ import { ${importName} } from '@nofinite/nui';
 ## API Reference
 
 <PropsTable name="${propsCompName}" />
-
----
-
-## Theming
-
-This component is styled using semantic tokens from [\`@nofinite/nuicss\`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
