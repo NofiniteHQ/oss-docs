@@ -70,7 +70,8 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         label: 'Getting Started',
         children: [
           { id: 'getting-started', label: 'Installation & Setup', href: '/nui/getting-started' },
-          { id: 'nuiprovider', label: 'NUIProvider', href: '/nui/components/nuiprovider' }
+          { id: 'nuiprovider', label: 'NUIProvider', href: '/nui/components/nuiprovider' },
+          { id: 'theming', label: 'Theming & Design Tokens', href: '/nui/theming' }
         ]
       },
       {

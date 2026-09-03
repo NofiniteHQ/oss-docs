@@ -154,6 +154,7 @@ function generateComponentMdx(compName, categoryKey) {
     let body = raw.replace(/^---[\s\S]*?---/, '');
     body = body.replace(/^#\s+[^\n]+/m, '');
     body = body.replace(/^##\s+Props[\s\S]*?(?=^##\s+|^---|\Z)/gm, '');
+    body = body.replace(/^##\s+Design Tokens[\s\S]*?(?=^##\s+|^---|\Z)/gmi, '');
 
     body = sanitizeTokens(body);
 
@@ -179,6 +180,12 @@ import { ${importName} } from '@nofinite/nui';
 ---
 
 ${body.trim()}
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [\`@nofinite/nuicss\`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -224,19 +231,9 @@ import { ${importName} } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from \`@nofinite/nuicss\`:
-
-| Token | Usage |
-| --- | --- |
-| \`--bg-surface\` | Default surface background |
-| \`--bg-subtle\` | Hover and muted background |
-| \`--fg-default\` | Primary text color |
-| \`--fg-muted\` | Secondary text color |
-| \`--border-default\` | Default border color |
-| \`--color-primary\` | Primary brand emphasis |
-| \`--radius-md\` | Border radius |
+This component is styled using semantic tokens from [\`@nofinite/nuicss\`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

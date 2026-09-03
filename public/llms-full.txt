@@ -972,37 +972,7 @@ Accordion does not provide visual variants via props. **Styling is controlled vi
 
 ---
 
-## Design Tokens / Theming
-
-```css
-:root {
-  /* Spacing & radius */
-  --space-4: 16px;
-  --radius-sm: 4px;
-
-  /* Typography */
-  --font-sans: 'Inter', sans-serif;
-  text-base: 1rem;
-  --weight-medium: 500;
-
-  /* Colors */
-  --fg-default: #111827;
-  --fg-subtle: #6b7280;
-  --color-primary: #3b82f6;
-
-  /* Borders */
-  --border-default: #e5e7eb;
-}
-```
-
-**Token Table:**
-
-| Token                  | Description                                    |
-| ---------------------- | ---------------------------------------------- |
-| `--space-4`        | Padding for accordion headers                  |
-| `--radius-sm`      | Border radius for header focus outline         |
-| `--font-sans`      | Font family for title and content              |
-| `text-base`      | Font size for header and panel content         |
+ze for header and panel content         |
 | `--weight-medium`  | Header font weight                             |
 | `--fg-default`     | Default text color                             |
 | `--fg-subtle`      | Subtle text color (icons, hover, content)      |
@@ -1027,6 +997,12 @@ Accordion does not provide visual variants via props. **Styling is controlled vi
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -1036,7 +1012,7 @@ Accordion does not provide visual variants via props. **Styling is controlled vi
 
 # Alert
 
-A flexible and accessible alert component for displaying contextual messages, notifications, or warnings. Supports multiple variants (info, success, warning, danger) and optional closable behavior.
+A composable, accessible Alert component for modern React applications.
 
 ```tsx
 import { Alert } from '@nofinite/nui';
@@ -1050,9 +1026,7 @@ import { Alert } from '@nofinite/nui';
 
 ---
 
-## Alert Types & Variants
-
-
+A flexible and **accessible alert component** for displaying contextual messages, notifications, or warnings. Supports multiple variants (`info`, `success`, `warning`, `error`), optional closable behavior, and clear accessibility cues.
 
 ---
 
@@ -1063,40 +1037,110 @@ import { Alert } from '@nofinite/nui';
 ```tsx
 import { Alert } from '@nofinite/nui';
 
-<Alert>This is an informational message.</Alert>
+<Alert>This is an informational message.</Alert>;
 ```
 
-### Alert with Title & Custom Content
+### Alert with a title
 
 ```tsx
-<Alert variant="info" title="System Notice">
-  Scheduled maintenance is set for Sunday at 02:00 UTC.
+<Alert title="Network Error">
+  Unable to connect to the server. Please try again.
+</Alert>
+```
+
+### Variants
+
+```tsx
+<Alert variant="success" title="Success">
+  Your data has been saved successfully.
+</Alert>
+
+<Alert variant="warning" title="Warning">
+  Your subscription will expire in 3 days.
+</Alert>
+
+<Alert variant="error" title="Error">
+  Failed to process your request.
+</Alert>
+```
+
+### Closable Alert
+
+```tsx
+<Alert
+  variant="info"
+  title="Reminder"
+  closable
+  onClose={() => console.log('Alert closed')}
+>
+  Don’t forget to check your inbox.
 </Alert>
 ```
 
 ---
 
-## API Reference
+---
 
+## Variants
 
+| Variant   | Background            | Border                 | Text Color                 | Description                         |
+| --------- | --------------------- | ---------------------- | -------------------------- | ----------------------------------- |
+| `info`    | `var(--brand-50)` | `var(--brand-100)` | `var(--color-primary-hover)`     | Informational message               |
+| `success` | `#f0fdf4`             | `#dcfce7`              | `var(--color-success)` | Positive feedback / success message |
+| `warning` | `#fffbeb`             | `#fef3c7`              | `#b45309`                  | Warning or caution                  |
+| `error`   | `#fef2f2`             | `#fee2e2`              | `var(--color-danger)`  | Error / critical alert              |
+
+> Colors can be overridden with design tokens for theming.
 
 ---
 
-## Design Tokens & Theming
+## Accessibility
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
+- Uses semantic roles:
 
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Info emphasis |
-| `--color-success` | Success feedback |
-| `--color-warning` | Warning feedback |
-| `--color-danger` | Destructive feedback |
+  - `role="alert"` for `error` and `warning` (automatically announced by screen readers)
+  - `role="status"` for `info` and `success`
+
+- Headers are optional but recommended.
+- Close button is keyboard accessible (`Enter` / `Space` triggers `onClose`).
+- Focus styles visible via `:focus-visible` on the close button.
+
+---
+
+## Behavior
+
+- Alerts are **controlled/uncontrolled**: content always renders; visibility is handled via parent component logic.
+- `closable` triggers `onClose` callback but does not remove alert automatically — parent should handle removal.
+- Alerts are visually distinct per variant for immediate recognition.
+- Close button shows hover and focus states for better UX.
+
+---
+
+---
+
+## Best Practices
+
+### Do
+
+- Provide a **title** for clarity, especially for `error` or `warning` alerts.
+- Keep messages concise.
+- Use `closable` for temporary notifications.
+
+### Don’t
+
+- Overload with too much text — keep alerts scannable.
+- Use only color to convey status; combine with icons or text.
+- Nest alerts inside other alerts — avoid confusion.
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
+## API Reference
 
 ---
 
@@ -1137,19 +1181,9 @@ import { Attachment } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -1311,9 +1345,7 @@ Avatar displays content in the following order:
 
 ---
 
-## Design Tokens / Theming
-
-You can customize Avatar appearance using CSS variables:
+ze Avatar appearance using CSS variables:
 
 ```css
 :root {
@@ -1363,6 +1395,12 @@ You can customize Avatar appearance using CSS variables:
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -1372,7 +1410,7 @@ You can customize Avatar appearance using CSS variables:
 
 # Badge
 
-A compact status or indicator component that can display numbers, icons, or small labels. Supports variants, sizes, pill shapes, dot mode, and interactive behavior.
+A composable, accessible Badge component for modern React applications.
 
 ```tsx
 import { Badge } from '@nofinite/nui';
@@ -1386,18 +1424,18 @@ import { Badge } from '@nofinite/nui';
 
 ---
 
-## Status Dot Badges
-
-
+A **compact status or indicator component** that can display numbers, icons, or small labels. Supports **variants, sizes, pill shapes, dot mode, and interactive behavior** (links or buttons).
 
 ---
 
 ## Usage
 
-### Variants
+### Basic Badge
 
 ```tsx
-<Badge variant="default">Default</Badge>
+import { Badge } from '@nofinite/nui';
+
+<Badge>New</Badge>
 <Badge variant="primary">Primary</Badge>
 <Badge variant="success">Success</Badge>
 <Badge variant="warning">Warning</Badge>
@@ -1412,35 +1450,143 @@ import { Badge } from '@nofinite/nui';
 <Badge count={120} max={99} />  {/* Displays 99+ */}
 ```
 
+### Dot Badge
+
+```tsx
+<Badge dot variant="success" />
+```
+
 ### Pill Badge
 
 ```tsx
 <Badge pill variant="primary">
-  Feature
+  Premium
+</Badge>
+```
+
+### Interactive Badge
+
+```tsx
+<Badge onClick={() => alert('Clicked!')} variant="primary">
+  Click Me
+</Badge>
+
+<Badge href="https://example.com" variant="primary">
+  Go to Link
+</Badge>
+```
+
+### Badge with Icons
+
+```tsx
+<Badge iconLeft={<Icon />} iconRight={<Icon />} variant="success">
+  Messages
 </Badge>
 ```
 
 ---
 
-## API Reference
+---
 
+## BadgeGroup
 
+Groups multiple badges and optionally displays a `+n` overflow indicator.
+
+### Usage
+
+```tsx
+import { Badge, BadgeGroup } from '@nofinite/nui';
+
+<BadgeGroup max={3}>
+  <Badge variant="success">Online</Badge>
+  <Badge variant="warning">Away</Badge>
+  <Badge variant="danger">Busy</Badge>
+  <Badge variant="primary">Admin</Badge>
+</BadgeGroup>;
+```
 
 ---
 
-## Design Tokens & Theming
+### Props
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
+| Prop        | Type                                   | Default | Description                                      |
+| ----------- | -------------------------------------- | ------- | ------------------------------------------------ |
+| `children`  | `React.ReactNode[]`                    | —       | Badge components to group                        |
+| `max`       | `number`                               | `3`     | Maximum badges to show; excess displayed as `+n` |
+| `className` | `string`                               | `""`    | Additional CSS classes for the group container   |
+| `...rest`   | `React.HTMLAttributes<HTMLDivElement>` | —       | Other native props                               |
 
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-full` | Pill badge border radius |
+---
+
+## Variants
+
+| Variant   | Description                        |
+| --------- | ---------------------------------- |
+| `default` | Neutral / gray                     |
+| `primary` | Brand / accent color               |
+| `success` | Success / green                    |
+| `warning` | Warning / amber                    |
+| `danger`  | Error / red                        |
+| `outline` | Transparent background with border |
+
+---
+
+## Sizes
+
+| Size | Height | Font Size | Notes                           |
+| ---- | ------ | --------- | ------------------------------- |
+| `sm` | 20px   | 12px      | Compact badges for tight spaces |
+| `md` | 24px   | 14px      | Default size                    |
+| `lg` | 28px   | 14px      | Slightly larger for emphasis    |
+
+---
+
+## Shapes
+
+- **Pill** – Fully rounded with `pill={true}`
+- **Dot** – Small circular badge, hides content with `dot={true}`
+
+---
+
+---
+
+## Accessibility
+
+- **Role and interactive elements**
+
+  - Non-interactive badges render as `<span>`.
+  - `href` badges render as `<a>` (link role).
+  - `onClick` badges render as `<button>` (button role).
+
+- Icons and counts are visible to screen readers.
+- Dot badges are visual-only; use `aria-label` via `...rest` if necessary.
+
+---
+
+## Best Practices
+
+### Do
+
+- Use badges to indicate status, counts, or labels.
+- Keep badge text short (1–2 words).
+- Use `max` in groups to prevent overflow.
+- Use `dot` for subtle notifications or status.
+
+### Don’t
+
+- Place essential information only inside dot badges.
+- Overload groups with too many badges; use `max` for overflow.
+- Use badges for primary navigation.
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
+## API Reference
 
 ---
 
@@ -1554,22 +1700,6 @@ Home › … › Parent › Current
 
 ---
 
-## Design Tokens / Theming
-
-```css
-:root {
-  --font-sans: 'Inter', sans-serif;
-  text-sm: 14px;
-  --space-2: 8px;
-
-  --fg-subtle: #6b7280;
-  --fg-default: #111827;
-  --fg-disabled: #9ca3af;
-  --border-default: #e5e7eb;
-  --weight-medium: 500;
-}
-```
-
 ---
 
 ## Accessibility
@@ -1603,6 +1733,12 @@ Home › … › Parent › Current
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -1630,37 +1766,95 @@ A polymorphic, accessible, and composable action component designed for primary 
 
 ---
 
-## Sizes
+## Usage
 
+### Basic usage
 
+```tsx id="btn1"
+import { Button } from '@nofinite/nui';
+
+<Button>Click me</Button>;
+```
+
+### Variants
+
+```tsx id="btn2"
+<Button variant="default">Default</Button>
+<Button variant="primary">Primary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="danger">Danger</Button>
+```
+
+### Sizes
+
+```tsx id="btn3"
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+<Button size="icon">⭐</Button>
+```
+
+### With icons
+
+```tsx id="btn4"
+<Button iconLeft={<FaPlus />}>Create</Button>
+<Button iconRight={<FaArrowRight />} variant="primary">Continue</Button>
+```
+
+### Loading state
+
+```tsx id="btn5"
+<Button isLoading>Processing</Button>
+```
+
+### Polymorphic usage (Next.js Link)
+
+```tsx id="btn6"
+<Button asChild variant="primary">
+  <NextLink href="/dashboard">Go to Dashboard</NextLink>
+</Button>
+```
 
 ---
 
-## Loading & Disabled States
+---
 
+## Variants
 
+### Visual variants
+
+- Default (secondary surface)
+- Primary (brand emphasis)
+- Outline (border only)
+- Ghost (minimal UI)
+- Danger (destructive action)
+- Link (text-like action)
+
+### Size variants
+
+- Small (compact UI)
+- Medium (default)
+- Large (emphasis)
+- Icon (square button)
+
+**Guidelines**
+
+- Use primary for main CTA
+- Use danger only for destructive actions
+- Use ghost for dense UI toolbars
+- Use outline for secondary emphasis
+- Use icon size for icon-only actions
 
 ---
 
-## API Reference
+## States
 
-
-
----
-
-## Design Tokens & Theming
-
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+- Default
+- Hover
+- Focus-visible
+- Disabled
+- Loading (spinner replaces left icon)
 
 ---
 
@@ -1668,10 +1862,61 @@ In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss
 
 | Key       | Behavior           |
 | --------- | ------------------ |
-| `Enter`   | Triggers `onClick` |
-| `Space`   | Triggers `onClick` |
-| `Tab`     | Focuses button     |
-| `Shift+Tab` | Previous focusable |
+| Enter     | Activates button   |
+| Space     | Activates button   |
+| Tab       | Focus navigation   |
+| Shift+Tab | Reverse navigation |
+
+---
+
+## Accessibility
+
+- Native button semantics preserved
+- Automatic disabled state when loading
+- `aria-hidden` spinner prevents duplicate announcements
+- Focus-visible ring for keyboard navigation
+- Supports polymorphic rendering while preserving semantics
+- Compatible with screen readers
+
+---
+
+ze text      |
+| text-sm        | Medium size text     |
+| text-base      | Large size text      |
+| --space-2        | Icon spacing         |
+| --space-3        | Small padding        |
+| --space-4        | Medium padding       |
+| --space-6        | Large padding        |
+
+---
+
+## Best Practices
+
+### Do
+
+- Use loading state for async actions
+- Provide accessible labels for icon-only buttons
+- Use asChild for router links
+- Keep icon alignment consistent
+- Use primary variant sparingly for emphasis
+
+### Don’t
+
+- Use danger variant for non-destructive actions
+- Place multiple primary buttons in the same section
+- Use icon-only buttons without aria-label
+- Override disabled state during loading
+- Nest interactive elements inside button content
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
+## API Reference
 
 ---
 
@@ -1712,19 +1957,9 @@ import { Calendar } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -1897,34 +2132,6 @@ Full-width separator for visual grouping.
 
 ---
 
-## Design Tokens / Theming
-
-```css
-:root {
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-
-  --radius-lg: 12px;
-
-  --font-sans: 'Inter', sans-serif;
-  --weight-bold: 700;
-  text-sm: 14px;
-  text-lg: 18px;
-
-  --bg-surface: #ffffff;
-  --bg-page: #ffffff;
-
-  --fg-default: #111827;
-  --fg-subtle: #6b7280;
-
-  --border-default: #e5e7eb;
-  --border-hover: #d1d5db;
-
-  --color-primary: #3b82f6;
-}
-```
-
 ---
 
 ## Accessibility
@@ -1952,6 +2159,12 @@ Full-width separator for visual grouping.
 - Overload cards with excessive content
 - Use clickable cards for destructive actions
 - Nest too many cards creating visual clutter
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -1996,19 +2209,9 @@ import { Carousel } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2123,23 +2326,6 @@ const [checked, setChecked] = useState(false);
 
 ---
 
-## Design Tokens / Theming
-
-```css
-:root {
-  --space-2: 8px;
-  --radius-sm: 4px;
-  --font-sans: 'Inter', sans-serif;
-  text-sm: 14px;
-
-  --bg-surface: #ffffff;
-  --border-default: #e5e7eb;
-  --color-primary: #2563eb;
-  --color-primary-fg: #ffffff;
-  --fg-default: #111827;
-}
-```
-
 ---
 
 ## Accessibility
@@ -2165,6 +2351,12 @@ const [checked, setChecked] = useState(false);
 - Rely solely on visual state without labels
 - Use indeterminate as a permanent state
 - Disable checkbox without explaining why interaction is blocked
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2288,29 +2480,6 @@ import { Chip } from '@nofinite/nui';
 
 ---
 
-## Design Tokens / Theming
-
-```css id="1xjnt3"
-:root {
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --radius-full: 9999px;
-  --font-sans: 'Inter', sans-serif;
-  --weight-medium: 500;
-  text-xs: 12px;
-  text-sm: 14px;
-
-  --bg-surface: #ffffff;
-  --bg-subtle: #f3f4f6;
-  --border-default: #e5e7eb;
-  --border-hover: #d1d5db;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --fg-default: #111827;
-}
-```
-
 ---
 
 ## Accessibility
@@ -2337,6 +2506,12 @@ import { Chip } from '@nofinite/nui';
 - Use chips for primary navigation
 - Overload chips with long content
 - Hide remove actions behind complex gestures
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2381,19 +2556,9 @@ import { Clipboard } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2442,19 +2607,9 @@ import { CodeBlock } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2503,19 +2658,9 @@ import { Collapsible } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2564,19 +2709,9 @@ import { ColorPicker } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2717,31 +2852,6 @@ const [value, setValue] = useState("");
 
 ---
 
-## Design Tokens / Theming
-
-```css
-:root {
-  --space-2: 8px;
-  --space-3: 12px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --font-sans: 'Inter', sans-serif;
-  --weight-medium: 500;
-  text-sm: 14px;
-
-  --bg-surface: #ffffff;
-  --bg-subtle: #f3f4f6;
-  --border-default: #e5e7eb;
-  --brand-50: #eff6ff;
-  --brand-100: #dbeafe;
-  --color-primary-hover: #1d4ed8;
-  --color-primary: #3b82f6;
-  --fg-default: #111827;
-  --fg-disabled: #9ca3af;
-  --fg-subtle: #6b7280;
-}
-```
-
 ---
 
 ## Accessibility
@@ -2774,6 +2884,12 @@ const [value, setValue] = useState("");
 * Hide essential information inside custom renderers
 * Disable keyboard navigation
 * Overload options with long content
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -2945,24 +3061,6 @@ import { ContextMenu } from '@nofinite/nui';
 
 ---
 
-## Design Tokens
-
-```css id="x8p3sw"
-:root {
-  --radius-lg: 12px;
-  --radius-sm: 4px;
-  --space-1: 4px;
-  --space-2: 8px;
-
-  --bg-surface: #ffffff;
-  --bg-subtle: #f3f4f6;
-  --border-default: #e5e7eb;
-  --fg-default: #111827;
-  --fg-muted: #6b7280;
-  --color-danger: #ef4444;
-}
-```
-
 ---
 
 ## Best Practices
@@ -2982,6 +3080,12 @@ import { ContextMenu } from '@nofinite/nui';
 - Mix unrelated destructive and safe actions
 - Disable keyboard navigation
 - Rely solely on hover for discoverability
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3107,19 +3211,7 @@ Width controlled via CSS (trigger defaults to 240px).
 
 ---
 
-## Design tokens / theming
-
-Uses NUI tokens:
-
-- `--bg-surface`
-- `--bg-subtle`
-- `--border-default`
-- `--color-primary`
-- `--brand-50`
-- `--radius-md`
-- `--radius-lg`
-- `--font-sans`
-- `--z-dropdown`
+z-dropdown`
 
 ---
 
@@ -3156,6 +3248,12 @@ Implemented semantics:
 - Disable without visual explanation
 - Use DatePicker for date ranges (create RangePicker)
 - Override popover positioning with custom CSS
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3298,20 +3396,7 @@ Trigger width defaults to **280px** (expanded to accommodate range label).
 
 ---
 
-## Design tokens / theming
-
-Uses NUI tokens:
-
-- `--bg-surface`
-- `--bg-subtle`
-- `--border-default`
-- `--border-hover`
-- `--color-primary`
-- `--color-primary-fg`
-- `--radius-md`
-- `--radius-lg`
-- `--font-sans`
-- `--z-dropdown`
+z-dropdown`
 
 ---
 
@@ -3351,6 +3436,12 @@ Implemented semantics:
 - Disable picker without explanation
 - Use for single-date selection (use DatePicker)
 - Override popover positioning manually
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3560,15 +3651,6 @@ This enables **headless toast invocation with React rendering**.
 
 ---
 
-## Design Tokens
-
-| Token             | Usage                |
-| ----------------- | -------------------- |
-| `--fg-subtle` | Dialog message color |
-| `text-sm`   | Message typography   |
-| `--space-6`   | Message spacing      |
-| `--space-3`   | Action gap           |
-
 ---
 
 ## Best Practices
@@ -3590,6 +3672,12 @@ This enables **headless toast invocation with React rendering**.
 - Bypass toast bridge for imperative notifications
 - Trigger dialogs during render phase
 - Depend on modal close for confirm resolution
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3634,19 +3722,9 @@ import { Divider } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -3797,15 +3875,7 @@ Width/height should be customized via `className` and layout utilities.
 
 ---
 
-## Design tokens / theming
-
-Uses NUI tokens:
-
-- `--bg-surface`
-- `--fg-default`
-- `--border-default`
-- `--radius-xl`
-- Z-index stack:
+Z-index stack:
   - Overlay: `9998`
   - Drawer: `9999`
 
@@ -3860,6 +3930,12 @@ Uses GPU-accelerated `transform` transitions.
 - Disable escape without strong reason
 - Mount heavy trees inside if frequent toggling
 - Stack multiple drawers without z-index management
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -4063,21 +4139,6 @@ Width should be extended via utilities.
 
 ---
 
-## Design tokens / theming
-
-Uses NUI tokens:
-
-- `--bg-surface`
-- `--bg-subtle`
-- `--fg-default`
-- `--border-default`
-- `--color-primary`
-- `--color-danger`
-- `--space-*`
-- `--radius-*`
-- `text-sm`
-- `--weight-medium`
-
 Z-index: `1000`
 
 ---
@@ -4154,6 +4215,12 @@ Design characteristics:
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -4195,19 +4262,9 @@ import { EmptyState } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -4357,26 +4414,6 @@ Sizing is controlled via layout utilities and token spacing.
 
 ---
 
-## Design tokens / theming
-
-Uses NUI tokens:
-
-- `--bg-surface`
-- `--bg-subtle`
-- `--bg-muted`
-- `--fg-default`
-- `--fg-subtle`
-- `--fg-muted`
-- `--border-default`
-- `--border-hover`
-- `--color-primary`
-- `--color-danger`
-- `--radius-*`
-- `--space-*`
-- `text-sm`
-- `--weight-medium`
-- `--font-sans`
-
 ---
 
 ## Accessibility
@@ -4450,6 +4487,12 @@ Potential caveat:
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -4491,19 +4534,9 @@ import { Form } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -4664,17 +4697,7 @@ Sizing should be customized via tokens or class overrides.
 
 ---
 
-## Design tokens / theming
-
-Uses NUI tokens:
-
-- `--bg-surface`
-- `--fg-default`
-- `--border-default`
-- `--radius-lg`
-- `--space-4`
-- `--font-sans`
-- `--z-dropdown`
+z-dropdown`
 
 Shadow uses soft dual-layer elevation.
 
@@ -4753,6 +4776,12 @@ Potential caveat:
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -4794,19 +4823,9 @@ import { Image } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -4832,12 +4851,6 @@ import { Input } from '@nofinite/nui';
 ---
 
 ## Interactive Preview
-
-
-
----
-
-## Input States & Validation
 
 
 
@@ -4959,26 +4972,6 @@ Icon padding dynamically adjusts via `--has-left` and `--has-right`.
 
 ---
 
-## Design tokens / theming
-
-Primary tokens:
-
-- `--bg-surface`
-- `--bg-subtle`
-- `--fg-default`
-- `--fg-subtle`
-- `--fg-disabled`
-- `--border-default`
-- `--border-hover`
-- `--color-primary`
-- `--color-danger`
-- `--brand-100`
-- `--radius-md`
-- `--space-*`
-- `--font-sans`
-
-Dark mode modifies focus ring opacity.
-
 ---
 
 ## Accessibility
@@ -5048,6 +5041,12 @@ Potential caveat:
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -5089,19 +5088,9 @@ import { Kbd } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -5308,17 +5297,7 @@ Extends `React.HTMLAttributes<HTMLDivElement>`.
 
 ---
 
-## Design tokens / theming
-
-Key tokens:
-
-- `--space-*`
-- `--flex-gap`
-- `--grid-gap`
-- `--grid-min-width`
-- `--grid-cols-fixed`
-
-Container horizontal padding uses spacing token fallback.
+zontal padding uses spacing token fallback.
 
 ---
 
@@ -5382,6 +5361,12 @@ Potential caveats:
 - Mix grid and flex alignment semantics incorrectly
 - Use fixed column grid for highly dynamic content
 - Depend on layout primitives for spacing-only concerns
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -5544,19 +5529,6 @@ import { Button } from '@nofinite/nui';
 
 ---
 
-## Design Tokens
-
-| Token                 | Usage              |
-| --------------------- | ------------------ |
-| `--space-1`       | Inline gap spacing |
-| `--font-sans`     | Font family        |
-| `--weight-medium` | Text weight        |
-| `--radius-sm`     | Focus radius       |
-| `--fg-default`    | Default text color |
-| `--color-primary` | Primary link color |
-| `--fg-subtle`     | Muted color        |
-| `--color-danger`  | Danger color       |
-
 ---
 
 ## Best Practices
@@ -5573,6 +5545,12 @@ import { Button } from '@nofinite/nui';
 - Use for button-like CTAs with backgrounds
 - Remove underline in dense paragraph navigation without other affordance
 - Use danger variant for non-destructive navigation
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -5736,15 +5714,7 @@ Default behavior:
 
 ---
 
-## Design tokens / theming
-
-Primary tokens:
-
-- `--space-*`
-- `--bg-surface`
-- `--border-default`
-- `--radius-lg`
-- `--z-dropdown`
+z-dropdown`
 - `--color-primary`
 - `--fg-default`
 
@@ -5822,6 +5792,12 @@ Tradeoffs:
 - Place inside overflow-hidden containers
 - Depend on default width for mobile layouts
 - Mix unrelated navigation categories
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -5973,20 +5949,6 @@ Sizing should be overridden via className.
 
 ---
 
-## Design tokens / theming
-
-Primary tokens:
-
-- `--bg-surface`
-- `--border-default`
-- `--radius-lg`
-- `--fg-default`
-- `--fg-subtle`
-- `--space-*`
-- `--color-primary`
-
-Elevation defined via layered shadow tokens.
-
 ---
 
 ## Accessibility
@@ -6073,6 +6035,12 @@ Tradeoffs:
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -6114,19 +6082,9 @@ import { MultiSelect } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6175,19 +6133,9 @@ import { NUIProvider } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6236,19 +6184,9 @@ import { NumberInput } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6389,21 +6327,6 @@ Generated item types:
 
 ---
 
-## Design Tokens
-
-```css
-:root {
-  --radius-md: 8px;
-  --space-1: 4px;
-  --space-2: 8px;
-
-  --bg-subtle: #f9fafb;
-  --border-default: #e5e7eb;
-  --fg-default: #111827;
-  --fg-muted: #6b7280;
-}
-```
-
 ---
 
 ## Best Practices
@@ -6423,6 +6346,12 @@ Generated item types:
 - Disable without visual feedback
 - Overload pagination with extra actions
 - Remove focus outline for accessibility
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6467,19 +6396,9 @@ import { PasswordInput } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6528,19 +6447,9 @@ import { PinInput } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6735,19 +6644,6 @@ The component implements **adaptive overlay positioning**:
 
 ---
 
-## Design Tokens
-
-```css
-:root {
-  --radius-lg: 12px;
-  --space-4: 16px;
-
-  --bg-surface: #ffffff;
-  --border-default: #e5e7eb;
-  --fg-default: #111827;
-}
-```
-
 ---
 
 ## Best Practices
@@ -6767,6 +6663,12 @@ The component implements **adaptive overlay positioning**:
 - Place destructive actions without visual separation
 - Disable Escape dismissal
 - Overuse horizontal placements in responsive layouts
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -6909,20 +6811,6 @@ The component uses **transform-based progress animation** instead of width chang
 
 ---
 
-## Design Tokens
-
-```css
-:root {
-  --radius-full: 9999px;
-
-  --bg-subtle: #e2e8f0;
-  --color-primary: #6366f1;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-}
-```
-
 ---
 
 ## Best Practices
@@ -6942,6 +6830,12 @@ The component uses **transform-based progress animation** instead of width chang
 - Rely solely on color for status indication
 - Exceed max value without normalization
 - Overuse large progress bars in dense layouts
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7101,24 +6995,6 @@ Native browser radio semantics ensure **automatic roving focus and selection beh
 
 ---
 
-## Design Tokens
-
-```css
-:root {
-  --space-3: 0.75rem;
-  --space-6: 1.5rem;
-
-  --border-default: #cbd5e1;
-  --border-hover: #94a3b8;
-
-  --bg-surface: #ffffff;
-  --bg-subtle: #f1f5f9;
-  --bg-muted: #e2e8f0;
-
-  --color-primary: #6366f1;
-}
-```
-
 ---
 
 ## Best Practices
@@ -7138,6 +7014,12 @@ Native browser radio semantics ensure **automatic roving focus and selection beh
 - Mix controlled and uncontrolled patterns
 - Overcrowd horizontal layouts
 - Disable individual items without context
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7274,17 +7156,6 @@ Component uses `role="slider"` semantics.
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                |
-| -------------------- | -------------------- |
-| --space-1        | Gap between icons    |
-| --font-sans      | Typography           |
-| --color-primary  | Focus ring           |
-| --border-default | Empty icon color     |
-| --color-warning  | Filled icon color    |
-| --radius-sm      | Focus outline radius |
-
 ---
 
 ## Best Practices
@@ -7302,6 +7173,12 @@ Component uses `role="slider"` semantics.
 - Combine disabled and readOnly simultaneously unless intentional
 - Allow fractional ratings without clear visual affordance
 - Overuse large size in dense UI contexts
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7490,16 +7367,6 @@ Handles follow separator interaction pattern.
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                     |
-| -------------------- | ------------------------- |
-| --border-default | Handle divider color      |
-| --color-primary  | Active/hover handle color |
-| --bg-subtle      | Focus background          |
-| --bg-surface     | Grip background           |
-| --fg-muted       | Grip icon color           |
-
 ---
 
 ## Best Practices
@@ -7518,6 +7385,12 @@ Handles follow separator interaction pattern.
 - Omit constraints in critical layouts
 - Place scroll containers directly on handles
 - Use vertical + horizontal nesting without UX clarity
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7562,19 +7435,9 @@ import { ScrollArea } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7623,19 +7486,9 @@ import { SegmentedControl } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7791,18 +7644,7 @@ const [value, setValue] = useState('apple');
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                        |
-| -------------------- | ---------------------------- |
-| --bg-surface     | Trigger & listbox background |
-| --border-default | Input border                 |
-| --border-hover   | Hover border                 |
-| --color-primary  | Selected option & focus      |
-| --color-danger   | Error state                  |
-| --bg-subtle      | Active option background     |
-| --brand-50       | Selected active background   |
-| --z-dropdown     | Portal layering              |
+z-dropdown     | Portal layering              |
 | --radius-md/lg   | Shape tokens                 |
 | --space-\*       | Padding & spacing            |
 
@@ -7825,6 +7667,12 @@ const [value, setValue] = useState('apple');
 - Use dropdowns for very large datasets (prefer combobox)
 - Disable typeahead in keyboard-heavy workflows
 - Omit name prop when using in forms
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -7970,16 +7818,6 @@ import { Skeleton } from '@nofinite/nui';
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                     |
-| -------------------- | ------------------------- |
-| --bg-subtle      | Skeleton base background  |
-| --radius-sm      | Default radius            |
-| --space-\*       | Layout spacing in helpers |
-| --border-default | Card helper border        |
-| --radius-md/lg   | Helper shapes             |
-
 ---
 
 ## Best Practices
@@ -7999,6 +7837,12 @@ import { Skeleton } from '@nofinite/nui';
 - Display skeleton after content is partially loaded
 - Replace error states with skeleton
 - Use mismatched skeleton sizes causing layout shift
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8139,16 +7983,6 @@ const [value, setValue] = useState(50);
 
 ---
 
-## Design Tokens
-
-| Token                      | Usage                     |
-| -------------------------- | ------------------------- |
-| --bg-subtle            | Track background          |
-| --color-primary        | Fill color + thumb border |
-| --bg-surface           | Thumb background          |
-| --brand-50 / 100 / 600 | Hover + focus states      |
-| --fg-muted             | Disabled styling          |
-
 ---
 
 ## Best Practices
@@ -8168,6 +8002,12 @@ const [value, setValue] = useState(50);
 - Rely solely on slider for critical precision input
 - Disable keyboard navigation
 - Use sliders for binary choices (prefer toggle)
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8292,15 +8132,6 @@ import { Spinner } from '@nofinite/nui';
 
 ---
 
-## Design Tokens
-
-| Token               | Usage                  |
-| ------------------- | ---------------------- |
-| --color-primary | Primary spinner color  |
-| --fg-muted      | Muted spinner color    |
-| currentColor        | Head + track rendering |
-| opacity values      | Track visual depth     |
-
 ---
 
 ## Best Practices
@@ -8320,6 +8151,12 @@ import { Spinner } from '@nofinite/nui';
 - Use spinner as the only feedback for long processes
 - Place spinner without context in large empty layouts
 - Ignore reduced motion preferences
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8364,19 +8201,9 @@ import { StatCard } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8531,18 +8358,6 @@ import { Stepper } from '@nofinite/nui';
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                          |
-| -------------------- | ------------------------------ |
-| --color-primary  | Active and completed indicator |
-| --border-default | Connector line                 |
-| --bg-surface     | Step circle background         |
-| --fg-subtle      | Default text                   |
-| --fg-muted       | Optional + description text    |
-| --brand-50       | Active glow                    |
-| --space-2        | Step spacing                   |
-
 ---
 
 ## Best Practices
@@ -8562,6 +8377,12 @@ import { Stepper } from '@nofinite/nui';
 - Use stepper for non-linear navigation patterns
 - Mix unrelated workflows in one stepper
 - Hide step progression context
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8705,20 +8526,6 @@ import { Switch } from '@nofinite/nui';
 
 ---
 
-## Design Tokens
-
-| Token                | Usage              |
-| -------------------- | ------------------ |
-| --color-primary  | Focus ring         |
-| --color-primary      | Checked background |
-| --color-primary-hover      | Checked hover      |
-| --border-default | Off state          |
-| --bg-page        | Focus ring offset  |
-| --radius-full    | Track shape        |
-| --space-3        | Layout spacing     |
-| --fg-default     | Label text         |
-| --fg-subtle      | Description text   |
-
 ---
 
 ## Best Practices
@@ -8738,6 +8545,12 @@ import { Switch } from '@nofinite/nui';
 - Hide consequences of toggling
 - Allow toggling when disabled state required
 - Use long descriptions that distract from action
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -8931,20 +8744,6 @@ import { Table } from '@nofinite/nui';
 
 ---
 
-## Design Tokens
-
-| Token                | Usage               |
-| -------------------- | ------------------- |
-| --border-default | Borders             |
-| --bg-surface     | Table background    |
-| --bg-subtle      | Header + hover      |
-| --fg-default     | Text                |
-| --fg-muted       | Header label        |
-| --fg-subtle      | Sort icon           |
-| --color-primary  | Sort active + focus |
-| --radius-lg      | Container radius    |
-| --space-\*       | Spacing scale       |
-
 ---
 
 ## Best Practices
@@ -8964,6 +8763,12 @@ import { Table } from '@nofinite/nui';
 - Use heavy components inside cells unnecessarily
 - Rely on string sorting for numeric values
 - Hide important actions inside render without affordance
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -9175,20 +8980,6 @@ const [tab, setTab] = useState('account');
 
 ---
 
-## Design Tokens
-
-| Token                | Usage            |
-| -------------------- | ---------------- |
-| --border-default | Tab list divider |
-| --border-hover   | Hover indicator  |
-| --color-primary  | Active indicator |
-| --fg-default     | Text             |
-| --fg-subtle      | Inactive text    |
-| --brand-200      | Focus ring       |
-| --space-\*       | Spacing scale    |
-| --radius-sm      | Focus rounding   |
-| --font-sans      | Typography       |
-
 ---
 
 ## Best Practices
@@ -9208,6 +8999,12 @@ const [tab, setTab] = useState('account');
 - Nest interactive elements inside triggers
 - Hide essential actions inside non-selected panels
 - Mount large data grids inside all panels simultaneously
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -9375,25 +9172,6 @@ const [value, setValue] = useState("");
 
 ---
 
-## Design Tokens
-
-| Token                | Usage         |
-| -------------------- | ------------- |
-| --bg-surface     | Background    |
-| --bg-muted       | Disabled bg   |
-| --bg-subtle      | Read-only bg  |
-| --fg-default     | Text          |
-| --fg-muted       | Counter       |
-| --fg-disabled    | Disabled text |
-| --border-default | Border        |
-| --border-hover   | Hover border  |
-| --color-primary  | Focus border  |
-| --color-danger   | Error border  |
-| --brand-100      | Focus ring    |
-| --radius-md      | Radius        |
-| --space-*        | Spacing       |
-| --font-sans      | Typography    |
-
 ---
 
 ## Best Practices
@@ -9413,6 +9191,12 @@ const [value, setValue] = useState("");
 * Mount multiple counters for same input
 * Force manual resize when autoGrow active
 * Use placeholder as primary label
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -9457,19 +9241,9 @@ import { Timeline } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -9628,24 +9402,7 @@ const [time, setTime] = useState("13:30");
 
 ---
 
-## Design Tokens
-
-| Token                  | Usage            |
-| ---------------------- | ---------------- |
-| --bg-surface       | Panel background |
-| --bg-muted         | Disabled trigger |
-| --bg-subtle        | Hover item       |
-| --fg-default       | Text             |
-| --fg-subtle        | Placeholder      |
-| --fg-disabled      | Disabled text    |
-| --border-default   | Borders          |
-| --border-hover     | Hover border     |
-| --color-primary    | Selected item    |
-| --color-primary-fg | Selected text    |
-| --brand-100        | Focus ring       |
-| --radius-md/lg     | Radius           |
-| --space-*          | Spacing          |
-| --z-dropdown       | Popover layering |
+z-dropdown       | Popover layering |
 
 ---
 
@@ -9666,6 +9423,12 @@ const [time, setTime] = useState("13:30");
 * Use extremely narrow triggers with long formatted values
 * Hide popover without restoring focus
 * Use timepicker for duration selection
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -9822,24 +9585,7 @@ const [range, setRange] = useState({ from: '09:00', to: '17:00' });
 
 ---
 
-## Design Tokens
-
-| Token                  | Usage                                |
-| ---------------------- | ------------------------------------ |
-| --bg-surface       | Panel background                     |
-| --bg-muted         | Disabled trigger                     |
-| --bg-subtle        | Hover item, footer button background |
-| --fg-default       | Text                                 |
-| --fg-subtle        | Placeholder, inactive part toggle    |
-| --fg-disabled      | Disabled text                        |
-| --border-default   | Column borders, panel borders        |
-| --border-hover     | Trigger hover border                 |
-| --color-primary    | Selected item                        |
-| --color-primary-fg | Selected text                        |
-| --brand-100        | Focus ring                           |
-| --radius-md/lg     | Border radius                        |
-| --space-\*         | Padding & gap                        |
-| --z-dropdown       | Popover layering                     |
+z-dropdown       | Popover layering                     |
 
 ---
 
@@ -9861,6 +9607,12 @@ const [range, setRange] = useState({ from: '09:00', to: '17:00' });
 - Use extremely narrow triggers with long `from → to` labels
 - Hide popover without focus restoration
 - Mix uncontrolled and controlled values inconsistently
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10044,6 +9796,12 @@ interface ToastContextValue {
 
 ---
 
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
 ## API Reference
 
 ---
@@ -10168,15 +9926,7 @@ import { Tooltip } from '@nofinite/nui';
 
 ---
 
-## Design Tokens
-
-| Token               | Usage                    |
-| ------------------- | ------------------------ |
-| --fg-default    | Tooltip background color |
-| --bg-surface    | Tooltip text color       |
-| --radius-sm     | Tooltip border radius    |
-| --space-1       | Vertical padding         |
-| --space-3       | Horizontal padding       |
+zontal padding       |
 | --font-sans     | Font family              |
 | text-xs       | Font size                |
 | --weight-medium | Font weight              |
@@ -10200,6 +9950,12 @@ import { Tooltip } from '@nofinite/nui';
 - Make tooltip content excessively long
 - Block pointer events of underlying content
 - Use tooltips for actions requiring confirmation
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10244,19 +10000,9 @@ import { TransferList } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10417,18 +10163,7 @@ const data = [
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                      |
-| -------------------- | -------------------------- |
-| --font-sans      | Font family                |
-| --fg-default     | Text color                 |
-| --fg-muted       | Chevron / icon color       |
-| --bg-subtle      | Hover / focus background   |
-| --color-primary  | Selected / focus outline   |
-| --radius-md      | Node border radius         |
-| --space-1        | Vertical padding           |
-| --space-2        | Horizontal padding / gap   |
+zontal padding / gap   |
 | text-sm        | Label font size            |
 | --weight-medium  | Selected label font weight |
 | --border-default | Chevron hover background   |
@@ -10452,6 +10187,12 @@ const data = [
 - Mix unrelated actions inside tree nodes
 - Remove focus indicators
 - Use long labels that overflow without ellipsis
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10496,19 +10237,9 @@ import { VideoPlayer } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10665,15 +10396,7 @@ const items = Array.from({ length: 10000 }, (_, i) => `Row ${i + 1}`);
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                          |
-| -------------------- | ------------------------------ |
-| --bg-surface     | Container background           |
-| --border-default | Row borders & container border |
-| --radius-md      | Container border radius        |
-| --font-sans      | Font family                    |
-| text-sm        | Row text size                  |
+ze                  |
 | --fg-default     | Row text color                 |
 | --bg-subtle      | Row hover background           |
 | --space-4        | Row horizontal padding         |
@@ -10697,6 +10420,12 @@ const items = Array.from({ length: 10000 }, (_, i) => `Row ${i + 1}`);
 - Overload rows with heavy components causing render jank
 - Forget to provide unique keys for dynamic items
 - Remove scrollable container or overflow properties
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10741,19 +10470,9 @@ import { Watermark } from '@nofinite/nui';
 
 ---
 
-## Design Tokens & Theming
+## Theming
 
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
@@ -10972,16 +10691,6 @@ Fundamental interactive elements and action triggers.
     </span>
   </a>
   <a 
-    href="/nui/components/nuiprovider" 
-    className="group block p-6 rounded-xl border border-default bg-surface hover:border-primary/50 hover:shadow-md transition-all duration-200"
-  >
-    
-    <p className="text-sm text-muted line-clamp-2 mb-4">Interactive and accessible NUIProvider component.</p>
-    <span className="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-      View Documentation & API →
-    </span>
-  </a>
-  <a 
     href="/nui/components/watermark" 
     className="group block p-6 rounded-xl border border-default bg-surface hover:border-primary/50 hover:shadow-md transition-all duration-200"
   >
@@ -11001,7 +10710,6 @@ Fundamental interactive elements and action triggers.
 - [Badge](/nui/components/badge)
 - [Chip](/nui/components/chip)
 - [Kbd](/nui/components/kbd)
-- [NUIProvider](/nui/components/nuiprovider)
 - [Watermark](/nui/components/watermark)
 
 ---
@@ -11801,6 +11509,136 @@ Components for selection menus, search dropdowns, and date/time pickers.
 - [Select](/nui/components/select)
 - [TimePicker](/nui/components/timepicker)
 - [TimeRangePicker](/nui/components/timerangepicker)
+
+---
+
+
+### Document: nui/theming/page.mdx
+
+# Theming & Design Tokens
+
+NUI v3 features an aesthetic, token-first design system completely driven by **`@nofinite/nuicss`** semantic design tokens. Every component seamlessly adapts to light and dark themes without manual CSS overrides.
+
+---
+
+## Overview
+
+Unlike hardcoded color palettes, NUI components reference **semantic CSS custom properties**. This ensures that colors, borders, and typography automatically respond to theme changes and user preferences.
+
+All tokens are defined on the `:root` element and automatically inverted under `.dark` when configured with `<NUIProvider>`.
+
+```tsx
+import { NUIProvider } from '@nofinite/nui';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <NUIProvider defaultTheme="system">
+      {children}
+    </NUIProvider>
+  );
+}
+```
+
+---
+
+## Semantic Tokens Reference
+
+### 1. Surface & Background Tokens
+Surface tokens control container backgrounds, page canvasses, card surfaces, and subtle interactive states.
+
+| Token | CSS Variable | Light Value | Dark Value | Usage |
+| --- | --- | --- | --- | --- |
+| `bg-page` | `--bg-page` | `#f8fafc` | `#020617` | Root application background |
+| `bg-surface` | `--bg-surface` | `#ffffff` | `#0f172a` | Cards, modals, dropdowns, menus |
+| `bg-subtle` | `--bg-subtle` | `#f1f5f9` | `#1e293b` | Hover states, tab backgrounds, table alternate rows |
+| `bg-muted` | `--bg-muted` | `#e2e8f0` | `#334155` | Disabled controls, secondary tags |
+
+### 2. Foreground & Text Tokens
+Foreground tokens govern text readability, icon contrast, and visual hierarchies.
+
+| Token | CSS Variable | Light Value | Dark Value | Usage |
+| --- | --- | --- | --- | --- |
+| `text-default` | `--fg-default` | `#0f172a` | `#f8fafc` | Primary headings and body copy |
+| `text-muted` | `--fg-muted` | `#64748b` | `#94a3b8` | Subtitles, descriptions, placeholders |
+| `text-subtle` | `--fg-subtle` | `#94a3b8` | `#64748b` | Timestamps, inactive hints |
+| `text-primary` | `--color-primary` | `#2563eb` | `#60a5fa` | Brand highlights, active links |
+
+### 3. Border & Divider Tokens
+Border tokens ensure consistent, subtle dividing lines across the interface.
+
+| Token | CSS Variable | Light Value | Dark Value | Usage |
+| --- | --- | --- | --- | --- |
+| `border-default` | `--border-default` | `#e2e8f0` | `#1e293b` | Default component borders |
+| `border-subtle` | `--border-subtle` | `#f1f5f9` | `#0f172a` | Inner dividers and table cells |
+| `border-strong` | `--border-strong` | `#cbd5e1` | `#334155` | Active and focused elements |
+
+### 4. Brand & Status Colors
+Semantic color scales communicate feedback, validation, and action priority.
+
+| State | Background / Accent | Border Token | Usage |
+| --- | --- | --- | --- |
+| **Primary** | `--color-primary` (`#2563eb`) | `--border-primary` | Main CTAs, selected controls |
+| **Success** | `--color-success` (`#16a34a`) | `--border-success` | Positive feedback, confirmation, online status |
+| **Warning** | `--color-warning` (`#d97706`) | `--border-warning` | Cautionary notices, pending states |
+| **Danger** | `--color-danger` (`#dc2626`) | `--border-danger` | Destructive actions, validation errors |
+
+### 5. Radius Scales
+Control border rounding consistency across all components.
+
+| Token | CSS Variable | Default Value | Usage |
+| --- | --- | --- | --- |
+| `rounded-sm` | `--radius-sm` | `4px` | Badges, tags, small inputs |
+| `rounded-md` | `--radius-md` | `8px` | Buttons, inputs, dropdowns |
+| `rounded-lg` | `--radius-lg` | `12px` | Cards, dialogs, drawers |
+| `rounded-full` | `--radius-full` | `9999px` | Avatars, pill badges |
+
+---
+
+## Dark Mode Implementation
+
+NUI v3 switches tokens automatically based on the `.dark` class applied to the root `<html>` element.
+
+When using `<NUIProvider>`, theme switching is handled seamlessly:
+
+```tsx
+import { useTheme, Button } from '@nofinite/nui';
+
+export function ThemeSwitcher() {
+  const { resolvedTheme, setTheme } = useTheme();
+
+  return (
+    <Button 
+      variant="outline"
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+    >
+      Toggle {resolvedTheme === 'dark' ? 'Light' : 'Dark'} Mode
+    </Button>
+  );
+}
+```
+
+---
+
+## Customizing Tokens
+
+You can easily override any token globally in your application's CSS file:
+
+```css
+:root {
+  /* Customize brand primary color */
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+
+  /* Customize default corner radius */
+  --radius-md: 10px;
+}
+
+.dark {
+  --color-primary: #a78bfa;
+}
+```
+
+Every NUI component consuming `--color-primary` or `--radius-md` will automatically adopt your custom values with zero configuration changes.
 
 ---
 

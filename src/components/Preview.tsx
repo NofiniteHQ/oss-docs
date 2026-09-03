@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Tabs, CodeBlock, Clipboard } from '@nofinite/nui';
+import { Tabs, CodeBlock } from '@nofinite/nui';
 import { registry } from '@/registry';
 import { ExternalLink } from 'lucide-react';
 import sdk from '@stackblitz/sdk';
@@ -189,11 +189,8 @@ export default defineConfig({
         </Tabs.Content>
         
         <Tabs.Content value="code" className="!m-0 !p-0 !border-none !outline-none focus-visible:!outline-none">
-          <div className="relative bg-[#0d1117] max-h-[500px] overflow-auto group">
-            <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Clipboard value={rawCode} />
-            </div>
-            <CodeBlock code={rawCode} language="tsx" />
+          <div className="relative max-h-[500px] overflow-auto">
+            <CodeBlock code={rawCode} language="tsx" readOnlyLanguage />
           </div>
         </Tabs.Content>
       </Tabs>

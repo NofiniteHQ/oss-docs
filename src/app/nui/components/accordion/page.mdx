@@ -139,37 +139,7 @@ Accordion does not provide visual variants via props. **Styling is controlled vi
 
 ---
 
-## Design Tokens / Theming
-
-```css
-:root {
-  /* Spacing & radius */
-  --space-4: 16px;
-  --radius-sm: 4px;
-
-  /* Typography */
-  --font-sans: 'Inter', sans-serif;
-  text-base: 1rem;
-  --weight-medium: 500;
-
-  /* Colors */
-  --fg-default: #111827;
-  --fg-subtle: #6b7280;
-  --color-primary: #3b82f6;
-
-  /* Borders */
-  --border-default: #e5e7eb;
-}
-```
-
-**Token Table:**
-
-| Token                  | Description                                    |
-| ---------------------- | ---------------------------------------------- |
-| `--space-4`        | Padding for accordion headers                  |
-| `--radius-sm`      | Border radius for header focus outline         |
-| `--font-sans`      | Font family for title and content              |
-| `text-base`      | Font size for header and panel content         |
+ze for header and panel content         |
 | `--weight-medium`  | Header font weight                             |
 | `--fg-default`     | Default text color                             |
 | `--fg-subtle`      | Subtle text color (icons, hover, content)      |
@@ -191,6 +161,12 @@ Accordion does not provide visual variants via props. **Styling is controlled vi
 - Nest accordions excessively.
 - Hide critical information inside collapsed panels.
 - Rely on accordion state for essential navigation.
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

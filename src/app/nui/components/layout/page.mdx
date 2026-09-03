@@ -190,17 +190,7 @@ Extends `React.HTMLAttributes<HTMLDivElement>`.
 
 ---
 
-## Design tokens / theming
-
-Key tokens:
-
-- `--space-*`
-- `--flex-gap`
-- `--grid-gap`
-- `--grid-min-width`
-- `--grid-cols-fixed`
-
-Container horizontal padding uses spacing token fallback.
+zontal padding uses spacing token fallback.
 
 ---
 
@@ -264,6 +254,12 @@ Potential caveats:
 - Mix grid and flex alignment semantics incorrectly
 - Use fixed column grid for highly dynamic content
 - Depend on layout primitives for spacing-only concerns
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

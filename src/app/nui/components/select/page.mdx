@@ -139,18 +139,7 @@ const [value, setValue] = useState('apple');
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                        |
-| -------------------- | ---------------------------- |
-| --bg-surface     | Trigger & listbox background |
-| --border-default | Input border                 |
-| --border-hover   | Hover border                 |
-| --color-primary  | Selected option & focus      |
-| --color-danger   | Error state                  |
-| --bg-subtle      | Active option background     |
-| --brand-50       | Selected active background   |
-| --z-dropdown     | Portal layering              |
+z-dropdown     | Portal layering              |
 | --radius-md/lg   | Shape tokens                 |
 | --space-\*       | Padding & spacing            |
 
@@ -173,6 +162,12 @@ const [value, setValue] = useState('apple');
 - Use dropdowns for very large datasets (prefer combobox)
 - Disable typeahead in keyboard-heavy workflows
 - Omit name prop when using in forms
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

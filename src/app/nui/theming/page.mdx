@@ -1,0 +1,124 @@
+# Theming & Design Tokens
+
+NUI v3 features an aesthetic, token-first design system completely driven by **`@nofinite/nuicss`** semantic design tokens. Every component seamlessly adapts to light and dark themes without manual CSS overrides.
+
+---
+
+## Overview
+
+Unlike hardcoded color palettes, NUI components reference **semantic CSS custom properties**. This ensures that colors, borders, and typography automatically respond to theme changes and user preferences.
+
+All tokens are defined on the `:root` element and automatically inverted under `.dark` when configured with `<NUIProvider>`.
+
+```tsx
+import { NUIProvider } from '@nofinite/nui';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <NUIProvider defaultTheme="system">
+      {children}
+    </NUIProvider>
+  );
+}
+```
+
+---
+
+## Semantic Tokens Reference
+
+### 1. Surface & Background Tokens
+Surface tokens control container backgrounds, page canvasses, card surfaces, and subtle interactive states.
+
+| Token | CSS Variable | Light Value | Dark Value | Usage |
+| --- | --- | --- | --- | --- |
+| `bg-page` | `--bg-page` | `#f8fafc` | `#020617` | Root application background |
+| `bg-surface` | `--bg-surface` | `#ffffff` | `#0f172a` | Cards, modals, dropdowns, menus |
+| `bg-subtle` | `--bg-subtle` | `#f1f5f9` | `#1e293b` | Hover states, tab backgrounds, table alternate rows |
+| `bg-muted` | `--bg-muted` | `#e2e8f0` | `#334155` | Disabled controls, secondary tags |
+
+### 2. Foreground & Text Tokens
+Foreground tokens govern text readability, icon contrast, and visual hierarchies.
+
+| Token | CSS Variable | Light Value | Dark Value | Usage |
+| --- | --- | --- | --- | --- |
+| `text-default` | `--fg-default` | `#0f172a` | `#f8fafc` | Primary headings and body copy |
+| `text-muted` | `--fg-muted` | `#64748b` | `#94a3b8` | Subtitles, descriptions, placeholders |
+| `text-subtle` | `--fg-subtle` | `#94a3b8` | `#64748b` | Timestamps, inactive hints |
+| `text-primary` | `--color-primary` | `#2563eb` | `#60a5fa` | Brand highlights, active links |
+
+### 3. Border & Divider Tokens
+Border tokens ensure consistent, subtle dividing lines across the interface.
+
+| Token | CSS Variable | Light Value | Dark Value | Usage |
+| --- | --- | --- | --- | --- |
+| `border-default` | `--border-default` | `#e2e8f0` | `#1e293b` | Default component borders |
+| `border-subtle` | `--border-subtle` | `#f1f5f9` | `#0f172a` | Inner dividers and table cells |
+| `border-strong` | `--border-strong` | `#cbd5e1` | `#334155` | Active and focused elements |
+
+### 4. Brand & Status Colors
+Semantic color scales communicate feedback, validation, and action priority.
+
+| State | Background / Accent | Border Token | Usage |
+| --- | --- | --- | --- |
+| **Primary** | `--color-primary` (`#2563eb`) | `--border-primary` | Main CTAs, selected controls |
+| **Success** | `--color-success` (`#16a34a`) | `--border-success` | Positive feedback, confirmation, online status |
+| **Warning** | `--color-warning` (`#d97706`) | `--border-warning` | Cautionary notices, pending states |
+| **Danger** | `--color-danger` (`#dc2626`) | `--border-danger` | Destructive actions, validation errors |
+
+### 5. Radius Scales
+Control border rounding consistency across all components.
+
+| Token | CSS Variable | Default Value | Usage |
+| --- | --- | --- | --- |
+| `rounded-sm` | `--radius-sm` | `4px` | Badges, tags, small inputs |
+| `rounded-md` | `--radius-md` | `8px` | Buttons, inputs, dropdowns |
+| `rounded-lg` | `--radius-lg` | `12px` | Cards, dialogs, drawers |
+| `rounded-full` | `--radius-full` | `9999px` | Avatars, pill badges |
+
+---
+
+## Dark Mode Implementation
+
+NUI v3 switches tokens automatically based on the `.dark` class applied to the root `<html>` element.
+
+When using `<NUIProvider>`, theme switching is handled seamlessly:
+
+```tsx
+import { useTheme, Button } from '@nofinite/nui';
+
+export function ThemeSwitcher() {
+  const { resolvedTheme, setTheme } = useTheme();
+
+  return (
+    <Button 
+      variant="outline"
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+    >
+      Toggle {resolvedTheme === 'dark' ? 'Light' : 'Dark'} Mode
+    </Button>
+  );
+}
+```
+
+---
+
+## Customizing Tokens
+
+You can easily override any token globally in your application's CSS file:
+
+```css
+:root {
+  /* Customize brand primary color */
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+
+  /* Customize default corner radius */
+  --radius-md: 10px;
+}
+
+.dark {
+  --color-primary: #a78bfa;
+}
+```
+
+Every NUI component consuming `--color-primary` or `--radius-md` will automatically adopt your custom values with zero configuration changes.

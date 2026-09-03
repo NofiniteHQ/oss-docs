@@ -144,24 +144,7 @@ const [range, setRange] = useState({ from: '09:00', to: '17:00' });
 
 ---
 
-## Design Tokens
-
-| Token                  | Usage                                |
-| ---------------------- | ------------------------------------ |
-| --bg-surface       | Panel background                     |
-| --bg-muted         | Disabled trigger                     |
-| --bg-subtle        | Hover item, footer button background |
-| --fg-default       | Text                                 |
-| --fg-subtle        | Placeholder, inactive part toggle    |
-| --fg-disabled      | Disabled text                        |
-| --border-default   | Column borders, panel borders        |
-| --border-hover     | Trigger hover border                 |
-| --color-primary    | Selected item                        |
-| --color-primary-fg | Selected text                        |
-| --brand-100        | Focus ring                           |
-| --radius-md/lg     | Border radius                        |
-| --space-\*         | Padding & gap                        |
-| --z-dropdown       | Popover layering                     |
+z-dropdown       | Popover layering                     |
 
 ---
 
@@ -183,6 +166,12 @@ const [range, setRange] = useState({ from: '09:00', to: '17:00' });
 - Use extremely narrow triggers with long `from → to` labels
 - Hide popover without focus restoration
 - Mix uncontrolled and controlled values inconsistently
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

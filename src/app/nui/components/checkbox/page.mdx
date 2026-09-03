@@ -98,23 +98,6 @@ const [checked, setChecked] = useState(false);
 
 ---
 
-## Design Tokens / Theming
-
-```css
-:root {
-  --space-2: 8px;
-  --radius-sm: 4px;
-  --font-sans: 'Inter', sans-serif;
-  text-sm: 14px;
-
-  --bg-surface: #ffffff;
-  --border-default: #e5e7eb;
-  --color-primary: #2563eb;
-  --color-primary-fg: #ffffff;
-  --fg-default: #111827;
-}
-```
-
 ---
 
 ## Accessibility
@@ -140,6 +123,12 @@ const [checked, setChecked] = useState(false);
 - Rely solely on visual state without labels
 - Use indeterminate as a permanent state
 - Disable checkbox without explaining why interaction is blocked
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

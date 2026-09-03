@@ -142,24 +142,7 @@ const [time, setTime] = useState("13:30");
 
 ---
 
-## Design Tokens
-
-| Token                  | Usage            |
-| ---------------------- | ---------------- |
-| --bg-surface       | Panel background |
-| --bg-muted         | Disabled trigger |
-| --bg-subtle        | Hover item       |
-| --fg-default       | Text             |
-| --fg-subtle        | Placeholder      |
-| --fg-disabled      | Disabled text    |
-| --border-default   | Borders          |
-| --border-hover     | Hover border     |
-| --color-primary    | Selected item    |
-| --color-primary-fg | Selected text    |
-| --brand-100        | Focus ring       |
-| --radius-md/lg     | Radius           |
-| --space-*          | Spacing          |
-| --z-dropdown       | Popover layering |
+z-dropdown       | Popover layering |
 
 ---
 
@@ -180,6 +163,12 @@ const [time, setTime] = useState("13:30");
 * Use extremely narrow triggers with long formatted values
 * Hide popover without restoring focus
 * Use timepicker for duration selection
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

@@ -143,15 +143,7 @@ const items = Array.from({ length: 10000 }, (_, i) => `Row ${i + 1}`);
 
 ---
 
-## Design Tokens
-
-| Token                | Usage                          |
-| -------------------- | ------------------------------ |
-| --bg-surface     | Container background           |
-| --border-default | Row borders & container border |
-| --radius-md      | Container border radius        |
-| --font-sans      | Font family                    |
-| text-sm        | Row text size                  |
+ze                  |
 | --fg-default     | Row text color                 |
 | --bg-subtle      | Row hover background           |
 | --space-4        | Row horizontal padding         |
@@ -175,6 +167,12 @@ const items = Array.from({ length: 10000 }, (_, i) => `Row ${i + 1}`);
 - Overload rows with heavy components causing render jank
 - Forget to provide unique keys for dynamic items
 - Remove scrollable container or overflow properties
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

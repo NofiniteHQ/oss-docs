@@ -128,16 +128,6 @@ const [value, setValue] = useState(50);
 
 ---
 
-## Design Tokens
-
-| Token                      | Usage                     |
-| -------------------------- | ------------------------- |
-| --bg-subtle            | Track background          |
-| --color-primary        | Fill color + thumb border |
-| --bg-surface           | Thumb background          |
-| --brand-50 / 100 / 600 | Hover + focus states      |
-| --fg-muted             | Disabled styling          |
-
 ---
 
 ## Best Practices
@@ -157,6 +147,12 @@ const [value, setValue] = useState(50);
 - Rely solely on slider for critical precision input
 - Disable keyboard navigation
 - Use sliders for binary choices (prefer toggle)
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

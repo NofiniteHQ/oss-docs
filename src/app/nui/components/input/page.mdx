@@ -14,12 +14,6 @@ import { Input } from '@nofinite/nui';
 
 ---
 
-## Input States & Validation
-
-<Preview name="input-states" />
-
----
-
 A composable text entry primitive supporting label association, validation messaging, icon affordances, and token-driven sizing.
 Implements WCAG-compliant labeling, dynamic `aria-describedby` linkage, and visual state management for error and disabled conditions.
 
@@ -136,26 +130,6 @@ Icon padding dynamically adjusts via `--has-left` and `--has-right`.
 
 ---
 
-## Design tokens / theming
-
-Primary tokens:
-
-- `--bg-surface`
-- `--bg-subtle`
-- `--fg-default`
-- `--fg-subtle`
-- `--fg-disabled`
-- `--border-default`
-- `--border-hover`
-- `--color-primary`
-- `--color-danger`
-- `--brand-100`
-- `--radius-md`
-- `--space-*`
-- `--font-sans`
-
-Dark mode modifies focus ring opacity.
-
 ---
 
 ## Accessibility
@@ -222,6 +196,12 @@ Potential caveat:
 - Place interactive elements inside icon slots
 - Depend solely on color for validation signaling
 - Render heavy nodes inside description/error
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

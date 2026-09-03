@@ -155,25 +155,6 @@ const [value, setValue] = useState("");
 
 ---
 
-## Design Tokens
-
-| Token                | Usage         |
-| -------------------- | ------------- |
-| --bg-surface     | Background    |
-| --bg-muted       | Disabled bg   |
-| --bg-subtle      | Read-only bg  |
-| --fg-default     | Text          |
-| --fg-muted       | Counter       |
-| --fg-disabled    | Disabled text |
-| --border-default | Border        |
-| --border-hover   | Hover border  |
-| --color-primary  | Focus border  |
-| --color-danger   | Error border  |
-| --brand-100      | Focus ring    |
-| --radius-md      | Radius        |
-| --space-*        | Spacing       |
-| --font-sans      | Typography    |
-
 ---
 
 ## Best Practices
@@ -193,6 +174,12 @@ const [value, setValue] = useState("");
 * Mount multiple counters for same input
 * Force manual resize when autoGrow active
 * Use placeholder as primary label
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 

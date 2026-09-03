@@ -18,37 +18,95 @@ A polymorphic, accessible, and composable action component designed for primary 
 
 ---
 
-## Sizes
+## Usage
 
-<Preview name="button-sizes" />
+### Basic usage
+
+```tsx id="btn1"
+import { Button } from '@nofinite/nui';
+
+<Button>Click me</Button>;
+```
+
+### Variants
+
+```tsx id="btn2"
+<Button variant="default">Default</Button>
+<Button variant="primary">Primary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="danger">Danger</Button>
+```
+
+### Sizes
+
+```tsx id="btn3"
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+<Button size="icon">⭐</Button>
+```
+
+### With icons
+
+```tsx id="btn4"
+<Button iconLeft={<FaPlus />}>Create</Button>
+<Button iconRight={<FaArrowRight />} variant="primary">Continue</Button>
+```
+
+### Loading state
+
+```tsx id="btn5"
+<Button isLoading>Processing</Button>
+```
+
+### Polymorphic usage (Next.js Link)
+
+```tsx id="btn6"
+<Button asChild variant="primary">
+  <NextLink href="/dashboard">Go to Dashboard</NextLink>
+</Button>
+```
 
 ---
 
-## Loading & Disabled States
+---
 
-<Preview name="button-states" />
+## Variants
+
+### Visual variants
+
+- Default (secondary surface)
+- Primary (brand emphasis)
+- Outline (border only)
+- Ghost (minimal UI)
+- Danger (destructive action)
+- Link (text-like action)
+
+### Size variants
+
+- Small (compact UI)
+- Medium (default)
+- Large (emphasis)
+- Icon (square button)
+
+**Guidelines**
+
+- Use primary for main CTA
+- Use danger only for destructive actions
+- Use ghost for dense UI toolbars
+- Use outline for secondary emphasis
+- Use icon size for icon-only actions
 
 ---
 
-## API Reference
+## States
 
-<PropsTable name="Button" />
-
----
-
-## Design Tokens & Theming
-
-In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
-
-| Token | Usage |
-| --- | --- |
-| `--bg-surface` | Default surface background |
-| `--bg-subtle` | Hover and muted background |
-| `--fg-default` | Primary text color |
-| `--fg-muted` | Secondary text color |
-| `--border-default` | Default border color |
-| `--color-primary` | Primary brand emphasis |
-| `--radius-md` | Border radius |
+- Default
+- Hover
+- Focus-visible
+- Disabled
+- Loading (spinner replaces left icon)
 
 ---
 
@@ -56,7 +114,60 @@ In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss
 
 | Key       | Behavior           |
 | --------- | ------------------ |
-| `Enter`   | Triggers `onClick` |
-| `Space`   | Triggers `onClick` |
-| `Tab`     | Focuses button     |
-| `Shift+Tab` | Previous focusable |
+| Enter     | Activates button   |
+| Space     | Activates button   |
+| Tab       | Focus navigation   |
+| Shift+Tab | Reverse navigation |
+
+---
+
+## Accessibility
+
+- Native button semantics preserved
+- Automatic disabled state when loading
+- `aria-hidden` spinner prevents duplicate announcements
+- Focus-visible ring for keyboard navigation
+- Supports polymorphic rendering while preserving semantics
+- Compatible with screen readers
+
+---
+
+ze text      |
+| text-sm        | Medium size text     |
+| text-base      | Large size text      |
+| --space-2        | Icon spacing         |
+| --space-3        | Small padding        |
+| --space-4        | Medium padding       |
+| --space-6        | Large padding        |
+
+---
+
+## Best Practices
+
+### Do
+
+- Use loading state for async actions
+- Provide accessible labels for icon-only buttons
+- Use asChild for router links
+- Keep icon alignment consistent
+- Use primary variant sparingly for emphasis
+
+### Don’t
+
+- Use danger variant for non-destructive actions
+- Place multiple primary buttons in the same section
+- Use icon-only buttons without aria-label
+- Override disabled state during loading
+- Nest interactive elements inside button content
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
+
+---
+
+## API Reference
+
+<PropsTable name="Button" />

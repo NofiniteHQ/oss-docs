@@ -124,31 +124,6 @@ const [value, setValue] = useState("");
 
 ---
 
-## Design Tokens / Theming
-
-```css
-:root {
-  --space-2: 8px;
-  --space-3: 12px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --font-sans: 'Inter', sans-serif;
-  --weight-medium: 500;
-  text-sm: 14px;
-
-  --bg-surface: #ffffff;
-  --bg-subtle: #f3f4f6;
-  --border-default: #e5e7eb;
-  --brand-50: #eff6ff;
-  --brand-100: #dbeafe;
-  --color-primary-hover: #1d4ed8;
-  --color-primary: #3b82f6;
-  --fg-default: #111827;
-  --fg-disabled: #9ca3af;
-  --fg-subtle: #6b7280;
-}
-```
-
 ---
 
 ## Accessibility
@@ -181,6 +156,12 @@ const [value, setValue] = useState("");
 * Hide essential information inside custom renderers
 * Disable keyboard navigation
 * Overload options with long content
+
+---
+
+## Theming
+
+This component is styled using semantic tokens from [`@nofinite/nuicss`](/nuicss). For the complete token reference and dark mode configuration, see the [Theming & Design Tokens](/nui/theming) guide.
 
 ---
 
