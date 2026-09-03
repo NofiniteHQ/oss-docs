@@ -4,9 +4,25 @@ import './globals.css';
 import { NUIProvider } from '@nofinite/nui';
 import { Navbar } from '@/components/Navbar';
 
-export const metadata = {
-  title: 'Nofinite OSS',
-  description: 'Documentation for Nofinite Open Source projects',
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Nofinite Opensource',
+    template: '%s | Nofinite Opensource',
+  },
+  description: 'Official documentation for Nofinite Open Source projects including NUI, NUICSS, Locale, and Utils.',
+  openGraph: {
+    title: 'Nofinite Opensource',
+    description: 'Official documentation for Nofinite Open Source projects including NUI, NUICSS, Locale, and Utils.',
+    siteName: 'Nofinite Opensource',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nofinite Opensource',
+    description: 'Official documentation for Nofinite Open Source projects including NUI, NUICSS, Locale, and Utils.',
+  },
 };
 
 export default function RootLayout({

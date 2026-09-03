@@ -1,16 +1,16 @@
 # Architecture & UnoCSS Engine
 
-Understand the inner workings of NUICSS v3 and how its on-demand compilation engine delivers instant styling.
+Understand the inner workings of NUICSS and how its on-demand compilation engine delivers instant styling.
 
 ---
 
-## From Custom JIT (v2) to UnoCSS Engine (v3)
+## Evolution to the UnoCSS Engine
 
 In previous iterations:
 - **v1** relied on static, monolithic utility stylesheets that bloated production bundles.
 - **v2** introduced a custom JIT engine, but had limited variant support, lacked modern CSS feature coverage, and suffered from edge cases.
 
-**NUICSS v3** is architected directly on top of **UnoCSS**, the industry standard instant atomic CSS engine:
+**NUICSS** is architected directly on top of **UnoCSS**, the industry standard instant atomic CSS engine:
 - **Instant Compilation**: Up to 5x faster than traditional CSS compilers.
 - **Full Modern Syntax**: Supports arbitrary values (`w-[340px]`), variant groups (`hover:(text-primary font-bold)`), and media queries (`@screen md`).
 - **Clean CSS Output**: Only emits classes that are actually used in your source code.

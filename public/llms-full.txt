@@ -10311,7 +10311,7 @@ Fundamental interactive elements and action triggers.
 
 # Getting Started with NUI
 
-Everything you need to install, configure, and build with the `@nofinite/nui` component library.
+Everything you need to install, configure, and build with the NUI component library.
 
 ---
 
@@ -10321,7 +10321,7 @@ NUI is a lightweight, performance-first React UI component library designed for 
 
 - **Performance-first**: Minimal runtime overhead, optimized rendering, and zero-bloat primitives.
 - **Composable APIs**: Low-level building blocks that can be combined freely without restrictive abstractions.
-- **Semantic Theming**: Native dark mode and full design token control via `@nofinite/nuicss`.
+- **Semantic Theming**: Native dark mode and full design token control via **NUICSS**.
 - **Accessibility by Default**: Strict WAI-ARIA compliance, focus rings, and full keyboard navigation.
 
 ---
@@ -10346,7 +10346,7 @@ yarn add @nofinite/nui
 bun add @nofinite/nui
 ```
 
-> **Optional:** If you also want an atomic, utility-first CSS framework for your custom HTML markup and layout templates, you can optionally install [`@nofinite/nuicss`](/nuicss). NUI does not require it.
+> **Layout & Custom Styling:** If you want utility-first styling for your custom layout designs, responsive grids, and page architecture, you can pair NUI with [**NUICSS**](/nuicss). NUI and NUICSS seamlessly share the exact same design tokens, color palette, and dark mode.
 
 ---
 
@@ -11261,17 +11261,17 @@ Rules:
 
 # Architecture & UnoCSS Engine
 
-Understand the inner workings of NUICSS v3 and how its on-demand compilation engine delivers instant styling.
+Understand the inner workings of NUICSS and how its on-demand compilation engine delivers instant styling.
 
 ---
 
-## From Custom JIT (v2) to UnoCSS Engine (v3)
+## Evolution to the UnoCSS Engine
 
 In previous iterations:
 - **v1** relied on static, monolithic utility stylesheets that bloated production bundles.
 - **v2** introduced a custom JIT engine, but had limited variant support, lacked modern CSS feature coverage, and suffered from edge cases.
 
-**NUICSS v3** is architected directly on top of **UnoCSS**, the industry standard instant atomic CSS engine:
+**NUICSS** is architected directly on top of **UnoCSS**, the industry standard instant atomic CSS engine:
 - **Instant Compilation**: Up to 5x faster than traditional CSS compilers.
 - **Full Modern Syntax**: Supports arbitrary values (`w-[340px]`), variant groups (`hover:(text-primary font-bold)`), and media queries (`@screen md`).
 - **Clean CSS Output**: Only emits classes that are actually used in your source code.
@@ -11351,13 +11351,13 @@ Extract values from your NUICSS theme directly in CSS:
 
 # Configuration
 
-Configure NUICSS v3 to fit your application structure, custom themes, and design tokens.
+Configure NUICSS to fit your application structure, custom themes, and design tokens.
 
 ---
 
 ## Configuration File
 
-NUICSS v3 loads configuration from `nuicss.config.ts` (or `.js`, `.mjs`, `.cjs`) in your project root using the `defineConfig` helper:
+NUICSS loads configuration from `nuicss.config.ts` (or `.js`, `.mjs`, `.cjs`) in your project root using the `defineConfig` helper:
 
 ```ts
 import { defineConfig, nuicssPreset } from '@nofinite/nuicss';
@@ -11446,7 +11446,7 @@ shortcuts: {
 
 # Installation & Setup
 
-Get started with **NUICSS v3** in your web application.
+Get started with **NUICSS** in your web application.
 
 ---
 
@@ -11553,18 +11553,18 @@ import '@nofinite/nuicss/virtual.css';
 
 ### Document: nuicss/page.mdx
 
-# NUICSS v3
+# NUICSS
 
-**NUICSS v3** is an instant, on-demand atomic CSS engine powered directly by the blazing-fast **UnoCSS** compiler. It provides high-performance utility generation, semantic design tokens, and seamless toolchain integration with zero runtime overhead.
+**NUICSS** is an instant, on-demand atomic CSS engine powered directly by the blazing-fast **UnoCSS** compiler. It provides high-performance utility generation, semantic design tokens, and seamless toolchain integration with zero runtime overhead.
 
 ---
 
-## Why NUICSS v3?
+## Why NUICSS?
 
 - **Instant On-Demand Compilation**: Powered by UnoCSS under the hood, compiling thousands of utility classes in milliseconds.
 - **`@nuicss` Directive**: Simple, standardized CSS integration for PostCSS and Vite.
 - **Zero Foreign Configuration**: Works directly with `nuicss.config.ts` out of the box with zero boilerplate.
-- **Semantic Design Tokens**: Harmonized with `@nofinite/nui` and modern design systems, offering unified light and dark mode scales.
+- **Semantic Design Tokens**: Harmonized with **NUI** and modern design systems, offering unified light and dark mode scales.
 - **Full Modern CSS Feature Set**: Supports arbitrary values (`w-[320px]`), variant grouping (`hover:(bg-primary text-white)`), responsive breakpoints (`sm:`, `md:`, `lg:`, `xl:`), and native CSS variables.
 
 ---
@@ -11583,7 +11583,7 @@ import '@nofinite/nuicss/virtual.css';
 
 ## Core Sections
 
-- [**Installation & Setup**](/nuicss/installation) — Add `@nofinite/nuicss` to Next.js, Vite, or PostCSS projects.
+- [**Installation & Setup**](/nuicss/installation) — Add NUICSS to Next.js, Vite, or PostCSS projects.
 - [**Configuration**](/nuicss/configuration) — Customize `nuicss.config.ts`, presets, and content scanning pipelines.
 - [**Architecture & Engine**](/nuicss/architecture) — Learn how the JIT compiler, layers, and directives operate.
 - [**Theming & Design Tokens**](/nuicss/theming) — Explore semantic tokens for surfaces, borders, radii, and dark mode.
@@ -11596,7 +11596,7 @@ import '@nofinite/nuicss/virtual.css';
 
 # Theming & Design Tokens
 
-NUICSS v3 features an aesthetic, token-first design system completely driven by CSS custom properties. It aligns directly with `@nofinite/nui` components for seamless cross-package consistency.
+NUICSS features an aesthetic, token-first design system completely driven by CSS custom properties. It aligns directly with **NUI** components for seamless cross-package consistency.
 
 ---
 
@@ -11642,7 +11642,7 @@ NUICSS uses semantic token names rather than static hex codes, making dark mode 
 
 ## Dark Mode
 
-NUICSS v3 applies dark theme styles automatically when the `.dark` class is present on the root `<html>` tag:
+NUICSS applies dark theme styles automatically when the `.dark` class is present on the root `<html>` tag:
 
 ```html
 <!-- Light Mode -->
@@ -11671,7 +11671,7 @@ Utilities for styling backgrounds, borders, divide lines, outline rings, and cor
 
 ## Background Colors
 
-NUICSS v3 provides semantic background utilities that dynamically adapt to theme changes:
+NUICSS provides semantic background utilities that dynamically adapt to theme changes:
 
 | Class | Properties |
 | --- | --- |
@@ -11729,7 +11729,7 @@ NUICSS v3 provides semantic background utilities that dynamically adapt to theme
 
 # Effects & Filters Utilities
 
-Utilities for applying drop shadows, opacity, backdrop blurs, transitions, and animations in NUICSS v3.
+Utilities for applying drop shadows, opacity, backdrop blurs, transitions, and animations in NUICSS.
 
 ---
 
@@ -11863,7 +11863,7 @@ Control gutters between grid and flex items:
 
 # Layout Utilities
 
-Utilities for controlling page layout, element display, positioning, and box model structure in NUICSS v3.
+Utilities for controlling page layout, element display, positioning, and box model structure in NUICSS.
 
 ---
 
@@ -12046,7 +12046,7 @@ Prefix any margin utility with a dash to apply negative spacing:
 
 ## Arbitrary Values
 
-NUICSS v3 supports any arbitrary spacing value using square bracket notation:
+NUICSS supports any arbitrary spacing value using square bracket notation:
 
 ```html
 

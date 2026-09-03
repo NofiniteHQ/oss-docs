@@ -1735,7 +1735,7 @@
   },
   {
     "title": "Getting Started with NUI",
-    "description": "Everything you need to install, configure, and build with the `@nofinite/nui` component library.",
+    "description": "Everything you need to install, configure, and build with the NUI component library.",
     "href": "/nui/getting-started",
     "pkg": "nui"
   },
@@ -1837,14 +1837,14 @@
   },
   {
     "title": "Architecture & UnoCSS Engine",
-    "description": "Understand the inner workings of NUICSS v3 and how its on-demand compilation engine delivers instant styling.",
+    "description": "Understand the inner workings of NUICSS and how its on-demand compilation engine delivers instant styling.",
     "href": "/nuicss/architecture",
     "pkg": "nuicss"
   },
   {
-    "title": "From Custom JIT (v2) to UnoCSS Engine (v3) (Architecture & UnoCSS Engine)",
+    "title": "Evolution to the UnoCSS Engine (Architecture & UnoCSS Engine)",
     "description": "In previous iterations:",
-    "href": "/nuicss/architecture#from-custom-jit-v2-to-unocss-engine-v3",
+    "href": "/nuicss/architecture#evolution-to-the-unocss-engine",
     "pkg": "nuicss"
   },
   {
@@ -1861,13 +1861,13 @@
   },
   {
     "title": "Configuration",
-    "description": "Configure NUICSS v3 to fit your application structure, custom themes, and design tokens.",
+    "description": "Configure NUICSS to fit your application structure, custom themes, and design tokens.",
     "href": "/nuicss/configuration",
     "pkg": "nuicss"
   },
   {
     "title": "Configuration File (Configuration)",
-    "description": "NUICSS v3 loads configuration from `nuicss.config.ts` (or `.js`, `.mjs`, `.cjs`) in your project root using the `defineConfig` helper:",
+    "description": "NUICSS loads configuration from `nuicss.config.ts` (or `.js`, `.mjs`, `.cjs`) in your project root using the `defineConfig` helper:",
     "href": "/nuicss/configuration#configuration-file",
     "pkg": "nuicss"
   },
@@ -1879,7 +1879,7 @@
   },
   {
     "title": "Installation & Setup",
-    "description": "Get started with **NUICSS v3** in your web application.",
+    "description": "Get started with **NUICSS** in your web application.",
     "href": "/nuicss/installation",
     "pkg": "nuicss"
   },
@@ -1914,32 +1914,32 @@
     "pkg": "nuicss"
   },
   {
-    "title": "NUICSS v3",
-    "description": "**NUICSS v3** is an instant, on-demand atomic CSS engine powered directly by the blazing-fast **UnoCSS** compiler. It provides high-performance utility generation, semantic design tokens, and seamless toolchain integration with zero runtime overhead.",
+    "title": "NUICSS",
+    "description": "**NUICSS** is an instant, on-demand atomic CSS engine powered directly by the blazing-fast **UnoCSS** compiler. It provides high-performance utility generation, semantic design tokens, and seamless toolchain integration with zero runtime overhead.",
     "href": "/nuicss",
     "pkg": "nuicss"
   },
   {
-    "title": "Why NUICSS v3? (NUICSS v3)",
+    "title": "Why NUICSS? (NUICSS)",
     "description": "- **Instant On-Demand Compilation**: Powered by UnoCSS under the hood, compiling thousands of utility classes in milliseconds.",
-    "href": "/nuicss#why-nuicss-v3",
+    "href": "/nuicss#why-nuicss",
     "pkg": "nuicss"
   },
   {
-    "title": "Quick Example (NUICSS v3)",
+    "title": "Quick Example (NUICSS)",
     "description": "```html",
     "href": "/nuicss#quick-example",
     "pkg": "nuicss"
   },
   {
-    "title": "Core Sections (NUICSS v3)",
-    "description": "- [**Installation & Setup**](/nuicss/installation) — Add `@nofinite/nuicss` to Next.js, Vite, or PostCSS projects.",
+    "title": "Core Sections (NUICSS)",
+    "description": "- [**Installation & Setup**](/nuicss/installation) — Add NUICSS to Next.js, Vite, or PostCSS projects.",
     "href": "/nuicss#core-sections",
     "pkg": "nuicss"
   },
   {
     "title": "Theming & Design Tokens",
-    "description": "NUICSS v3 features an aesthetic, token-first design system completely driven by CSS custom properties. It aligns directly with `@nofinite/nui` components for seamless cross-package consistency.",
+    "description": "NUICSS features an aesthetic, token-first design system completely driven by CSS custom properties. It aligns directly with **NUI** components for seamless cross-package consistency.",
     "href": "/nuicss/theming",
     "pkg": "nuicss"
   },
@@ -1963,7 +1963,7 @@
   },
   {
     "title": "Dark Mode (Theming & Design Tokens)",
-    "description": "NUICSS v3 applies dark theme styles automatically when the `.dark` class is present on the root `<html>` tag:",
+    "description": "NUICSS applies dark theme styles automatically when the `.dark` class is present on the root `<html>` tag:",
     "href": "/nuicss/theming#dark-mode",
     "pkg": "nuicss"
   },
@@ -1975,7 +1975,7 @@
   },
   {
     "title": "Background Colors (Backgrounds & Borders Utilities)",
-    "description": "NUICSS v3 provides semantic background utilities that dynamically adapt to theme changes:",
+    "description": "NUICSS provides semantic background utilities that dynamically adapt to theme changes:",
     "href": "/nuicss/utilities/backgrounds-borders#background-colors",
     "pkg": "nuicss"
   },
@@ -1999,7 +1999,7 @@
   },
   {
     "title": "Effects & Filters Utilities",
-    "description": "Utilities for applying drop shadows, opacity, backdrop blurs, transitions, and animations in NUICSS v3.",
+    "description": "Utilities for applying drop shadows, opacity, backdrop blurs, transitions, and animations in NUICSS.",
     "href": "/nuicss/utilities/effects-filters",
     "pkg": "nuicss"
   },
@@ -2059,7 +2059,7 @@
   },
   {
     "title": "Layout Utilities",
-    "description": "Utilities for controlling page layout, element display, positioning, and box model structure in NUICSS v3.",
+    "description": "Utilities for controlling page layout, element display, positioning, and box model structure in NUICSS.",
     "href": "/nuicss/utilities/layout",
     "pkg": "nuicss"
   },
@@ -2131,7 +2131,7 @@
   },
   {
     "title": "Arbitrary Values (Spacing Utilities)",
-    "description": "NUICSS v3 supports any arbitrary spacing value using square bracket notation:",
+    "description": "NUICSS supports any arbitrary spacing value using square bracket notation:",
     "href": "/nuicss/utilities/spacing#arbitrary-values",
     "pkg": "nuicss"
   },

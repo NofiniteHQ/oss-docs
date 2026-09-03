@@ -76,6 +76,20 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
   // Active item title for mobile header bar
   const activeItem = flatNav.find(item => item.href === pathname);
 
+  // Dynamic SEO page title synchronization on client-side navigation
+  useEffect(() => {
+    if (activeItem?.label) {
+      const pkgLabel = currentPkgId === 'nui' ? 'NUI' : currentPkgId === 'nuicss' ? 'NUICSS' : currentPkgId ? currentPkgId.toUpperCase() : '';
+      let pageTitle = activeItem.label;
+      if (activeItem.label === 'Overview' && pkgLabel) {
+        pageTitle = pkgLabel;
+      } else if (pkgLabel) {
+        pageTitle = `${activeItem.label} — ${pkgLabel}`;
+      }
+      document.title = `${pageTitle} | Nofinite Opensource`;
+    }
+  }, [pathname, activeItem, currentPkgId]);
+
   const isVersionedPackage = false;
 
   const renderNavList = (isMobile = false) => (
