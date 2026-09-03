@@ -192,6 +192,41 @@ export function getDocsNavigation(pkg: string): NavItem[] {
     ];
   }
 
+  if (pkg === 'nuicss') {
+    return [
+      {
+        id: 'getting-started-section',
+        label: 'Getting Started',
+        children: [
+          { id: 'overview', label: 'Overview', href: '/nuicss' },
+          { id: 'installation', label: 'Installation & Setup', href: '/nuicss/installation' },
+          { id: 'configuration', label: 'Configuration', href: '/nuicss/configuration' },
+        ]
+      },
+      {
+        id: 'core-concepts-section',
+        label: 'Core Concepts',
+        children: [
+          { id: 'architecture', label: 'Architecture & Engine', href: '/nuicss/architecture' },
+          { id: 'theming', label: 'Theming & Design Tokens', href: '/nuicss/theming' },
+        ]
+      },
+      {
+        id: 'utilities-section',
+        label: 'Utilities',
+        children: [
+          { id: 'layout', label: 'Layout', href: '/nuicss/utilities/layout' },
+          { id: 'flex-grid', label: 'Flexbox & Grid', href: '/nuicss/utilities/flex-grid' },
+          { id: 'spacing', label: 'Spacing', href: '/nuicss/utilities/spacing' },
+          { id: 'sizing', label: 'Sizing', href: '/nuicss/utilities/sizing' },
+          { id: 'typography', label: 'Typography', href: '/nuicss/utilities/typography' },
+          { id: 'backgrounds-borders', label: 'Backgrounds & Borders', href: '/nuicss/utilities/backgrounds-borders' },
+          { id: 'effects-filters', label: 'Effects & Filters', href: '/nuicss/utilities/effects-filters' },
+        ]
+      }
+    ];
+  }
+
   const docsDir = path.join(process.cwd(), 'src', 'app', pkg);
   const nav = buildTree(docsDir, `/${pkg}`);
   

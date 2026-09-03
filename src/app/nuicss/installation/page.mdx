@@ -1,0 +1,103 @@
+# Installation & Setup
+
+Get started with **NUICSS v3** in your web application.
+
+---
+
+## 1. Install the Package
+
+Install `@nofinite/nuicss` using your preferred package manager:
+
+```bash
+# npm
+npm install -D @nofinite/nuicss postcss
+
+# pnpm
+pnpm add -D @nofinite/nuicss postcss
+
+# yarn
+yarn add -D @nofinite/nuicss postcss
+
+# bun
+bun add -D @nofinite/nuicss postcss
+```
+
+---
+
+## 2. Configure PostCSS
+
+Add the `@nofinite/nuicss/postcss` plugin to your `postcss.config.js` (or `.mjs`):
+
+```js
+// postcss.config.js
+module.exports = {
+  plugins: {
+    '@nofinite/nuicss/postcss': {},
+  },
+};
+```
+
+---
+
+## 3. Add the `@nuicss` Directive
+
+In your main CSS entry point (e.g. `src/app/globals.css` or `src/style.css`), add the `@nuicss;` directive:
+
+```css
+/* globals.css */
+@nuicss;
+```
+
+This tells the compiler where to inject reset styles, default tokens, and generated utility classes.
+
+---
+
+## 4. Create `nuicss.config.ts`
+
+Create a `nuicss.config.ts` in the root of your project:
+
+```ts
+// nuicss.config.ts
+import { defineConfig, nuicssPreset } from '@nofinite/nuicss';
+
+export default defineConfig({
+  presets: [
+    nuicssPreset() as any,
+  ],
+  content: {
+    pipeline: {
+      include: [
+        /\.(vue|svelte|[jt]sx|mdx?|html)($|\?)/,
+        'src/**/*.{js,ts,jsx,tsx,mdx}',
+      ],
+    },
+  },
+});
+```
+
+---
+
+## Vite Plugin Setup (Alternative to PostCSS)
+
+If you are using Vite without PostCSS, you can use `nuicssVitePlugin` directly:
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { nuicssVitePlugin } from '@nofinite/nuicss';
+
+export default defineConfig({
+  plugins: [
+    react(),
+    nuicssVitePlugin(),
+  ],
+});
+```
+
+Then import the virtual CSS in your entry file:
+
+```ts
+// main.tsx
+import '@nofinite/nuicss/virtual.css';
+```

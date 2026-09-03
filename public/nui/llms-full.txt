@@ -10316,21 +10316,25 @@ NUI is a lightweight, performance-first React UI component library designed for 
 
 ## Installation
 
-Install `@nofinite/nui` and its peer dependencies using your package manager of choice:
+NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.
+
+Install `@nofinite/nui` using your package manager of choice:
 
 ```bash
 # npm
-npm install @nofinite/nui @nofinite/nuicss
+npm install @nofinite/nui
 
 # pnpm
-pnpm add @nofinite/nui @nofinite/nuicss
+pnpm add @nofinite/nui
 
 # yarn
-yarn add @nofinite/nui @nofinite/nuicss
+yarn add @nofinite/nui
 
 # bun
-bun add @nofinite/nui @nofinite/nuicss
+bun add @nofinite/nui
 ```
+
+> **Optional:** If you also want an atomic, utility-first CSS framework for your custom HTML markup and layout templates, you can optionally install [`@nofinite/nuicss`](/nuicss). NUI does not require it.
 
 ---
 

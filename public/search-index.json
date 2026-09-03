@@ -1747,7 +1747,7 @@
   },
   {
     "title": "Installation (Getting Started with NUI)",
-    "description": "Install `@nofinite/nui` and its peer dependencies using your package manager of choice:",
+    "description": "NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.",
     "href": "/nui/getting-started#installation",
     "pkg": "nui"
   },
@@ -1836,591 +1836,327 @@
     "pkg": "nui"
   },
   {
-    "title": "NUI CSS Architecture",
-    "description": "",
-    "href": "/nuicss/v1/architecture",
+    "title": "Architecture & UnoCSS Engine",
+    "description": "Understand the inner workings of NUICSS v3 and how its on-demand compilation engine delivers instant styling.",
+    "href": "/nuicss/architecture",
     "pkg": "nuicss"
   },
   {
-    "title": "Installation",
-    "description": "",
-    "href": "/nuicss/v1/getting-started/installation",
+    "title": "From Custom JIT (v2) to UnoCSS Engine (v3) (Architecture & UnoCSS Engine)",
+    "description": "In previous iterations:",
+    "href": "/nuicss/architecture#from-custom-jit-v2-to-unocss-engine-v3",
     "pkg": "nuicss"
   },
   {
-    "title": "Standard Utilities (Installation)",
+    "title": "The `@nuicss` Directive (Architecture & UnoCSS Engine)",
+    "description": "When `@nuicss;` is placed in your stylesheet, the PostCSS/Vite plugin processes it into structured layers:",
+    "href": "/nuicss/architecture#the-nuicss-directive",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Directives Support (Architecture & UnoCSS Engine)",
+    "description": "",
+    "href": "/nuicss/architecture#directives-support",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Configuration",
+    "description": "Configure NUICSS v3 to fit your application structure, custom themes, and design tokens.",
+    "href": "/nuicss/configuration",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Configuration File (Configuration)",
+    "description": "NUICSS v3 loads configuration from `nuicss.config.ts` (or `.js`, `.mjs`, `.cjs`) in your project root using the `defineConfig` helper:",
+    "href": "/nuicss/configuration#configuration-file",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Configuration Options (Configuration)",
+    "description": "",
+    "href": "/nuicss/configuration#configuration-options",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Installation & Setup",
+    "description": "Get started with **NUICSS v3** in your web application.",
+    "href": "/nuicss/installation",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "1. Install the Package (Installation & Setup)",
+    "description": "Install `@nofinite/nuicss` using your preferred package manager:",
+    "href": "/nuicss/installation#1-install-the-package",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "2. Configure PostCSS (Installation & Setup)",
+    "description": "Add the `@nofinite/nuicss/postcss` plugin to your `postcss.config.js` (or `.mjs`):",
+    "href": "/nuicss/installation#2-configure-postcss",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "3. Add the `@nuicss` Directive (Installation & Setup)",
+    "description": "In your main CSS entry point (e.g. `src/app/globals.css` or `src/style.css`), add the `@nuicss;` directive:",
+    "href": "/nuicss/installation#3-add-the-nuicss-directive",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "4. Create `nuicss.config.ts` (Installation & Setup)",
+    "description": "Create a `nuicss.config.ts` in the root of your project:",
+    "href": "/nuicss/installation#4-create-nuicss-config-ts",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Vite Plugin Setup (Alternative to PostCSS) (Installation & Setup)",
+    "description": "If you are using Vite without PostCSS, you can use `nuicssVitePlugin` directly:",
+    "href": "/nuicss/installation#vite-plugin-setup-alternative-to-postcss",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "NUICSS v3",
+    "description": "**NUICSS v3** is an instant, on-demand atomic CSS engine powered directly by the blazing-fast **UnoCSS** compiler. It provides high-performance utility generation, semantic design tokens, and seamless toolchain integration with zero runtime overhead.",
+    "href": "/nuicss",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Why NUICSS v3? (NUICSS v3)",
+    "description": "- **Instant On-Demand Compilation**: Powered by UnoCSS under the hood, compiling thousands of utility classes in milliseconds.",
+    "href": "/nuicss#why-nuicss-v3",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Quick Example (NUICSS v3)",
     "description": "```html",
-    "href": "/nuicss/v1/getting-started/installation#standard-utilities",
+    "href": "/nuicss#quick-example",
     "pkg": "nuicss"
   },
   {
-    "title": "Prefixed Utilities (Installation)",
-    "description": "If you are building reusable UI components or libraries, you can load the prefixed utilities.",
-    "href": "/nuicss/v1/getting-started/installation#prefixed-utilities",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Setup",
-    "description": "",
-    "href": "/nuicss/v1/getting-started/setup",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Introduction",
-    "description": "",
-    "href": "/nuicss/v1",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Who is this for? (Introduction)",
-    "description": "NUI CSS is designed for:",
-    "href": "/nuicss/v1#who-is-this-for",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Design Philosophy (Introduction)",
-    "description": "NUI CSS follows a small set of principles:",
-    "href": "/nuicss/v1#design-philosophy",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "What this library is (Introduction)",
-    "description": "- A utility-based CSS framework",
-    "href": "/nuicss/v1#what-this-library-is",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "What this library is not (Introduction)",
-    "description": "- A full design system",
-    "href": "/nuicss/v1#what-this-library-is-not",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Framework Compatibility (Introduction)",
-    "description": "NUI CSS works with all modern frontend environments:",
-    "href": "/nuicss/v1#framework-compatibility",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Production Readiness (Introduction)",
-    "description": "NUI CSS is built with production applications in mind.",
-    "href": "/nuicss/v1#production-readiness",
+    "title": "Core Sections (NUICSS v3)",
+    "description": "- [**Installation & Setup**](/nuicss/installation) — Add `@nofinite/nuicss` to Next.js, Vite, or PostCSS projects.",
+    "href": "/nuicss#core-sections",
     "pkg": "nuicss"
   },
   {
     "title": "Theming & Design Tokens",
-    "description": "",
-    "href": "/nuicss/v1/theming",
+    "description": "NUICSS v3 features an aesthetic, token-first design system completely driven by CSS custom properties. It aligns directly with `@nofinite/nui` components for seamless cross-package consistency.",
+    "href": "/nuicss/theming",
     "pkg": "nuicss"
   },
   {
-    "title": "Flexbox Utilities",
-    "description": "",
-    "href": "/nuicss/v1/utilities/flex",
+    "title": "Semantic Color Scale (Theming & Design Tokens)",
+    "description": "NUICSS uses semantic token names rather than static hex codes, making dark mode transitions automatic and effortless.",
+    "href": "/nuicss/theming#semantic-color-scale",
     "pkg": "nuicss"
   },
   {
-    "title": "Row (Flexbox Utilities)",
-    "description": "Items are arranged horizontally.",
-    "href": "/nuicss/v1/utilities/flex#row",
+    "title": "Brand & Feedback Colors (Theming & Design Tokens)",
+    "description": "| Color Role | Background Utility | Text Utility | Border Utility |",
+    "href": "/nuicss/theming#brand-feedback-colors",
     "pkg": "nuicss"
   },
   {
-    "title": "Column (Flexbox Utilities)",
-    "description": "Items are arranged vertically.",
-    "href": "/nuicss/v1/utilities/flex#column",
+    "title": "Border Radius Tokens (Theming & Design Tokens)",
+    "description": "| Utility Class | Variable | Size |",
+    "href": "/nuicss/theming#border-radius-tokens",
     "pkg": "nuicss"
   },
   {
-    "title": "Wrap (Flexbox Utilities)",
-    "description": "Items move to the next line when there is not enough space.",
-    "href": "/nuicss/v1/utilities/flex#wrap",
+    "title": "Dark Mode (Theming & Design Tokens)",
+    "description": "NUICSS v3 applies dark theme styles automatically when the `.dark` class is present on the root `<html>` tag:",
+    "href": "/nuicss/theming#dark-mode",
     "pkg": "nuicss"
   },
   {
-    "title": "No Wrap (Flexbox Utilities)",
-    "description": "Items stay on a single line even if they overflow.",
-    "href": "/nuicss/v1/utilities/flex#no-wrap",
+    "title": "Backgrounds & Borders Utilities",
+    "description": "Utilities for styling backgrounds, borders, divide lines, outline rings, and corner radii.",
+    "href": "/nuicss/utilities/backgrounds-borders",
     "pkg": "nuicss"
   },
   {
-    "title": "Start (Flexbox Utilities)",
-    "description": "Items align to the start of the cross axis.",
-    "href": "/nuicss/v1/utilities/flex#start",
+    "title": "Background Colors (Backgrounds & Borders Utilities)",
+    "description": "NUICSS v3 provides semantic background utilities that dynamically adapt to theme changes:",
+    "href": "/nuicss/utilities/backgrounds-borders#background-colors",
     "pkg": "nuicss"
   },
   {
-    "title": "Center (Flexbox Utilities)",
-    "description": "Items align to the center.",
-    "href": "/nuicss/v1/utilities/flex#center",
+    "title": "Border Width & Style (Backgrounds & Borders Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/backgrounds-borders#border-width-style",
     "pkg": "nuicss"
   },
   {
-    "title": "End (Flexbox Utilities)",
-    "description": "Items align to the end.",
-    "href": "/nuicss/v1/utilities/flex#end",
+    "title": "Border Colors (Backgrounds & Borders Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/backgrounds-borders#border-colors",
     "pkg": "nuicss"
   },
   {
-    "title": "Stretch (Flexbox Utilities)",
-    "description": "Items stretch to fill the container height.",
-    "href": "/nuicss/v1/utilities/flex#stretch",
+    "title": "Border Radius (Backgrounds & Borders Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/backgrounds-borders#border-radius",
     "pkg": "nuicss"
   },
   {
-    "title": "Start (Flexbox Utilities)",
-    "description": "Items align to the start of the cross axis.",
-    "href": "/nuicss/v1/utilities/flex#start-1",
+    "title": "Effects & Filters Utilities",
+    "description": "Utilities for applying drop shadows, opacity, backdrop blurs, transitions, and animations in NUICSS v3.",
+    "href": "/nuicss/utilities/effects-filters",
     "pkg": "nuicss"
   },
   {
-    "title": "Center (Flexbox Utilities)",
-    "description": "Items align to the center.",
-    "href": "/nuicss/v1/utilities/flex#center-1",
+    "title": "Box Shadow (Effects & Filters Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/effects-filters#box-shadow",
     "pkg": "nuicss"
   },
   {
-    "title": "End (Flexbox Utilities)",
-    "description": "Items align to the end.",
-    "href": "/nuicss/v1/utilities/flex#end-1",
+    "title": "Opacity (Effects & Filters Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/effects-filters#opacity",
     "pkg": "nuicss"
   },
   {
-    "title": "Space Between (Flexbox Utilities)",
-    "description": "Items are evenly distributed with space between them.",
-    "href": "/nuicss/v1/utilities/flex#space-between",
+    "title": "Backdrop Blur (Effects & Filters Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/effects-filters#backdrop-blur",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Transitions & Animation (Effects & Filters Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/effects-filters#transitions-animation",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Flexbox & Grid Utilities",
+    "description": "Utilities for building 1D and 2D responsive layouts using CSS Flexbox and CSS Grid.",
+    "href": "/nuicss/utilities/flex-grid",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Flex Direction & Wrapping (Flexbox & Grid Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/flex-grid#flex-direction-wrapping",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Justify Content & Alignment (Flexbox & Grid Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/flex-grid#justify-content-alignment",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Grid Columns & Rows (Flexbox & Grid Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/flex-grid#grid-columns-rows",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Gap (Flexbox & Grid Utilities)",
+    "description": "Control gutters between grid and flex items:",
+    "href": "/nuicss/utilities/flex-grid#gap",
     "pkg": "nuicss"
   },
   {
     "title": "Layout Utilities",
-    "description": "",
-    "href": "/nuicss/v1/utilities/layout",
+    "description": "Utilities for controlling page layout, element display, positioning, and box model structure in NUICSS v3.",
+    "href": "/nuicss/utilities/layout",
     "pkg": "nuicss"
   },
   {
-    "title": "Prefixed Utilities",
-    "description": "",
-    "href": "/nuicss/v1/utilities/prefixed",
+    "title": "Display (Layout Utilities)",
+    "description": "Control the display property of elements:",
+    "href": "/nuicss/utilities/layout#display",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Position (Layout Utilities)",
+    "description": "Control element positioning in the DOM:",
+    "href": "/nuicss/utilities/layout#position",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Z-Index (Layout Utilities)",
+    "description": "Stacking order utilities:",
+    "href": "/nuicss/utilities/layout#z-index",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Overflow (Layout Utilities)",
+    "description": "Control how content behaves when it exceeds its container:",
+    "href": "/nuicss/utilities/layout#overflow",
     "pkg": "nuicss"
   },
   {
     "title": "Sizing Utilities",
-    "description": "",
-    "href": "/nuicss/v1/utilities/sizing",
+    "description": "Utilities for setting element width, height, min/max dimensions, and aspect ratios.",
+    "href": "/nuicss/utilities/sizing",
     "pkg": "nuicss"
   },
   {
-    "title": "Fixed Width Scale (Sizing Utilities)",
-    "description": "These utilities map to the NUI spacing scale.",
-    "href": "/nuicss/v1/utilities/sizing#fixed-width-scale",
+    "title": "Width (Sizing Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/sizing#width",
     "pkg": "nuicss"
   },
   {
-    "title": "Fixed Height Scale (Sizing Utilities)",
-    "description": "| Class | Default Size |",
-    "href": "/nuicss/v1/utilities/sizing#fixed-height-scale",
+    "title": "Height (Sizing Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/sizing#height",
+    "pkg": "nuicss"
+  },
+  {
+    "title": "Min & Max Sizing (Sizing Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/sizing#min-max-sizing",
     "pkg": "nuicss"
   },
   {
     "title": "Spacing Utilities",
-    "description": "",
-    "href": "/nuicss/v1/utilities/spacing",
+    "description": "Utilities for controlling padding, margin, and space between elements using the 4px baseline scale.",
+    "href": "/nuicss/utilities/spacing",
     "pkg": "nuicss"
   },
   {
-    "title": "All Sides (Spacing Utilities)",
-    "description": "| Class | Example |",
-    "href": "/nuicss/v1/utilities/spacing#all-sides",
+    "title": "Padding (Spacing Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/spacing#padding",
     "pkg": "nuicss"
   },
   {
-    "title": "Top (Spacing Utilities)",
-    "description": "| Class  |",
-    "href": "/nuicss/v1/utilities/spacing#top",
+    "title": "Margin (Spacing Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/spacing#margin",
     "pkg": "nuicss"
   },
   {
-    "title": "Right (Spacing Utilities)",
-    "description": "| Class  |",
-    "href": "/nuicss/v1/utilities/spacing#right",
+    "title": "Arbitrary Values (Spacing Utilities)",
+    "description": "NUICSS v3 supports any arbitrary spacing value using square bracket notation:",
+    "href": "/nuicss/utilities/spacing#arbitrary-values",
     "pkg": "nuicss"
   },
   {
-    "title": "Bottom (Spacing Utilities)",
-    "description": "| Class  |",
-    "href": "/nuicss/v1/utilities/spacing#bottom",
+    "title": "Typography Utilities",
+    "description": "Utilities for font sizing, font weights, line heights, text alignment, and typography styling.",
+    "href": "/nuicss/utilities/typography",
     "pkg": "nuicss"
   },
   {
-    "title": "Left (Spacing Utilities)",
-    "description": "| Class  |",
-    "href": "/nuicss/v1/utilities/spacing#left",
+    "title": "Font Size (Typography Utilities)",
+    "description": "| Class | Font Size | Line Height |",
+    "href": "/nuicss/utilities/typography#font-size",
     "pkg": "nuicss"
   },
   {
-    "title": "All Sides (Spacing Utilities)",
-    "description": "| Class | Example |",
-    "href": "/nuicss/v1/utilities/spacing#all-sides-1",
+    "title": "Font Weight (Typography Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/typography#font-weight",
     "pkg": "nuicss"
   },
   {
-    "title": "Horizontal (Spacing Utilities)",
-    "description": "| Class  |",
-    "href": "/nuicss/v1/utilities/spacing#horizontal",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Vertical (Spacing Utilities)",
-    "description": "| Class  |",
-    "href": "/nuicss/v1/utilities/spacing#vertical",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "JIT Engine Architecture",
-    "description": "",
-    "href": "/nuicss/v2/architecture",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "The Core Generator (JIT Engine Architecture)",
-    "description": "At the heart of v2.0 is the `generateCSS` engine. It is a completely pure, Node.js-agnostic function that takes an array of class names and returns minified CSS.",
-    "href": "/nuicss/v2/architecture#the-core-generator",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Arbitrary Value Parsing (JIT Engine Architecture)",
-    "description": "The generator uses Advanced Regex Pattern Matching (AST) to evaluate utility classes. It natively supports important modifiers (e.g. `!pl-10`), properly escaping them to generate robust overriding styles (like `.\\!pl-10`).",
-    "href": "/nuicss/v2/architecture#arbitrary-value-parsing",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Plugin Ecosystem (JIT Engine Architecture)",
-    "description": "",
-    "href": "/nuicss/v2/architecture#plugin-ecosystem",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Configuration Resolution (JIT Engine Architecture)",
-    "description": "Configuration is resolved automatically via `jiti`, allowing you to write your `nuicss.config.ts` in modern TypeScript or ESModules without a compile step.",
-    "href": "/nuicss/v2/architecture#configuration-resolution",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Installation",
-    "description": "",
-    "href": "/nuicss/v2/installation",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "1. Browser JIT CDN (Quick Start) (Installation)",
-    "description": "For rapid prototyping or zero-build projects, you can use our blazing fast Browser JIT CDN. This is a lightweight script that observes your DOM and generates styles on the fly!",
-    "href": "/nuicss/v2/installation#1-browser-jit-cdn-quick-start",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "2. Vite Plugin (Installation)",
-    "description": "If you are using Vite, NUI CSS provides a first-class plugin for optimal performance.",
-    "href": "/nuicss/v2/installation#2-vite-plugin",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "3. PostCSS Plugin (Installation)",
-    "description": "For Next.js, Webpack, or any other setup that supports PostCSS, you can use the NUI CSS PostCSS plugin.",
-    "href": "/nuicss/v2/installation#3-postcss-plugin",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Configuration (Installation)",
-    "description": "For Vite and PostCSS setups, NUI CSS automatically looks for a `nuicss.config.ts` (or `.js`) at the root of your project.",
-    "href": "/nuicss/v2/installation#configuration",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Introduction to NUI CSS v2.0",
-    "description": "",
-    "href": "/nuicss/v2",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Why upgrade to v2.0? (Introduction to NUI CSS v2.0)",
-    "description": "The v2.0 release brings incredible power while retaining the minimalist, aesthetic design language NUI is known for:",
-    "href": "/nuicss/v2#why-upgrade-to-v2-0",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Design Philosophy (Introduction to NUI CSS v2.0)",
-    "description": "NUI CSS v2.0 is built on the same core principles, supercharged for modern workflows:",
-    "href": "/nuicss/v2#design-philosophy",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "What this library is (Introduction to NUI CSS v2.0)",
-    "description": "- A dynamic, JIT-based utility CSS framework",
-    "href": "/nuicss/v2#what-this-library-is",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Framework Compatibility (Introduction to NUI CSS v2.0)",
-    "description": "NUI CSS v2.0 ships with robust integrations for:",
-    "href": "/nuicss/v2#framework-compatibility",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Theming NUI CSS",
-    "description": "",
-    "href": "/nuicss/v2/theming",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "The Config File (Theming NUI CSS)",
-    "description": "Create a `nuicss.config.ts` (or `.js`) in the root of your project:",
-    "href": "/nuicss/v2/theming#the-config-file",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "CSS Variables (Theming NUI CSS)",
-    "description": "Under the hood, all theme values are injected as CSS variables on `:root`.",
-    "href": "/nuicss/v2/theming#css-variables",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Component Expansion (Theming NUI CSS)",
-    "description": "When you define a component like `btn-brand` in your configuration, the JIT engine will automatically map it, expand the base classes, and generate a single `.btn-brand` selector in the output CSS.",
-    "href": "/nuicss/v2/theming#component-expansion",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Backgrounds & Borders",
-    "description": "",
-    "href": "/nuicss/v2/utilities/backgrounds-borders",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Background Color (Backgrounds & Borders)",
-    "description": "Control the background color of an element.",
-    "href": "/nuicss/v2/utilities/backgrounds-borders#background-color",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Gradients (Backgrounds & Borders)",
-    "description": "NUI CSS provides built-in directional gradients.",
-    "href": "/nuicss/v2/utilities/backgrounds-borders#gradients",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Border Radius (Backgrounds & Borders)",
-    "description": "Control the border radius (rounded corners) of an element.",
-    "href": "/nuicss/v2/utilities/backgrounds-borders#border-radius",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Border Width (Backgrounds & Borders)",
-    "description": "Control the border width of an element.",
-    "href": "/nuicss/v2/utilities/backgrounds-borders#border-width",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Border Color (Backgrounds & Borders)",
-    "description": "Control the border color. Functions exactly like background and text colors.",
-    "href": "/nuicss/v2/utilities/backgrounds-borders#border-color",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Semantic Components",
-    "description": "",
-    "href": "/nuicss/v2/utilities/components",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Built-in Components (Semantic Components)",
-    "description": "",
-    "href": "/nuicss/v2/utilities/components#built-in-components",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Customizing Components (Semantic Components)",
-    "description": "You can override, extend, or add completely new components by editing your `nuicss.config.ts`.",
-    "href": "/nuicss/v2/utilities/components#customizing-components",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Effects & Filters",
-    "description": "",
-    "href": "/nuicss/v2/utilities/effects",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Box Shadow (Effects & Filters)",
-    "description": "Control the box shadow of an element.",
-    "href": "/nuicss/v2/utilities/effects#box-shadow",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Focus Rings (Effects & Filters)",
-    "description": "Focus rings are critical for accessibility and premium input interactions. NUI CSS fully replicates Tailwind's ring system.",
-    "href": "/nuicss/v2/utilities/effects#focus-rings",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Opacity (Effects & Filters)",
-    "description": "Control the opacity of an element.",
-    "href": "/nuicss/v2/utilities/effects#opacity",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Backdrop Blur (Glassmorphism) (Effects & Filters)",
-    "description": "NUI CSS provides built-in utilities for creating glassmorphism effects using the CSS `backdrop-filter` property.",
-    "href": "/nuicss/v2/utilities/effects#backdrop-blur-glassmorphism",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Transforms (Effects & Filters)",
-    "description": "Control scaling and translating of elements.",
-    "href": "/nuicss/v2/utilities/effects#transforms",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Transitions & Animations (Effects & Filters)",
-    "description": "",
-    "href": "/nuicss/v2/utilities/effects#transitions-animations",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Flexbox & Grid",
-    "description": "",
-    "href": "/nuicss/v2/utilities/flex-grid",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Flexbox (Flexbox & Grid)",
-    "description": "",
-    "href": "/nuicss/v2/utilities/flex-grid#flexbox",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Grid (Flexbox & Grid)",
-    "description": "",
-    "href": "/nuicss/v2/utilities/flex-grid#grid",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Gap (Flexbox & Grid)",
-    "description": "Control the gutters between grid and flexbox items.",
-    "href": "/nuicss/v2/utilities/flex-grid#gap",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Justify Content (Flexbox & Grid)",
-    "description": "- `justify-start`",
-    "href": "/nuicss/v2/utilities/flex-grid#justify-content",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Align Items (Flexbox & Grid)",
-    "description": "- `items-start`",
-    "href": "/nuicss/v2/utilities/flex-grid#align-items",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Layout & Sizing",
-    "description": "",
-    "href": "/nuicss/v2/utilities/layout",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Display (Layout & Sizing)",
-    "description": "Control the display box type of an element using the `display` utilities.",
-    "href": "/nuicss/v2/utilities/layout#display",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Positioning (Layout & Sizing)",
-    "description": "Use positioning utilities to control how an element is positioned in the DOM.",
-    "href": "/nuicss/v2/utilities/layout#positioning",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Z-Index (Layout & Sizing)",
-    "description": "Control the stack order of an element using `z-index`.",
-    "href": "/nuicss/v2/utilities/layout#z-index",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Sizing (Layout & Sizing)",
-    "description": "",
-    "href": "/nuicss/v2/utilities/layout#sizing",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Spacing",
-    "description": "",
-    "href": "/nuicss/v2/utilities/spacing",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Padding (Spacing)",
-    "description": "Control the padding of an element using the `p*` utilities.",
-    "href": "/nuicss/v2/utilities/spacing#padding",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Margin (Spacing)",
-    "description": "Control the margin of an element using the `m*` utilities.",
-    "href": "/nuicss/v2/utilities/spacing#margin",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Arbitrary Spacing (Spacing)",
-    "description": "If you need a specific spacing value that doesn't exist in the design system, use arbitrary values:",
-    "href": "/nuicss/v2/utilities/spacing#arbitrary-spacing",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Typography",
-    "description": "",
-    "href": "/nuicss/v2/utilities/typography",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Font Size (Typography)",
-    "description": "Control the font size and line height using the text utilities.",
-    "href": "/nuicss/v2/utilities/typography#font-size",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Font Weight (Typography)",
-    "description": "Control the font weight of an element.",
-    "href": "/nuicss/v2/utilities/typography#font-weight",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Text Color (Typography)",
-    "description": "Control the text color of an element using NUI CSS colors or arbitrary values.",
-    "href": "/nuicss/v2/utilities/typography#text-color",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Text Alignment (Typography)",
-    "description": "Control the text alignment of an element.",
-    "href": "/nuicss/v2/utilities/typography#text-alignment",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Text Transform & Decoration (Typography)",
-    "description": "- `uppercase`, `lowercase`, `capitalize`, `normal-case`",
-    "href": "/nuicss/v2/utilities/typography#text-transform-decoration",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Tracking (Letter Spacing) (Typography)",
-    "description": "Control the letter spacing of an element.",
-    "href": "/nuicss/v2/utilities/typography#tracking-letter-spacing",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Line Height (Leading) (Typography)",
-    "description": "- `leading-none`, `leading-tight`, `leading-snug`, `leading-normal`, `leading-relaxed`, `leading-loose`",
-    "href": "/nuicss/v2/utilities/typography#line-height-leading",
+    "title": "Text Alignment & Transform (Typography Utilities)",
+    "description": "| Class | Properties |",
+    "href": "/nuicss/utilities/typography#text-alignment-transform",
     "pkg": "nuicss"
   },
   {

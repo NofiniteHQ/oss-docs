@@ -76,7 +76,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
   // Active item title for mobile header bar
   const activeItem = flatNav.find(item => item.href === pathname);
 
-  const isVersionedPackage = currentPkgId === 'nuicss';
+  const isVersionedPackage = false;
 
   const renderNavList = (isMobile = false) => (
     <nav className="flex flex-col gap-2 py-2 pr-2">
