@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { MegaMenu } from '@nofinite/nui';
+import { Link, MegaMenu } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

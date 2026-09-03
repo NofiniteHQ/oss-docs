@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { MultiSelect } from '@nofinite/nui';
+import { MultiSelect, Select } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

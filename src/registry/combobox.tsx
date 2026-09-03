@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { Combobox } from '@nofinite/nui';
+import { Combobox, Select } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

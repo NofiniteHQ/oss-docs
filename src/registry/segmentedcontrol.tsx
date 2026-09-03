@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { SegmentedControl } from '@nofinite/nui';
+import { SegmentedControl, Table } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { Checkbox } from '@nofinite/nui';
+import { Checkbox, Select } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

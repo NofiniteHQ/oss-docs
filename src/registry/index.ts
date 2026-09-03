@@ -1889,8 +1889,26 @@ console.log(greeting);" language="typescript" />`
     component: dynamic(() => import("./toast"), {
       loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
     }),
-    code: `<Button variant="outline" onClick={() => alert('Toast triggered')}>
-        Trigger Notification
+    code: `<Button
+        variant="outline"
+        onClick={() => show('Standard Notification', { variant: 'default', description: 'This is a standard toast notification.' })}
+      >
+        Default Toast
+      </Button>
+
+      <Button
+        variant="primary"
+        onClick={() => show('Project Saved!', { variant: 'success', description: 'All your recent changes have been saved.' })}
+      >
+        Success Toast
+      </Button>
+
+      <Button
+        variant="outline"
+        className="text-red-500 border-red-500/30 hover:bg-red-500/10"
+        onClick={() => show('Connection Lost', { variant: 'error', description: 'Could not connect to the remote server.' })}
+      >
+        Error Toast
       </Button>`
   },
   "tooltip": {

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { Badge } from '@nofinite/nui';
+import { Badge, Link } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

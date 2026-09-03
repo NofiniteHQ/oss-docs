@@ -823,7 +823,11 @@ function cleanRegistry() {
 
     const usedImports = new Set();
     for (const comp of VALID_NUI_EXPORTS) {
-      if (funcBody.includes(`<${comp}`) || funcBody.includes(`${comp}.`)) {
+      if (
+        funcBody.includes(`<${comp}`) ||
+        funcBody.includes(`${comp}.`) ||
+        new RegExp(`\\b${comp}\\b`).test(funcBody)
+      ) {
         usedImports.add(comp);
       }
     }

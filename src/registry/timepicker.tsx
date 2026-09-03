@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { TimePicker } from '@nofinite/nui';
+import { Select, TimePicker } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

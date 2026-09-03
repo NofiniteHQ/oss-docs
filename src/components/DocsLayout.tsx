@@ -324,6 +324,25 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
         {/* Desktop Sticky Sidebar */}
         <aside className="hidden md:flex flex-col w-64 lg:w-72 border-r border-default flex-shrink-0 sticky top-16 h-[calc(100vh-4rem)] bg-page">
           <div className="flex-1 overflow-y-auto px-2 py-4 [scrollbar-width:thin] [scrollbar-color:var(--border-default)_transparent]">
+            {/* Quick Ecosystem Switcher */}
+            <div className="flex items-center gap-1 p-1 mb-4 bg-subtle/40 border border-default rounded-lg">
+              {PACKAGES.map((pkg) => {
+                const isPkgActive = currentPkgId === pkg.id;
+                return (
+                  <Link
+                    key={pkg.id}
+                    href={pkg.href}
+                    className={`flex-1 text-center text-xs py-1 px-1 rounded-md font-semibold transition-all ${
+                      isPkgActive
+                        ? 'bg-surface text-primary shadow-xs border border-default/60'
+                        : 'text-muted hover:text-default'
+                    }`}
+                  >
+                    {pkg.label}
+                  </Link>
+                );
+              })}
+            </div>
             {renderNavList(false)}
           </div>
         </aside>

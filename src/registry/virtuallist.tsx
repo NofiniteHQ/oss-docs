@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { Button } from '@nofinite/nui';
+import { VirtualList } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

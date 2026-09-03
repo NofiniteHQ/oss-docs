@@ -1,7 +1,7 @@
 
 import '@nofinite/nui/styles.css';
 import './globals.css';
-import { NUIProvider } from '@nofinite/nui';
+import { NUIProvider, ToastProvider } from '@nofinite/nui';
 import { Navbar } from '@/components/Navbar';
 
 import type { Metadata } from 'next';
@@ -34,10 +34,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="nui-reset antialiased bg-page text-default min-h-screen flex flex-col">
         <NUIProvider>
-          <Navbar />
-          <main className="flex-1 flex flex-col">
-            {children}
-          </main>
+          <ToastProvider>
+            <Navbar />
+            <main className="flex-1 flex flex-col">
+              {children}
+            </main>
+          </ToastProvider>
         </NUIProvider>
       </body>
     </html>

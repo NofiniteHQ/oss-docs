@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { Button } from '@nofinite/nui';
+import { Button, Toast, useToast } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [
@@ -19,10 +19,30 @@ const date = new Date();
 const r = { start: new Date(), end: new Date() };
 
 export default function Example() {
+  const { show } = useToast();
+
   return (
-    <div className="flex gap-2">
-      <Button variant="outline" onClick={() => alert('Toast triggered')}>
-        Trigger Notification
+    <div className="flex flex-wrap items-center gap-3">
+      <Button
+        variant="outline"
+        onClick={() => show('Standard Notification', { variant: 'default', description: 'This is a standard toast notification.' })}
+      >
+        Default Toast
+      </Button>
+
+      <Button
+        variant="primary"
+        onClick={() => show('Project Saved!', { variant: 'success', description: 'All your recent changes have been saved.' })}
+      >
+        Success Toast
+      </Button>
+
+      <Button
+        variant="outline"
+        className="text-red-500 border-red-500/30 hover:bg-red-500/10"
+        onClick={() => show('Connection Lost', { variant: 'error', description: 'Could not connect to the remote server.' })}
+      >
+        Error Toast
       </Button>
     </div>
   );

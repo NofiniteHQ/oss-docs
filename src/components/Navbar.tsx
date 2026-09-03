@@ -26,7 +26,7 @@ export function Navbar() {
             <Logo className="w-8 h-8 text-default group-hover:text-primary transition-colors" />
             <span className="text-default font-extrabold tracking-tight">Opensource</span>
           </Link>
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-sm font-medium">
             <Link href="/nui/getting-started" className="text-muted hover:text-primary transition-colors">NUI</Link>
             <Link href="/nuicss" className="text-muted hover:text-primary transition-colors">NUICSS</Link>
             <Link href="/locale" className="text-muted hover:text-primary transition-colors">Locale</Link>

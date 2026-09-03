@@ -2483,7 +2483,7 @@ import { Clipboard } from '@nofinite/nui';
 
 ### Document: nui/components/codeblock/page.mdx
 
-# CodeBlock
+# Code Block
 
 A fully accessible, token-driven CodeBlock component built with strict WAI-ARIA compliance.
 
@@ -2573,7 +2573,7 @@ import { Collapsible } from '@nofinite/nui';
 
 ### Document: nui/components/colorpicker/page.mdx
 
-# ColorPicker
+# Color Picker
 
 A fully accessible, token-driven ColorPicker component built with strict WAI-ARIA compliance.
 
@@ -2786,7 +2786,7 @@ const [value, setValue] = useState("");
 
 ### Document: nui/components/contextmenu/page.mdx
 
-# Contextmenu
+# Context Menu
 
 A composable, accessible Contextmenu component for modern React applications.
 
@@ -2976,7 +2976,7 @@ import { ContextMenu } from '@nofinite/nui';
 
 ### Document: nui/components/datepicker/page.mdx
 
-# DatePicker
+# Date Picker
 
 A composable, accessible DatePicker component for modern React applications.
 
@@ -3138,7 +3138,7 @@ Implemented semantics:
 
 ### Document: nui/components/daterangepicker/page.mdx
 
-# DateRangePicker
+# Date Range Picker
 
 A composable, accessible DateRangePicker component for modern React applications.
 
@@ -4072,7 +4072,7 @@ Design characteristics:
 
 ### Document: nui/components/emptystate/page.mdx
 
-# EmptyState
+# Empty State
 
 A fully accessible, token-driven EmptyState component built with strict WAI-ARIA compliance.
 
@@ -4117,7 +4117,7 @@ import { EmptyState } from '@nofinite/nui';
 
 ### Document: nui/components/fileuploader/page.mdx
 
-# FileUploader
+# File Uploader
 
 A composable, accessible FileUploader component for modern React applications.
 
@@ -4377,7 +4377,7 @@ import { Form } from '@nofinite/nui';
 
 ### Document: nui/components/hovercard/page.mdx
 
-# HoverCard
+# Hover Card
 
 A composable, accessible HoverCard component for modern React applications.
 
@@ -5351,7 +5351,7 @@ import { Button } from '@nofinite/nui';
 
 ### Document: nui/components/megamenu/page.mdx
 
-# MegaMenu
+# Mega Menu
 
 A composable, accessible MegaMenu component for modern React applications.
 
@@ -5826,7 +5826,7 @@ Tradeoffs:
 
 ### Document: nui/components/multiselect/page.mdx
 
-# MultiSelect
+# Multi Select
 
 A fully accessible, token-driven MultiSelect component built with strict WAI-ARIA compliance.
 
@@ -5871,7 +5871,7 @@ import { MultiSelect } from '@nofinite/nui';
 
 ### Document: nui/components/nuiprovider/page.mdx
 
-# NUIProvider
+# NUI Provider
 
 A fully accessible, token-driven NUIProvider component built with strict WAI-ARIA compliance.
 
@@ -5916,7 +5916,7 @@ import { NUIProvider } from '@nofinite/nui';
 
 ### Document: nui/components/numberinput/page.mdx
 
-# NumberInput
+# Number Input
 
 A fully accessible, token-driven NumberInput component built with strict WAI-ARIA compliance.
 
@@ -6116,7 +6116,7 @@ Generated item types:
 
 ### Document: nui/components/passwordinput/page.mdx
 
-# PasswordInput
+# Password Input
 
 A fully accessible, token-driven PasswordInput component built with strict WAI-ARIA compliance.
 
@@ -6161,7 +6161,7 @@ import { PasswordInput } from '@nofinite/nui';
 
 ### Document: nui/components/pininput/page.mdx
 
-# PinInput
+# Pin Input
 
 A fully accessible, token-driven PinInput component built with strict WAI-ARIA compliance.
 
@@ -6576,7 +6576,7 @@ The component uses **transform-based progress animation** instead of width chang
 
 ### Document: nui/components/radiogroup/page.mdx
 
-# RadioGroup
+# Radio Group
 
 A composable, accessible RadioGroup component for modern React applications.
 
@@ -7113,7 +7113,7 @@ Handles follow separator interaction pattern.
 
 ### Document: nui/components/scrollarea/page.mdx
 
-# ScrollArea
+# Scroll Area
 
 A fully accessible, token-driven ScrollArea component built with strict WAI-ARIA compliance.
 
@@ -7158,7 +7158,7 @@ import { ScrollArea } from '@nofinite/nui';
 
 ### Document: nui/components/segmentedcontrol/page.mdx
 
-# SegmentedControl
+# Segmented Control
 
 A fully accessible, token-driven SegmentedControl component built with strict WAI-ARIA compliance.
 
@@ -7843,7 +7843,7 @@ import { Spinner } from '@nofinite/nui';
 
 ### Document: nui/components/statcard/page.mdx
 
-# StatCard
+# Stat Card
 
 A fully accessible, token-driven StatCard component built with strict WAI-ARIA compliance.
 
@@ -8892,7 +8892,7 @@ import { Timeline } from '@nofinite/nui';
 
 ### Document: nui/components/timepicker/page.mdx
 
-# TimePicker
+# Time Picker
 
 A composable, accessible TimePicker component for modern React applications.
 
@@ -9067,7 +9067,7 @@ z-dropdown       | Popover layering |
 
 ### Document: nui/components/timerangepicker/page.mdx
 
-# TimeRangePicker
+# Time Range Picker
 
 A composable, accessible TimeRangePicker component for modern React applications.
 
@@ -9576,7 +9576,7 @@ zontal padding       |
 
 ### Document: nui/components/transferlist/page.mdx
 
-# TransferList
+# Transfer List
 
 A fully accessible, token-driven TransferList component built with strict WAI-ARIA compliance.
 
@@ -9621,7 +9621,7 @@ import { TransferList } from '@nofinite/nui';
 
 ### Document: nui/components/treeview/page.mdx
 
-# TreeView
+# Tree View
 
 A composable, accessible TreeView component for modern React applications.
 
@@ -9846,7 +9846,7 @@ import { VideoPlayer } from '@nofinite/nui';
 
 ### Document: nui/components/virtuallist/page.mdx
 
-# VirtualList
+# Virtual List
 
 A composable, accessible VirtualList component for modern React applications.
 
