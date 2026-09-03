@@ -1,6 +1,6 @@
 # Badge
 
-A composable, accessible Badge component for modern React applications.
+A compact status or indicator component that can display numbers, icons, or small labels. Supports variants, sizes, pill shapes, dot mode, and interactive behavior.
 
 ```tsx
 import { Badge } from '@nofinite/nui';
@@ -14,18 +14,18 @@ import { Badge } from '@nofinite/nui';
 
 ---
 
-A **compact status or indicator component** that can display numbers, icons, or small labels. Supports **variants, sizes, pill shapes, dot mode, and interactive behavior** (links or buttons).
+## Status Dot Badges
+
+<Preview name="badge-dots" />
 
 ---
 
 ## Usage
 
-### Basic Badge
+### Variants
 
 ```tsx
-import { Badge } from '@nofinite/nui';
-
-<Badge>New</Badge>
+<Badge variant="default">Default</Badge>
 <Badge variant="primary">Primary</Badge>
 <Badge variant="success">Success</Badge>
 <Badge variant="warning">Warning</Badge>
@@ -40,162 +40,32 @@ import { Badge } from '@nofinite/nui';
 <Badge count={120} max={99} />  {/* Displays 99+ */}
 ```
 
-### Dot Badge
-
-```tsx
-<Badge dot variant="success" />
-```
-
 ### Pill Badge
 
 ```tsx
 <Badge pill variant="primary">
-  Premium
+  Feature
 </Badge>
 ```
-
-### Interactive Badge
-
-```tsx
-<Badge onClick={() => alert('Clicked!')} variant="primary">
-  Click Me
-</Badge>
-
-<Badge href="https://example.com" variant="primary">
-  Go to Link
-</Badge>
-```
-
-### Badge with Icons
-
-```tsx
-<Badge iconLeft={<Icon />} iconRight={<Icon />} variant="success">
-  Messages
-</Badge>
-```
-
----
-
----
-
-## BadgeGroup
-
-Groups multiple badges and optionally displays a `+n` overflow indicator.
-
-### Usage
-
-```tsx
-import { Badge, BadgeGroup } from '@nofinite/nui';
-
-<BadgeGroup max={3}>
-  <Badge variant="success">Online</Badge>
-  <Badge variant="warning">Away</Badge>
-  <Badge variant="danger">Busy</Badge>
-  <Badge variant="primary">Admin</Badge>
-</BadgeGroup>;
-```
-
----
-
-### Props
-
-| Prop        | Type                                   | Default | Description                                      |
-| ----------- | -------------------------------------- | ------- | ------------------------------------------------ |
-| `children`  | `React.ReactNode[]`                    | —       | Badge components to group                        |
-| `max`       | `number`                               | `3`     | Maximum badges to show; excess displayed as `+n` |
-| `className` | `string`                               | `""`    | Additional CSS classes for the group container   |
-| `...rest`   | `React.HTMLAttributes<HTMLDivElement>` | —       | Other native props                               |
-
----
-
-## Variants
-
-| Variant   | Description                        |
-| --------- | ---------------------------------- |
-| `default` | Neutral / gray                     |
-| `primary` | Brand / accent color               |
-| `success` | Success / green                    |
-| `warning` | Warning / amber                    |
-| `danger`  | Error / red                        |
-| `outline` | Transparent background with border |
-
----
-
-## Sizes
-
-| Size | Height | Font Size | Notes                           |
-| ---- | ------ | --------- | ------------------------------- |
-| `sm` | 20px   | 12px      | Compact badges for tight spaces |
-| `md` | 24px   | 14px      | Default size                    |
-| `lg` | 28px   | 14px      | Slightly larger for emphasis    |
-
----
-
-## Shapes
-
-- **Pill** – Fully rounded with `pill={true}`
-- **Dot** – Small circular badge, hides content with `dot={true}`
-
----
-
-## Design Tokens / Theming
-
-```css
-:root {
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --radius-sm: 4px;
-  --radius-full: 9999px;
-  --font-sans: 'Inter', sans-serif;
-  --weight-medium: 500;
-  text-xs: 12px;
-  text-sm: 14px;
-
-  /* Colors */
-  --bg-subtle: #f3f4f6;
-  --fg-default: #111827;
-  --border-default: #e5e7eb;
-  --brand-100: #dbeafe;
-  --brand-200: #bfdbfe;
-  --color-primary-hover: #1d4ed8;
-  --color-success: #22c55e;
-  --color-danger: #ef4444;
-}
-```
-
----
-
-## Accessibility
-
-- **Role and interactive elements**
-
-  - Non-interactive badges render as `<span>`.
-  - `href` badges render as `<a>` (link role).
-  - `onClick` badges render as `<button>` (button role).
-
-- Icons and counts are visible to screen readers.
-- Dot badges are visual-only; use `aria-label` via `...rest` if necessary.
-
----
-
-## Best Practices
-
-### Do
-
-- Use badges to indicate status, counts, or labels.
-- Keep badge text short (1–2 words).
-- Use `max` in groups to prevent overflow.
-- Use `dot` for subtle notifications or status.
-
-### Don’t
-
-- Place essential information only inside dot badges.
-- Overload groups with too many badges; use `max` for overflow.
-- Use badges for primary navigation.
 
 ---
 
 ## API Reference
 
 <PropsTable name="Badge" />
+
+---
+
+## Design Tokens & Theming
+
+In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
+
+| Token | Usage |
+| --- | --- |
+| `--bg-surface` | Default surface background |
+| `--bg-subtle` | Hover and muted background |
+| `--fg-default` | Primary text color |
+| `--fg-muted` | Secondary text color |
+| `--border-default` | Default border color |
+| `--color-primary` | Primary brand emphasis |
+| `--radius-full` | Pill badge border radius |

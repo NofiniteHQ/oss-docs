@@ -1036,7 +1036,7 @@ Accordion does not provide visual variants via props. **Styling is controlled vi
 
 # Alert
 
-A composable, accessible Alert component for modern React applications.
+A flexible and accessible alert component for displaying contextual messages, notifications, or warnings. Supports multiple variants (info, success, warning, danger) and optional closable behavior.
 
 ```tsx
 import { Alert } from '@nofinite/nui';
@@ -1050,7 +1050,9 @@ import { Alert } from '@nofinite/nui';
 
 ---
 
-A flexible and **accessible alert component** for displaying contextual messages, notifications, or warnings. Supports multiple variants (`info`, `success`, `warning`, `error`), optional closable behavior, and clear accessibility cues.
+## Alert Types & Variants
+
+
 
 ---
 
@@ -1061,128 +1063,40 @@ A flexible and **accessible alert component** for displaying contextual messages
 ```tsx
 import { Alert } from '@nofinite/nui';
 
-<Alert>This is an informational message.</Alert>;
+<Alert>This is an informational message.</Alert>
 ```
 
-### Alert with a title
+### Alert with Title & Custom Content
 
 ```tsx
-<Alert title="Network Error">
-  Unable to connect to the server. Please try again.
+<Alert variant="info" title="System Notice">
+  Scheduled maintenance is set for Sunday at 02:00 UTC.
 </Alert>
 ```
-
-### Variants
-
-```tsx
-<Alert variant="success" title="Success">
-  Your data has been saved successfully.
-</Alert>
-
-<Alert variant="warning" title="Warning">
-  Your subscription will expire in 3 days.
-</Alert>
-
-<Alert variant="error" title="Error">
-  Failed to process your request.
-</Alert>
-```
-
-### Closable Alert
-
-```tsx
-<Alert
-  variant="info"
-  title="Reminder"
-  closable
-  onClose={() => console.log('Alert closed')}
->
-  Don’t forget to check your inbox.
-</Alert>
-```
-
----
-
----
-
-## Variants
-
-| Variant   | Background            | Border                 | Text Color                 | Description                         |
-| --------- | --------------------- | ---------------------- | -------------------------- | ----------------------------------- |
-| `info`    | `var(--brand-50)` | `var(--brand-100)` | `var(--color-primary-hover)`     | Informational message               |
-| `success` | `#f0fdf4`             | `#dcfce7`              | `var(--color-success)` | Positive feedback / success message |
-| `warning` | `#fffbeb`             | `#fef3c7`              | `#b45309`                  | Warning or caution                  |
-| `error`   | `#fef2f2`             | `#fee2e2`              | `var(--color-danger)`  | Error / critical alert              |
-
-> Colors can be overridden with design tokens for theming.
-
----
-
-## Accessibility
-
-- Uses semantic roles:
-
-  - `role="alert"` for `error` and `warning` (automatically announced by screen readers)
-  - `role="status"` for `info` and `success`
-
-- Headers are optional but recommended.
-- Close button is keyboard accessible (`Enter` / `Space` triggers `onClose`).
-- Focus styles visible via `:focus-visible` on the close button.
-
----
-
-## Behavior
-
-- Alerts are **controlled/uncontrolled**: content always renders; visibility is handled via parent component logic.
-- `closable` triggers `onClose` callback but does not remove alert automatically — parent should handle removal.
-- Alerts are visually distinct per variant for immediate recognition.
-- Close button shows hover and focus states for better UX.
-
----
-
-## Design Tokens / Theming
-
-You can override CSS variables to adjust the appearance:
-
-```css
-:root {
-  /* Colors */
-  --brand-50: #eff6ff;
-  --brand-100: #dbeafe;
-  --color-primary-hover: #1d4ed8;
-  --color-success: #22c55e;
-  --color-danger: #ef4444;
-
-  /* Typography */
-  --font-sans: 'Inter', sans-serif;
-  text-sm: 0.875rem;
-  --weight-bold: 700;
-
-  /* Spacing & Radius */
-  --space-4: 16px;
-  --radius-md: 8px;
-}
-```
-
----
-
-## Best Practices
-
-### Do
-
-- Provide a **title** for clarity, especially for `error` or `warning` alerts.
-- Keep messages concise.
-- Use `closable` for temporary notifications.
-
-### Don’t
-
-- Overload with too much text — keep alerts scannable.
-- Use only color to convey status; combine with icons or text.
-- Nest alerts inside other alerts — avoid confusion.
 
 ---
 
 ## API Reference
+
+
+
+---
+
+## Design Tokens & Theming
+
+In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
+
+| Token | Usage |
+| --- | --- |
+| `--bg-surface` | Default surface background |
+| `--bg-subtle` | Hover and muted background |
+| `--fg-default` | Primary text color |
+| `--fg-muted` | Secondary text color |
+| `--border-default` | Default border color |
+| `--color-primary` | Info emphasis |
+| `--color-success` | Success feedback |
+| `--color-warning` | Warning feedback |
+| `--color-danger` | Destructive feedback |
 
 ---
 
@@ -1458,7 +1372,7 @@ You can customize Avatar appearance using CSS variables:
 
 # Badge
 
-A composable, accessible Badge component for modern React applications.
+A compact status or indicator component that can display numbers, icons, or small labels. Supports variants, sizes, pill shapes, dot mode, and interactive behavior.
 
 ```tsx
 import { Badge } from '@nofinite/nui';
@@ -1472,18 +1386,18 @@ import { Badge } from '@nofinite/nui';
 
 ---
 
-A **compact status or indicator component** that can display numbers, icons, or small labels. Supports **variants, sizes, pill shapes, dot mode, and interactive behavior** (links or buttons).
+## Status Dot Badges
+
+
 
 ---
 
 ## Usage
 
-### Basic Badge
+### Variants
 
 ```tsx
-import { Badge } from '@nofinite/nui';
-
-<Badge>New</Badge>
+<Badge variant="default">Default</Badge>
 <Badge variant="primary">Primary</Badge>
 <Badge variant="success">Success</Badge>
 <Badge variant="warning">Warning</Badge>
@@ -1498,163 +1412,35 @@ import { Badge } from '@nofinite/nui';
 <Badge count={120} max={99} />  {/* Displays 99+ */}
 ```
 
-### Dot Badge
-
-```tsx
-<Badge dot variant="success" />
-```
-
 ### Pill Badge
 
 ```tsx
 <Badge pill variant="primary">
-  Premium
+  Feature
 </Badge>
 ```
-
-### Interactive Badge
-
-```tsx
-<Badge onClick={() => alert('Clicked!')} variant="primary">
-  Click Me
-</Badge>
-
-<Badge href="https://example.com" variant="primary">
-  Go to Link
-</Badge>
-```
-
-### Badge with Icons
-
-```tsx
-<Badge iconLeft={<Icon />} iconRight={<Icon />} variant="success">
-  Messages
-</Badge>
-```
-
----
-
----
-
-## BadgeGroup
-
-Groups multiple badges and optionally displays a `+n` overflow indicator.
-
-### Usage
-
-```tsx
-import { Badge, BadgeGroup } from '@nofinite/nui';
-
-<BadgeGroup max={3}>
-  <Badge variant="success">Online</Badge>
-  <Badge variant="warning">Away</Badge>
-  <Badge variant="danger">Busy</Badge>
-  <Badge variant="primary">Admin</Badge>
-</BadgeGroup>;
-```
-
----
-
-### Props
-
-| Prop        | Type                                   | Default | Description                                      |
-| ----------- | -------------------------------------- | ------- | ------------------------------------------------ |
-| `children`  | `React.ReactNode[]`                    | —       | Badge components to group                        |
-| `max`       | `number`                               | `3`     | Maximum badges to show; excess displayed as `+n` |
-| `className` | `string`                               | `""`    | Additional CSS classes for the group container   |
-| `...rest`   | `React.HTMLAttributes<HTMLDivElement>` | —       | Other native props                               |
-
----
-
-## Variants
-
-| Variant   | Description                        |
-| --------- | ---------------------------------- |
-| `default` | Neutral / gray                     |
-| `primary` | Brand / accent color               |
-| `success` | Success / green                    |
-| `warning` | Warning / amber                    |
-| `danger`  | Error / red                        |
-| `outline` | Transparent background with border |
-
----
-
-## Sizes
-
-| Size | Height | Font Size | Notes                           |
-| ---- | ------ | --------- | ------------------------------- |
-| `sm` | 20px   | 12px      | Compact badges for tight spaces |
-| `md` | 24px   | 14px      | Default size                    |
-| `lg` | 28px   | 14px      | Slightly larger for emphasis    |
-
----
-
-## Shapes
-
-- **Pill** – Fully rounded with `pill={true}`
-- **Dot** – Small circular badge, hides content with `dot={true}`
-
----
-
-## Design Tokens / Theming
-
-```css
-:root {
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --radius-sm: 4px;
-  --radius-full: 9999px;
-  --font-sans: 'Inter', sans-serif;
-  --weight-medium: 500;
-  text-xs: 12px;
-  text-sm: 14px;
-
-  /* Colors */
-  --bg-subtle: #f3f4f6;
-  --fg-default: #111827;
-  --border-default: #e5e7eb;
-  --brand-100: #dbeafe;
-  --brand-200: #bfdbfe;
-  --color-primary-hover: #1d4ed8;
-  --color-success: #22c55e;
-  --color-danger: #ef4444;
-}
-```
-
----
-
-## Accessibility
-
-- **Role and interactive elements**
-
-  - Non-interactive badges render as `<span>`.
-  - `href` badges render as `<a>` (link role).
-  - `onClick` badges render as `<button>` (button role).
-
-- Icons and counts are visible to screen readers.
-- Dot badges are visual-only; use `aria-label` via `...rest` if necessary.
-
----
-
-## Best Practices
-
-### Do
-
-- Use badges to indicate status, counts, or labels.
-- Keep badge text short (1–2 words).
-- Use `max` in groups to prevent overflow.
-- Use `dot` for subtle notifications or status.
-
-### Don’t
-
-- Place essential information only inside dot badges.
-- Overload groups with too many badges; use `max` for overflow.
-- Use badges for primary navigation.
 
 ---
 
 ## API Reference
+
+
+
+---
+
+## Design Tokens & Theming
+
+In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
+
+| Token | Usage |
+| --- | --- |
+| `--bg-surface` | Default surface background |
+| `--bg-subtle` | Hover and muted background |
+| `--fg-default` | Primary text color |
+| `--fg-muted` | Secondary text color |
+| `--border-default` | Default border color |
+| `--color-primary` | Primary brand emphasis |
+| `--radius-full` | Pill badge border radius |
 
 ---
 
@@ -1844,95 +1630,37 @@ A polymorphic, accessible, and composable action component designed for primary 
 
 ---
 
-## Usage
+## Sizes
 
-### Basic usage
 
-```tsx id="btn1"
-import { Button } from '@nofinite/nui';
-
-<Button>Click me</Button>;
-```
-
-### Variants
-
-```tsx id="btn2"
-<Button variant="default">Default</Button>
-<Button variant="primary">Primary</Button>
-<Button variant="outline">Outline</Button>
-<Button variant="ghost">Ghost</Button>
-<Button variant="danger">Danger</Button>
-```
-
-### Sizes
-
-```tsx id="btn3"
-<Button size="sm">Small</Button>
-<Button size="md">Medium</Button>
-<Button size="lg">Large</Button>
-<Button size="icon">⭐</Button>
-```
-
-### With icons
-
-```tsx id="btn4"
-<Button iconLeft={<FaPlus />}>Create</Button>
-<Button iconRight={<FaArrowRight />} variant="primary">Continue</Button>
-```
-
-### Loading state
-
-```tsx id="btn5"
-<Button isLoading>Processing</Button>
-```
-
-### Polymorphic usage (Next.js Link)
-
-```tsx id="btn6"
-<Button asChild variant="primary">
-  <NextLink href="/dashboard">Go to Dashboard</NextLink>
-</Button>
-```
 
 ---
 
----
+## Loading & Disabled States
 
-## Variants
 
-### Visual variants
-
-- Default (secondary surface)
-- Primary (brand emphasis)
-- Outline (border only)
-- Ghost (minimal UI)
-- Danger (destructive action)
-- Link (text-like action)
-
-### Size variants
-
-- Small (compact UI)
-- Medium (default)
-- Large (emphasis)
-- Icon (square button)
-
-**Guidelines**
-
-- Use primary for main CTA
-- Use danger only for destructive actions
-- Use ghost for dense UI toolbars
-- Use outline for secondary emphasis
-- Use icon size for icon-only actions
 
 ---
 
-## States
+## API Reference
 
-- Default
-- Hover
-- Focus-visible
-- Disabled
-- Loading (spinner replaces left icon)
+
+
+---
+
+## Design Tokens & Theming
+
+In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:
+
+| Token | Usage |
+| --- | --- |
+| `--bg-surface` | Default surface background |
+| `--bg-subtle` | Hover and muted background |
+| `--fg-default` | Primary text color |
+| `--fg-muted` | Secondary text color |
+| `--border-default` | Default border color |
+| `--color-primary` | Primary brand emphasis |
+| `--radius-md` | Border radius |
 
 ---
 
@@ -1940,68 +1668,10 @@ import { Button } from '@nofinite/nui';
 
 | Key       | Behavior           |
 | --------- | ------------------ |
-| Enter     | Activates button   |
-| Space     | Activates button   |
-| Tab       | Focus navigation   |
-| Shift+Tab | Reverse navigation |
-
----
-
-## Accessibility
-
-- Native button semantics preserved
-- Automatic disabled state when loading
-- `aria-hidden` spinner prevents duplicate announcements
-- Focus-visible ring for keyboard navigation
-- Supports polymorphic rendering while preserving semantics
-- Compatible with screen readers
-
----
-
-## Design Tokens
-
-| Token                | Usage                |
-| -------------------- | -------------------- |
-| --bg-surface     | Default background   |
-| --bg-subtle      | Hover background     |
-| --border-default | Outline border       |
-| --border-hover   | Outline hover border |
-| --color-primary      | Primary background   |
-| --color-primary-hover      | Primary hover        |
-| --color-danger   | Danger background    |
-| --radius-md      | Border radius        |
-| --font-sans      | Typography           |
-| text-xs        | Small size text      |
-| text-sm        | Medium size text     |
-| text-base      | Large size text      |
-| --space-2        | Icon spacing         |
-| --space-3        | Small padding        |
-| --space-4        | Medium padding       |
-| --space-6        | Large padding        |
-
----
-
-## Best Practices
-
-### Do
-
-- Use loading state for async actions
-- Provide accessible labels for icon-only buttons
-- Use asChild for router links
-- Keep icon alignment consistent
-- Use primary variant sparingly for emphasis
-
-### Don’t
-
-- Use danger variant for non-destructive actions
-- Place multiple primary buttons in the same section
-- Use icon-only buttons without aria-label
-- Override disabled state during loading
-- Nest interactive elements inside button content
-
----
-
-## API Reference
+| `Enter`   | Triggers `onClick` |
+| `Space`   | Triggers `onClick` |
+| `Tab`     | Focuses button     |
+| `Shift+Tab` | Previous focusable |
 
 ---
 
@@ -5162,6 +4832,12 @@ import { Input } from '@nofinite/nui';
 ---
 
 ## Interactive Preview
+
+
+
+---
+
+## Input States & Validation
 
 
 

@@ -14,7 +14,7 @@ const categories = {
   'general': {
     title: 'General & Actions',
     description: 'Fundamental interactive elements and action triggers.',
-    components: ['button', 'badge', 'chip', 'kbd', 'nuiprovider', 'watermark']
+    components: ['button', 'badge', 'chip', 'kbd', 'watermark']
   },
   'layout-and-structure': {
     title: 'Layout & Structure',
@@ -353,6 +353,7 @@ function main() {
       generateComponentMdx(comp, catKey);
     }
   }
+  generateComponentMdx('nuiprovider', 'getting-started');
 
   console.log('\nGenerating visual Category Hub pages...');
   generateCategoryHubs();

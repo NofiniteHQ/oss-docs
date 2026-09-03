@@ -10,6 +10,7 @@ export interface NavItem {
 
 function formatLabel(name: string): string {
   if (name === 'getting-started') return 'Getting Started';
+  if (name.toLowerCase() === 'nuicss') return 'NUICSS';
   if (/^v\d+$/i.test(name)) return name.toUpperCase();
   return name.split('-').map(word => word === 'and' ? 'and' : word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
@@ -68,19 +69,18 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'getting-started-section',
         label: 'Getting Started',
         children: [
-          { id: 'getting-started', label: 'Installation & Setup', href: '/nui/getting-started' }
+          { id: 'getting-started', label: 'Installation & Setup', href: '/nui/getting-started' },
+          { id: 'nuiprovider', label: 'NUIProvider', href: '/nui/components/nuiprovider' }
         ]
       },
       {
         id: 'general-section',
         label: 'General & Actions',
         children: [
-          { id: 'general-overview', label: 'Category Overview', href: '/nui/general' },
-          { id: 'badge', label: 'Badge', href: '/nui/components/badge' },
           { id: 'button', label: 'Button', href: '/nui/components/button' },
+          { id: 'badge', label: 'Badge', href: '/nui/components/badge' },
           { id: 'chip', label: 'Chip', href: '/nui/components/chip' },
           { id: 'kbd', label: 'Kbd', href: '/nui/components/kbd' },
-          { id: 'nuiprovider', label: 'NUIProvider', href: '/nui/components/nuiprovider' },
           { id: 'watermark', label: 'Watermark', href: '/nui/components/watermark' },
         ]
       },
@@ -88,7 +88,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'layout-section',
         label: 'Layout & Structure',
         children: [
-          { id: 'layout-overview', label: 'Category Overview', href: '/nui/layout-and-structure' },
           { id: 'accordion', label: 'Accordion', href: '/nui/components/accordion' },
           { id: 'card', label: 'Card', href: '/nui/components/card' },
           { id: 'collapsible', label: 'Collapsible', href: '/nui/components/collapsible' },
@@ -102,7 +101,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'inputs-section',
         label: 'Inputs & Forms',
         children: [
-          { id: 'inputs-overview', label: 'Category Overview', href: '/nui/inputs-and-forms' },
           { id: 'checkbox', label: 'Checkbox', href: '/nui/components/checkbox' },
           { id: 'colorpicker', label: 'ColorPicker', href: '/nui/components/colorpicker' },
           { id: 'fileuploader', label: 'FileUploader', href: '/nui/components/fileuploader' },
@@ -122,7 +120,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'pickers-section',
         label: 'Pickers & Selects',
         children: [
-          { id: 'pickers-overview', label: 'Category Overview', href: '/nui/pickers-and-selects' },
           { id: 'calendar', label: 'Calendar', href: '/nui/components/calendar' },
           { id: 'combobox', label: 'Combobox', href: '/nui/components/combobox' },
           { id: 'datepicker', label: 'DatePicker', href: '/nui/components/datepicker' },
@@ -137,7 +134,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'navigation-section',
         label: 'Navigation',
         children: [
-          { id: 'navigation-overview', label: 'Category Overview', href: '/nui/navigation' },
           { id: 'breadcrumbs', label: 'Breadcrumbs', href: '/nui/components/breadcrumbs' },
           { id: 'link', label: 'Link', href: '/nui/components/link' },
           { id: 'megamenu', label: 'MegaMenu', href: '/nui/components/megamenu' },
@@ -152,7 +148,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'overlays-section',
         label: 'Overlays & Dialogs',
         children: [
-          { id: 'overlays-overview', label: 'Category Overview', href: '/nui/overlays-and-dialogs' },
           { id: 'contextmenu', label: 'ContextMenu', href: '/nui/components/contextmenu' },
           { id: 'dialog', label: 'Dialog', href: '/nui/components/dialog' },
           { id: 'drawer', label: 'Drawer', href: '/nui/components/drawer' },
@@ -167,7 +162,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'feedback-section',
         label: 'Indicators & Feedback',
         children: [
-          { id: 'indicators-overview', label: 'Category Overview', href: '/nui/indicators-and-buttons' },
           { id: 'alert', label: 'Alert', href: '/nui/components/alert' },
           { id: 'progress', label: 'Progress', href: '/nui/components/progress' },
           { id: 'skeleton', label: 'Skeleton', href: '/nui/components/skeleton' },
@@ -179,7 +173,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'data-section',
         label: 'Data Display & Media',
         children: [
-          { id: 'data-overview', label: 'Category Overview', href: '/nui/data-display' },
           { id: 'attachment', label: 'Attachment', href: '/nui/components/attachment' },
           { id: 'avatar', label: 'Avatar', href: '/nui/components/avatar' },
           { id: 'carousel', label: 'Carousel', href: '/nui/components/carousel' },

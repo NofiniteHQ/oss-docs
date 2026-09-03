@@ -9,7 +9,7 @@ import { TableOfContents } from './TableOfContents';
 
 const PACKAGES = [
   { id: 'nui', label: 'NUI', href: '/nui/getting-started' },
-  { id: 'nuicss', label: 'Nuicss', href: '/nuicss' },
+  { id: 'nuicss', label: 'NUICSS', href: '/nuicss' },
   { id: 'locale', label: 'Locale', href: '/locale' },
   { id: 'utils', label: 'Utils', href: '/utils' },
   { id: 'markon', label: 'Markon', href: '/markon' },
@@ -76,12 +76,45 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
   // Active item title for mobile header bar
   const activeItem = flatNav.find(item => item.href === pathname);
 
+  const isVersionedPackage = currentPkgId === 'nuicss';
+
   const renderNavList = (isMobile = false) => (
     <nav className="flex flex-col gap-2 py-2 pr-2">
       {navData.map((item) => {
         const hasChildren = item.children && item.children.length > 0;
 
         if (hasChildren) {
+          // In NUI and standard docs: categories are naturally expanded (not collapsible accordions)
+          if (!isVersionedPackage) {
+            return (
+              <div key={item.id} className="flex flex-col gap-1 mb-4">
+                <h4 className="text-[11px] font-bold uppercase tracking-wider text-muted px-3 py-1">
+                  {item.label}
+                </h4>
+                <div className="flex flex-col gap-0.5">
+                  {item.children!.map((child) => {
+                    const isActive = pathname === child.href;
+                    return (
+                      <Link
+                        key={child.id}
+                        href={child.href || '#'}
+                        onClick={() => isMobile && setMobileMenuOpen(false)}
+                        className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
+                          isActive
+                            ? 'bg-subtle text-primary font-semibold shadow-xs'
+                            : 'text-muted hover:text-default hover:bg-subtle/50'
+                        }`}
+                      >
+                        <span className="truncate">{child.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+
+          // In NUICSS: versions (V2 vs V1) use single-open accordion
           const isOpen = openSectionId === item.id;
 
           return (

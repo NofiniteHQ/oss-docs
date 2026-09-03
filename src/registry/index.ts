@@ -22,6 +22,23 @@ export const registry: Record<string, { component: React.ComponentType<any>; cod
         ]}
       />`
   },
+  "alert-types": {
+    component: dynamic(() => import("./alert-types"), {
+      loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
+    }),
+    code: `<Alert variant="info" title="Information">
+        A newer version of the package is available.
+      </Alert>
+      <Alert variant="success" title="Completed">
+        Your settings have been saved successfully.
+      </Alert>
+      <Alert variant="warning" title="Warning">
+        API rate limit threshold reached 85%.
+      </Alert>
+      <Alert variant="danger" title="Error">
+        Authentication failed. Please verify credentials.
+      </Alert>`
+  },
   "alert": {
     component: dynamic(() => import("./alert"), {
       loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
@@ -46,6 +63,14 @@ export const registry: Record<string, { component: React.ComponentType<any>; cod
     code: `<Avatar fallback="NF" />
       <Avatar fallback="JD" status="online" />
       <Avatar fallback="AL" status="busy" />`
+  },
+  "badge-dots": {
+    component: dynamic(() => import("./badge-dots"), {
+      loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
+    }),
+    code: `<Badge variant="success" dot>Live System</Badge>
+      <Badge variant="warning" dot>Sync Pending</Badge>
+      <Badge variant="danger" dot>Offline</Badge>`
   },
   "badge": {
     component: dynamic(() => import("./badge"), {
@@ -72,6 +97,30 @@ export const registry: Record<string, { component: React.ComponentType<any>; cod
     />
   );
 }`
+  },
+  "button-sizes": {
+    component: dynamic(() => import("./button-sizes"), {
+      loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
+    }),
+    code: `<Button size="sm" variant="primary">Small</Button>
+      <Button size="md" variant="primary">Medium</Button>
+      <Button size="lg" variant="primary">Large</Button>`
+  },
+  "button-states": {
+    component: dynamic(() => import("./button-states"), {
+      loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
+    }),
+    code: `<Button 
+        loading={loading} 
+        variant="primary" 
+        onClick={() => {
+          setLoading(true);
+          setTimeout(() => setLoading(false), 2000);
+        }}
+      >
+        {loading ? 'Submitting...' : 'Click to Load'}
+      </Button>
+      <Button disabled variant="outline">Disabled</Button>`
   },
   "button": {
     component: dynamic(() => import("./button"), {
@@ -706,6 +755,14 @@ console.log(greeting);" language="typescript" />`
 >
   Don’t forget to check your inbox.
 </Alert>`
+  },
+  "input-states": {
+    component: dynamic(() => import("./input-states"), {
+      loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
+    }),
+    code: `<Input placeholder="Standard Input..." />
+      <Input placeholder="Invalid input..." error />
+      <Input placeholder="Disabled input..." disabled />`
   },
   "input": {
     component: dynamic(() => import("./input"), {

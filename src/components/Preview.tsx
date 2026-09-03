@@ -13,8 +13,6 @@ export interface PreviewProps {
 }
 
 export function Preview({ name, code: customCode, children }: PreviewProps) {
-  const [previewTheme, setPreviewTheme] = useState<'system' | 'light' | 'dark'>('system');
-  
   const item = name ? (registry as any)[name] : null;
   const Component = item?.component;
   const rawCode = customCode || item?.code || '';
@@ -151,8 +149,6 @@ export default defineConfig({
     }, { openFile: 'src/App.tsx' });
   };
 
-  const themeClass = previewTheme === 'dark' ? 'dark bg-[#0f172a] text-white' : previewTheme === 'light' ? 'light bg-white text-slate-900' : 'bg-page text-default';
-
   return (
     <div className="my-8 rounded-lg border border-default overflow-hidden shadow-sm bg-page flex flex-col">
       <Tabs defaultValue="preview">
@@ -172,39 +168,16 @@ export default defineConfig({
             </Tabs.Trigger>
           </Tabs.List>
           
-          <div className="flex items-center gap-3">
-            <div className="flex items-center bg-default rounded-md border border-default p-0.5 text-xs">
-              <button 
-                onClick={() => setPreviewTheme('system')}
-                className={`px-2 py-0.5 rounded transition-colors ${previewTheme === 'system' ? 'bg-subtle text-default font-medium shadow-xs' : 'text-muted hover:text-default'}`}
-              >
-                System
-              </button>
-              <button 
-                onClick={() => setPreviewTheme('light')}
-                className={`px-2 py-0.5 rounded transition-colors ${previewTheme === 'light' ? 'bg-subtle text-default font-medium shadow-xs' : 'text-muted hover:text-default'}`}
-              >
-                Light
-              </button>
-              <button 
-                onClick={() => setPreviewTheme('dark')}
-                className={`px-2 py-0.5 rounded transition-colors ${previewTheme === 'dark' ? 'bg-subtle text-default font-medium shadow-xs' : 'text-muted hover:text-default'}`}
-              >
-                Dark
-              </button>
-            </div>
-
-            <button 
-              onClick={openInStackBlitz} 
-              className="text-muted hover:text-default text-xs flex items-center gap-1.5 transition-colors font-medium whitespace-nowrap"
-            >
-              <ExternalLink size={14} /> Open in StackBlitz
-            </button>
-          </div>
+          <button 
+            onClick={openInStackBlitz} 
+            className="text-muted hover:text-default text-xs flex items-center gap-1.5 transition-colors font-medium whitespace-nowrap"
+          >
+            <ExternalLink size={14} /> Open in StackBlitz
+          </button>
         </div>
         
         <Tabs.Content value="preview" className="!m-0 !p-0 !border-none !outline-none focus-visible:!outline-none">
-          <div className={`p-6 md:p-10 flex items-center justify-center min-h-[250px] relative transition-colors ${themeClass}`}>
+          <div className="p-6 md:p-10 flex items-center justify-center min-h-[250px] relative transition-colors bg-page text-default">
             <div 
               className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" 
               style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} 

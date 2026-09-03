@@ -23,7 +23,7 @@ export default function Home() {
     },
     {
       id: 'nuicss',
-      title: 'Nuicss',
+      title: 'NUICSS',
       desc: 'Semantic design token engine and utility-first CSS framework powered by the blazing fast UnoCSS compiler.',
       href: '/nuicss',
       version: 'v3.0.5',

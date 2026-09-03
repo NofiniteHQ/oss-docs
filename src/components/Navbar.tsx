@@ -28,7 +28,7 @@ export function Navbar() {
           </Link>
           <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
             <Link href="/nui/getting-started" className="text-muted hover:text-primary transition-colors">NUI</Link>
-            <Link href="/nuicss" className="text-muted hover:text-primary transition-colors">Nuicss</Link>
+            <Link href="/nuicss" className="text-muted hover:text-primary transition-colors">NUICSS</Link>
             <Link href="/locale" className="text-muted hover:text-primary transition-colors">Locale</Link>
             <Link href="/utils" className="text-muted hover:text-primary transition-colors">Utils</Link>
             <Link href="/markon" className="text-muted hover:text-primary transition-colors">Markon</Link>

@@ -295,7 +295,7 @@
   },
   {
     "title": "Alert",
-    "description": "A composable, accessible Alert component for modern React applications.",
+    "description": "A flexible and accessible alert component for displaying contextual messages, notifications, or warnings. Supports multiple variants (info, success, warning, danger) and optional closable behavior.",
     "href": "/nui/components/alert",
     "pkg": "nui"
   },
@@ -306,14 +306,14 @@
     "pkg": "nui"
   },
   {
-    "title": "Behavior (Alert)",
-    "description": "- Alerts are **controlled/uncontrolled**: content always renders; visibility is handled via parent component logic.",
-    "href": "/nui/components/alert#behavior",
+    "title": "Alert Types & Variants (Alert)",
+    "description": "",
+    "href": "/nui/components/alert#alert-types-variants",
     "pkg": "nui"
   },
   {
-    "title": "Design Tokens / Theming (Alert)",
-    "description": "You can override CSS variables to adjust the appearance:",
+    "title": "Design Tokens & Theming (Alert)",
+    "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/alert#design-tokens-theming",
     "pkg": "nui"
   },
@@ -391,7 +391,7 @@
   },
   {
     "title": "Badge",
-    "description": "A composable, accessible Badge component for modern React applications.",
+    "description": "A compact status or indicator component that can display numbers, icons, or small labels. Supports variants, sizes, pill shapes, dot mode, and interactive behavior.",
     "href": "/nui/components/badge",
     "pkg": "nui"
   },
@@ -402,20 +402,14 @@
     "pkg": "nui"
   },
   {
-    "title": "BadgeGroup (Badge)",
-    "description": "Groups multiple badges and optionally displays a `+n` overflow indicator.",
-    "href": "/nui/components/badge#badgegroup",
+    "title": "Status Dot Badges (Badge)",
+    "description": "",
+    "href": "/nui/components/badge#status-dot-badges",
     "pkg": "nui"
   },
   {
-    "title": "Shapes (Badge)",
-    "description": "- **Pill** – Fully rounded with `pill={true}`",
-    "href": "/nui/components/badge#shapes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Design Tokens / Theming (Badge)",
-    "description": "```css",
+    "title": "Design Tokens & Theming (Badge)",
+    "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
     "href": "/nui/components/badge#design-tokens-theming",
     "pkg": "nui"
   },
@@ -459,6 +453,18 @@
     "title": "Interactive Preview (Button)",
     "description": "",
     "href": "/nui/components/button#interactive-preview",
+    "pkg": "nui"
+  },
+  {
+    "title": "Loading & Disabled States (Button)",
+    "description": "",
+    "href": "/nui/components/button#loading-disabled-states",
+    "pkg": "nui"
+  },
+  {
+    "title": "Design Tokens & Theming (Button)",
+    "description": "In NUI v3, this component is styled using semantic tokens from `@nofinite/nuicss`:",
+    "href": "/nui/components/button#design-tokens-theming",
     "pkg": "nui"
   },
   {
@@ -1089,6 +1095,12 @@
     "title": "Interactive Preview (Input)",
     "description": "",
     "href": "/nui/components/input#interactive-preview",
+    "pkg": "nui"
+  },
+  {
+    "title": "Input States & Validation (Input)",
+    "description": "",
+    "href": "/nui/components/input#input-states-validation",
     "pkg": "nui"
   },
   {
