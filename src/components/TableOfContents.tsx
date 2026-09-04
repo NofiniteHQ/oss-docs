@@ -63,7 +63,7 @@ export function TableOfContents() {
                 className={`transition-colors block leading-relaxed ${
                   activeId === heading.id
                     ? 'text-primary font-semibold'
-                    : 'text-muted hover:text-default'
+                    : 'text-muted hover:text-primary'
                 }`}
               >
                 {heading.text}

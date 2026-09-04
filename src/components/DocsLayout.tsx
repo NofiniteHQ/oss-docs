@@ -134,8 +134,8 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                         onClick={() => isMobile && setMobileMenuOpen(false)}
                         className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
                           isActive
-                            ? 'bg-subtle text-primary font-semibold shadow-xs'
-                            : 'text-muted hover:text-default hover:bg-subtle/50'
+                            ? 'bg-primary/10 text-primary font-semibold shadow-xs'
+                            : 'text-muted hover:text-primary hover:bg-primary/5'
                         }`}
                       >
                         <span className="truncate">{child.label}</span>
@@ -157,7 +157,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                 type="button"
                 onClick={() => toggleSection(item.id)}
                 className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-xs font-bold uppercase tracking-wider transition-colors group cursor-pointer ${
-                  isOpen ? 'text-default bg-subtle/50' : 'text-muted hover:text-default hover:bg-subtle/30'
+                  isOpen ? 'text-primary bg-primary/10' : 'text-muted hover:text-primary hover:bg-primary/5'
                 }`}
                 aria-expanded={isOpen}
               >
@@ -172,7 +172,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className={`transition-transform duration-200 text-muted group-hover:text-default flex-shrink-0 ${
+                  className={`transition-transform duration-200 text-muted group-hover:text-primary flex-shrink-0 ${
                     isOpen ? 'rotate-90' : ''
                   }`}
                 >
@@ -189,8 +189,8 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                       onClick={() => isMobile && setMobileMenuOpen(false)}
                       className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
                         pathname === item.href
-                          ? 'bg-subtle text-primary font-semibold shadow-xs'
-                          : 'text-muted hover:text-default hover:bg-subtle/50'
+                          ? 'bg-primary/10 text-primary font-semibold shadow-xs'
+                          : 'text-muted hover:text-primary hover:bg-primary/5'
                       }`}
                     >
                       <span className="truncate">Introduction</span>
@@ -216,8 +216,8 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                                   onClick={() => isMobile && setMobileMenuOpen(false)}
                                   className={`px-3 py-1.5 rounded-md text-xs transition-all ${
                                     isSubActive
-                                      ? 'bg-subtle text-primary font-semibold shadow-xs'
-                                      : 'text-muted hover:text-default hover:bg-subtle/50'
+                                      ? 'bg-primary/10 text-primary font-semibold shadow-xs'
+                                      : 'text-muted hover:text-primary hover:bg-primary/5'
                                   }`}
                                 >
                                   <span className="truncate">{sub.label}</span>
@@ -237,8 +237,8 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                         onClick={() => isMobile && setMobileMenuOpen(false)}
                         className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
                           isActive
-                            ? 'bg-subtle text-primary font-semibold shadow-xs'
-                            : 'text-muted hover:text-default hover:bg-subtle/50'
+                            ? 'bg-primary/10 text-primary font-semibold shadow-xs'
+                            : 'text-muted hover:text-primary hover:bg-primary/5'
                         }`}
                       >
                         <span className="truncate">{child.label}</span>
@@ -259,8 +259,8 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
             onClick={() => isMobile && setMobileMenuOpen(false)}
             className={`px-3 py-2 rounded-md text-sm transition-all ${
               isActive
-                ? 'bg-subtle text-primary font-bold shadow-xs'
-                : 'text-muted hover:text-default hover:bg-subtle/50'
+                ? 'bg-primary/10 text-primary font-bold shadow-xs'
+                : 'text-muted hover:text-primary hover:bg-primary/5'
             }`}
           >
             {item.label}
@@ -400,7 +400,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                       className={`text-xs px-2.5 py-1.5 rounded-md font-semibold transition-colors ${
                         isPkgActive
                           ? 'bg-primary text-primary-fg shadow-xs'
-                          : 'bg-subtle text-muted hover:text-default hover:bg-subtle/80'
+                          : 'bg-subtle text-muted hover:text-primary hover:bg-subtle/80'
                       }`}
                     >
                       {pkg.label}
@@ -431,7 +431,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                     className={`flex-1 text-center text-xs py-1 px-1 rounded-md font-semibold transition-all ${
                       isPkgActive
                         ? 'bg-surface text-primary shadow-xs border border-default/60'
-                        : 'text-muted hover:text-default'
+                        : 'text-muted hover:text-primary'
                     }`}
                   >
                     {pkg.label}
