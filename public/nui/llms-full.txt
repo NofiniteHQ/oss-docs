@@ -10927,6 +10927,14 @@ import { nui } from '@nofinite/nui';
 
 ---
 
+## Interactive API Playground
+
+Test how the programmatic API behaves in real-time. Watch the live console track Promise resolution lifecycle and imperative event dispatches:
+
+
+
+---
+
 ## Why Use the Programmatic API?
 
 Traditionally, when developers need a quick confirmation or alert in vanilla logic, they face a frustrating trade-off:

@@ -1676,6 +1676,84 @@ console.log(greeting);" language="typescript" />`
   );
 }`
   },
+  "programmatic": {
+    component: dynamic(() => import("./programmatic"), {
+      loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
+    }),
+    code: `{/* API Action Triggers */}
+      <div className="flex flex-wrap items-center justify-center gap-2.5">
+        <Button variant="danger" onClick={testConfirm}>
+          Run nui.confirm()
+        </Button>
+
+        <Button variant="primary" onClick={testAlert}>
+          Run nui.alert()
+        </Button>
+
+        <Button
+          variant="outline"
+          onClick={() => nui.success('Workspace updated', { description: 'All environment variables synced.' })}
+        >
+          Run nui.success()
+        </Button>
+
+        <Button
+          variant="outline"
+          className="text-red-500 border-red-500/30 hover:bg-red-500/10"
+          onClick={() => nui.error('Deployment Failed', { description: 'Network timeout during artifact upload.' })}
+        >
+          Run nui.error()
+        </Button>
+
+        <Button
+          variant="outline"
+          className="text-amber-500 border-amber-500/30 hover:bg-amber-500/10"
+          onClick={() => nui.warn('API Rate Limit', { description: '85% of your quota has been reached.' })}
+        >
+          Run nui.warn()
+        </Button>
+      </div>
+
+      {/* Live API Console Output */}
+      <div className="w-full bg-subtle/50 border border-default rounded-lg p-3 font-mono text-xs text-muted flex flex-col gap-1">
+        <div className="flex items-center justify-between text-[10px] text-muted uppercase tracking-wider border-b border-default/50 pb-1 mb-1">
+          <span>Live API Execution Output</span>
+          <button onClick={() => setLogs(['// Console cleared'])} className="hover:text-default transition-colors">
+            Clear
+          </button>
+        </div>
+        {logs.map((log, i) => (
+          <div
+            key={i}
+            className={log.startsWith('<') ? 'text-primary font-semibold' : log.startsWith('>') ? 'text-default' : 'text-muted'}
+          >
+            {log}
+          </div>
+        ))}
+      </div>
+
+      <Modal
+        open={dialogState.isOpen}
+        onClose={() => handleClose(false)}
+        title={dialogState.title}
+        style={{ maxWidth: '420px' }}
+      >
+        <p className="text-sm text-muted mb-6 leading-relaxed">{dialogState.message}</p>
+        <div className="flex justify-end gap-2">
+          {dialogState.type === 'confirm' && (
+            <Button variant="outline" onClick={() => handleClose(false)}>
+              {dialogState.cancelText || 'Cancel'}
+            </Button>
+          )}
+          <Button
+            variant={dialogState.isDanger ? 'danger' : 'primary'}
+            onClick={() => handleClose(true)}
+          >
+            {dialogState.confirmText || 'Confirm'}
+          </Button>
+        </div>
+      </Modal>`
+  },
   "progress": {
     component: dynamic(() => import("./progress"), {
       loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")

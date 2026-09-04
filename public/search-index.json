@@ -182,6 +182,13 @@
     "priority": 6
   },
   {
+    "title": "Interactive API Playground (Programmatic API)",
+    "description": "Test how the programmatic API behaves in real-time. Watch the live console track Promise resolution lifecycle and imperative event dispatches:",
+    "href": "/nui/programmatic#interactive-api-playground",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
     "title": "One-Time Root Setup (Programmatic API)",
     "description": "To enable the programmatic API across your entire application, mount inside your in your root layout:",
     "href": "/nui/programmatic#one-time-root-setup",
