@@ -1,6 +1,6 @@
-# Programmatic API (`nui.*`)
+# Programmatic API
 
-NUI features a built-in imperative API (`nui.*`) that allows you to trigger **confirmation dialogs**, **alerts**, and **toast notifications** programmatically from anywhere in your codebase—without mounting or managing any JSX markup.
+NUI features a built-in imperative API that allows you to trigger **confirmation dialogs**, **alerts**, and **toast notifications** programmatically from anywhere in your codebase—without mounting or managing any JSX markup.
 
 ```tsx
 import { nui } from '@nofinite/nui';
@@ -8,14 +8,24 @@ import { nui } from '@nofinite/nui';
 
 ---
 
-## Why Use the Programmatic API?
+## Interactive Preview
 
-In standard React development, showing an alert modal or triggering a toast usually requires declaring local state (`const [open, setOpen] = useState(false)`), placing modal components in JSX, and wiring up props.
+<Preview name="programmatic" />
 
-With `nui.*`, you get:
-- **Zero JSX in your components**: Trigger modals and toasts with a single function call.
-- **Promise-based async/await flow**: `await nui.confirm()` pauses execution and resolves when the user clicks Confirm or Cancel!
-- **Usable outside React components**: Call `nui.error()` or `nui.confirm()` directly from API interceptors, state management stores (Zustand, Redux), utility functions, and non-React files.
+---
+
+## Never Use Ugly Browser Alerts Again
+
+Traditionally, when developers need a quick confirmation or alert in vanilla logic, they often resort to native browser functions like `window.confirm()` or `window.alert()`. These browser dialogs:
+- Freeze execution across all tabs.
+- Cannot be styled or branded with your theme or dark mode.
+- Look unpolished, dated, and jarring to users.
+- Break accessibility guidelines.
+
+**NUI replaces native browser popups with beautiful, promise-driven modals:**
+- `await nui.confirm('...')` replaces `window.confirm()` with an animated, themed modal that pauses execution and resolves to `true` or `false`.
+- `await nui.alert('...')` replaces `window.alert()` with an accessible, branded modal.
+- `nui.success()`, `nui.error()`, and `nui.warn()` replace makeshift notification UI with stacked, animated toast notifications.
 
 ---
 
@@ -46,7 +56,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
 ## Confirmation Dialogs (`nui.confirm`)
 
-`nui.confirm` displays an accessible modal dialog and returns a `Promise<boolean>` that resolves to `true` if the user confirms, or `false` if they cancel.
+`nui.confirm` displays an accessible modal dialog and returns a `Promise<boolean>` that resolves to `true` if the user clicks confirm, or `false` if they cancel.
 
 ### Basic Confirmation
 
@@ -114,34 +124,32 @@ async function handleCheckout() {
 
 ---
 
-## Programmatic Toasts (`nui.toast`)
+## Status Toasts (`nui.toast`, `nui.success`, `nui.error`, `nui.warn`)
 
 NUI connects `nui.*` directly into your application's `<ToastProvider>`. You can fire animated toasts instantly without declaring `useToast()`:
 
-### Toast Variants
-
 ```tsx
 import { nui } from '@nofinite/nui';
+
+// Success notification
+nui.success('Workspace updated', {
+  description: 'Your changes have been saved to the cloud.',
+});
+
+// Error notification
+nui.error('Connection timeout', {
+  description: 'Could not reach the database cluster.',
+});
+
+// Warning notification
+nui.warn('Storage 85% full', {
+  description: 'Consider upgrading your cloud plan.',
+});
 
 // Default notification
 nui.toast('New update available', {
   description: 'Version 3.1 is ready for installation.',
   duration: 5000,
-});
-
-// Success notification
-nui.success('Settings saved', {
-  description: 'Your workspace preferences were updated.',
-});
-
-// Warning notification
-nui.warn('Approaching quota', {
-  description: 'You have used 85% of your storage limit.',
-});
-
-// Error notification
-nui.error('Network timeout', {
-  description: 'Could not connect to the database cluster.',
 });
 ```
 

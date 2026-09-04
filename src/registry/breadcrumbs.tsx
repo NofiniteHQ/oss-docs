@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { Breadcrumbs } from '@nofinite/nui';
+import { Breadcrumbs, nui } from '@nofinite/nui';
 import * as FaIcons from 'react-icons/fa';
 
 const data = [

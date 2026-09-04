@@ -1,2336 +1,2620 @@
 [
   {
-    "title": "CDN Usage",
-    "description": "If you are not using a build system, Nofinite Locale can be used directly via CDN.",
-    "href": "/locale/getting-started/cdn",
-    "pkg": "locale"
-  },
-  {
-    "title": "Include Styles and Script (CDN Usage)",
-    "description": "```html",
-    "href": "/locale/getting-started/cdn#include-styles-and-script",
-    "pkg": "locale"
-  },
-  {
-    "title": "Installation",
-    "description": "Install the package using your preferred package manager.",
-    "href": "/locale/getting-started/installation",
-    "pkg": "locale"
-  },
-  {
-    "title": "Package Managers (Installation)",
-    "description": "```bash",
-    "href": "/locale/getting-started/installation#package-managers",
-    "pkg": "locale"
-  },
-  {
-    "title": "Nofinite Locale",
-    "description": "",
-    "href": "/locale",
-    "pkg": "locale"
-  },
-  {
-    "title": "Features (Nofinite Locale)",
-    "description": "- Country metadata including name, ISO-2 code, and dial code",
-    "href": "/locale#features",
-    "pkg": "locale"
-  },
-  {
-    "title": "@nofinite/locale — v1.0.0",
-    "description": "",
-    "href": "/locale/releases",
-    "pkg": "locale"
-  },
-  {
-    "title": "Summary (@nofinite/locale — v1.0.0)",
-    "description": "Initial stable release of `@nofinite/locale`.",
-    "href": "/locale/releases#summary",
-    "pkg": "locale"
-  },
-  {
-    "title": "Included (@nofinite/locale — v1.0.0)",
-    "description": "- Country metadata (name, ISO code, dial code)",
-    "href": "/locale/releases#included",
-    "pkg": "locale"
-  },
-  {
-    "title": "Notes (@nofinite/locale — v1.0.0)",
-    "description": "- Establishes the public API surface for locale data usage.",
-    "href": "/locale/releases#notes",
-    "pkg": "locale"
-  },
-  {
-    "title": "Country Lookup",
-    "description": "Nofinite Locale provides simple helper functions to retrieve country information.",
-    "href": "/locale/usage/country-lookup",
-    "pkg": "locale"
-  },
-  {
-    "title": "Lookup by ISO Code or Dial Code (Country Lookup)",
-    "description": "",
-    "href": "/locale/usage/country-lookup#lookup-by-iso-code-or-dial-code",
-    "pkg": "locale"
-  },
-  {
-    "title": "Flags",
-    "description": "Country flags are provided as SVGs through CSS classes.",
-    "href": "/locale/usage/flags",
-    "pkg": "locale"
-  },
-  {
-    "title": "Import Styles (Flags)",
-    "description": "",
-    "href": "/locale/usage/flags#import-styles",
-    "pkg": "locale"
-  },
-  {
-    "title": "CDN Usage",
-    "description": "",
-    "href": "/markon/getting-started/cdn",
-    "pkg": "markon"
-  },
-  {
-    "title": "Notes and Limitations (CDN Usage)",
-    "description": "- The CDN build does not provide TypeScript types.",
-    "href": "/markon/getting-started/cdn#notes-and-limitations",
-    "pkg": "markon"
-  },
-  {
-    "title": "Installation",
-    "description": "",
-    "href": "/markon/getting-started/installation",
-    "pkg": "markon"
-  },
-  {
-    "title": "Package Installation (Installation)",
-    "description": "Install the package using your preferred package manager.",
-    "href": "/markon/getting-started/installation#package-installation",
-    "pkg": "markon"
-  },
-  {
-    "title": "Requirements (Installation)",
-    "description": "- Node.js 16 or later (recommended)",
-    "href": "/markon/getting-started/installation#requirements",
-    "pkg": "markon"
-  },
-  {
-    "title": "Setup",
-    "description": "",
-    "href": "/markon/getting-started/setup",
-    "pkg": "markon"
-  },
-  {
-    "title": "React Setup (Setup)",
-    "description": "Use `ReactMarkon` to render Markon-formatted content.",
-    "href": "/markon/getting-started/setup#react-setup",
-    "pkg": "markon"
-  },
-  {
-    "title": "Notes (Setup)",
-    "description": "- No provider or global configuration is required.",
-    "href": "/markon/getting-started/setup#notes",
-    "pkg": "markon"
-  },
-  {
-    "title": "Introduction",
-    "description": "",
-    "href": "/markon",
-    "pkg": "markon"
-  },
-  {
-    "title": "Who is this for? (Introduction)",
-    "description": "`@nofinite/markon` is designed for:",
-    "href": "/markon#who-is-this-for",
-    "pkg": "markon"
-  },
-  {
-    "title": "Design Philosophy (Introduction)",
-    "description": "Markon is built with the following goals:",
-    "href": "/markon#design-philosophy",
-    "pkg": "markon"
-  },
-  {
-    "title": "What this library is (Introduction)",
-    "description": "- A utility to transform Markon syntax into HTML",
-    "href": "/markon#what-this-library-is",
-    "pkg": "markon"
-  },
-  {
-    "title": "What this library is not (Introduction)",
-    "description": "- A full Markdown or MDX parser",
-    "href": "/markon#what-this-library-is-not",
-    "pkg": "markon"
-  },
-  {
-    "title": "Framework Compatibility (Introduction)",
-    "description": "`@nofinite/markon` works in:",
-    "href": "/markon#framework-compatibility",
-    "pkg": "markon"
-  },
-  {
-    "title": "Production Readiness (Introduction)",
-    "description": "- Zero external dependencies",
-    "href": "/markon#production-readiness",
-    "pkg": "markon"
-  },
-  {
-    "title": "@nofinite/markon — v1.1.1",
-    "description": "",
-    "href": "/markon/releases",
-    "pkg": "markon"
-  },
-  {
-    "title": "Summary (@nofinite/markon — v1.1.1)",
-    "description": "`@nofinite/markon` is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text with formatting elements such as bold, underline, links, lists, emphasis, and line breaks.",
-    "href": "/markon/releases#summary",
-    "pkg": "markon"
-  },
-  {
-    "title": "Included (@nofinite/markon — v1.1.1)",
-    "description": "- Core Markon text formatting syntax",
-    "href": "/markon/releases#included",
-    "pkg": "markon"
-  },
-  {
-    "title": "Notes (@nofinite/markon — v1.1.1)",
-    "description": "- This version is the **latest published release** available on the repository.",
-    "href": "/markon/releases#notes",
-    "pkg": "markon"
-  },
-  {
-    "title": "Release Metadata (@nofinite/markon — v1.1.1)",
-    "description": "- Repository: [NofiniteHQ/markon on GitHub]",
-    "href": "/markon/releases#release-metadata",
-    "pkg": "markon"
-  },
-  {
-    "title": "Markon Syntax",
-    "description": "",
-    "href": "/markon/usage/markon-syntax",
-    "pkg": "markon"
-  },
-  {
-    "title": "Bold (Markon Syntax)",
-    "description": "Wrap text with `#b[...]#` to render bold content.",
-    "href": "/markon/usage/markon-syntax#bold",
-    "pkg": "markon"
-  },
-  {
-    "title": "Underline (Markon Syntax)",
-    "description": "Wrap text with `#u[...]#` to underline content.",
-    "href": "/markon/usage/markon-syntax#underline",
-    "pkg": "markon"
-  },
-  {
-    "title": "Emphasis (Markon Syntax)",
-    "description": "Use `#e[...]#` to emphasize text.",
-    "href": "/markon/usage/markon-syntax#emphasis",
-    "pkg": "markon"
-  },
-  {
-    "title": "Line Break (Markon Syntax)",
-    "description": "Insert a line break using `#br#`.",
-    "href": "/markon/usage/markon-syntax#line-break",
-    "pkg": "markon"
-  },
-  {
-    "title": "Link (Markon Syntax)",
-    "description": "Create a hyperlink using `#link[Text, URL]#`.",
-    "href": "/markon/usage/markon-syntax#link",
-    "pkg": "markon"
-  },
-  {
-    "title": "List (Markon Syntax)",
-    "description": "Render a list using `#list[...]#`.",
-    "href": "/markon/usage/markon-syntax#list",
-    "pkg": "markon"
-  },
-  {
-    "title": "Combined Example (Markon Syntax)",
-    "description": "```text",
-    "href": "/markon/usage/markon-syntax#combined-example",
-    "pkg": "markon"
-  },
-  {
-    "title": "Parsing Rules (Markon Syntax)",
-    "description": "- Syntax rules do not support nesting.",
-    "href": "/markon/usage/markon-syntax#parsing-rules",
-    "pkg": "markon"
-  },
-  {
-    "title": "Security Considerations (Markon Syntax)",
-    "description": "- Markon does **not** sanitize HTML output.",
-    "href": "/markon/usage/markon-syntax#security-considerations",
-    "pkg": "markon"
-  },
-  {
-    "title": "Notes (Markon Syntax)",
-    "description": "- Markon is intentionally minimal by design.",
-    "href": "/markon/usage/markon-syntax#notes",
-    "pkg": "markon"
-  },
-  {
-    "title": "Accordion",
-    "description": "A composable, accessible Accordion component for modern React applications.",
-    "href": "/nui/components/accordion",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Accordion)",
-    "description": "",
-    "href": "/nui/components/accordion#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Props Reference (Accordion)",
-    "description": "",
-    "href": "/nui/components/accordion#props-reference",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Accordion)",
-    "description": "- `Accordion.Item`",
-    "href": "/nui/components/accordion#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Alert",
-    "description": "A composable, accessible Alert component for modern React applications.",
-    "href": "/nui/components/alert",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Alert)",
-    "description": "",
-    "href": "/nui/components/alert#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Behavior (Alert)",
-    "description": "- Alerts are **controlled/uncontrolled**: content always renders; visibility is handled via parent component logic.",
-    "href": "/nui/components/alert#behavior",
-    "pkg": "nui"
-  },
-  {
-    "title": "Attachment",
-    "description": "A fully accessible, token-driven Attachment component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/attachment",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Attachment)",
-    "description": "",
-    "href": "/nui/components/attachment#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Attachment)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/attachment#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Avatar",
-    "description": "A composable, accessible Avatar component for modern React applications.",
-    "href": "/nui/components/avatar",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Avatar)",
-    "description": "",
-    "href": "/nui/components/avatar#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "AvatarGroup (Avatar)",
-    "description": "Groups multiple avatars into a compact stack. Shows an excess counter (`+n`) if more avatars exist than `max`.",
-    "href": "/nui/components/avatar#avatargroup",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes (Avatar)",
-    "description": "The `shape` prop controls the border radius.",
-    "href": "/nui/components/avatar#shapes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Status Indicator (Avatar)",
-    "description": "Add a small status dot to represent user state.",
-    "href": "/nui/components/avatar#status-indicator",
-    "pkg": "nui"
-  },
-  {
-    "title": "Loading State (Avatar)",
-    "description": "When `loading` is `true`:",
-    "href": "/nui/components/avatar#loading-state",
-    "pkg": "nui"
-  },
-  {
-    "title": "Fallback Behavior (Avatar)",
-    "description": "Avatar displays content in the following order:",
-    "href": "/nui/components/avatar#fallback-behavior",
-    "pkg": "nui"
-  },
-  {
-    "title": "Badge",
-    "description": "A composable, accessible Badge component for modern React applications.",
-    "href": "/nui/components/badge",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Badge)",
-    "description": "",
-    "href": "/nui/components/badge#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "BadgeGroup (Badge)",
-    "description": "Groups multiple badges and optionally displays a `+n` overflow indicator.",
-    "href": "/nui/components/badge#badgegroup",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes (Badge)",
-    "description": "- **Pill** – Fully rounded with `pill={true}`",
-    "href": "/nui/components/badge#shapes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Breadcrumbs",
-    "description": "A composable, accessible Breadcrumbs component for modern React applications.",
-    "href": "/nui/components/breadcrumbs",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Breadcrumbs)",
-    "description": "",
-    "href": "/nui/components/breadcrumbs#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Props Reference (Breadcrumbs)",
-    "description": "",
-    "href": "/nui/components/breadcrumbs#props-reference",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Breadcrumbs)",
-    "description": "- `Breadcrumbs.Item`",
-    "href": "/nui/components/breadcrumbs#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Button",
-    "description": "A composable, accessible Button component for modern React applications.",
-    "href": "/nui/components/button",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Button)",
-    "description": "",
-    "href": "/nui/components/button#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Button)",
-    "description": "| Key       | Behavior           |",
-    "href": "/nui/components/button#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Calendar",
-    "description": "A fully accessible, token-driven Calendar component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/calendar",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Calendar)",
-    "description": "",
-    "href": "/nui/components/calendar#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Calendar)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/calendar#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Card",
-    "description": "A composable, accessible Card component for modern React applications.",
-    "href": "/nui/components/card",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Card)",
-    "description": "",
-    "href": "/nui/components/card#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Card)",
-    "description": "",
-    "href": "/nui/components/card#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "States / Behavior (Card)",
-    "description": "| State         | Description                                        |",
-    "href": "/nui/components/card#states-behavior",
-    "pkg": "nui"
-  },
-  {
-    "title": "Layout & Structure (Card)",
-    "description": "| Section | Purpose                            |",
-    "href": "/nui/components/card#layout-structure",
-    "pkg": "nui"
-  },
-  {
-    "title": "Carousel",
-    "description": "A fully accessible, token-driven Carousel component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/carousel",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Carousel)",
-    "description": "",
-    "href": "/nui/components/carousel#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Carousel)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/carousel#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Checkbox",
-    "description": "A composable, accessible Checkbox component for modern React applications.",
-    "href": "/nui/components/checkbox",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Checkbox)",
-    "description": "",
-    "href": "/nui/components/checkbox#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Chip",
-    "description": "A composable, accessible Chip component for modern React applications.",
-    "href": "/nui/components/chip",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Chip)",
-    "description": "",
-    "href": "/nui/components/chip#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Clipboard",
-    "description": "A fully accessible, token-driven Clipboard component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/clipboard",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Clipboard)",
-    "description": "",
-    "href": "/nui/components/clipboard#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Clipboard)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/clipboard#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Code Block",
-    "description": "A fully accessible, token-driven CodeBlock component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/codeblock",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Code Block)",
-    "description": "",
-    "href": "/nui/components/codeblock#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Code Block)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/codeblock#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Collapsible",
-    "description": "A fully accessible, token-driven Collapsible component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/collapsible",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Collapsible)",
-    "description": "",
-    "href": "/nui/components/collapsible#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Collapsible)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/collapsible#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Color Picker",
-    "description": "A fully accessible, token-driven ColorPicker component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/colorpicker",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Color Picker)",
-    "description": "",
-    "href": "/nui/components/colorpicker#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Color Picker)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/colorpicker#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Combobox",
-    "description": "A composable, accessible Combobox component for modern React applications.",
-    "href": "/nui/components/combobox",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Combobox)",
-    "description": "",
-    "href": "/nui/components/combobox#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Context Menu",
-    "description": "A composable, accessible Contextmenu component for modern React applications.",
-    "href": "/nui/components/contextmenu",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Context Menu)",
-    "description": "",
-    "href": "/nui/components/contextmenu#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "ContextMenuItem Structure (Context Menu)",
-    "description": "| Field      | Type                    | Description                   |",
-    "href": "/nui/components/contextmenu#contextmenuitem-structure",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Context Menu)",
-    "description": "| Key             | Behavior                      |",
-    "href": "/nui/components/contextmenu#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Date Picker",
-    "description": "A composable, accessible DatePicker component for modern React applications.",
-    "href": "/nui/components/datepicker",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Date Picker)",
-    "description": "",
-    "href": "/nui/components/datepicker#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Date Picker)",
-    "description": "None exposed.",
-    "href": "/nui/components/datepicker#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Date Picker)",
-    "description": "**Modes**",
-    "href": "/nui/components/datepicker#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Date Range Picker",
-    "description": "A composable, accessible DateRangePicker component for modern React applications.",
-    "href": "/nui/components/daterangepicker",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Date Range Picker)",
-    "description": "",
-    "href": "/nui/components/daterangepicker#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Date Range Picker)",
-    "description": "None exposed.",
-    "href": "/nui/components/daterangepicker#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Date Range Picker)",
-    "description": "**Modes**",
-    "href": "/nui/components/daterangepicker#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Dialog",
-    "description": "A composable, accessible Dialog component for modern React applications.",
-    "href": "/nui/components/dialog",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Dialog)",
-    "description": "",
-    "href": "/nui/components/dialog#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Behavior (Dialog)",
-    "description": "- Uses **external store subscription** via `useSyncExternalStore`",
-    "href": "/nui/components/dialog#behavior",
-    "pkg": "nui"
-  },
-  {
-    "title": "Dialog Types (Dialog)",
-    "description": "| Type                | Description                                   |",
-    "href": "/nui/components/dialog#dialog-types",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Dialog)",
-    "description": "| Key         | Behavior                                             |",
-    "href": "/nui/components/dialog#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Architecture Notes (Dialog)",
-    "description": "",
-    "href": "/nui/components/dialog#architecture-notes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Divider",
-    "description": "A fully accessible, token-driven Divider component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/divider",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Divider)",
-    "description": "",
-    "href": "/nui/components/divider#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Divider)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/divider#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Drawer",
-    "description": "A composable, accessible Drawer component for modern React applications.",
-    "href": "/nui/components/drawer",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Drawer)",
-    "description": "",
-    "href": "/nui/components/drawer#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Drawer)",
-    "description": "None exposed.",
-    "href": "/nui/components/drawer#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Drawer)",
-    "description": "**Positions**",
-    "href": "/nui/components/drawer#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animation Model (Drawer)",
-    "description": "Two-phase state system:",
-    "href": "/nui/components/drawer#animation-model",
-    "pkg": "nui"
-  },
-  {
-    "title": "Dropdown",
-    "description": "A composable, accessible Dropdown component for modern React applications.",
-    "href": "/nui/components/dropdown",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Dropdown)",
-    "description": "",
-    "href": "/nui/components/dropdown#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Props Reference (Dropdown)",
-    "description": "",
-    "href": "/nui/components/dropdown#props-reference",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Dropdown)",
-    "description": "- `Dropdown.Trigger`",
-    "href": "/nui/components/dropdown#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Empty State",
-    "description": "A fully accessible, token-driven EmptyState component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/emptystate",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Empty State)",
-    "description": "",
-    "href": "/nui/components/emptystate#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Empty State)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/emptystate#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "File Uploader",
-    "description": "A composable, accessible FileUploader component for modern React applications.",
-    "href": "/nui/components/fileuploader",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (File Uploader)",
-    "description": "",
-    "href": "/nui/components/fileuploader#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (File Uploader)",
-    "description": "None exposed.",
-    "href": "/nui/components/fileuploader#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (File Uploader)",
-    "description": "**Interaction states**",
-    "href": "/nui/components/fileuploader#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animation model (File Uploader)",
-    "description": "- File item pop-in via translateY + fade",
-    "href": "/nui/components/fileuploader#animation-model",
-    "pkg": "nui"
-  },
-  {
-    "title": "Architectural notes (File Uploader)",
-    "description": "Key design decisions:",
-    "href": "/nui/components/fileuploader#architectural-notes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Form",
-    "description": "A fully accessible, token-driven Form component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/form",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Form)",
-    "description": "",
-    "href": "/nui/components/form#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Form)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/form#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Hover Card",
-    "description": "A composable, accessible HoverCard component for modern React applications.",
-    "href": "/nui/components/hovercard",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Hover Card)",
-    "description": "",
-    "href": "/nui/components/hovercard#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Hover Card)",
-    "description": "- HoverCard.Trigger",
-    "href": "/nui/components/hovercard#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Hover Card)",
-    "description": "**Interaction states**",
-    "href": "/nui/components/hovercard#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animation model (Hover Card)",
-    "description": "- Entry animation: scale + translate + fade",
-    "href": "/nui/components/hovercard#animation-model",
-    "pkg": "nui"
-  },
-  {
-    "title": "Architectural notes (Hover Card)",
-    "description": "Key behaviors:",
-    "href": "/nui/components/hovercard#architectural-notes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Image",
-    "description": "A fully accessible, token-driven Image component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/image",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Image)",
-    "description": "",
-    "href": "/nui/components/image#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Image)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/image#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Input",
-    "description": "A composable, accessible Input component for modern React applications.",
-    "href": "/nui/components/input",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Input)",
-    "description": "",
-    "href": "/nui/components/input#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Input)",
-    "description": "**Interaction states**",
-    "href": "/nui/components/input#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animation model (Input)",
-    "description": "- Border and shadow transitions (200ms)",
-    "href": "/nui/components/input#animation-model",
-    "pkg": "nui"
-  },
-  {
-    "title": "Architectural notes (Input)",
-    "description": "Key behaviors:",
-    "href": "/nui/components/input#architectural-notes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Kbd",
-    "description": "A fully accessible, token-driven Kbd component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/kbd",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Kbd)",
-    "description": "",
-    "href": "/nui/components/kbd#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Kbd)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/kbd#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Layout",
-    "description": "A composable, accessible Layout component for modern React applications.",
-    "href": "/nui/components/layout",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Layout)",
-    "description": "",
-    "href": "/nui/components/layout#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Layout)",
-    "description": "**Flex states**",
-    "href": "/nui/components/layout#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animation model (Layout)",
-    "description": "- No intrinsic animation",
-    "href": "/nui/components/layout#animation-model",
-    "pkg": "nui"
-  },
-  {
-    "title": "Architectural notes (Layout)",
-    "description": "Key behaviors:",
-    "href": "/nui/components/layout#architectural-notes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Link",
-    "description": "A composable, accessible Link component for modern React applications.",
-    "href": "/nui/components/link",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Link)",
-    "description": "",
-    "href": "/nui/components/link#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Link)",
-    "description": "| Key         | Behavior             |",
-    "href": "/nui/components/link#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Mega Menu",
-    "description": "A composable, accessible MegaMenu component for modern React applications.",
-    "href": "/nui/components/megamenu",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Mega Menu)",
-    "description": "",
-    "href": "/nui/components/megamenu#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Mega Menu)",
-    "description": "**Behavioral modes**",
-    "href": "/nui/components/megamenu#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animation (Mega Menu)",
-    "description": "Entrance animation:",
-    "href": "/nui/components/megamenu#animation",
-    "pkg": "nui"
-  },
-  {
-    "title": "Architectural notes (Mega Menu)",
-    "description": "Key behaviors:",
-    "href": "/nui/components/megamenu#architectural-notes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Modal",
-    "description": "A composable, accessible Modal component for modern React applications.",
-    "href": "/nui/components/modal",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Modal)",
-    "description": "",
-    "href": "/nui/components/modal#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Modal)",
-    "description": "**Interaction modes**",
-    "href": "/nui/components/modal#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animation (Modal)",
-    "description": "Lifecycle animation model:",
-    "href": "/nui/components/modal#animation",
-    "pkg": "nui"
-  },
-  {
-    "title": "Architectural notes (Modal)",
-    "description": "Key behaviors:",
-    "href": "/nui/components/modal#architectural-notes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Multi Select",
-    "description": "A fully accessible, token-driven MultiSelect component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/multiselect",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Multi Select)",
-    "description": "",
-    "href": "/nui/components/multiselect#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Multi Select)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/multiselect#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "NUI Provider",
-    "description": "A fully accessible, token-driven NUIProvider component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/nuiprovider",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (NUI Provider)",
-    "description": "",
-    "href": "/nui/components/nuiprovider#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (NUI Provider)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/nuiprovider#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Number Input",
-    "description": "A fully accessible, token-driven NumberInput component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/numberinput",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Number Input)",
-    "description": "",
-    "href": "/nui/components/numberinput#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Number Input)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/numberinput#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Pagination",
-    "description": "A composable, accessible Pagination component for modern React applications.",
-    "href": "/nui/components/pagination",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Pagination)",
-    "description": "",
-    "href": "/nui/components/pagination#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Page Generation Logic (Pagination)",
-    "description": "The component implements **adaptive pagination math**:",
-    "href": "/nui/components/pagination#page-generation-logic",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Pagination)",
-    "description": "| Key     | Behavior                  |",
-    "href": "/nui/components/pagination#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Password Input",
-    "description": "A fully accessible, token-driven PasswordInput component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/passwordinput",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Password Input)",
-    "description": "",
-    "href": "/nui/components/passwordinput#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Password Input)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/passwordinput#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Pin Input",
-    "description": "A fully accessible, token-driven PinInput component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/pininput",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Pin Input)",
-    "description": "",
-    "href": "/nui/components/pininput#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Pin Input)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/pininput#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Popover",
-    "description": "A composable, accessible Popover component for modern React applications.",
-    "href": "/nui/components/popover",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Popover)",
-    "description": "",
-    "href": "/nui/components/popover#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Compound API (Popover)",
-    "description": "| Component         | Responsibility                       |",
-    "href": "/nui/components/popover#compound-api",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Popover)",
-    "description": "| Key             | Behavior                                |",
-    "href": "/nui/components/popover#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Positioning Behavior (Popover)",
-    "description": "The component implements **adaptive overlay positioning**:",
-    "href": "/nui/components/popover#positioning-behavior",
-    "pkg": "nui"
-  },
-  {
-    "title": "Progress",
-    "description": "A composable, accessible Progress component for modern React applications.",
-    "href": "/nui/components/progress",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Progress)",
-    "description": "",
-    "href": "/nui/components/progress#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Performance Characteristics (Progress)",
-    "description": "The component uses **transform-based progress animation** instead of width changes:",
-    "href": "/nui/components/progress#performance-characteristics",
-    "pkg": "nui"
-  },
-  {
-    "title": "Radio Group",
-    "description": "A composable, accessible RadioGroup component for modern React applications.",
-    "href": "/nui/components/radiogroup",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Radio Group)",
-    "description": "",
-    "href": "/nui/components/radiogroup#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Radio Group)",
-    "description": "| Key          | Behavior                      |",
-    "href": "/nui/components/radiogroup#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Rating",
-    "description": "A composable, accessible Rating component for modern React applications.",
-    "href": "/nui/components/rating",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Rating)",
-    "description": "",
-    "href": "/nui/components/rating#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Rating)",
-    "description": "| Key                   | Behavior                          |",
-    "href": "/nui/components/rating#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Resizable",
-    "description": "A composable, accessible Resizable component for modern React applications.",
-    "href": "/nui/components/resizable",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Resizable)",
-    "description": "",
-    "href": "/nui/components/resizable#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Resizable)",
-    "description": "| Key           | Behavior                           |",
-    "href": "/nui/components/resizable#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Scroll Area",
-    "description": "A fully accessible, token-driven ScrollArea component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/scrollarea",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Scroll Area)",
-    "description": "",
-    "href": "/nui/components/scrollarea#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Scroll Area)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/scrollarea#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Segmented Control",
-    "description": "A fully accessible, token-driven SegmentedControl component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/segmentedcontrol",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Segmented Control)",
-    "description": "",
-    "href": "/nui/components/segmentedcontrol#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Segmented Control)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/segmentedcontrol#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Select",
-    "description": "A composable, accessible Select component for modern React applications.",
-    "href": "/nui/components/select",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Select)",
-    "description": "",
-    "href": "/nui/components/select#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Select)",
-    "description": "| Key                      | Behavior                     |",
-    "href": "/nui/components/select#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Skeleton",
-    "description": "A composable, accessible Skeleton component for modern React applications.",
-    "href": "/nui/components/skeleton",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Skeleton)",
-    "description": "",
-    "href": "/nui/components/skeleton#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Helper Components (Skeleton)",
-    "description": "",
-    "href": "/nui/components/skeleton#helper-components",
-    "pkg": "nui"
-  },
-  {
-    "title": "Slider",
-    "description": "A composable, accessible Slider component for modern React applications.",
-    "href": "/nui/components/slider",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Slider)",
-    "description": "",
-    "href": "/nui/components/slider#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Slider)",
-    "description": "| Key                   | Behavior              |",
-    "href": "/nui/components/slider#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Spinner",
-    "description": "A composable, accessible Spinner component for modern React applications.",
-    "href": "/nui/components/spinner",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Spinner)",
-    "description": "",
-    "href": "/nui/components/spinner#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Stat Card",
-    "description": "A fully accessible, token-driven StatCard component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/statcard",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Stat Card)",
-    "description": "",
-    "href": "/nui/components/statcard#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Stat Card)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/statcard#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Stepper",
-    "description": "A composable, accessible Stepper component for modern React applications.",
-    "href": "/nui/components/stepper",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Stepper)",
-    "description": "",
-    "href": "/nui/components/stepper#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Sub-definitions (Stepper)",
-    "description": "",
-    "href": "/nui/components/stepper#sub-definitions",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Stepper)",
-    "description": "- Tab → moves focus between step buttons",
-    "href": "/nui/components/stepper#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Switch",
-    "description": "A composable, accessible Switch component for modern React applications.",
-    "href": "/nui/components/switch",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Switch)",
-    "description": "",
-    "href": "/nui/components/switch#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Switch)",
-    "description": "- Tab → focuses switch",
-    "href": "/nui/components/switch#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Data Table",
-    "description": "A composable, accessible Table component for modern React applications.",
-    "href": "/nui/components/table",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Data Table)",
-    "description": "",
-    "href": "/nui/components/table#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Props Reference (Data Table)",
-    "description": "",
-    "href": "/nui/components/table#props-reference",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Data Table)",
-    "description": "- `Table.Header`",
-    "href": "/nui/components/table#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Tabs",
-    "description": "A composable, accessible Tabs component for modern React applications.",
-    "href": "/nui/components/tabs",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Tabs)",
-    "description": "",
-    "href": "/nui/components/tabs#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Props Reference (Tabs)",
-    "description": "",
-    "href": "/nui/components/tabs#props-reference",
-    "pkg": "nui"
-  },
-  {
-    "title": "Subcomponents (Tabs)",
-    "description": "- `Tabs.List`",
-    "href": "/nui/components/tabs#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Textarea",
-    "description": "A composable, accessible Textarea component for modern React applications.",
-    "href": "/nui/components/textarea",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Textarea)",
-    "description": "",
-    "href": "/nui/components/textarea#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Textarea)",
-    "description": "* Standard textarea typing behavior",
-    "href": "/nui/components/textarea#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Timeline",
-    "description": "A fully accessible, token-driven Timeline component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/timeline",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Timeline)",
-    "description": "",
-    "href": "/nui/components/timeline#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Timeline)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/timeline#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Time Picker",
-    "description": "A composable, accessible TimePicker component for modern React applications.",
-    "href": "/nui/components/timepicker",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Time Picker)",
-    "description": "",
-    "href": "/nui/components/timepicker#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Time Picker)",
-    "description": "* Trigger opens popover via Enter / Space",
-    "href": "/nui/components/timepicker#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Time Range Picker",
-    "description": "A composable, accessible TimeRangePicker component for modern React applications.",
-    "href": "/nui/components/timerangepicker",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Time Range Picker)",
-    "description": "",
-    "href": "/nui/components/timerangepicker#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Time Range Picker)",
-    "description": "- Trigger opens popover via Enter / Space",
-    "href": "/nui/components/timerangepicker#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Toast",
-    "description": "A composable, accessible Toast component for modern React applications.",
-    "href": "/nui/components/toast",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Toast)",
-    "description": "",
-    "href": "/nui/components/toast#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Context API (Toast)",
-    "description": "",
-    "href": "/nui/components/toast#context-api",
-    "pkg": "nui"
-  },
-  {
-    "title": "Variants / Semantic Styling (Toast)",
-    "description": "| Variant   | Left Border Color     | Usage                         |",
-    "href": "/nui/components/toast#variants-semantic-styling",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animations (Toast)",
-    "description": "- **Slide in:** `nui-toast-slide-in` – slides from right + scale up",
-    "href": "/nui/components/toast#animations",
-    "pkg": "nui"
-  },
-  {
-    "title": "Layout / Styling (Toast)",
-    "description": "- Stack vertically, right-aligned: `.nui-toast-region`",
-    "href": "/nui/components/toast#layout-styling",
-    "pkg": "nui"
-  },
-  {
-    "title": "Provider Notes (Toast)",
-    "description": "- Handles **multiple toasts** with independent timers",
-    "href": "/nui/components/toast#provider-notes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Tooltip",
-    "description": "A composable, accessible Tooltip component for modern React applications.",
-    "href": "/nui/components/tooltip",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Tooltip)",
-    "description": "",
-    "href": "/nui/components/tooltip#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Tooltip)",
-    "description": "- Tab → focuses trigger element",
-    "href": "/nui/components/tooltip#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Transfer List",
-    "description": "A fully accessible, token-driven TransferList component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/transferlist",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Transfer List)",
-    "description": "",
-    "href": "/nui/components/transferlist#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Transfer List)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/transferlist#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Tree View",
-    "description": "A composable, accessible TreeView component for modern React applications.",
-    "href": "/nui/components/treeview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Tree View)",
-    "description": "",
-    "href": "/nui/components/treeview#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Tree View)",
-    "description": "- ArrowUp / ArrowDown → navigate visible nodes",
-    "href": "/nui/components/treeview#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "VideoPlayer",
-    "description": "A fully accessible, token-driven VideoPlayer component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/video",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (VideoPlayer)",
-    "description": "",
-    "href": "/nui/components/video#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (VideoPlayer)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/video#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Virtual List",
-    "description": "A composable, accessible VirtualList component for modern React applications.",
-    "href": "/nui/components/virtuallist",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Virtual List)",
-    "description": "",
-    "href": "/nui/components/virtuallist#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Keyboard Interaction (Virtual List)",
-    "description": "- Standard browser scrolling applies",
-    "href": "/nui/components/virtuallist#keyboard-interaction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Watermark",
-    "description": "A fully accessible, token-driven Watermark component built with strict WAI-ARIA compliance.",
-    "href": "/nui/components/watermark",
-    "pkg": "nui"
-  },
-  {
-    "title": "Interactive Preview (Watermark)",
-    "description": "",
-    "href": "/nui/components/watermark#interactive-preview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Accessibility & Guidelines (Watermark)",
-    "description": "- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).",
-    "href": "/nui/components/watermark#accessibility-guidelines",
-    "pkg": "nui"
-  },
-  {
-    "title": "Data Display & Media",
-    "description": "Components for rendering structured data, media players, code, and avatars.",
-    "href": "/nui/data-display",
-    "pkg": "nui"
-  },
-  {
-    "title": "General & Actions",
-    "description": "Fundamental interactive elements and action triggers.",
-    "href": "/nui/general",
-    "pkg": "nui"
-  },
-  {
-    "title": "Installation & Setup",
-    "description": "Complete technical guide to installing and configuring NUI in Next.js, Vite, and modern React environments.",
-    "href": "/nui/getting-started",
-    "pkg": "nui"
-  },
-  {
-    "title": "Package Installation (Installation & Setup)",
-    "description": "NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.",
-    "href": "/nui/getting-started#package-installation",
-    "pkg": "nui"
-  },
-  {
-    "title": "Root Provider Setup (Installation & Setup)",
-    "description": "NUI uses a root `NUIProvider` to manage global theme context, portals, and toast notifications. We recommend creating a dedicated `Providers` component.",
-    "href": "/nui/getting-started#root-provider-setup",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming & Dark Mode (Installation & Setup)",
-    "description": "NUI includes a theme engine that syncs with OS preferences and persists user choices.",
-    "href": "/nui/getting-started#theming-dark-mode",
-    "pkg": "nui"
-  },
-  {
-    "title": "TypeScript CSS Import Notice (Installation & Setup)",
-    "description": "If importing CSS files causes a TypeScript error (`Cannot find module '*.css'`), ensure you have a `global.d.ts` declaration in your project:",
-    "href": "/nui/getting-started#typescript-css-import-notice",
-    "pkg": "nui"
-  },
-  {
-    "title": "Indicators & Feedback",
-    "description": "Components for progress tracking, notifications, banners, and loading states.",
-    "href": "/nui/indicators-and-buttons",
-    "pkg": "nui"
-  },
-  {
-    "title": "Inputs & Forms",
-    "description": "Components for user input, form controls, and data capture.",
-    "href": "/nui/inputs-and-forms",
-    "pkg": "nui"
-  },
-  {
-    "title": "Layout & Structure",
-    "description": "Components for organizing page structure, layout grids, and content containers.",
-    "href": "/nui/layout-and-structure",
-    "pkg": "nui"
-  },
-  {
-    "title": "Navigation",
-    "description": "Components for hierarchical routing, breadcrumbs, menus, and pagination.",
-    "href": "/nui/navigation",
-    "pkg": "nui"
-  },
-  {
-    "title": "Overlays & Dialogs",
-    "description": "Contextual overlays, modal windows, drawers, and floating panels.",
-    "href": "/nui/overlays-and-dialogs",
-    "pkg": "nui"
-  },
-  {
     "title": "Introduction to NUI",
-    "description": "**NUI** is a lightweight, high-performance React UI component library engineered for modern web applications and scalable design systems. It delivers strictly accessible, beautifully styled UI primitives with zero runtime styling overhead.",
+    "description": "NUI is a lightweight, high-performance React UI component library engineered for modern web applications and scalable design systems. It delivers strictly ac...",
     "href": "/nui",
-    "pkg": "nui"
+    "pkg": "nui",
+    "priority": 1
+  },
+  {
+    "title": "Core Pillars of NUI (Introduction to NUI)",
+    "description": "Self-Contained Styling: All NUI components come with pre-compiled CSS. You do not need to install complex build plugins or Tailwind presets just to render a ...",
+    "href": "/nui#core-pillars-of-nui",
+    "pkg": "nui",
+    "priority": 1.5
+  },
+  {
+    "title": "Getting Started (Introduction to NUI)",
+    "description": "Getting Started section in Introduction to NUI documentation.",
+    "href": "/nui#getting-started",
+    "pkg": "nui",
+    "priority": 1.5
+  },
+  {
+    "title": "Plug-and-Play (PnP) vs. Composable Primitives (Introduction to NUI)",
+    "description": "For composite components—such as Dropdown, Tabs, Accordion, Table, and Breadcrumbs—NUI gives you the best of both worlds:",
+    "href": "/nui#plug-and-play-pnp-vs-composable-primitives",
+    "pkg": "nui",
+    "priority": 1.5
   },
   {
     "title": "The Philosophy: Why NUI? (Introduction to NUI)",
     "description": "Most modern UI libraries force developers into a painful trade-off:",
     "href": "/nui#the-philosophy-why-nui",
-    "pkg": "nui"
+    "pkg": "nui",
+    "priority": 1.5
   },
   {
-    "title": "Plug-and-Play (PnP) vs. Composable Primitives (Introduction to NUI)",
-    "description": "For composite components—such as **Dropdown**, **Tabs**, **Accordion**, **Table**, and **Breadcrumbs**—NUI gives you the best of both worlds:",
-    "href": "/nui#plug-and-play-pnp-vs-composable-primitives",
-    "pkg": "nui"
+    "title": "Installation & Setup",
+    "description": "Complete technical guide to installing and configuring NUI in Next.js, Vite, and modern React environments.",
+    "href": "/nui/getting-started",
+    "pkg": "nui",
+    "priority": 2
   },
   {
-    "title": "Core Pillars of NUI (Introduction to NUI)",
-    "description": "- **Self-Contained Styling:** All NUI components come with pre-compiled CSS. You do not need to install complex build plugins or Tailwind presets just to render a button.",
-    "href": "/nui#core-pillars-of-nui",
-    "pkg": "nui"
+    "title": "Package Installation (Installation & Setup)",
+    "description": "NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.",
+    "href": "/nui/getting-started#package-installation",
+    "pkg": "nui",
+    "priority": 2.5
   },
   {
-    "title": "Getting Started (Introduction to NUI)",
-    "description": "Ready to integrate NUI into your application? Follow the guides below:",
-    "href": "/nui#getting-started",
-    "pkg": "nui"
+    "title": "Root Provider Setup (Installation & Setup)",
+    "description": "NUI uses a root NUIProvider to manage global theme context, portals, and toast notifications. We recommend creating a dedicated Providers component.",
+    "href": "/nui/getting-started#root-provider-setup",
+    "pkg": "nui",
+    "priority": 2.5
+  },
+  {
+    "title": "Theming & Dark Mode (Installation & Setup)",
+    "description": "NUI includes a theme engine that syncs with OS preferences and persists user choices.",
+    "href": "/nui/getting-started#theming-dark-mode",
+    "pkg": "nui",
+    "priority": 2.5
+  },
+  {
+    "title": "TypeScript CSS Import Notice (Installation & Setup)",
+    "description": "If importing CSS files causes a TypeScript error (Cannot find module '*.css'), ensure you have a global.d.ts declaration in your project:",
+    "href": "/nui/getting-started#typescript-css-import-notice",
+    "pkg": "nui",
+    "priority": 2.5
+  },
+  {
+    "title": "NUICSS",
+    "description": "NUICSS is an instant, on-demand atomic CSS engine powered directly by the blazing-fast UnoCSS compiler. It provides high-performance utility generation, sema...",
+    "href": "/nuicss",
+    "pkg": "nuicss",
+    "priority": 3
+  },
+  {
+    "title": "Core Sections (NUICSS)",
+    "description": "Core Sections section in NUICSS documentation.",
+    "href": "/nuicss#core-sections",
+    "pkg": "nuicss",
+    "priority": 3.5
+  },
+  {
+    "title": "Quick Example (NUICSS)",
+    "description": "Quick Example section in NUICSS documentation.",
+    "href": "/nuicss#quick-example",
+    "pkg": "nuicss",
+    "priority": 3.5
+  },
+  {
+    "title": "Why NUICSS? (NUICSS)",
+    "description": "Instant On-Demand Compilation: Powered by UnoCSS under the hood, compiling thousands of utility classes in milliseconds.",
+    "href": "/nuicss#why-nuicss",
+    "pkg": "nuicss",
+    "priority": 3.5
+  },
+  {
+    "title": "Installation & Setup",
+    "description": "Get started with NUICSS in your web application.",
+    "href": "/nuicss/installation",
+    "pkg": "nuicss",
+    "priority": 4
+  },
+  {
+    "title": "Add the @nuicss Directive (Installation & Setup)",
+    "description": "In your main CSS entry point (e.g. src/app/globals.css or src/style.css), add the @nuicss; directive:",
+    "href": "/nuicss/installation#add-the-nuicss-directive",
+    "pkg": "nuicss",
+    "priority": 4.5
+  },
+  {
+    "title": "Configure PostCSS (Installation & Setup)",
+    "description": "Add the @nofinite/nuicss/postcss plugin to your postcss.config.js (or .mjs):",
+    "href": "/nuicss/installation#configure-postcss",
+    "pkg": "nuicss",
+    "priority": 4.5
+  },
+  {
+    "title": "Create nuicss.config.ts (Installation & Setup)",
+    "description": "Create a nuicss.config.ts in the root of your project:",
+    "href": "/nuicss/installation#create-nuicss-config-ts",
+    "pkg": "nuicss",
+    "priority": 4.5
+  },
+  {
+    "title": "Install the Package (Installation & Setup)",
+    "description": "Install @nofinite/nuicss using your preferred package manager:",
+    "href": "/nuicss/installation#install-the-package",
+    "pkg": "nuicss",
+    "priority": 4.5
+  },
+  {
+    "title": "Vite Plugin Setup (Alternative to PostCSS) (Installation & Setup)",
+    "description": "Vite Plugin Setup (Alternative to PostCSS) section in Installation & Setup documentation.",
+    "href": "/nuicss/installation#vite-plugin-setup-alternative-to-postcss",
+    "pkg": "nuicss",
+    "priority": 4.5
+  },
+  {
+    "title": "Theming & Design Tokens",
+    "description": "NUI v3 features an aesthetic, token-first design system completely driven by @nofinite/nuicss semantic design tokens. Every component seamlessly adapts to li...",
+    "href": "/nui/theming",
+    "pkg": "nui",
+    "priority": 5
+  },
+  {
+    "title": "Customizing Tokens (Theming & Design Tokens)",
+    "description": "Customizing Tokens section in Theming & Design Tokens documentation.",
+    "href": "/nui/theming#customizing-tokens",
+    "pkg": "nui",
+    "priority": 5.5
+  },
+  {
+    "title": "Dark Mode Implementation (Theming & Design Tokens)",
+    "description": "NUI v3 switches tokens automatically based on the .dark class applied to the root element.",
+    "href": "/nui/theming#dark-mode-implementation",
+    "pkg": "nui",
+    "priority": 5.5
+  },
+  {
+    "title": "Overview (Theming & Design Tokens)",
+    "description": "Unlike hardcoded color palettes, NUI components reference semantic CSS custom properties. This ensures that colors, borders, and typography automatically res...",
+    "href": "/nui/theming#overview",
+    "pkg": "nui",
+    "priority": 5.5
+  },
+  {
+    "title": "Semantic Tokens Reference (Theming & Design Tokens)",
+    "description": "Semantic Tokens Reference section in Theming & Design Tokens documentation.",
+    "href": "/nui/theming#semantic-tokens-reference",
+    "pkg": "nui",
+    "priority": 5.5
+  },
+  {
+    "title": "Programmatic API",
+    "description": "NUI features a built-in imperative API that allows you to trigger confirmation dialogs, alerts, and toast notifications programmatically from anywhere in you...",
+    "href": "/nui/programmatic",
+    "pkg": "nui",
+    "priority": 6
+  },
+  {
+    "title": "Alert Dialogs (nui.alert) (Programmatic API)",
+    "description": "nui.alert displays an informational or blocking alert modal that resolves when the user acknowledges it:",
+    "href": "/nui/programmatic#alert-dialogs-nui-alert",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
+    "title": "Confirmation Dialogs (nui.confirm) (Programmatic API)",
+    "description": "nui.confirm displays an accessible modal dialog and returns a Promise that resolves to true if the user clicks confirm, or false if they cancel.",
+    "href": "/nui/programmatic#confirmation-dialogs-nui-confirm",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
+    "title": "Interactive Preview (Programmatic API)",
+    "description": "Interactive Preview section in Programmatic API documentation.",
+    "href": "/nui/programmatic#interactive-preview",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
+    "title": "Never Use Ugly Browser Alerts Again (Programmatic API)",
+    "description": "Traditionally, when developers need a quick confirmation or alert in vanilla logic, they often resort to native browser functions like window.confirm() or wi...",
+    "href": "/nui/programmatic#never-use-ugly-browser-alerts-again",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
+    "title": "One-Time Setup (Programmatic API)",
+    "description": "To enable the programmatic API across your entire application, mount inside your in your root layout:",
+    "href": "/nui/programmatic#one-time-setup",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
+    "title": "Real-World Example: API Client Interceptor (Programmatic API)",
+    "description": "Because nui.* does not rely on React hooks, you can invoke notifications directly inside API interceptors (e.g., Axios or Fetch wrappers):",
+    "href": "/nui/programmatic#real-world-example-api-client-interceptor",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
+    "title": "Related Components (Programmatic API)",
+    "description": "Related Components section in Programmatic API documentation.",
+    "href": "/nui/programmatic#related-components",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
+    "title": "Status Toasts (nui.toast, nui.success, nui.error, nui.warn) (Programmatic API)",
+    "description": "NUI connects nui.* directly into your application's . You can fire animated toasts instantly without declaring useToast():",
+    "href": "/nui/programmatic#status-toasts-nui-toast-nui-success-nui-error-nui-warn",
+    "pkg": "nui",
+    "priority": 6.5
+  },
+  {
+    "title": "Accordion",
+    "description": "A composable, accessible Accordion component for modern React applications.",
+    "href": "/nui/components/accordion",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Alert",
+    "description": "A composable, accessible Alert component for modern React applications.",
+    "href": "/nui/components/alert",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Attachment",
+    "description": "A fully accessible, token-driven Attachment component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/attachment",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Avatar",
+    "description": "A composable, accessible Avatar component for modern React applications.",
+    "href": "/nui/components/avatar",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Badge",
+    "description": "A composable, accessible Badge component for modern React applications.",
+    "href": "/nui/components/badge",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Breadcrumbs",
+    "description": "A composable, accessible Breadcrumbs component for modern React applications.",
+    "href": "/nui/components/breadcrumbs",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Button",
+    "description": "A composable, accessible Button component for modern React applications.",
+    "href": "/nui/components/button",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Calendar",
+    "description": "A fully accessible, token-driven Calendar component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/calendar",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Card",
+    "description": "A composable, accessible Card component for modern React applications.",
+    "href": "/nui/components/card",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Carousel",
+    "description": "A fully accessible, token-driven Carousel component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/carousel",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Checkbox",
+    "description": "A composable, accessible Checkbox component for modern React applications.",
+    "href": "/nui/components/checkbox",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Chip",
+    "description": "A composable, accessible Chip component for modern React applications.",
+    "href": "/nui/components/chip",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Clipboard",
+    "description": "A fully accessible, token-driven Clipboard component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/clipboard",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Code Block",
+    "description": "A fully accessible, token-driven CodeBlock component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/codeblock",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Collapsible",
+    "description": "A fully accessible, token-driven Collapsible component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/collapsible",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Color Picker",
+    "description": "A fully accessible, token-driven ColorPicker component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/colorpicker",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Combobox",
+    "description": "A composable, accessible Combobox component for modern React applications.",
+    "href": "/nui/components/combobox",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Context Menu",
+    "description": "A composable, accessible Contextmenu component for modern React applications.",
+    "href": "/nui/components/contextmenu",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Data Table",
+    "description": "A composable, accessible Table component for modern React applications.",
+    "href": "/nui/components/table",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Date Picker",
+    "description": "A composable, accessible DatePicker component for modern React applications.",
+    "href": "/nui/components/datepicker",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Date Range Picker",
+    "description": "A composable, accessible DateRangePicker component for modern React applications.",
+    "href": "/nui/components/daterangepicker",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Dialog",
+    "description": "A composable, accessible Dialog component for modern React applications.",
+    "href": "/nui/components/dialog",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Divider",
+    "description": "A fully accessible, token-driven Divider component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/divider",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Drawer",
+    "description": "A composable, accessible Drawer component for modern React applications.",
+    "href": "/nui/components/drawer",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Dropdown",
+    "description": "A composable, accessible Dropdown component for modern React applications.",
+    "href": "/nui/components/dropdown",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Empty State",
+    "description": "A fully accessible, token-driven EmptyState component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/emptystate",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "File Uploader",
+    "description": "A composable, accessible FileUploader component for modern React applications.",
+    "href": "/nui/components/fileuploader",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Form",
+    "description": "A fully accessible, token-driven Form component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/form",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Hover Card",
+    "description": "A composable, accessible HoverCard component for modern React applications.",
+    "href": "/nui/components/hovercard",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Image",
+    "description": "A fully accessible, token-driven Image component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/image",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Input",
+    "description": "A composable, accessible Input component for modern React applications.",
+    "href": "/nui/components/input",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Kbd",
+    "description": "A fully accessible, token-driven Kbd component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/kbd",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Layout",
+    "description": "A composable, accessible Layout component for modern React applications.",
+    "href": "/nui/components/layout",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Link",
+    "description": "A composable, accessible Link component for modern React applications.",
+    "href": "/nui/components/link",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Mega Menu",
+    "description": "A composable, accessible MegaMenu component for modern React applications.",
+    "href": "/nui/components/megamenu",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Modal",
+    "description": "A composable, accessible Modal component for modern React applications.",
+    "href": "/nui/components/modal",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Multi Select",
+    "description": "A fully accessible, token-driven MultiSelect component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/multiselect",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "NUI Provider",
+    "description": "A fully accessible, token-driven NUIProvider component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/nuiprovider",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Number Input",
+    "description": "A fully accessible, token-driven NumberInput component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/numberinput",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Pagination",
+    "description": "A composable, accessible Pagination component for modern React applications.",
+    "href": "/nui/components/pagination",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Password Input",
+    "description": "A fully accessible, token-driven PasswordInput component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/passwordinput",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Pin Input",
+    "description": "A fully accessible, token-driven PinInput component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/pininput",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Popover",
+    "description": "A composable, accessible Popover component for modern React applications.",
+    "href": "/nui/components/popover",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Progress",
+    "description": "A composable, accessible Progress component for modern React applications.",
+    "href": "/nui/components/progress",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Radio Group",
+    "description": "A composable, accessible RadioGroup component for modern React applications.",
+    "href": "/nui/components/radiogroup",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Rating",
+    "description": "A composable, accessible Rating component for modern React applications.",
+    "href": "/nui/components/rating",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Resizable",
+    "description": "A composable, accessible Resizable component for modern React applications.",
+    "href": "/nui/components/resizable",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Scroll Area",
+    "description": "A fully accessible, token-driven ScrollArea component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/scrollarea",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Segmented Control",
+    "description": "A fully accessible, token-driven SegmentedControl component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/segmentedcontrol",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Select",
+    "description": "A composable, accessible Select component for modern React applications.",
+    "href": "/nui/components/select",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Skeleton",
+    "description": "A composable, accessible Skeleton component for modern React applications.",
+    "href": "/nui/components/skeleton",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Slider",
+    "description": "A composable, accessible Slider component for modern React applications.",
+    "href": "/nui/components/slider",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Spinner",
+    "description": "A composable, accessible Spinner component for modern React applications.",
+    "href": "/nui/components/spinner",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Stat Card",
+    "description": "A fully accessible, token-driven StatCard component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/statcard",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Stepper",
+    "description": "A composable, accessible Stepper component for modern React applications.",
+    "href": "/nui/components/stepper",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Switch",
+    "description": "A composable, accessible Switch component for modern React applications.",
+    "href": "/nui/components/switch",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Tabs",
+    "description": "A composable, accessible Tabs component for modern React applications.",
+    "href": "/nui/components/tabs",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Textarea",
+    "description": "A composable, accessible Textarea component for modern React applications.",
+    "href": "/nui/components/textarea",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Time Picker",
+    "description": "A composable, accessible TimePicker component for modern React applications.",
+    "href": "/nui/components/timepicker",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Time Range Picker",
+    "description": "A composable, accessible TimeRangePicker component for modern React applications.",
+    "href": "/nui/components/timerangepicker",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Timeline",
+    "description": "A fully accessible, token-driven Timeline component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/timeline",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Toast",
+    "description": "A composable, accessible Toast component for modern React applications.",
+    "href": "/nui/components/toast",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Tooltip",
+    "description": "A composable, accessible Tooltip component for modern React applications.",
+    "href": "/nui/components/tooltip",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Transfer List",
+    "description": "A fully accessible, token-driven TransferList component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/transferlist",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Tree View",
+    "description": "A composable, accessible TreeView component for modern React applications.",
+    "href": "/nui/components/treeview",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "VideoPlayer",
+    "description": "A fully accessible, token-driven VideoPlayer component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/video",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Virtual List",
+    "description": "A composable, accessible VirtualList component for modern React applications.",
+    "href": "/nui/components/virtuallist",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Watermark",
+    "description": "A fully accessible, token-driven Watermark component built with strict WAI-ARIA compliance.",
+    "href": "/nui/components/watermark",
+    "pkg": "nui",
+    "priority": 14
+  },
+  {
+    "title": "Accessibility & Guidelines (Attachment)",
+    "description": "Accessibility & Guidelines section in Attachment documentation.",
+    "href": "/nui/components/attachment#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Calendar)",
+    "description": "Accessibility & Guidelines section in Calendar documentation.",
+    "href": "/nui/components/calendar#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Carousel)",
+    "description": "Accessibility & Guidelines section in Carousel documentation.",
+    "href": "/nui/components/carousel#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Clipboard)",
+    "description": "Accessibility & Guidelines section in Clipboard documentation.",
+    "href": "/nui/components/clipboard#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Code Block)",
+    "description": "Accessibility & Guidelines section in Code Block documentation.",
+    "href": "/nui/components/codeblock#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Collapsible)",
+    "description": "Accessibility & Guidelines section in Collapsible documentation.",
+    "href": "/nui/components/collapsible#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Color Picker)",
+    "description": "Accessibility & Guidelines section in Color Picker documentation.",
+    "href": "/nui/components/colorpicker#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Divider)",
+    "description": "Accessibility & Guidelines section in Divider documentation.",
+    "href": "/nui/components/divider#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Empty State)",
+    "description": "Accessibility & Guidelines section in Empty State documentation.",
+    "href": "/nui/components/emptystate#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Form)",
+    "description": "Accessibility & Guidelines section in Form documentation.",
+    "href": "/nui/components/form#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Image)",
+    "description": "Accessibility & Guidelines section in Image documentation.",
+    "href": "/nui/components/image#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Kbd)",
+    "description": "Accessibility & Guidelines section in Kbd documentation.",
+    "href": "/nui/components/kbd#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Multi Select)",
+    "description": "Accessibility & Guidelines section in Multi Select documentation.",
+    "href": "/nui/components/multiselect#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (NUI Provider)",
+    "description": "Accessibility & Guidelines section in NUI Provider documentation.",
+    "href": "/nui/components/nuiprovider#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Number Input)",
+    "description": "Accessibility & Guidelines section in Number Input documentation.",
+    "href": "/nui/components/numberinput#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Password Input)",
+    "description": "Accessibility & Guidelines section in Password Input documentation.",
+    "href": "/nui/components/passwordinput#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Pin Input)",
+    "description": "Accessibility & Guidelines section in Pin Input documentation.",
+    "href": "/nui/components/pininput#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Scroll Area)",
+    "description": "Accessibility & Guidelines section in Scroll Area documentation.",
+    "href": "/nui/components/scrollarea#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Segmented Control)",
+    "description": "Accessibility & Guidelines section in Segmented Control documentation.",
+    "href": "/nui/components/segmentedcontrol#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Stat Card)",
+    "description": "Accessibility & Guidelines section in Stat Card documentation.",
+    "href": "/nui/components/statcard#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Timeline)",
+    "description": "Accessibility & Guidelines section in Timeline documentation.",
+    "href": "/nui/components/timeline#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Transfer List)",
+    "description": "Accessibility & Guidelines section in Transfer List documentation.",
+    "href": "/nui/components/transferlist#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (VideoPlayer)",
+    "description": "Accessibility & Guidelines section in VideoPlayer documentation.",
+    "href": "/nui/components/video#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Accessibility & Guidelines (Watermark)",
+    "description": "Accessibility & Guidelines section in Watermark documentation.",
+    "href": "/nui/components/watermark#accessibility-guidelines",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Animation (Mega Menu)",
+    "description": "Entrance animation:",
+    "href": "/nui/components/megamenu#animation",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Animation (Modal)",
+    "description": "Lifecycle animation model:",
+    "href": "/nui/components/modal#animation",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Animation Model (Drawer)",
+    "description": "Two-phase state system:",
+    "href": "/nui/components/drawer#animation-model",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Animation model (File Uploader)",
+    "description": "File item pop-in via translateY + fade",
+    "href": "/nui/components/fileuploader#animation-model",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Animation model (Hover Card)",
+    "description": "Entry animation: scale + translate + fade",
+    "href": "/nui/components/hovercard#animation-model",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Animation model (Input)",
+    "description": "Border and shadow transitions (200ms)",
+    "href": "/nui/components/input#animation-model",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Animation model (Layout)",
+    "description": "No intrinsic animation",
+    "href": "/nui/components/layout#animation-model",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Animations (Toast)",
+    "description": "Slide in: nui-toast-slide-in – slides from right + scale up",
+    "href": "/nui/components/toast#animations",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Architectural notes (File Uploader)",
+    "description": "Key design decisions:",
+    "href": "/nui/components/fileuploader#architectural-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Architectural notes (Hover Card)",
+    "description": "Timer orchestration prevents hover jitter",
+    "href": "/nui/components/hovercard#architectural-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Architectural notes (Input)",
+    "description": "WCAG linkage via deterministic id generation",
+    "href": "/nui/components/input#architectural-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Architectural notes (Layout)",
+    "description": "Attribute-driven CSS mapping (low runtime cost)",
+    "href": "/nui/components/layout#architectural-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Architectural notes (Mega Menu)",
+    "description": "Context-driven open state",
+    "href": "/nui/components/megamenu#architectural-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Architectural notes (Modal)",
+    "description": "Portal rendering avoids stacking context conflicts",
+    "href": "/nui/components/modal#architectural-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Architecture Notes (Dialog)",
+    "description": "Architecture Notes section in Dialog documentation.",
+    "href": "/nui/components/dialog#architecture-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "AvatarGroup (Avatar)",
+    "description": "Groups multiple avatars into a compact stack. Shows an excess counter (+n) if more avatars exist than max.",
+    "href": "/nui/components/avatar#avatargroup",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "BadgeGroup (Badge)",
+    "description": "Groups multiple badges and optionally displays a +n overflow indicator.",
+    "href": "/nui/components/badge#badgegroup",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Behavior (Alert)",
+    "description": "Alerts are controlled/uncontrolled: content always renders; visibility is handled via parent component logic.",
+    "href": "/nui/components/alert#behavior",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Behavior (Dialog)",
+    "description": "Uses external store subscription via useSyncExternalStore",
+    "href": "/nui/components/dialog#behavior",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Compound API (Popover)",
+    "description": "Responsibility |",
+    "href": "/nui/components/popover#compound-api",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Context API (Toast)",
+    "description": "Context API section in Toast documentation.",
+    "href": "/nui/components/toast#context-api",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "ContextMenuItem Structure (Context Menu)",
+    "description": "-----------------------",
+    "href": "/nui/components/contextmenu#contextmenuitem-structure",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Dialog Types (Dialog)",
+    "description": "--------------------------------------------- |",
+    "href": "/nui/components/dialog#dialog-types",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Fallback Behavior (Avatar)",
+    "description": "Avatar displays content in the following order:",
+    "href": "/nui/components/avatar#fallback-behavior",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Helper Components (Skeleton)",
+    "description": "Helper Components section in Skeleton documentation.",
+    "href": "/nui/components/skeleton#helper-components",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Accordion)",
+    "description": "An accessible, WAI-ARIA–compliant accordion component for showing and hiding sections of related content. Supports single or multiple open panels with smooth...",
+    "href": "/nui/components/accordion#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Alert)",
+    "description": "A flexible and accessible alert component for displaying contextual messages, notifications, or warnings. Supports multiple variants (info, success, warning,...",
+    "href": "/nui/components/alert#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Attachment)",
+    "description": "Interactive Preview section in Attachment documentation.",
+    "href": "/nui/components/attachment#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Avatar)",
+    "description": "A flexible and accessible avatar component for representing users or entities with images, initials, or fallback icons. Supports multiple sizes, shapes, stat...",
+    "href": "/nui/components/avatar#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Badge)",
+    "description": "A compact status or indicator component that can display numbers, icons, or small labels. Supports variants, sizes, pill shapes, dot mode, and interactive be...",
+    "href": "/nui/components/badge#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Breadcrumbs)",
+    "description": "A navigation aid component that displays the user’s location within a hierarchical structure. Supports interactive links, custom separators, responsive colla...",
+    "href": "/nui/components/breadcrumbs#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Button)",
+    "description": "A polymorphic, accessible, and composable action component designed for primary interactions. Supports visual variants, sizes, loading states, icons, and rou...",
+    "href": "/nui/components/button#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Calendar)",
+    "description": "Interactive Preview section in Calendar documentation.",
+    "href": "/nui/components/calendar#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Card)",
+    "description": "A flexible container component used to group related content and actions. Supports structured sections (Header, Body, Footer, Divider), hover elevation, and ...",
+    "href": "/nui/components/card#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Carousel)",
+    "description": "Interactive Preview section in Carousel documentation.",
+    "href": "/nui/components/carousel#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Checkbox)",
+    "description": "A binary selection control that allows users to toggle between checked, unchecked, and indeterminate states.",
+    "href": "/nui/components/checkbox#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Chip)",
+    "description": "A compact pill-shaped component used to represent selections, filters, or small entities.",
+    "href": "/nui/components/chip#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Clipboard)",
+    "description": "Interactive Preview section in Clipboard documentation.",
+    "href": "/nui/components/clipboard#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Code Block)",
+    "description": "Interactive Preview section in Code Block documentation.",
+    "href": "/nui/components/codeblock#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Collapsible)",
+    "description": "Interactive Preview section in Collapsible documentation.",
+    "href": "/nui/components/collapsible#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Color Picker)",
+    "description": "Interactive Preview section in Color Picker documentation.",
+    "href": "/nui/components/colorpicker#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Combobox)",
+    "description": "A searchable dropdown input component that allows users to filter and select options from a list.",
+    "href": "/nui/components/combobox#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Context Menu)",
+    "description": "A right-click triggered contextual action menu that provides spatially anchored commands with keyboard navigation, collision-aware positioning, accessibility...",
+    "href": "/nui/components/contextmenu#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Data Table)",
+    "description": "A polymorphic table component that supports both Plug and Play (PnP) Smart Mode with automatic sorting and typed cell formatters, and Composable Compound Pri...",
+    "href": "/nui/components/table#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Date Picker)",
+    "description": "A controlled/uncontrolled popover calendar component for selecting a single date.",
+    "href": "/nui/components/datepicker#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Date Range Picker)",
+    "description": "A popover-based dual-date calendar component for selecting a start and end date.",
+    "href": "/nui/components/daterangepicker#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Dialog)",
+    "description": "Global infrastructure component responsible for orchestrating imperative dialogs and toast bridging across the application.",
+    "href": "/nui/components/dialog#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Divider)",
+    "description": "Interactive Preview section in Divider documentation.",
+    "href": "/nui/components/divider#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Drawer)",
+    "description": "A controlled overlay panel that slides from an edge of the viewport.",
+    "href": "/nui/components/drawer#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Dropdown)",
+    "description": "A compound menu component for contextual actions anchored to a trigger.",
+    "href": "/nui/components/dropdown#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Empty State)",
+    "description": "Interactive Preview section in Empty State documentation.",
+    "href": "/nui/components/emptystate#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (File Uploader)",
+    "description": "FileUploader is a flexible file upload component that supports drag-and-drop, click-to-upload, keyboard interaction, file previews, and file removal. It work...",
+    "href": "/nui/components/fileuploader#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Form)",
+    "description": "Interactive Preview section in Form documentation.",
+    "href": "/nui/components/form#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Hover Card)",
+    "description": "HoverCard is a floating content container that appears when a user hovers over or focuses on a trigger element. It is useful for previews, tooltips with rich...",
+    "href": "/nui/components/hovercard#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Image)",
+    "description": "Interactive Preview section in Image documentation.",
+    "href": "/nui/components/image#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Input)",
+    "description": "A composable text entry primitive supporting label association, validation messaging, icon affordances, and token-driven sizing.",
+    "href": "/nui/components/input#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Kbd)",
+    "description": "Interactive Preview section in Kbd documentation.",
+    "href": "/nui/components/kbd#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Layout)",
+    "description": "A low-level layout system providing constraint-based width management, flexbox composition, and responsive grid orchestration.",
+    "href": "/nui/components/layout#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Link)",
+    "description": "Typographic navigation element designed for inline navigation inside paragraphs, lists, and breadcrumbs.",
+    "href": "/nui/components/link#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Mega Menu)",
+    "description": "A compositional navigation primitive implementing a trigger-controlled expandable panel for complex multi-column navigation, category exploration, and market...",
+    "href": "/nui/components/megamenu#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Modal)",
+    "description": "A portal-based dialog primitive implementing focus isolation, background inerting, scroll locking, and controlled mounting with animated lifecycle transitions.",
+    "href": "/nui/components/modal#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Multi Select)",
+    "description": "Interactive Preview section in Multi Select documentation.",
+    "href": "/nui/components/multiselect#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (NUI Provider)",
+    "description": "Interactive Preview section in NUI Provider documentation.",
+    "href": "/nui/components/nuiprovider#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Number Input)",
+    "description": "Interactive Preview section in Number Input documentation.",
+    "href": "/nui/components/numberinput#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Pagination)",
+    "description": "A fully accessible, WAI-ARIA compliant pagination component for navigating through pages. Supports first/prev/next/last controls, arrow key navigation, and g...",
+    "href": "/nui/components/pagination#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Password Input)",
+    "description": "Interactive Preview section in Password Input documentation.",
+    "href": "/nui/components/passwordinput#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Pin Input)",
+    "description": "Interactive Preview section in Pin Input documentation.",
+    "href": "/nui/components/pininput#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Popover)",
+    "description": "Popover is a versatile overlay component used to display contextual content or interactive elements anchored to a trigger. It supports portal rendering, auto...",
+    "href": "/nui/components/popover#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Progress)",
+    "description": "A visual feedback component used to represent task completion or loading state with support for determinate and indeterminate modes, size scaling, semantic v...",
+    "href": "/nui/components/progress#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Radio Group)",
+    "description": "A controlled/uncontrolled selection component that enables users to choose a single option from a set while preserving native radio behavior, accessibility s...",
+    "href": "/nui/components/radiogroup#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Rating)",
+    "description": "A visual input component that allows users to select a rating value using icons (typically stars). It supports controlled and uncontrolled modes, fractional ...",
+    "href": "/nui/components/rating#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Resizable)",
+    "description": "A layout primitive that enables users to resize adjacent panels via drag or keyboard interaction. It supports horizontal and vertical orientations, flexible ...",
+    "href": "/nui/components/resizable#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Scroll Area)",
+    "description": "Interactive Preview section in Scroll Area documentation.",
+    "href": "/nui/components/scrollarea#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Segmented Control)",
+    "description": "Interactive Preview section in Segmented Control documentation.",
+    "href": "/nui/components/segmentedcontrol#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Select)",
+    "description": "A fully accessible dropdown component that allows users to choose a single option from a list. It supports controlled and uncontrolled modes, portal-based po...",
+    "href": "/nui/components/select#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Skeleton)",
+    "description": "A placeholder component used to indicate loading content while preserving layout structure. It supports multiple sizes, shimmer animation, shape variants, an...",
+    "href": "/nui/components/skeleton#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Slider)",
+    "description": "An interactive input control that allows users to select a numeric value within a defined range using pointer dragging, track clicking, or keyboard navigatio...",
+    "href": "/nui/components/slider#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Spinner)",
+    "description": "A visual loading indicator that communicates ongoing asynchronous activity. Designed for inline usage, button loading states, and page-level placeholders. Su...",
+    "href": "/nui/components/spinner#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Stat Card)",
+    "description": "Interactive Preview section in Stat Card documentation.",
+    "href": "/nui/components/statcard#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Stepper)",
+    "description": "A horizontal progress navigation component that visualizes multi-step workflows such as onboarding, checkout, and forms. Supports interactive navigation, opt...",
+    "href": "/nui/components/stepper#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Switch)",
+    "description": "A toggle control that allows users to switch between binary states (on/off). Supports controlled and uncontrolled usage, form integration, accessibility sema...",
+    "href": "/nui/components/switch#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Tabs)",
+    "description": "A composable, accessible tabs component implementing Dual-Mode Architecture, controlled and uncontrolled state, roving tabindex keyboard navigation, and ARIA...",
+    "href": "/nui/components/tabs#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Textarea)",
+    "description": "A controlled/uncontrolled multiline input supporting auto-growing height, character counting, error state, and robust accessibility semantics. Designed for f...",
+    "href": "/nui/components/textarea#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Time Picker)",
+    "description": "A popover-based time selection component supporting 12/24-hour clocks, minute stepping, controlled/uncontrolled usage, collision-aware positioning, and scrol...",
+    "href": "/nui/components/timepicker#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Time Range Picker)",
+    "description": "A popover-based time range selector supporting 12/24-hour clocks, minute stepping, controlled/uncontrolled mode, scrollable hour/minute/AM-PM columns, and st...",
+    "href": "/nui/components/timerangepicker#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Timeline)",
+    "description": "Interactive Preview section in Timeline documentation.",
+    "href": "/nui/components/timeline#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Toast)",
+    "description": "A fully accessible, animated toast notification system built with React + TypeScript. Supports multiple variants, auto-dismiss with pause-on-hover, manual di...",
+    "href": "/nui/components/toast#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Tooltip)",
+    "description": "A floating informational popup that appears when a user hovers or focuses on an element. Supports dynamic positioning, delay, offsets, accessibility semantic...",
+    "href": "/nui/components/tooltip#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Transfer List)",
+    "description": "Interactive Preview section in Transfer List documentation.",
+    "href": "/nui/components/transferlist#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Tree View)",
+    "description": "A hierarchical list component that allows users to navigate, expand, and select nested items. Supports controlled selection, default expansion, keyboard navi...",
+    "href": "/nui/components/treeview#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (VideoPlayer)",
+    "description": "Interactive Preview section in VideoPlayer documentation.",
+    "href": "/nui/components/video#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Virtual List)",
+    "description": "A high-performance scrollable list component that efficiently renders only visible rows. Supports dynamic row virtualization, custom item rendering, fixed ro...",
+    "href": "/nui/components/virtuallist#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Interactive Preview (Watermark)",
+    "description": "Interactive Preview section in Watermark documentation.",
+    "href": "/nui/components/watermark#interactive-preview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Button)",
+    "description": "------------------ |",
+    "href": "/nui/components/button#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Context Menu)",
+    "description": "----------------------------- |",
+    "href": "/nui/components/contextmenu#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Dialog)",
+    "description": "---------------------------------------------------- |",
+    "href": "/nui/components/dialog#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Link)",
+    "description": "-------------------- |",
+    "href": "/nui/components/link#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Pagination)",
+    "description": "------------------------- |",
+    "href": "/nui/components/pagination#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Popover)",
+    "description": "--------------------------------------- |",
+    "href": "/nui/components/popover#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Radio Group)",
+    "description": "----------------------------- |",
+    "href": "/nui/components/radiogroup#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Rating)",
+    "description": "--------------------------------- |",
+    "href": "/nui/components/rating#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Resizable)",
+    "description": "---------------------------------- |",
+    "href": "/nui/components/resizable#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Select)",
+    "description": "---------------------------- |",
+    "href": "/nui/components/select#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Slider)",
+    "description": "--------------------- |",
+    "href": "/nui/components/slider#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Stepper)",
+    "description": "Tab → moves focus between step buttons",
+    "href": "/nui/components/stepper#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Switch)",
+    "description": "Tab → focuses switch",
+    "href": "/nui/components/switch#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Textarea)",
+    "description": "Standard textarea typing behavior",
+    "href": "/nui/components/textarea#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Time Picker)",
+    "description": "Trigger opens popover via Enter / Space",
+    "href": "/nui/components/timepicker#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Time Range Picker)",
+    "description": "Trigger opens popover via Enter / Space",
+    "href": "/nui/components/timerangepicker#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Tooltip)",
+    "description": "Tab → focuses trigger element",
+    "href": "/nui/components/tooltip#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Tree View)",
+    "description": "ArrowUp / ArrowDown → navigate visible nodes",
+    "href": "/nui/components/treeview#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Keyboard Interaction (Virtual List)",
+    "description": "Standard browser scrolling applies",
+    "href": "/nui/components/virtuallist#keyboard-interaction",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Layout / Styling (Toast)",
+    "description": "Stack vertically, right-aligned: .nui-toast-region",
+    "href": "/nui/components/toast#layout-styling",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Layout & Structure (Card)",
+    "description": "---------------------------------- |",
+    "href": "/nui/components/card#layout-structure",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Loading State (Avatar)",
+    "description": "When loading is true:",
+    "href": "/nui/components/avatar#loading-state",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Page Generation Logic (Pagination)",
+    "description": "The component implements adaptive pagination math:",
+    "href": "/nui/components/pagination#page-generation-logic",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Performance Characteristics (Progress)",
+    "description": "The component uses transform-based progress animation instead of width changes:",
+    "href": "/nui/components/progress#performance-characteristics",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Positioning Behavior (Popover)",
+    "description": "The component implements adaptive overlay positioning:",
+    "href": "/nui/components/popover#positioning-behavior",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Provider Notes (Toast)",
+    "description": "Handles multiple toasts with independent timers",
+    "href": "/nui/components/toast#provider-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes (Avatar)",
+    "description": "The shape prop controls the border radius.",
+    "href": "/nui/components/avatar#shapes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes (Badge)",
+    "description": "Pill – Fully rounded with pill={true}",
+    "href": "/nui/components/badge#shapes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (Date Picker)",
+    "description": "Month/year selector mode",
+    "href": "/nui/components/datepicker#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (Date Range Picker)",
+    "description": "Month/year selector",
+    "href": "/nui/components/daterangepicker#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (Drawer)",
+    "description": "Mounted (in DOM)",
+    "href": "/nui/components/drawer#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (File Uploader)",
+    "description": "Interaction states",
+    "href": "/nui/components/fileuploader#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (Hover Card)",
+    "description": "Interaction states",
+    "href": "/nui/components/hovercard#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (Input)",
+    "description": "Interaction states",
+    "href": "/nui/components/input#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (Layout)",
+    "description": "Direction variants",
+    "href": "/nui/components/layout#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (Mega Menu)",
+    "description": "Behavioral modes",
+    "href": "/nui/components/megamenu#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Shapes / Modes (Modal)",
+    "description": "Interaction modes",
+    "href": "/nui/components/modal#shapes-modes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "States / Behavior (Card)",
+    "description": "-------------------------------------------------- |",
+    "href": "/nui/components/card#states-behavior",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Status Indicator (Avatar)",
+    "description": "Add a small status dot to represent user state.",
+    "href": "/nui/components/avatar#status-indicator",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Sub-definitions (Stepper)",
+    "description": "Sub-definitions section in Stepper documentation.",
+    "href": "/nui/components/stepper#sub-definitions",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Variants / Semantic Styling (Toast)",
+    "description": "Left Border Color",
+    "href": "/nui/components/toast#variants-semantic-styling",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Data Display & Media",
+    "description": "Components for rendering structured data, media players, code, and avatars.",
+    "href": "/nui/data-display",
+    "pkg": "nui",
+    "priority": 18
+  },
+  {
+    "title": "General & Actions",
+    "description": "Fundamental interactive elements and action triggers.",
+    "href": "/nui/general",
+    "pkg": "nui",
+    "priority": 18
+  },
+  {
+    "title": "Indicators & Feedback",
+    "description": "Components for progress tracking, notifications, banners, and loading states.",
+    "href": "/nui/indicators-and-buttons",
+    "pkg": "nui",
+    "priority": 18
+  },
+  {
+    "title": "Inputs & Forms",
+    "description": "Components for user input, form controls, and data capture.",
+    "href": "/nui/inputs-and-forms",
+    "pkg": "nui",
+    "priority": 18
+  },
+  {
+    "title": "Layout & Structure",
+    "description": "Components for organizing page structure, layout grids, and content containers.",
+    "href": "/nui/layout-and-structure",
+    "pkg": "nui",
+    "priority": 18
+  },
+  {
+    "title": "Navigation",
+    "description": "Components for hierarchical routing, breadcrumbs, menus, and pagination.",
+    "href": "/nui/navigation",
+    "pkg": "nui",
+    "priority": 18
+  },
+  {
+    "title": "Overlays & Dialogs",
+    "description": "Contextual overlays, modal windows, drawers, and floating panels.",
+    "href": "/nui/overlays-and-dialogs",
+    "pkg": "nui",
+    "priority": 18
   },
   {
     "title": "Pickers & Selects",
     "description": "Components for selection menus, search dropdowns, and date/time pickers.",
     "href": "/nui/pickers-and-selects",
-    "pkg": "nui"
-  },
-  {
-    "title": "Programmatic API (`nui.*`)",
-    "description": "NUI features a built-in imperative API (`nui.*`) that allows you to trigger **confirmation dialogs**, **alerts**, and **toast notifications** programmatically from anywhere in your codebase—without mounting or managing any JSX markup.",
-    "href": "/nui/programmatic",
-    "pkg": "nui"
-  },
-  {
-    "title": "Why Use the Programmatic API? (Programmatic API (`nui.*`))",
-    "description": "In standard React development, showing an alert modal or triggering a toast usually requires declaring local state (`const [open, setOpen] = useState(false)`), placing modal components in JSX, and wiring up props.",
-    "href": "/nui/programmatic#why-use-the-programmatic-api",
-    "pkg": "nui"
-  },
-  {
-    "title": "One-Time Setup (Programmatic API (`nui.*`))",
-    "description": "To enable the programmatic API across your entire application, mount `<DialogProvider />` inside your `<ToastProvider>` in your root layout:",
-    "href": "/nui/programmatic#one-time-setup",
-    "pkg": "nui"
-  },
-  {
-    "title": "Confirmation Dialogs (`nui.confirm`) (Programmatic API (`nui.*`))",
-    "description": "`nui.confirm` displays an accessible modal dialog and returns a `Promise<boolean>` that resolves to `true` if the user confirms, or `false` if they cancel.",
-    "href": "/nui/programmatic#confirmation-dialogs-nui-confirm",
-    "pkg": "nui"
-  },
-  {
-    "title": "Alert Dialogs (`nui.alert`) (Programmatic API (`nui.*`))",
-    "description": "`nui.alert` displays an informational or blocking alert modal that resolves when the user acknowledges it:",
-    "href": "/nui/programmatic#alert-dialogs-nui-alert",
-    "pkg": "nui"
-  },
-  {
-    "title": "Programmatic Toasts (`nui.toast`) (Programmatic API (`nui.*`))",
-    "description": "NUI connects `nui.*` directly into your application's `<ToastProvider>`. You can fire animated toasts instantly without declaring `useToast()`:",
-    "href": "/nui/programmatic#programmatic-toasts-nui-toast",
-    "pkg": "nui"
-  },
-  {
-    "title": "Real-World Example: API Client Interceptor (Programmatic API (`nui.*`))",
-    "description": "Because `nui.*` does not rely on React hooks, you can invoke notifications directly inside API interceptors (e.g., Axios or Fetch wrappers):",
-    "href": "/nui/programmatic#real-world-example-api-client-interceptor",
-    "pkg": "nui"
-  },
-  {
-    "title": "Related Components (Programmatic API (`nui.*`))",
-    "description": "- [**Dialog**](/nui/components/dialog) — React declarative modal dialog primitive.",
-    "href": "/nui/programmatic#related-components",
-    "pkg": "nui"
-  },
-  {
-    "title": "Theming & Design Tokens",
-    "description": "NUI v3 features an aesthetic, token-first design system completely driven by **`@nofinite/nuicss`** semantic design tokens. Every component seamlessly adapts to light and dark themes without manual CSS overrides.",
-    "href": "/nui/theming",
-    "pkg": "nui"
-  },
-  {
-    "title": "Overview (Theming & Design Tokens)",
-    "description": "Unlike hardcoded color palettes, NUI components reference **semantic CSS custom properties**. This ensures that colors, borders, and typography automatically respond to theme changes and user preferences.",
-    "href": "/nui/theming#overview",
-    "pkg": "nui"
-  },
-  {
-    "title": "Semantic Tokens Reference (Theming & Design Tokens)",
-    "description": "",
-    "href": "/nui/theming#semantic-tokens-reference",
-    "pkg": "nui"
-  },
-  {
-    "title": "Dark Mode Implementation (Theming & Design Tokens)",
-    "description": "NUI v3 switches tokens automatically based on the `.dark` class applied to the root `<html>` element.",
-    "href": "/nui/theming#dark-mode-implementation",
-    "pkg": "nui"
-  },
-  {
-    "title": "Customizing Tokens (Theming & Design Tokens)",
-    "description": "You can easily override any token globally in your application's CSS file:",
-    "href": "/nui/theming#customizing-tokens",
-    "pkg": "nui"
+    "pkg": "nui",
+    "priority": 18
   },
   {
     "title": "Architecture & UnoCSS Engine",
     "description": "Understand the inner workings of NUICSS and how its on-demand compilation engine delivers instant styling.",
     "href": "/nuicss/architecture",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Evolution to the UnoCSS Engine (Architecture & UnoCSS Engine)",
-    "description": "In previous iterations:",
-    "href": "/nuicss/architecture#evolution-to-the-unocss-engine",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "The `@nuicss` Directive (Architecture & UnoCSS Engine)",
-    "description": "When `@nuicss;` is placed in your stylesheet, the PostCSS/Vite plugin processes it into structured layers:",
-    "href": "/nuicss/architecture#the-nuicss-directive",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Directives Support (Architecture & UnoCSS Engine)",
-    "description": "",
-    "href": "/nuicss/architecture#directives-support",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Configuration",
-    "description": "Configure NUICSS to fit your application structure, custom themes, and design tokens.",
-    "href": "/nuicss/configuration",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Configuration File (Configuration)",
-    "description": "NUICSS loads configuration from `nuicss.config.ts` (or `.js`, `.mjs`, `.cjs`) in your project root using the `defineConfig` helper:",
-    "href": "/nuicss/configuration#configuration-file",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Configuration Options (Configuration)",
-    "description": "",
-    "href": "/nuicss/configuration#configuration-options",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Installation & Setup",
-    "description": "Get started with **NUICSS** in your web application.",
-    "href": "/nuicss/installation",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "1. Install the Package (Installation & Setup)",
-    "description": "Install `@nofinite/nuicss` using your preferred package manager:",
-    "href": "/nuicss/installation#1-install-the-package",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "2. Configure PostCSS (Installation & Setup)",
-    "description": "Add the `@nofinite/nuicss/postcss` plugin to your `postcss.config.js` (or `.mjs`):",
-    "href": "/nuicss/installation#2-configure-postcss",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "3. Add the `@nuicss` Directive (Installation & Setup)",
-    "description": "In your main CSS entry point (e.g. `src/app/globals.css` or `src/style.css`), add the `@nuicss;` directive:",
-    "href": "/nuicss/installation#3-add-the-nuicss-directive",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "4. Create `nuicss.config.ts` (Installation & Setup)",
-    "description": "Create a `nuicss.config.ts` in the root of your project:",
-    "href": "/nuicss/installation#4-create-nuicss-config-ts",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Vite Plugin Setup (Alternative to PostCSS) (Installation & Setup)",
-    "description": "If you are using Vite without PostCSS, you can use `nuicssVitePlugin` directly:",
-    "href": "/nuicss/installation#vite-plugin-setup-alternative-to-postcss",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "NUICSS",
-    "description": "**NUICSS** is an instant, on-demand atomic CSS engine powered directly by the blazing-fast **UnoCSS** compiler. It provides high-performance utility generation, semantic design tokens, and seamless toolchain integration with zero runtime overhead.",
-    "href": "/nuicss",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Why NUICSS? (NUICSS)",
-    "description": "- **Instant On-Demand Compilation**: Powered by UnoCSS under the hood, compiling thousands of utility classes in milliseconds.",
-    "href": "/nuicss#why-nuicss",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Quick Example (NUICSS)",
-    "description": "```html",
-    "href": "/nuicss#quick-example",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Core Sections (NUICSS)",
-    "description": "- [**Installation & Setup**](/nuicss/installation) — Add NUICSS to Next.js, Vite, or PostCSS projects.",
-    "href": "/nuicss#core-sections",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Theming & Design Tokens",
-    "description": "NUICSS features an aesthetic, token-first design system completely driven by CSS custom properties. It aligns directly with **NUI** components for seamless cross-package consistency.",
-    "href": "/nuicss/theming",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Semantic Color Scale (Theming & Design Tokens)",
-    "description": "NUICSS uses semantic token names rather than static hex codes, making dark mode transitions automatic and effortless.",
-    "href": "/nuicss/theming#semantic-color-scale",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Brand & Feedback Colors (Theming & Design Tokens)",
-    "description": "| Color Role | Background Utility | Text Utility | Border Utility |",
-    "href": "/nuicss/theming#brand-feedback-colors",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Border Radius Tokens (Theming & Design Tokens)",
-    "description": "| Utility Class | Variable | Size |",
-    "href": "/nuicss/theming#border-radius-tokens",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Dark Mode (Theming & Design Tokens)",
-    "description": "NUICSS applies dark theme styles automatically when the `.dark` class is present on the root `<html>` tag:",
-    "href": "/nuicss/theming#dark-mode",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
     "title": "Backgrounds & Borders Utilities",
     "description": "Utilities for styling backgrounds, borders, divide lines, outline rings, and corner radii.",
     "href": "/nuicss/utilities/backgrounds-borders",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
-    "title": "Background Colors (Backgrounds & Borders Utilities)",
-    "description": "NUICSS provides semantic background utilities that dynamically adapt to theme changes:",
-    "href": "/nuicss/utilities/backgrounds-borders#background-colors",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Border Width & Style (Backgrounds & Borders Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/backgrounds-borders#border-width-style",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Border Colors (Backgrounds & Borders Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/backgrounds-borders#border-colors",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Border Radius (Backgrounds & Borders Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/backgrounds-borders#border-radius",
-    "pkg": "nuicss"
+    "title": "Configuration",
+    "description": "Configure NUICSS to fit your application structure, custom themes, and design tokens.",
+    "href": "/nuicss/configuration",
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
     "title": "Effects & Filters Utilities",
     "description": "Utilities for applying drop shadows, opacity, backdrop blurs, transitions, and animations in NUICSS.",
     "href": "/nuicss/utilities/effects-filters",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Box Shadow (Effects & Filters Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/effects-filters#box-shadow",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Opacity (Effects & Filters Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/effects-filters#opacity",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Backdrop Blur (Effects & Filters Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/effects-filters#backdrop-blur",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Transitions & Animation (Effects & Filters Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/effects-filters#transitions-animation",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
     "title": "Flexbox & Grid Utilities",
     "description": "Utilities for building 1D and 2D responsive layouts using CSS Flexbox and CSS Grid.",
     "href": "/nuicss/utilities/flex-grid",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Flex Direction & Wrapping (Flexbox & Grid Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/flex-grid#flex-direction-wrapping",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Justify Content & Alignment (Flexbox & Grid Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/flex-grid#justify-content-alignment",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Grid Columns & Rows (Flexbox & Grid Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/flex-grid#grid-columns-rows",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Gap (Flexbox & Grid Utilities)",
-    "description": "Control gutters between grid and flex items:",
-    "href": "/nuicss/utilities/flex-grid#gap",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
     "title": "Layout Utilities",
     "description": "Utilities for controlling page layout, element display, positioning, and box model structure in NUICSS.",
     "href": "/nuicss/utilities/layout",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Display (Layout Utilities)",
-    "description": "Control the display property of elements:",
-    "href": "/nuicss/utilities/layout#display",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Position (Layout Utilities)",
-    "description": "Control element positioning in the DOM:",
-    "href": "/nuicss/utilities/layout#position",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Z-Index (Layout Utilities)",
-    "description": "Stacking order utilities:",
-    "href": "/nuicss/utilities/layout#z-index",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Overflow (Layout Utilities)",
-    "description": "Control how content behaves when it exceeds its container:",
-    "href": "/nuicss/utilities/layout#overflow",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
     "title": "Sizing Utilities",
     "description": "Utilities for setting element width, height, min/max dimensions, and aspect ratios.",
     "href": "/nuicss/utilities/sizing",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Width (Sizing Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/sizing#width",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Height (Sizing Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/sizing#height",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Min & Max Sizing (Sizing Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/sizing#min-max-sizing",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
     "title": "Spacing Utilities",
     "description": "Utilities for controlling padding, margin, and space between elements using the 4px baseline scale.",
     "href": "/nuicss/utilities/spacing",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
-    "title": "Padding (Spacing Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/spacing#padding",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Margin (Spacing Utilities)",
-    "description": "| Class | Properties |",
-    "href": "/nuicss/utilities/spacing#margin",
-    "pkg": "nuicss"
-  },
-  {
-    "title": "Arbitrary Values (Spacing Utilities)",
-    "description": "NUICSS supports any arbitrary spacing value using square bracket notation:",
-    "href": "/nuicss/utilities/spacing#arbitrary-values",
-    "pkg": "nuicss"
+    "title": "Theming & Design Tokens",
+    "description": "NUICSS features an aesthetic, token-first design system completely driven by CSS custom properties. It aligns directly with NUI components for seamless cross...",
+    "href": "/nuicss/theming",
+    "pkg": "nuicss",
+    "priority": 28
   },
   {
     "title": "Typography Utilities",
     "description": "Utilities for font sizing, font weights, line heights, text alignment, and typography styling.",
     "href": "/nuicss/utilities/typography",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28
+  },
+  {
+    "title": "Arbitrary Values (Spacing Utilities)",
+    "description": "Arbitrary Values section in Spacing Utilities documentation.",
+    "href": "/nuicss/utilities/spacing#arbitrary-values",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Backdrop Blur (Effects & Filters Utilities)",
+    "description": "backdrop-filter: blur(0); |",
+    "href": "/nuicss/utilities/effects-filters#backdrop-blur",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Background Colors (Backgrounds & Borders Utilities)",
+    "description": "NUICSS provides semantic background utilities that dynamically adapt to theme changes:",
+    "href": "/nuicss/utilities/backgrounds-borders#background-colors",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Border Colors (Backgrounds & Borders Utilities)",
+    "description": "border-color: var(--border-default); |",
+    "href": "/nuicss/utilities/backgrounds-borders#border-colors",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Border Radius (Backgrounds & Borders Utilities)",
+    "description": "Border Radius section in Backgrounds & Borders Utilities documentation.",
+    "href": "/nuicss/utilities/backgrounds-borders#border-radius",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Border Radius Tokens (Theming & Design Tokens)",
+    "description": "Border Radius Tokens section in Theming & Design Tokens documentation.",
+    "href": "/nuicss/theming#border-radius-tokens",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Border Width & Style (Backgrounds & Borders Utilities)",
+    "description": "border-width: 1px; border-style: solid; |",
+    "href": "/nuicss/utilities/backgrounds-borders#border-width-style",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Box Shadow (Effects & Filters Utilities)",
+    "description": "box-shadow: none; |",
+    "href": "/nuicss/utilities/effects-filters#box-shadow",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Brand & Feedback Colors (Theming & Design Tokens)",
+    "description": "Background Utility Border Utility |",
+    "href": "/nuicss/theming#brand-feedback-colors",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Configuration File (Configuration)",
+    "description": "NUICSS loads configuration from nuicss.config.ts (or .js, .mjs, .cjs) in your project root using the defineConfig helper:",
+    "href": "/nuicss/configuration#configuration-file",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Configuration Options (Configuration)",
+    "description": "Configuration Options section in Configuration documentation.",
+    "href": "/nuicss/configuration#configuration-options",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Dark Mode (Theming & Design Tokens)",
+    "description": "Dark Mode section in Theming & Design Tokens documentation.",
+    "href": "/nuicss/theming#dark-mode",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Directives Support (Architecture & UnoCSS Engine)",
+    "description": "Directives Support section in Architecture & UnoCSS Engine documentation.",
+    "href": "/nuicss/architecture#directives-support",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Display (Layout Utilities)",
+    "description": "Control the display property of elements:",
+    "href": "/nuicss/utilities/layout#display",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Evolution to the UnoCSS Engine (Architecture & UnoCSS Engine)",
+    "description": "In previous iterations:",
+    "href": "/nuicss/architecture#evolution-to-the-unocss-engine",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Flex Direction & Wrapping (Flexbox & Grid Utilities)",
+    "description": "flex-direction: row; |",
+    "href": "/nuicss/utilities/flex-grid#flex-direction-wrapping",
+    "pkg": "nuicss",
+    "priority": 28.5
   },
   {
     "title": "Font Size (Typography Utilities)",
-    "description": "| Class | Font Size | Line Height |",
+    "description": "Font Size section in Typography Utilities documentation.",
     "href": "/nuicss/utilities/typography#font-size",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28.5
   },
   {
     "title": "Font Weight (Typography Utilities)",
-    "description": "| Class | Properties |",
+    "description": "font-weight: 100; |",
     "href": "/nuicss/utilities/typography#font-weight",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Gap (Flexbox & Grid Utilities)",
+    "description": "Gap section in Flexbox & Grid Utilities documentation.",
+    "href": "/nuicss/utilities/flex-grid#gap",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Grid Columns & Rows (Flexbox & Grid Utilities)",
+    "description": "grid-template-columns: repeat(1, minmax(0, 1fr)); |",
+    "href": "/nuicss/utilities/flex-grid#grid-columns-rows",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Height (Sizing Utilities)",
+    "description": "height: 100vh; |",
+    "href": "/nuicss/utilities/sizing#height",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Justify Content & Alignment (Flexbox & Grid Utilities)",
+    "description": "justify-content: flex-start; |",
+    "href": "/nuicss/utilities/flex-grid#justify-content-alignment",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Margin (Spacing Utilities)",
+    "description": "margin-left: auto; margin-right: auto; |",
+    "href": "/nuicss/utilities/spacing#margin",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Min & Max Sizing (Sizing Utilities)",
+    "description": "Min & Max Sizing section in Sizing Utilities documentation.",
+    "href": "/nuicss/utilities/sizing#min-max-sizing",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Opacity (Effects & Filters Utilities)",
+    "description": "opacity: 0.25; |",
+    "href": "/nuicss/utilities/effects-filters#opacity",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Overflow (Layout Utilities)",
+    "description": "Overflow section in Layout Utilities documentation.",
+    "href": "/nuicss/utilities/layout#overflow",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Padding (Spacing Utilities)",
+    "description": "padding: 0.25rem; / 4px / |",
+    "href": "/nuicss/utilities/spacing#padding",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Position (Layout Utilities)",
+    "description": "Control element positioning in the DOM:",
+    "href": "/nuicss/utilities/layout#position",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Semantic Color Scale (Theming & Design Tokens)",
+    "description": "NUICSS uses semantic token names rather than static hex codes, making dark mode transitions automatic and effortless.",
+    "href": "/nuicss/theming#semantic-color-scale",
+    "pkg": "nuicss",
+    "priority": 28.5
   },
   {
     "title": "Text Alignment & Transform (Typography Utilities)",
-    "description": "| Class | Properties |",
+    "description": "Text Alignment & Transform section in Typography Utilities documentation.",
     "href": "/nuicss/utilities/typography#text-alignment-transform",
-    "pkg": "nuicss"
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "The @nuicss Directive (Architecture & UnoCSS Engine)",
+    "description": "When @nuicss; is placed in your stylesheet, the PostCSS/Vite plugin processes it into structured layers:",
+    "href": "/nuicss/architecture#the-nuicss-directive",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Transitions & Animation (Effects & Filters Utilities)",
+    "description": "Transitions & Animation section in Effects & Filters Utilities documentation.",
+    "href": "/nuicss/utilities/effects-filters#transitions-animation",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Width (Sizing Utilities)",
+    "description": "width: 33.333333%; |",
+    "href": "/nuicss/utilities/sizing#width",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "Z-Index (Layout Utilities)",
+    "description": "Stacking order utilities:",
+    "href": "/nuicss/utilities/layout#z-index",
+    "pkg": "nuicss",
+    "priority": 28.5
+  },
+  {
+    "title": "@nofinite/locale — v1.0.0",
+    "description": "Release date: 25 December 2025",
+    "href": "/locale/releases",
+    "pkg": "locale",
+    "priority": 38
+  },
+  {
+    "title": "CDN Usage",
+    "description": "If you are not using a build system, Nofinite Locale can be used directly via CDN.",
+    "href": "/locale/getting-started/cdn",
+    "pkg": "locale",
+    "priority": 38
+  },
+  {
+    "title": "Country Lookup",
+    "description": "Nofinite Locale provides simple helper functions to retrieve country information.",
+    "href": "/locale/usage/country-lookup",
+    "pkg": "locale",
+    "priority": 38
+  },
+  {
+    "title": "Flags",
+    "description": "Country flags are provided as SVGs through CSS classes.",
+    "href": "/locale/usage/flags",
+    "pkg": "locale",
+    "priority": 38
+  },
+  {
+    "title": "Installation",
+    "description": "Install the package using your preferred package manager.",
+    "href": "/locale/getting-started/installation",
+    "pkg": "locale",
+    "priority": 38
+  },
+  {
+    "title": "Nofinite Locale",
+    "description": "Nofinite Locale is a lightweight utility library that provides country metadata, international dialing codes, and CSS-based flags for web applications.",
+    "href": "/locale",
+    "pkg": "locale",
+    "priority": 38
+  },
+  {
+    "title": "Features (Nofinite Locale)",
+    "description": "Features section in Nofinite Locale documentation.",
+    "href": "/locale#features",
+    "pkg": "locale",
+    "priority": 38.5
+  },
+  {
+    "title": "Import Styles (Flags)",
+    "description": "Import Styles section in Flags documentation.",
+    "href": "/locale/usage/flags#import-styles",
+    "pkg": "locale",
+    "priority": 38.5
+  },
+  {
+    "title": "Include Styles and Script (CDN Usage)",
+    "description": "Include Styles and Script section in CDN Usage documentation.",
+    "href": "/locale/getting-started/cdn#include-styles-and-script",
+    "pkg": "locale",
+    "priority": 38.5
+  },
+  {
+    "title": "Included (@nofinite/locale — v1.0.0)",
+    "description": "Country metadata (name, ISO code, dial code)",
+    "href": "/locale/releases#included",
+    "pkg": "locale",
+    "priority": 38.5
+  },
+  {
+    "title": "Lookup by ISO Code or Dial Code (Country Lookup)",
+    "description": "Lookup by ISO Code or Dial Code section in Country Lookup documentation.",
+    "href": "/locale/usage/country-lookup#lookup-by-iso-code-or-dial-code",
+    "pkg": "locale",
+    "priority": 38.5
+  },
+  {
+    "title": "Notes (@nofinite/locale — v1.0.0)",
+    "description": "Notes section in @nofinite/locale — v1.0.0 documentation.",
+    "href": "/locale/releases#notes",
+    "pkg": "locale",
+    "priority": 38.5
+  },
+  {
+    "title": "Package Managers (Installation)",
+    "description": "Package Managers section in Installation documentation.",
+    "href": "/locale/getting-started/installation#package-managers",
+    "pkg": "locale",
+    "priority": 38.5
+  },
+  {
+    "title": "Summary (@nofinite/locale — v1.0.0)",
+    "description": "Initial stable release of @nofinite/locale.",
+    "href": "/locale/releases#summary",
+    "pkg": "locale",
+    "priority": 38.5
+  },
+  {
+    "title": "@nofinite/utils — Initial Release (v0.1.0)",
+    "description": "Release date: 02 February 2026",
+    "href": "/utils/releases",
+    "pkg": "utils",
+    "priority": 48
   },
   {
     "title": "Auth And Crypto",
     "description": "Documentation for Auth And Crypto utilities.",
     "href": "/utils/auth-and-crypto",
-    "pkg": "utils"
+    "pkg": "utils",
+    "priority": 48
   },
   {
     "title": "Getting Started",
-    "description": "",
+    "description": "This guide covers installation, required setup, and basic usage of @nofinite/utils. For an overview of the library’s goals and philosophy, see the Introduction.",
     "href": "/utils/getting-started/installation",
-    "pkg": "utils"
-  },
-  {
-    "title": "Installation (Getting Started)",
-    "description": "Install the package using your preferred package manager.",
-    "href": "/utils/getting-started/installation#installation",
-    "pkg": "utils"
+    "pkg": "utils",
+    "priority": 48
   },
   {
     "title": "Introduction",
-    "description": "",
+    "description": "Nofinite Utils is a lightweight, framework-agnostic utility library designed for modern TypeScript and JavaScript applications.",
     "href": "/utils",
-    "pkg": "utils"
-  },
-  {
-    "title": "Who is this for? (Introduction)",
-    "description": "Nofinite Utils is designed for:",
-    "href": "/utils#who-is-this-for",
-    "pkg": "utils"
-  },
-  {
-    "title": "Design Philosophy (Introduction)",
-    "description": "The library is built around a small set of core principles:",
-    "href": "/utils#design-philosophy",
-    "pkg": "utils"
-  },
-  {
-    "title": "What this library is (Introduction)",
-    "description": "- A collection of reusable utility functions",
-    "href": "/utils#what-this-library-is",
-    "pkg": "utils"
-  },
-  {
-    "title": "What this library is not (Introduction)",
-    "description": "- A framework or application layer",
-    "href": "/utils#what-this-library-is-not",
-    "pkg": "utils"
-  },
-  {
-    "title": "Runtime Compatibility (Introduction)",
-    "description": "Nofinite Utils works in:",
-    "href": "/utils#runtime-compatibility",
-    "pkg": "utils"
-  },
-  {
-    "title": "Production Readiness (Introduction)",
-    "description": "- TypeScript-first with generated declaration files",
-    "href": "/utils#production-readiness",
-    "pkg": "utils"
-  },
-  {
-    "title": "@nofinite/utils — Initial Release (v0.1.0)",
-    "description": "",
-    "href": "/utils/releases",
-    "pkg": "utils"
-  },
-  {
-    "title": "Overview (@nofinite/utils — Initial Release (v0.1.0))",
-    "description": "This is the first public release of Nofinite Utils.",
-    "href": "/utils/releases#overview",
-    "pkg": "utils"
-  },
-  {
-    "title": "Included (@nofinite/utils — Initial Release (v0.1.0))",
-    "description": "- OTP generation and verification (secure, hash-based)",
-    "href": "/utils/releases#included",
-    "pkg": "utils"
-  },
-  {
-    "title": "Design Goals (@nofinite/utils — Initial Release (v0.1.0))",
-    "description": "- **Security-first** defaults",
-    "href": "/utils/releases#design-goals",
-    "pkg": "utils"
-  },
-  {
-    "title": "Notes (@nofinite/utils — Initial Release (v0.1.0))",
-    "description": "- This release establishes the public API surface.",
-    "href": "/utils/releases#notes",
-    "pkg": "utils"
-  },
-  {
-    "title": "Known Limitations (@nofinite/utils — Initial Release (v0.1.0))",
-    "description": "- Email utilities rely on external providers (e.g. ZeptoMail).",
-    "href": "/utils/releases#known-limitations",
-    "pkg": "utils"
+    "pkg": "utils",
+    "priority": 48
   },
   {
     "title": "System And Mail",
     "description": "Documentation for System And Mail utilities.",
     "href": "/utils/system-and-mail",
-    "pkg": "utils"
+    "pkg": "utils",
+    "priority": 48
+  },
+  {
+    "title": "Design Goals (@nofinite/utils — Initial Release (v0.1.0))",
+    "description": "Security-first defaults",
+    "href": "/utils/releases#design-goals",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Design Philosophy (Introduction)",
+    "description": "The library is built around a small set of core principles:",
+    "href": "/utils#design-philosophy",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Included (@nofinite/utils — Initial Release (v0.1.0))",
+    "description": "OTP generation and verification (secure, hash-based)",
+    "href": "/utils/releases#included",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Installation (Getting Started)",
+    "description": "Install the package using your preferred package manager.",
+    "href": "/utils/getting-started/installation#installation",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Known Limitations (@nofinite/utils — Initial Release (v0.1.0))",
+    "description": "Email utilities rely on external providers (e.g.",
+    "href": "/utils/releases#known-limitations",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Notes (@nofinite/utils — Initial Release (v0.1.0))",
+    "description": "This release establishes the public API surface.",
+    "href": "/utils/releases#notes",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Overview (@nofinite/utils — Initial Release (v0.1.0))",
+    "description": "This is the first public release of Nofinite Utils.",
+    "href": "/utils/releases#overview",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Production Readiness (Introduction)",
+    "description": "TypeScript-first with generated declaration files",
+    "href": "/utils#production-readiness",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Runtime Compatibility (Introduction)",
+    "description": "Nofinite Utils works in:",
+    "href": "/utils#runtime-compatibility",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "What this library is (Introduction)",
+    "description": "A collection of reusable utility functions",
+    "href": "/utils#what-this-library-is",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "What this library is not (Introduction)",
+    "description": "A framework or application layer",
+    "href": "/utils#what-this-library-is-not",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "Who is this for? (Introduction)",
+    "description": "Nofinite Utils is designed for:",
+    "href": "/utils#who-is-this-for",
+    "pkg": "utils",
+    "priority": 48.5
+  },
+  {
+    "title": "@nofinite/markon — v1.1.1",
+    "description": "Release date: 01 February 2024",
+    "href": "/markon/releases",
+    "pkg": "markon",
+    "priority": 58
+  },
+  {
+    "title": "CDN Usage",
+    "description": "Load the Markon bundle directly from the CDN.",
+    "href": "/markon/getting-started/cdn",
+    "pkg": "markon",
+    "priority": 58
+  },
+  {
+    "title": "Installation",
+    "description": "This page covers how to install @nofinite/markon in your project.",
+    "href": "/markon/getting-started/installation",
+    "pkg": "markon",
+    "priority": 58
+  },
+  {
+    "title": "Introduction",
+    "description": "@nofinite/markon is a lightweight content formatting library for JavaScript and React environments. It provides a simple, rule-based syntax for converting st...",
+    "href": "/markon",
+    "pkg": "markon",
+    "priority": 58
+  },
+  {
+    "title": "Markon Syntax",
+    "description": "This page documents all supported Markon syntax rules. Markon uses an explicit, bracket-based syntax designed for predictable and controlled text formatting.",
+    "href": "/markon/usage/markon-syntax",
+    "pkg": "markon",
+    "priority": 58
+  },
+  {
+    "title": "Setup",
+    "description": "This page explains how to set up Markon in a React application.",
+    "href": "/markon/getting-started/setup",
+    "pkg": "markon",
+    "priority": 58
+  },
+  {
+    "title": "Bold (Markon Syntax)",
+    "description": "Wrap text with #b[...]# to render bold content.",
+    "href": "/markon/usage/markon-syntax#bold",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Combined Example (Markon Syntax)",
+    "description": "Combined Example section in Markon Syntax documentation.",
+    "href": "/markon/usage/markon-syntax#combined-example",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Design Philosophy (Introduction)",
+    "description": "Markon is built with the following goals:",
+    "href": "/markon#design-philosophy",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Emphasis (Markon Syntax)",
+    "description": "Use #e[...]# to emphasize text.",
+    "href": "/markon/usage/markon-syntax#emphasis",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Framework Compatibility (Introduction)",
+    "description": "@nofinite/markon works in:",
+    "href": "/markon#framework-compatibility",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Included (@nofinite/markon — v1.1.1)",
+    "description": "Core Markon text formatting syntax",
+    "href": "/markon/releases#included",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Line Break (Markon Syntax)",
+    "description": "Insert a line break using #br#.",
+    "href": "/markon/usage/markon-syntax#line-break",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Link (Markon Syntax)",
+    "description": "Create a hyperlink using #link[Text, URL]#.",
+    "href": "/markon/usage/markon-syntax#link",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "List (Markon Syntax)",
+    "description": "Render a list using #list[...]#.",
+    "href": "/markon/usage/markon-syntax#list",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Notes (@nofinite/markon — v1.1.1)",
+    "description": "This version is the latest published release available on the repository.",
+    "href": "/markon/releases#notes",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Notes (Markon Syntax)",
+    "description": "Notes section in Markon Syntax documentation.",
+    "href": "/markon/usage/markon-syntax#notes",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Notes (Setup)",
+    "description": "Notes section in Setup documentation.",
+    "href": "/markon/getting-started/setup#notes",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Notes and Limitations (CDN Usage)",
+    "description": "Notes and Limitations section in CDN Usage documentation.",
+    "href": "/markon/getting-started/cdn#notes-and-limitations",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Package Installation (Installation)",
+    "description": "Install the package using your preferred package manager.",
+    "href": "/markon/getting-started/installation#package-installation",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Parsing Rules (Markon Syntax)",
+    "description": "Syntax rules do not support nesting.",
+    "href": "/markon/usage/markon-syntax#parsing-rules",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Production Readiness (Introduction)",
+    "description": "Production Readiness section in Introduction documentation.",
+    "href": "/markon#production-readiness",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "React Setup (Setup)",
+    "description": "Use ReactMarkon to render Markon-formatted content.",
+    "href": "/markon/getting-started/setup#react-setup",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Release Metadata (@nofinite/markon — v1.1.1)",
+    "description": "Release Metadata section in @nofinite/markon — v1.1.1 documentation.",
+    "href": "/markon/releases#release-metadata",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Requirements (Installation)",
+    "description": "Requirements section in Installation documentation.",
+    "href": "/markon/getting-started/installation#requirements",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Security Considerations (Markon Syntax)",
+    "description": "Markon does not sanitize HTML output.",
+    "href": "/markon/usage/markon-syntax#security-considerations",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Summary (@nofinite/markon — v1.1.1)",
+    "description": "@nofinite/markon is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text w...",
+    "href": "/markon/releases#summary",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Underline (Markon Syntax)",
+    "description": "Wrap text with #u[...]# to underline content.",
+    "href": "/markon/usage/markon-syntax#underline",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "What this library is (Introduction)",
+    "description": "A utility to transform Markon syntax into HTML",
+    "href": "/markon#what-this-library-is",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "What this library is not (Introduction)",
+    "description": "A full Markdown or MDX parser",
+    "href": "/markon#what-this-library-is-not",
+    "pkg": "markon",
+    "priority": 58.5
+  },
+  {
+    "title": "Who is this for? (Introduction)",
+    "description": "@nofinite/markon is designed for:",
+    "href": "/markon#who-is-this-for",
+    "pkg": "markon",
+    "priority": 58.5
   }
 ]

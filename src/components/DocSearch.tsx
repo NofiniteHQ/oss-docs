@@ -28,8 +28,14 @@ export function DocSearch() {
   }, []);
 
   const fuse = new Fuse(index, {
-    keys: ['title', 'description', 'pkg'],
-    threshold: 0.3,
+    keys: [
+      { name: 'title', weight: 0.7 },
+      { name: 'description', weight: 0.2 },
+      { name: 'pkg', weight: 0.1 },
+    ],
+    threshold: 0.35,
+    includeScore: true,
+    ignoreLocation: true,
   });
 
   const handleSelect = (href: string) => {
@@ -39,8 +45,26 @@ export function DocSearch() {
   };
 
   const results = query 
-    ? fuse.search(query).map(r => r.item)
-    : index.slice(0, 10);
+    ? fuse.search(query)
+        .sort((a, b) => {
+          const scoreA = a.score ?? 0;
+          const scoreB = b.score ?? 0;
+          const prioA = a.item.priority ?? 99;
+          const prioB = b.item.priority ?? 99;
+
+          // If one match is significantly better, use the fuzzy score
+          if (Math.abs(scoreA - scoreB) > 0.2) {
+            return scoreA - scoreB;
+          }
+          // Otherwise prioritize primary packages (NUI & NUICSS) and top pages before sub-anchors
+          if (prioA !== prioB) {
+            return prioA - prioB;
+          }
+          return scoreA - scoreB;
+        })
+        .map(r => r.item)
+        .slice(0, 15)
+    : index.filter((item: any) => !item.href.includes('#')).slice(0, 10);
 
   return (
     <>

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavItem } from '@/utils/nav';
 import { TableOfContents } from './TableOfContents';
+import { usePackageVersions } from '@/hooks/usePackageVersions';
 
 const PACKAGES = [
   { id: 'nui', label: 'NUI', href: '/nui/getting-started' },
@@ -18,10 +19,12 @@ const PACKAGES = [
 export function DocsLayout({ children, navData }: { children: React.ReactNode, navData: NavItem[] }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const versions = usePackageVersions();
 
   // Active package detection using exact segment boundary
   const currentPkgId = pathname.split('/').filter(Boolean)[0] || 'nui';
   const currentPackage = PACKAGES.find(p => p.id === currentPkgId) || PACKAGES[0];
+  const currentVersion = versions[currentPkgId];
 
   // Helper to find which section contains the currently active route
   const findActiveSectionId = (items: NavItem[]): string | null => {
@@ -276,9 +279,16 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
           </div>
         </button>
 
-        <span className="text-[11px] font-mono uppercase tracking-wider text-muted bg-subtle px-2 py-1 rounded border border-default">
-          {currentPackage.label}
-        </span>
+        <div className="flex items-center gap-1.5 flex-shrink-0">
+          <span className="text-[11px] font-mono uppercase tracking-wider text-muted bg-subtle px-2 py-1 rounded border border-default">
+            {currentPackage.label}
+          </span>
+          {currentVersion && (
+            <span className="text-[11px] font-mono text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded font-medium">
+              v{currentVersion}
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="flex flex-1 w-full max-w-[1536px] mx-auto">
@@ -292,7 +302,14 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
           <div className="h-full w-full overflow-y-auto px-2 py-4 flex flex-col gap-4">
             {/* Package Switcher Bar */}
             <div className="flex flex-col gap-2 pb-4 border-b border-default">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-muted px-2">Ecosystem</span>
+              <div className="flex items-center justify-between px-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-muted">Ecosystem</span>
+                {currentVersion && (
+                  <span className="text-[11px] font-mono text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded font-medium">
+                    {currentPackage.label} v{currentVersion}
+                  </span>
+                )}
+              </div>
               <div className="flex flex-wrap gap-1.5 px-1">
                 {PACKAGES.map((pkg) => {
                   const isPkgActive = currentPkgId === pkg.id;
@@ -325,7 +342,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
         <aside className="hidden md:flex flex-col w-64 lg:w-72 border-r border-default flex-shrink-0 sticky top-16 h-[calc(100vh-4rem)] bg-page">
           <div className="flex-1 overflow-y-auto px-2 py-4 [scrollbar-width:thin] [scrollbar-color:var(--border-default)_transparent]">
             {/* Quick Ecosystem Switcher */}
-            <div className="flex items-center gap-1 p-1 mb-4 bg-subtle/40 border border-default rounded-lg">
+            <div className="flex items-center gap-1 p-1 mb-3 bg-subtle/40 border border-default rounded-lg">
               {PACKAGES.map((pkg) => {
                 const isPkgActive = currentPkgId === pkg.id;
                 return (
@@ -342,6 +359,18 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                   </Link>
                 );
               })}
+            </div>
+            {/* Active Package & Realtime Version Pill */}
+            <div className="flex items-center justify-between px-2.5 py-1.5 mb-3 bg-subtle/30 border border-default/60 rounded-md">
+              <span className="text-xs font-semibold text-default flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                {currentPackage.label}
+              </span>
+              {currentVersion && (
+                <span className="text-[11px] font-mono text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded font-medium">
+                  v{currentVersion}
+                </span>
+              )}
             </div>
             {renderNavList(false)}
           </div>

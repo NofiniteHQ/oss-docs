@@ -71,7 +71,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         children: [
           { id: 'introduction', label: 'Introduction', href: '/nui' },
           { id: 'getting-started', label: 'Installation & Setup', href: '/nui/getting-started' },
-          { id: 'programmatic', label: 'Programmatic API (nui.*)', href: '/nui/programmatic' },
           { id: 'nuiprovider', label: 'NUI Provider', href: '/nui/components/nuiprovider' },
           { id: 'theming', label: 'Theming & Design Tokens', href: '/nui/theming' }
         ]
@@ -189,6 +188,13 @@ export function getDocsNavigation(pkg: string): NavItem[] {
           { id: 'timeline', label: 'Timeline', href: '/nui/components/timeline' },
           { id: 'video', label: 'Video Player', href: '/nui/components/video' },
           { id: 'virtuallist', label: 'Virtual List', href: '/nui/components/virtuallist' },
+        ]
+      },
+      {
+        id: 'api-section',
+        label: 'API',
+        children: [
+          { id: 'programmatic', label: 'Programmatic API', href: '/nui/programmatic' }
         ]
       }
     ];

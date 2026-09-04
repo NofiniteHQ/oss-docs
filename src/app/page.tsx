@@ -4,15 +4,18 @@ import React from "react";
 import Link from "next/link";
 import { Badge } from "@nofinite/nui";
 import { Logo } from "@/components/Logo";
+import { usePackageVersions } from "@/hooks/usePackageVersions";
 
 export default function Home() {
+  const versions = usePackageVersions();
+
   const packages = [
     {
       id: 'nui',
       title: 'NUI',
       desc: 'Highly accessible, beautifully designed headless UI components built for modern React applications.',
       href: '/nui/getting-started',
-      version: 'v3.0.5',
+      version: `v${versions.nui || '3.0.6'}`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
@@ -26,7 +29,7 @@ export default function Home() {
       title: 'NUICSS',
       desc: 'Semantic design token engine and utility-first CSS framework powered by the blazing fast UnoCSS compiler.',
       href: '/nuicss',
-      version: 'v3.0.5',
+      version: `v${versions.nuicss || '3.0.5'}`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
@@ -38,7 +41,7 @@ export default function Home() {
       title: 'Markon',
       desc: 'High-speed AST-based Markdown and MDX parser and compiler for rich text editing and rendering.',
       href: '/markon',
-      version: 'v0.0.1',
+      version: `v${versions.markon || '1.1.1'}`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m18 16 4-4-4-4"/>
@@ -52,7 +55,7 @@ export default function Home() {
       title: 'Locale',
       desc: 'Lightweight localization, country lookups, ISO dialing codes, and flag utilities for React apps.',
       href: '/locale',
-      version: 'v0.0.1',
+      version: `v${versions.locale || '2.0.0'}`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"/>
@@ -66,7 +69,7 @@ export default function Home() {
       title: 'Utils',
       desc: 'Shared TypeScript helpers, class name merge (cn), DOM utilities, and functional hooks for Nofinite packages.',
       href: '/utils',
-      version: 'v0.0.1',
+      version: `v${versions.utils || '2.0.0'}`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>

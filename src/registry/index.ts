@@ -1676,6 +1676,63 @@ console.log(greeting);" language="typescript" />`
   );
 }`
   },
+  "programmatic": {
+    component: dynamic(() => import("./programmatic"), {
+      loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")
+    }),
+    code: `<Button variant="danger" onClick={handleConfirm}>
+        Trigger Confirm
+      </Button>
+
+      <Button variant="primary" onClick={handleAlert}>
+        Trigger Alert
+      </Button>
+
+      <Button
+        variant="outline"
+        onClick={() => nui.success('Workspace updated', { description: 'All environment variables synced.' })}
+      >
+        Success Toast
+      </Button>
+
+      <Button
+        variant="outline"
+        className="text-red-500 border-red-500/30 hover:bg-red-500/10"
+        onClick={() => nui.error('Deployment Failed', { description: 'Network timeout during artifact upload.' })}
+      >
+        Error Toast
+      </Button>
+
+      <Button
+        variant="outline"
+        className="text-amber-500 border-amber-500/30 hover:bg-amber-500/10"
+        onClick={() => nui.warn('API Rate Limit', { description: '85% of your monthly quota has been reached.' })}
+      >
+        Warning Toast
+      </Button>
+
+      <Modal
+        open={dialogState.isOpen}
+        onClose={() => handleClose(false)}
+        title={dialogState.title}
+        style={{ maxWidth: '420px' }}
+      >
+        <p className="text-sm text-muted mb-6 leading-relaxed">{dialogState.message}</p>
+        <div className="flex justify-end gap-2">
+          {dialogState.type === 'confirm' && (
+            <Button variant="outline" onClick={() => handleClose(false)}>
+              {dialogState.cancelText || 'Cancel'}
+            </Button>
+          )}
+          <Button
+            variant={dialogState.isDanger ? 'danger' : 'primary'}
+            onClick={() => handleClose(true)}
+          >
+            {dialogState.confirmText || 'Confirm'}
+          </Button>
+        </div>
+      </Modal>`
+  },
   "progress": {
     component: dynamic(() => import("./progress"), {
       loading: () => React.createElement("div", { className: "text-sm text-muted p-4 animate-pulse" }, "Loading preview...")

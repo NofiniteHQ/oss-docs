@@ -20,7 +20,7 @@ const VALID_NUI_EXPORTS = new Set([
   'Slider', 'Spinner', 'StatCard', 'Stepper', 'Switch', 'Table', 'Tabs', 'Textarea', 
   'Timeline', 'TimePicker', 'TimeRangePicker', 'Toast', 'ToastProvider', 'useToast', 
   'Tooltip', 'TransferList', 'TreeView', 'VideoPlayer', 'VirtualList', 'Watermark',
-  'cn'
+  'cn', 'nui'
 ]);
 
 const ALL_68_COMPONENTS = [
