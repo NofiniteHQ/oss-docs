@@ -182,9 +182,9 @@
     "priority": 6
   },
   {
-    "title": "Interactive API Playground (Programmatic API)",
+    "title": "Interactive Preview (Programmatic API)",
     "description": "Test how the programmatic API behaves in real-time. Watch the live console track Promise resolution lifecycle and imperative event dispatches:",
-    "href": "/nui/programmatic#interactive-api-playground",
+    "href": "/nui/programmatic#interactive-preview",
     "pkg": "nui",
     "priority": 6.5
   },

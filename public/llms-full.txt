@@ -10939,11 +10939,11 @@ import { nui } from '@nofinite/nui';
 
 ---
 
-## Interactive API Playground
+## Interactive Preview
 
 Test how the programmatic API behaves in real-time. Watch the live console track Promise resolution lifecycle and imperative event dispatches:
 
-
+<Preview name="programmatic" hideCode />
 
 ---
 

@@ -10,12 +10,29 @@ export interface PreviewProps {
   name?: string;
   code?: string;
   children?: React.ReactNode;
+  hideCode?: boolean;
 }
 
-export function Preview({ name, code: customCode, children }: PreviewProps) {
+export function Preview({ name, code: customCode, children, hideCode }: PreviewProps) {
   const item = name ? (registry as any)[name] : null;
   const Component = item?.component;
   const rawCode = customCode || item?.code || '';
+
+  if (hideCode) {
+    return (
+      <div className="my-8 rounded-lg border border-default overflow-hidden shadow-sm bg-page flex flex-col">
+        <div className="p-6 md:p-10 flex items-center justify-center min-h-[200px] relative transition-colors bg-page text-default">
+          <div 
+            className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" 
+            style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} 
+          />
+          <div className="relative z-10 w-full flex justify-center items-center gap-4 flex-wrap">
+            {children ? children : Component ? <Component /> : <div className="text-muted text-sm">Preview not available</div>}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const openInStackBlitz = () => {
     let appJs = rawCode.replace(/import .* from '.*';\n/g, '').trim();
