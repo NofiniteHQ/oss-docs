@@ -5739,7 +5739,7 @@ import { NUIProvider, useTheme } from '@nofinite/nui';
 
 ## Overview
 
-Unlike standard interactive UI widgets, `NUIProvider` is an application-level wrapper component. It injects and manages the `.dark` theme class on your root `<html>` or `<body>` element, ensuring that all NUICSS semantic design tokens automatically adapt to light and dark modes across all components.
+Unlike standard interactive UI widgets, `NUIProvider` is an application-level wrapper component. It injects and manages the `.dark` theme class on your root `<html>` or `<body>` element, ensuring that all NUI component styles automatically adapt between light and dark modes across your application.
 
 All NUI components rely on `NUIProvider` being present at the root of your component tree.
 
@@ -5762,7 +5762,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-page text-default min-h-screen">
+      <body>
         <NUIProvider defaultTheme="system" storageKey="nui-theme">
           {children}
         </NUIProvider>
@@ -5801,14 +5801,39 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 Use the `useTheme()` hook inside any child component to read the current theme, inspect the resolved DOM theme, or trigger theme changes:
 
 ```tsx
-import { useTheme, Button } from '@nofinite/nui';
+import { useTheme, Button, Flex } from '@nofinite/nui';
 
 export function ThemeSwitcher() {
   const { theme, resolvedTheme, setTheme } = useTheme();
 
   return (
-    
-    </div>
+    <Flex align="center" justify="between" gap={16}>
+      <span>Current theme: <strong>{resolvedTheme}</strong></span>
+
+      <Flex gap={8}>
+        <Button
+          variant={theme === 'light' ? 'primary' : 'outline'}
+          size="sm"
+          onClick={() => setTheme('light')}
+        >
+          Light
+        </Button>
+        <Button
+          variant={theme === 'dark' ? 'primary' : 'outline'}
+          size="sm"
+          onClick={() => setTheme('dark')}
+        >
+          Dark
+        </Button>
+        <Button
+          variant={theme === 'system' ? 'primary' : 'outline'}
+          size="sm"
+          onClick={() => setTheme('system')}
+        >
+          System
+        </Button>
+      </Flex>
+    </Flex>
   );
 }
 ```
@@ -10179,7 +10204,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="nui-reset antialiased bg-page text-default min-h-screen">
+      <body>
         <Providers>{children}</Providers>
       </body>
     </html>
@@ -10219,13 +10244,24 @@ NUI includes a theme engine that syncs with OS preferences and persists user cho
 'use client';
 
 import React from 'react';
-import { useTheme, Button } from '@nofinite/nui';
+import { useTheme, Button, Flex } from '@nofinite/nui';
 
 export function ThemeSwitcher() {
-  const { theme, resolved, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   return (
-    
+    <Flex align="center" gap={8}>
+      <span>Active: {resolvedTheme}</span>
+      <Button size="sm" variant={theme === 'light' ? 'primary' : 'outline'} onClick={() => setTheme('light')}>
+        Light
+      </Button>
+      <Button size="sm" variant={theme === 'dark' ? 'primary' : 'outline'} onClick={() => setTheme('dark')}>
+        Dark
+      </Button>
+      <Button size="sm" variant={theme === 'system' ? 'primary' : 'outline'} onClick={() => setTheme('system')}>
+        System
+      </Button>
+    </Flex>
   );
 }
 ```

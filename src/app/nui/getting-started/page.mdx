@@ -71,7 +71,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="nui-reset antialiased bg-page text-default min-h-screen">
+      <body>
         <Providers>{children}</Providers>
       </body>
     </html>
@@ -111,14 +111,14 @@ NUI includes a theme engine that syncs with OS preferences and persists user cho
 'use client';
 
 import React from 'react';
-import { useTheme, Button } from '@nofinite/nui';
+import { useTheme, Button, Flex } from '@nofinite/nui';
 
 export function ThemeSwitcher() {
-  const { theme, resolved, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   return (
-    <div className="flex items-center gap-2">
-      <span className="text-sm text-muted">Active: {resolved}</span>
+    <Flex align="center" gap={8}>
+      <span>Active: {resolvedTheme}</span>
       <Button size="sm" variant={theme === 'light' ? 'primary' : 'outline'} onClick={() => setTheme('light')}>
         Light
       </Button>
@@ -128,7 +128,7 @@ export function ThemeSwitcher() {
       <Button size="sm" variant={theme === 'system' ? 'primary' : 'outline'} onClick={() => setTheme('system')}>
         System
       </Button>
-    </div>
+    </Flex>
   );
 }
 ```

@@ -10,7 +10,7 @@ import { NUIProvider, useTheme } from '@nofinite/nui';
 
 ## Overview
 
-Unlike standard interactive UI widgets, `NUIProvider` is an application-level wrapper component. It injects and manages the `.dark` theme class on your root `<html>` or `<body>` element, ensuring that all NUICSS semantic design tokens automatically adapt to light and dark modes across all components.
+Unlike standard interactive UI widgets, `NUIProvider` is an application-level wrapper component. It injects and manages the `.dark` theme class on your root `<html>` or `<body>` element, ensuring that all NUI component styles automatically adapt between light and dark modes across your application.
 
 All NUI components rely on `NUIProvider` being present at the root of your component tree.
 
@@ -33,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-page text-default min-h-screen">
+      <body>
         <NUIProvider defaultTheme="system" storageKey="nui-theme">
           {children}
         </NUIProvider>
@@ -72,18 +72,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 Use the `useTheme()` hook inside any child component to read the current theme, inspect the resolved DOM theme, or trigger theme changes:
 
 ```tsx
-import { useTheme, Button } from '@nofinite/nui';
+import { useTheme, Button, Flex } from '@nofinite/nui';
 
 export function ThemeSwitcher() {
   const { theme, resolvedTheme, setTheme } = useTheme();
 
   return (
-    <div className="flex items-center gap-3 p-4 bg-surface border border-default rounded-lg">
-      <span className="text-sm font-medium">
-        Current Theme: <strong className="text-primary capitalize">{resolvedTheme}</strong>
-      </span>
+    <Flex align="center" justify="between" gap={16}>
+      <span>Current theme: <strong>{resolvedTheme}</strong></span>
 
-      <div className="flex items-center gap-2">
+      <Flex gap={8}>
         <Button
           variant={theme === 'light' ? 'primary' : 'outline'}
           size="sm"
@@ -105,8 +103,8 @@ export function ThemeSwitcher() {
         >
           System
         </Button>
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 }
 ```
