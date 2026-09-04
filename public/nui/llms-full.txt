@@ -5717,43 +5717,113 @@ import { MultiSelect } from '@nofinite/nui';
 
 # NUI Provider
 
-A fully accessible, token-driven NUIProvider component built with strict WAI-ARIA compliance.
+The `NUIProvider` is the root context wrapper for all NUI applications. It manages global theme state (`light`, `dark`, or `system`), synchronizes preferences with `localStorage`, listens for operating system theme changes, and exposes the `useTheme` hook.
 
 ```tsx
-import { NUIProvider } from '@nofinite/nui';
+import { NUIProvider, useTheme } from '@nofinite/nui';
 ```
 
 ---
 
-## Interactive Preview
+## Overview
 
+Unlike standard interactive UI widgets, `NUIProvider` is an application-level wrapper component. It injects and manages the `.dark` theme class on your root `<html>` or `<body>` element, ensuring that all NUICSS semantic design tokens automatically adapt to light and dark modes across all components.
 
+All NUI components rely on `NUIProvider` being present at the root of your component tree.
 
 ---
 
-## Usage
+## Setup & Integration
 
-### Basic Example
+### Next.js App Router Setup
+
+Place `NUIProvider` in your root layout (`src/app/layout.tsx`). We recommend adding `suppressHydrationWarning` to `<html>` to avoid React hydration mismatches when reading theme preference from `localStorage`:
 
 ```tsx
+import '@nofinite/nui/styles.css';
 import { NUIProvider } from '@nofinite/nui';
 
-<NUIProvider />
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-page text-default min-h-screen">
+        <NUIProvider defaultTheme="system" storageKey="nui-theme">
+          {children}
+        </NUIProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+---
+
+### Vite / React SPA Setup
+
+In single-page React applications, wrap your root application tree in `main.tsx` or `App.tsx`:
+
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import '@nofinite/nui/styles.css';
+import { NUIProvider } from '@nofinite/nui';
+import App from './App';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <NUIProvider defaultTheme="system">
+      <App />
+    </NUIProvider>
+  </React.StrictMode>
+);
+```
+
+---
+
+## Switching Themes with `useTheme`
+
+Use the `useTheme()` hook inside any child component to read the current theme, inspect the resolved DOM theme, or trigger theme changes:
+
+```tsx
+import { useTheme, Button } from '@nofinite/nui';
+
+export function ThemeSwitcher() {
+  const { theme, resolvedTheme, setTheme } = useTheme();
+
+  return (
+    
+    </div>
+  );
+}
 ```
 
 ---
 
 ## API Reference
 
+### `NUIProvider` Props
 
+
+
+### `useTheme` Hook Return Values
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `theme` | `'light' \| 'dark' \| 'system'` | The user's active theme setting (including `'system'`). |
+| `resolvedTheme` | `'light' \| 'dark'` | The actual computed theme active on the page (`'light'` or `'dark'`). |
+| `setTheme` | `(theme: ThemeMode) => void` | Updates the active theme and persists the preference to `localStorage`. |
 
 ---
 
-## Accessibility & Guidelines
+## Best Practices
 
-- **Semantic Tokens:** Built strictly using Nuicss semantic tokens (`bg-surface`, `text-default`, `border-subtle`, `bg-primary`).
-- **Keyboard Navigation:** Adheres to strict WAI-ARIA standards.
-- **Screen Reader Support:** Includes semantic roles and live regions where appropriate.
+- **Place at Root:** Always mount `<NUIProvider>` as close to the root of your application tree as possible.
+- **Hydration Safety:** When using Next.js or SSR frameworks, add `suppressHydrationWarning` to the `<html>` tag to prevent client-server theme mismatch warnings.
+- **Persistent Key:** The `storageKey` prop defaults to `'nui-theme'`. If you run multiple apps on the same domain, configure unique storage keys to prevent theme conflicts.
 
 ---
 

@@ -470,7 +470,7 @@
   },
   {
     "title": "NUI Provider",
-    "description": "A fully accessible, token-driven NUIProvider component built with strict WAI-ARIA compliance.",
+    "description": "The NUIProvider is the root context wrapper for all NUI applications. It manages global theme state (light, dark, or system), synchronizes preferences with l...",
     "href": "/nui/components/nuiprovider",
     "pkg": "nui",
     "priority": 14
@@ -773,13 +773,6 @@
     "title": "Accessibility & Guidelines (Multi Select)",
     "description": "Accessibility & Guidelines section in Multi Select documentation.",
     "href": "/nui/components/multiselect#accessibility-guidelines",
-    "pkg": "nui",
-    "priority": 14.5
-  },
-  {
-    "title": "Accessibility & Guidelines (NUI Provider)",
-    "description": "Accessibility & Guidelines section in NUI Provider documentation.",
-    "href": "/nui/components/nuiprovider#accessibility-guidelines",
     "pkg": "nui",
     "priority": 14.5
   },
@@ -1288,13 +1281,6 @@
     "priority": 14.5
   },
   {
-    "title": "Interactive Preview (NUI Provider)",
-    "description": "Interactive Preview section in NUI Provider documentation.",
-    "href": "/nui/components/nuiprovider#interactive-preview",
-    "pkg": "nui",
-    "priority": 14.5
-  },
-  {
     "title": "Interactive Preview (Number Input)",
     "description": "Interactive Preview section in Number Input documentation.",
     "href": "/nui/components/numberinput#interactive-preview",
@@ -1659,6 +1645,13 @@
     "priority": 14.5
   },
   {
+    "title": "Overview (NUI Provider)",
+    "description": "Unlike standard interactive UI widgets, NUIProvider is an application-level wrapper component. It injects and manages the .dark theme class on your root or e...",
+    "href": "/nui/components/nuiprovider#overview",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
     "title": "Page Generation Logic (Pagination)",
     "description": "The component implements adaptive pagination math:",
     "href": "/nui/components/pagination#page-generation-logic",
@@ -1683,6 +1676,13 @@
     "title": "Provider Notes (Toast)",
     "description": "Handles multiple toasts with independent timers",
     "href": "/nui/components/toast#provider-notes",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Setup & Integration (NUI Provider)",
+    "description": "Setup & Integration section in NUI Provider documentation.",
+    "href": "/nui/components/nuiprovider#setup-integration",
     "pkg": "nui",
     "priority": 14.5
   },
@@ -1781,6 +1781,13 @@
     "title": "Sub-definitions (Stepper)",
     "description": "Sub-definitions section in Stepper documentation.",
     "href": "/nui/components/stepper#sub-definitions",
+    "pkg": "nui",
+    "priority": 14.5
+  },
+  {
+    "title": "Switching Themes with useTheme (NUI Provider)",
+    "description": "Use the useTheme() hook inside any child component to read the current theme, inspect the resolved DOM theme, or trigger theme changes:",
+    "href": "/nui/components/nuiprovider#switching-themes-with-usetheme",
     "pkg": "nui",
     "priority": 14.5
   },
