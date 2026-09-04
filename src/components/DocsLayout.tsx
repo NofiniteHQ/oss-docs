@@ -16,6 +16,14 @@ const PACKAGES = [
   { id: 'markon', label: 'Markon', href: '/markon' },
 ];
 
+const PACKAGE_REPOS: Record<string, string> = {
+  nui: 'https://github.com/NofiniteHQ/stack/tree/main/packages/nui',
+  nuicss: 'https://github.com/NofiniteHQ/stack/tree/main/packages/nuicss',
+  locale: 'https://github.com/NofiniteHQ/stack/tree/main/packages/locale',
+  utils: 'https://github.com/NofiniteHQ/stack/tree/main/packages/utils',
+  markon: 'https://github.com/NofiniteHQ/markon',
+};
+
 export function DocsLayout({ children, navData }: { children: React.ReactNode, navData: NavItem[] }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -25,6 +33,14 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
   const currentPkgId = pathname.split('/').filter(Boolean)[0] || 'nui';
   const currentPackage = PACKAGES.find(p => p.id === currentPkgId) || PACKAGES[0];
   const currentVersion = versions[currentPkgId];
+
+  // Source repository links
+  const isComponentPage = pathname.startsWith('/nui/components/');
+  const componentSlug = isComponentPage ? pathname.replace('/nui/components/', '').split('/')[0] : null;
+  const componentSourceUrl = componentSlug
+    ? `https://github.com/NofiniteHQ/stack/tree/main/packages/nui/src/components/${componentSlug}`
+    : null;
+  const currentRepoUrl = PACKAGE_REPOS[currentPkgId] || 'https://github.com/NofiniteHQ';
 
   // Helper to find which section contains the currently active route
   const findActiveSectionId = (items: NavItem[]): string | null => {
@@ -254,8 +270,59 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
     </nav>
   );
 
+  const pageTitle = activeItem?.label || currentPackage.label;
+  const canonicalUrl = `https://nofinite.com${pathname}`;
+
+  // Rich Snippet JSON-LD Schema (SoftwareApplication & SoftwareSourceCode)
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'SoftwareApplication',
+        name: `${pageTitle} — Nofinite ${currentPackage.label}`,
+        description: `Official documentation and API reference for ${pageTitle} in Nofinite ${currentPackage.label}.`,
+        applicationCategory: 'DeveloperApplication',
+        operatingSystem: 'Any',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        softwareVersion: currentVersion || '3.0',
+        author: {
+          '@type': 'Organization',
+          name: 'Nofinite',
+          url: 'https://nofinite.com',
+        },
+      },
+      {
+        '@type': 'SoftwareSourceCode',
+        name: `${pageTitle} Source Code`,
+        programmingLanguage: ['TypeScript', 'React', 'CSS'],
+        codeRepository: componentSourceUrl || currentRepoUrl,
+        license: 'https://opensource.org/licenses/MIT',
+        author: {
+          '@type': 'Organization',
+          name: 'Nofinite',
+          url: 'https://nofinite.com',
+        },
+        targetProduct: {
+          '@type': 'SoftwareApplication',
+          name: `Nofinite ${currentPackage.label}`,
+          url: canonicalUrl,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="w-full flex-1 flex flex-col bg-page">
+      {/* Google Rich Snippet Structured Data (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Mobile & Tablet Left-Aligned Sub-bar (Industry Standard) */}
       <div className="md:hidden border-b border-default bg-surface/90 backdrop-blur-sm sticky top-16 z-40 px-4 py-2.5 flex items-center justify-between">
         <button
@@ -288,6 +355,18 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
               v{currentVersion}
             </span>
           )}
+          <a
+            href={componentSourceUrl || currentRepoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`View ${componentSlug ? activeItem?.label || 'component' : currentPackage.label} source on GitHub`}
+            className="text-muted hover:text-primary transition-colors p-1"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+              <path d="M9 18c-4.51 2-5-2-7-2"/>
+            </svg>
+          </a>
         </div>
       </div>
 
@@ -366,11 +445,26 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                 {currentPackage.label}
               </span>
-              {currentVersion && (
-                <span className="text-[11px] font-mono text-muted bg-subtle px-1.5 py-0.5 rounded border border-default font-medium">
-                  v{currentVersion}
-                </span>
-              )}
+              <div className="flex items-center gap-1.5">
+                {currentVersion && (
+                  <span className="text-[11px] font-mono text-muted bg-subtle px-1.5 py-0.5 rounded border border-default font-medium">
+                    v{currentVersion}
+                  </span>
+                )}
+                <a
+                  href={componentSourceUrl || currentRepoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${currentPackage.label} source on GitHub`}
+                  title={`View ${componentSlug ? activeItem?.label || 'component' : currentPackage.label} source on GitHub`}
+                  className="text-muted hover:text-primary transition-colors p-0.5"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                  </svg>
+                </a>
+              </div>
             </div>
             {renderNavList(false)}
           </div>
@@ -385,7 +479,20 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
 
             {/* Bottom Footer & Navigation */}
             <div className="mt-16 pt-8 border-t border-default flex flex-col gap-8">
-              <div className="flex items-center justify-end text-sm text-muted">
+              <div className="flex flex-col sm:flex-row items-center justify-between text-sm text-muted gap-4">
+                <a
+                  href={componentSourceUrl || currentRepoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-primary transition-colors font-medium"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                  </svg>
+                  <span>{componentSlug ? `View ${activeItem?.label || 'Component'} Source on GitHub` : `View ${currentPackage.label} on GitHub`}</span>
+                </a>
+
                 <a 
                   href={`https://github.com/NofiniteHQ/oss-docs/tree/main/src/app${pathname}/page.mdx`}
                   target="_blank"

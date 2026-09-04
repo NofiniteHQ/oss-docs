@@ -21,7 +21,7 @@ export function usePackageVersions() {
       return;
     }
 
-    fetch('/api/versions')
+    fetch('/versions.json')
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
@@ -33,7 +33,7 @@ export function usePackageVersions() {
         }
       })
       .catch((err) => {
-        console.warn('Failed to load realtime versions from /api/versions, using fallback:', err);
+        console.warn('Failed to load static versions from /versions.json, using fallback:', err);
       });
   }, []);
 

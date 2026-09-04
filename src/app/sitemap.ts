@@ -2,54 +2,75 @@ import { MetadataRoute } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://oss.nofinite.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nofinite.com';
+const APP_DIR = path.join(process.cwd(), 'src/app');
 
-  const staticRoutes = [
-    '',
-    '/nui',
-    '/nui/getting-started',
-    '/nui/programmatic',
-    '/nui/theming',
-    '/nuicss',
-    '/nuicss/installation',
-    '/nuicss/configuration',
-    '/nuicss/architecture',
-    '/nuicss/theming',
-    '/nuicss/utilities/layout',
-    '/nuicss/utilities/flex-grid',
-    '/nuicss/utilities/spacing',
-    '/nuicss/utilities/sizing',
-    '/nuicss/utilities/typography',
-    '/nuicss/utilities/backgrounds-borders',
-    '/nuicss/utilities/effects-filters',
-    '/locale',
-    '/locale/getting-started',
-    '/locale/usage',
-    '/locale/releases',
-    '/markon',
-    '/markon/getting-started',
-    '/markon/usage',
-    '/utils',
-    '/utils/getting-started',
-    '/utils/releases',
-  ];
+interface SitemapEntry {
+  route: string;
+  lastModified: Date;
+  isRedirect: boolean;
+}
 
-  const componentsDir = path.join(process.cwd(), 'src/app/nui/components');
-  let componentRoutes: string[] = [];
-  if (fs.existsSync(componentsDir)) {
-    const entries = fs.readdirSync(componentsDir, { withFileTypes: true });
-    componentRoutes = entries
-      .filter(entry => entry.isDirectory())
-      .map(entry => `/nui/components/${entry.name}`);
+function scanAppRoutes(dir: string, baseRoute = ''): SitemapEntry[] {
+  if (!fs.existsSync(dir)) return [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  let routes: SitemapEntry[] = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      if (entry.name.startsWith('_') || entry.name.startsWith('api') || entry.name.startsWith('.')) {
+        continue;
+      }
+      const nestedRoute = baseRoute ? `${baseRoute}/${entry.name}` : `/${entry.name}`;
+      routes = routes.concat(scanAppRoutes(fullPath, nestedRoute));
+    } else if (entry.isFile() && (entry.name === 'page.mdx' || entry.name === 'page.tsx')) {
+      const content = fs.readFileSync(fullPath, 'utf-8');
+      const isRedirect = content.includes('redirect(');
+      const stats = fs.statSync(fullPath);
+
+      routes.push({
+        route: baseRoute || '',
+        lastModified: stats.mtime,
+        isRedirect,
+      });
+    }
   }
+  return routes;
+}
 
-  const allRoutes = [...new Set([...staticRoutes, ...componentRoutes])];
+export default function sitemap(): MetadataRoute.Sitemap {
+  const allRoutes = scanAppRoutes(APP_DIR);
 
-  return allRoutes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: (route.includes('/components/') ? 'weekly' : 'daily') as MetadataRoute.Sitemap[number]['changeFrequency'],
-    priority: route === '' ? 1.0 : route.startsWith('/nui') || route.startsWith('/nuicss') ? 0.8 : 0.6,
-  }));
+  // Filter out pure redirect routes to maintain 100% canonical SEO integrity
+  const canonicalRoutes = allRoutes.filter((item) => !item.isRedirect);
+
+  return canonicalRoutes.map(({ route, lastModified }) => {
+    const url = `${BASE_URL}${route}`;
+
+    let priority = 0.8;
+    let changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'weekly';
+
+    if (route === '') {
+      priority = 1.0;
+      changeFrequency = 'daily';
+    } else if (route.includes('/components/')) {
+      priority = 0.9;
+      changeFrequency = 'weekly';
+    } else if (route.endsWith('/getting-started') || route.endsWith('/installation') || route === '/nui' || route === '/nuicss') {
+      priority = 0.9;
+      changeFrequency = 'weekly';
+    } else if (route.includes('/releases')) {
+      priority = 0.7;
+      changeFrequency = 'monthly';
+    }
+
+    return {
+      url,
+      lastModified,
+      changeFrequency,
+      priority,
+    };
+  });
 }
