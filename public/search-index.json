@@ -176,64 +176,36 @@
   },
   {
     "title": "Programmatic API",
-    "description": "NUI features a built-in imperative API that allows you to trigger confirmation dialogs, alerts, and toast notifications programmatically from anywhere in you...",
+    "description": "NUI provides a built-in imperative API (nui.) that allows you to trigger promise-driven confirmation dialogs, alert modals, and status toast notifications** ...",
     "href": "/nui/programmatic",
     "pkg": "nui",
     "priority": 6
   },
   {
-    "title": "Alert Dialogs (nui.alert) (Programmatic API)",
-    "description": "nui.alert displays an informational or blocking alert modal that resolves when the user acknowledges it:",
-    "href": "/nui/programmatic#alert-dialogs-nui-alert",
-    "pkg": "nui",
-    "priority": 6.5
-  },
-  {
-    "title": "Confirmation Dialogs (nui.confirm) (Programmatic API)",
-    "description": "nui.confirm displays an accessible modal dialog and returns a Promise that resolves to true if the user clicks confirm, or false if they cancel.",
-    "href": "/nui/programmatic#confirmation-dialogs-nui-confirm",
-    "pkg": "nui",
-    "priority": 6.5
-  },
-  {
-    "title": "Interactive Preview (Programmatic API)",
-    "description": "Interactive Preview section in Programmatic API documentation.",
-    "href": "/nui/programmatic#interactive-preview",
-    "pkg": "nui",
-    "priority": 6.5
-  },
-  {
-    "title": "Never Use Ugly Browser Alerts Again (Programmatic API)",
-    "description": "Traditionally, when developers need a quick confirmation or alert in vanilla logic, they often resort to native browser functions like window.confirm() or wi...",
-    "href": "/nui/programmatic#never-use-ugly-browser-alerts-again",
-    "pkg": "nui",
-    "priority": 6.5
-  },
-  {
-    "title": "One-Time Setup (Programmatic API)",
+    "title": "One-Time Root Setup (Programmatic API)",
     "description": "To enable the programmatic API across your entire application, mount inside your in your root layout:",
-    "href": "/nui/programmatic#one-time-setup",
+    "href": "/nui/programmatic#one-time-root-setup",
     "pkg": "nui",
     "priority": 6.5
   },
   {
-    "title": "Real-World Example: API Client Interceptor (Programmatic API)",
-    "description": "Because nui.* does not rely on React hooks, you can invoke notifications directly inside API interceptors (e.g., Axios or Fetch wrappers):",
-    "href": "/nui/programmatic#real-world-example-api-client-interceptor",
+    "title": "Primitives vs. Programmatic API (Programmatic API)",
+    "description": "Primitives vs. Programmatic API section in Programmatic API documentation.",
+    "href": "/nui/programmatic#primitives-vs-programmatic-api",
     "pkg": "nui",
     "priority": 6.5
   },
   {
-    "title": "Related Components (Programmatic API)",
-    "description": "Related Components section in Programmatic API documentation.",
-    "href": "/nui/programmatic#related-components",
+    "title": "Real-World Production Patterns (Programmatic API)",
+    "description": "Real-World Production Patterns section in Programmatic API documentation.",
+    "href": "/nui/programmatic#real-world-production-patterns",
     "pkg": "nui",
     "priority": 6.5
   },
   {
-    "title": "Status Toasts (nui.toast, nui.success, nui.error, nui.warn) (Programmatic API)",
-    "description": "NUI connects nui.* directly into your application's . You can fire animated toasts instantly without declaring useToast():",
-    "href": "/nui/programmatic#status-toasts-nui-toast-nui-success-nui-error-nui-warn",
+    "title": "Why Use the Programmatic API? (Programmatic API)",
+    "description": "Traditionally, when developers need a quick confirmation or alert in vanilla logic, they face a frustrating trade-off:",
+    "href": "/nui/programmatic#why-use-the-programmatic-api",
     "pkg": "nui",
     "priority": 6.5
   },

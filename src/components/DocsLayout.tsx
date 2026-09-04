@@ -280,11 +280,11 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
         </button>
 
         <div className="flex items-center gap-1.5 flex-shrink-0">
-          <span className="text-[11px] font-mono uppercase tracking-wider text-muted bg-subtle px-2 py-1 rounded border border-default">
+          <span className="text-[11px] font-mono uppercase tracking-wider text-muted bg-subtle px-2 py-1 rounded border border-default font-medium">
             {currentPackage.label}
           </span>
           {currentVersion && (
-            <span className="text-[11px] font-mono text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded font-medium">
+            <span className="text-[11px] font-mono text-muted bg-subtle px-2 py-1 rounded border border-default font-medium">
               v{currentVersion}
             </span>
           )}
@@ -305,7 +305,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
               <div className="flex items-center justify-between px-2">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-muted">Ecosystem</span>
                 {currentVersion && (
-                  <span className="text-[11px] font-mono text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded font-medium">
+                  <span className="text-[11px] font-mono text-muted bg-subtle px-2 py-0.5 rounded border border-default font-medium">
                     {currentPackage.label} v{currentVersion}
                   </span>
                 )}
@@ -367,7 +367,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                 {currentPackage.label}
               </span>
               {currentVersion && (
-                <span className="text-[11px] font-mono text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded font-medium">
+                <span className="text-[11px] font-mono text-muted bg-subtle px-1.5 py-0.5 rounded border border-default font-medium">
                   v{currentVersion}
                 </span>
               )}
