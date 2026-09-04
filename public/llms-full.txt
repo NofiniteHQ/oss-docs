@@ -10046,7 +10046,7 @@ Complete technical guide to installing and configuring NUI in Next.js, Vite, and
 
 NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.
 
-Install `@nofinite/nui` using your package manager of choice:
+Install **NUI** using your package manager of choice:
 
 ```bash
 # npm
@@ -11169,7 +11169,7 @@ async function handlePublishArticle(articleId: string) {
 
 # Theming & Design Tokens
 
-NUI v3 features an aesthetic, token-first design system completely driven by **`@nofinite/nuicss`** semantic design tokens. Every component seamlessly adapts to light and dark themes without manual CSS overrides.
+NUI v3 features an aesthetic, token-first design system completely driven by **NUICSS** semantic design tokens. Every component seamlessly adapts to light and dark themes without manual CSS overrides.
 
 ---
 
@@ -11502,61 +11502,110 @@ shortcuts: {
 
 # Installation & Setup
 
-Get started with **NUICSS** in your web application.
+Get started with **NUICSS** using your preferred package manager, a bundler plugin, or directly via CDN with zero build steps.
 
 ---
 
-## 1. Install the Package
+## 1. Package Installation
 
-Install `@nofinite/nuicss` using your preferred package manager:
+Install **NUICSS** as a development dependency:
 
 ```bash
 # npm
-npm install -D @nofinite/nuicss postcss
+npm install -D @nofinite/nuicss
 
 # pnpm
-pnpm add -D @nofinite/nuicss postcss
+pnpm add -D @nofinite/nuicss
 
 # yarn
-yarn add -D @nofinite/nuicss postcss
+yarn add -D @nofinite/nuicss
 
 # bun
-bun add -D @nofinite/nuicss postcss
+bun add -D @nofinite/nuicss
 ```
 
 ---
 
-## 2. Configure PostCSS
+## 2. CDN Usage (Zero Build Setup)
 
-Add the `@nofinite/nuicss/postcss` plugin to your `postcss.config.js` (or `.mjs`):
+For rapid prototyping, static HTML pages, HTMX, or server-rendered templates, you can include NUICSS directly in your `<head>` tag without installing build tools:
+
+### Option A: JIT Runtime Script (Recommended for Prototyping)
+
+The JIT script automatically observes DOM mutations in real time and compiles utility classes on the fly:
+
+```html
+<!-- unpkg -->
+<script src="https://unpkg.com/@nofinite/nuicss"></script>
+
+<!-- or jsDelivr -->
+<script src="https://cdn.jsdelivr.net/npm/@nofinite/nuicss/dist/index.global.js"></script>
+```
+
+### Option B: Precompiled Stylesheet
+
+If you only need the static reset styles, typography base, and semantic design tokens:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nofinite/nuicss/dist/index.css" />
+```
+
+---
+
+## 3. Framework Integration
+
+### A. Vite Plugin (Recommended for SPAs)
+
+If you are using Vite (React, Vue, Svelte, or Vanilla), you do **not** need PostCSS. Use the built-in Vite plugin directly:
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { nuicssVitePlugin } from '@nofinite/nuicss';
+
+export default defineConfig({
+  plugins: [
+    react(),
+    nuicssVitePlugin(),
+  ],
+});
+```
+
+Import the virtual stylesheet in your application entry point:
+
+```ts
+// src/main.tsx or src/index.ts
+import '@nofinite/nuicss/virtual.css';
+```
+
+---
+
+### B. Next.js & PostCSS Pipeline
+
+If your framework uses a PostCSS pipeline (such as Next.js), add the `@nofinite/nuicss/postcss` plugin to your `postcss.config.js` (or `.mjs`):
 
 ```js
-// postcss.config.js
-module.exports = {
+// postcss.config.mjs
+export default {
   plugins: {
     '@nofinite/nuicss/postcss': {},
   },
 };
 ```
 
----
-
-## 3. Add the `@nuicss` Directive
-
-In your main CSS entry point (e.g. `src/app/globals.css` or `src/style.css`), add the `@nuicss;` directive:
+Then add the `@nuicss;` directive at the top of your global CSS file:
 
 ```css
-/* globals.css */
+/* src/app/globals.css */
 @nuicss;
 ```
 
-This tells the compiler where to inject reset styles, default tokens, and generated utility classes.
-
 ---
 
-## 4. Create `nuicss.config.ts`
+## 4. Configuration (`nuicss.config.ts`)
 
-Create a `nuicss.config.ts` in the root of your project:
+Create an optional `nuicss.config.ts` in your project root to customize tokens, breakpoints, and file scanning rules:
 
 ```ts
 // nuicss.config.ts
@@ -11575,33 +11624,6 @@ export default defineConfig({
     },
   },
 });
-```
-
----
-
-## Vite Plugin Setup (Alternative to PostCSS)
-
-If you are using Vite without PostCSS, you can use `nuicssVitePlugin` directly:
-
-```ts
-// vite.config.ts
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { nuicssVitePlugin } from '@nofinite/nuicss';
-
-export default defineConfig({
-  plugins: [
-    react(),
-    nuicssVitePlugin(),
-  ],
-});
-```
-
-Then import the virtual CSS in your entry file:
-
-```ts
-// main.tsx
-import '@nofinite/nuicss/virtual.css';
 ```
 
 ---
@@ -12242,17 +12264,17 @@ It is designed to work with modern JavaScript frameworks as well as plain HTML e
 
 ### Document: locale/releases/page.mdx
 
-# @nofinite/locale — v1.0.0
-
-**Release date:** 25 December 2025
+# Locale Releases
+ 
+**Latest version:** `v1.0.0` (25 December 2025)
 
 ---
 
 ## Summary
 
-Initial stable release of `@nofinite/locale`.
+Initial stable release of **Locale**.
 
-`@nofinite/locale` is a lightweight TypeScript library providing standardized country metadata, flags, and international dialing codes for web applications.
+**Locale** is a lightweight TypeScript library providing standardized country metadata, flags, and international dialing codes for web applications.
 
 ---
 
@@ -12446,7 +12468,7 @@ The CDN build exposes a global function named `JSMarkon`.
 
 # Installation
 
-This page covers how to install `@nofinite/markon` in your project.
+This page covers how to install **Markon** in your project.
 
 ---
 
@@ -12521,7 +12543,7 @@ export function Example() {
 
 # Introduction
 
-`@nofinite/markon` is a lightweight content formatting library for JavaScript and React environments.  
+**Markon** is a lightweight content formatting library for JavaScript and React environments.  
 It provides a simple, rule-based syntax for converting structured text into HTML, enabling controlled formatting without the overhead of a full Markdown parser.
 
 Markon is optimized for predictable output, minimal dependencies, and ease of integration across platforms.
@@ -12530,7 +12552,7 @@ Markon is optimized for predictable output, minimal dependencies, and ease of in
 
 ## Who is this for?
 
-`@nofinite/markon` is designed for:
+**Markon** is designed for:
 
 - Developers who need simple text formatting without Markdown complexity
 - Applications rendering CMS or user-generated content
@@ -12570,7 +12592,7 @@ Markon is built with the following goals:
 
 ## Framework Compatibility
 
-`@nofinite/markon` works in:
+**Markon** works in:
 
 - React applications using `ReactMarkon`
 - Plain HTML and JavaScript environments using `JSMarkon`
@@ -12602,17 +12624,17 @@ No additional configuration is required for supported environments.
 
 ### Document: markon/releases/page.mdx
 
-# @nofinite/markon — v1.1.1
+# Markon Releases
 
-**Release date:** 01 February 2024
+**Latest version:** `v1.1.1` (01 February 2024)
 
-This release of `@nofinite/markon` represents the most recent published version of the library.
+This release of **Markon** represents the most recent published version of the library.
 
 ---
 
 ## Summary
 
-`@nofinite/markon` is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text with formatting elements such as bold, underline, links, lists, emphasis, and line breaks.
+**Markon** is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text with formatting elements such as bold, underline, links, lists, emphasis, and line breaks.
 
 ---
 
@@ -12875,7 +12897,7 @@ Documentation for Auth And Crypto utilities.
 
 # Getting Started
 
-This guide covers installation, required setup, and basic usage of `@nofinite/utils`.
+This guide covers installation, required setup, and basic usage of **Utils**.
 For an overview of the library’s goals and philosophy, see the Introduction.
 
 ---
@@ -12991,9 +13013,9 @@ All utilities are tree-shakable and safe to use in server contexts.
 
 ### Document: utils/releases/page.mdx
 
-# @nofinite/utils — Initial Release (v0.1.0)
+# Utils Releases
 
-**Release date:** 02 February 2026
+**Latest version:** `v0.1.0` (02 February 2026)
 
 ---
 

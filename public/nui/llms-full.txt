@@ -10034,7 +10034,7 @@ Complete technical guide to installing and configuring NUI in Next.js, Vite, and
 
 NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.
 
-Install `@nofinite/nui` using your package manager of choice:
+Install **NUI** using your package manager of choice:
 
 ```bash
 # npm
@@ -11157,7 +11157,7 @@ async function handlePublishArticle(articleId: string) {
 
 # Theming & Design Tokens
 
-NUI v3 features an aesthetic, token-first design system completely driven by **`@nofinite/nuicss`** semantic design tokens. Every component seamlessly adapts to light and dark themes without manual CSS overrides.
+NUI v3 features an aesthetic, token-first design system completely driven by **NUICSS** semantic design tokens. Every component seamlessly adapts to light and dark themes without manual CSS overrides.
 
 ---
 

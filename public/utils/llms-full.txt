@@ -21,7 +21,7 @@ Documentation for Auth And Crypto utilities.
 
 # Getting Started
 
-This guide covers installation, required setup, and basic usage of `@nofinite/utils`.
+This guide covers installation, required setup, and basic usage of **Utils**.
 For an overview of the library’s goals and philosophy, see the Introduction.
 
 ---
@@ -137,9 +137,9 @@ All utilities are tree-shakable and safe to use in server contexts.
 
 ### Document: utils/releases/page.mdx
 
-# @nofinite/utils — Initial Release (v0.1.0)
+# Utils Releases
 
-**Release date:** 02 February 2026
+**Latest version:** `v0.1.0` (02 February 2026)
 
 ---
 

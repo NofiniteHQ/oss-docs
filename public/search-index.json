@@ -99,49 +99,42 @@
   },
   {
     "title": "Installation & Setup",
-    "description": "Get started with NUICSS in your web application.",
+    "description": "Get started with NUICSS using your preferred package manager, a bundler plugin, or directly via CDN with zero build steps.",
     "href": "/nuicss/installation",
     "pkg": "nuicss",
     "priority": 4
   },
   {
-    "title": "Add the @nuicss Directive (Installation & Setup)",
-    "description": "In your main CSS entry point (e.g. src/app/globals.css or src/style.css), add the @nuicss; directive:",
-    "href": "/nuicss/installation#add-the-nuicss-directive",
+    "title": "CDN Usage (Zero Build Setup) (Installation & Setup)",
+    "description": "For rapid prototyping, static HTML pages, HTMX, or server-rendered templates, you can include NUICSS directly in your tag without installing build tools:",
+    "href": "/nuicss/installation#cdn-usage-zero-build-setup",
     "pkg": "nuicss",
     "priority": 4.5
   },
   {
-    "title": "Configure PostCSS (Installation & Setup)",
-    "description": "Add the @nofinite/nuicss/postcss plugin to your postcss.config.js (or .mjs):",
-    "href": "/nuicss/installation#configure-postcss",
+    "title": "Configuration (nuicss.config.ts) (Installation & Setup)",
+    "description": "Configuration (nuicss.config.ts) section in Installation & Setup documentation.",
+    "href": "/nuicss/installation#configuration-nuicss-config-ts",
     "pkg": "nuicss",
     "priority": 4.5
   },
   {
-    "title": "Create nuicss.config.ts (Installation & Setup)",
-    "description": "Create a nuicss.config.ts in the root of your project:",
-    "href": "/nuicss/installation#create-nuicss-config-ts",
+    "title": "Framework Integration (Installation & Setup)",
+    "description": "Framework Integration section in Installation & Setup documentation.",
+    "href": "/nuicss/installation#framework-integration",
     "pkg": "nuicss",
     "priority": 4.5
   },
   {
-    "title": "Install the Package (Installation & Setup)",
-    "description": "Install @nofinite/nuicss using your preferred package manager:",
-    "href": "/nuicss/installation#install-the-package",
-    "pkg": "nuicss",
-    "priority": 4.5
-  },
-  {
-    "title": "Vite Plugin Setup (Alternative to PostCSS) (Installation & Setup)",
-    "description": "Vite Plugin Setup (Alternative to PostCSS) section in Installation & Setup documentation.",
-    "href": "/nuicss/installation#vite-plugin-setup-alternative-to-postcss",
+    "title": "Package Installation (Installation & Setup)",
+    "description": "Install NUICSS as a development dependency:",
+    "href": "/nuicss/installation#package-installation",
     "pkg": "nuicss",
     "priority": 4.5
   },
   {
     "title": "Theming & Design Tokens",
-    "description": "NUI v3 features an aesthetic, token-first design system completely driven by @nofinite/nuicss semantic design tokens. Every component seamlessly adapts to li...",
+    "description": "NUI v3 features an aesthetic, token-first design system completely driven by NUICSS semantic design tokens. Every component seamlessly adapts to light and da...",
     "href": "/nui/theming",
     "pkg": "nui",
     "priority": 5
@@ -2163,13 +2156,6 @@
     "priority": 28.5
   },
   {
-    "title": "@nofinite/locale — v1.0.0",
-    "description": "Release date: 25 December 2025",
-    "href": "/locale/releases",
-    "pkg": "locale",
-    "priority": 38
-  },
-  {
     "title": "CDN Usage",
     "description": "If you are not using a build system, Nofinite Locale can be used directly via CDN.",
     "href": "/locale/getting-started/cdn",
@@ -2194,6 +2180,13 @@
     "title": "Installation",
     "description": "Install the package using your preferred package manager.",
     "href": "/locale/getting-started/installation",
+    "pkg": "locale",
+    "priority": 38
+  },
+  {
+    "title": "Locale Releases",
+    "description": "Latest version: v1.0.0 (25 December 2025)",
+    "href": "/locale/releases",
     "pkg": "locale",
     "priority": 38
   },
@@ -2226,7 +2219,7 @@
     "priority": 38.5
   },
   {
-    "title": "Included (@nofinite/locale — v1.0.0)",
+    "title": "Included (Locale Releases)",
     "description": "Country metadata (name, ISO code, dial code)",
     "href": "/locale/releases#included",
     "pkg": "locale",
@@ -2240,8 +2233,8 @@
     "priority": 38.5
   },
   {
-    "title": "Notes (@nofinite/locale — v1.0.0)",
-    "description": "Notes section in @nofinite/locale — v1.0.0 documentation.",
+    "title": "Notes (Locale Releases)",
+    "description": "Notes section in Locale Releases documentation.",
     "href": "/locale/releases#notes",
     "pkg": "locale",
     "priority": 38.5
@@ -2254,18 +2247,11 @@
     "priority": 38.5
   },
   {
-    "title": "Summary (@nofinite/locale — v1.0.0)",
-    "description": "Initial stable release of @nofinite/locale.",
+    "title": "Summary (Locale Releases)",
+    "description": "Initial stable release of Locale.",
     "href": "/locale/releases#summary",
     "pkg": "locale",
     "priority": 38.5
-  },
-  {
-    "title": "@nofinite/utils — Initial Release (v0.1.0)",
-    "description": "Release date: 02 February 2026",
-    "href": "/utils/releases",
-    "pkg": "utils",
-    "priority": 48
   },
   {
     "title": "Auth And Crypto",
@@ -2276,7 +2262,7 @@
   },
   {
     "title": "Getting Started",
-    "description": "This guide covers installation, required setup, and basic usage of @nofinite/utils. For an overview of the library’s goals and philosophy, see the Introduction.",
+    "description": "This guide covers installation, required setup, and basic usage of Utils. For an overview of the library’s goals and philosophy, see the Introduction.",
     "href": "/utils/getting-started/installation",
     "pkg": "utils",
     "priority": 48
@@ -2296,7 +2282,14 @@
     "priority": 48
   },
   {
-    "title": "Design Goals (@nofinite/utils — Initial Release (v0.1.0))",
+    "title": "Utils Releases",
+    "description": "Latest version: v0.1.0 (02 February 2026)",
+    "href": "/utils/releases",
+    "pkg": "utils",
+    "priority": 48
+  },
+  {
+    "title": "Design Goals (Utils Releases)",
     "description": "Security-first defaults",
     "href": "/utils/releases#design-goals",
     "pkg": "utils",
@@ -2310,7 +2303,7 @@
     "priority": 48.5
   },
   {
-    "title": "Included (@nofinite/utils — Initial Release (v0.1.0))",
+    "title": "Included (Utils Releases)",
     "description": "OTP generation and verification (secure, hash-based)",
     "href": "/utils/releases#included",
     "pkg": "utils",
@@ -2324,21 +2317,21 @@
     "priority": 48.5
   },
   {
-    "title": "Known Limitations (@nofinite/utils — Initial Release (v0.1.0))",
+    "title": "Known Limitations (Utils Releases)",
     "description": "Email utilities rely on external providers (e.g.",
     "href": "/utils/releases#known-limitations",
     "pkg": "utils",
     "priority": 48.5
   },
   {
-    "title": "Notes (@nofinite/utils — Initial Release (v0.1.0))",
+    "title": "Notes (Utils Releases)",
     "description": "This release establishes the public API surface.",
     "href": "/utils/releases#notes",
     "pkg": "utils",
     "priority": 48.5
   },
   {
-    "title": "Overview (@nofinite/utils — Initial Release (v0.1.0))",
+    "title": "Overview (Utils Releases)",
     "description": "This is the first public release of Nofinite Utils.",
     "href": "/utils/releases#overview",
     "pkg": "utils",
@@ -2380,13 +2373,6 @@
     "priority": 48.5
   },
   {
-    "title": "@nofinite/markon — v1.1.1",
-    "description": "Release date: 01 February 2024",
-    "href": "/markon/releases",
-    "pkg": "markon",
-    "priority": 58
-  },
-  {
     "title": "CDN Usage",
     "description": "Load the Markon bundle directly from the CDN.",
     "href": "/markon/getting-started/cdn",
@@ -2395,15 +2381,22 @@
   },
   {
     "title": "Installation",
-    "description": "This page covers how to install @nofinite/markon in your project.",
+    "description": "This page covers how to install Markon in your project.",
     "href": "/markon/getting-started/installation",
     "pkg": "markon",
     "priority": 58
   },
   {
     "title": "Introduction",
-    "description": "@nofinite/markon is a lightweight content formatting library for JavaScript and React environments. It provides a simple, rule-based syntax for converting st...",
+    "description": "Markon is a lightweight content formatting library for JavaScript and React environments. It provides a simple, rule-based syntax for converting structured t...",
     "href": "/markon",
+    "pkg": "markon",
+    "priority": 58
+  },
+  {
+    "title": "Markon Releases",
+    "description": "Latest version: v1.1.1 (01 February 2024)",
+    "href": "/markon/releases",
     "pkg": "markon",
     "priority": 58
   },
@@ -2451,13 +2444,13 @@
   },
   {
     "title": "Framework Compatibility (Introduction)",
-    "description": "@nofinite/markon works in:",
+    "description": "Markon works in:",
     "href": "/markon#framework-compatibility",
     "pkg": "markon",
     "priority": 58.5
   },
   {
-    "title": "Included (@nofinite/markon — v1.1.1)",
+    "title": "Included (Markon Releases)",
     "description": "Core Markon text formatting syntax",
     "href": "/markon/releases#included",
     "pkg": "markon",
@@ -2485,7 +2478,7 @@
     "priority": 58.5
   },
   {
-    "title": "Notes (@nofinite/markon — v1.1.1)",
+    "title": "Notes (Markon Releases)",
     "description": "This version is the latest published release available on the repository.",
     "href": "/markon/releases#notes",
     "pkg": "markon",
@@ -2541,8 +2534,8 @@
     "priority": 58.5
   },
   {
-    "title": "Release Metadata (@nofinite/markon — v1.1.1)",
-    "description": "Release Metadata section in @nofinite/markon — v1.1.1 documentation.",
+    "title": "Release Metadata (Markon Releases)",
+    "description": "Release Metadata section in Markon Releases documentation.",
     "href": "/markon/releases#release-metadata",
     "pkg": "markon",
     "priority": 58.5
@@ -2562,8 +2555,8 @@
     "priority": 58.5
   },
   {
-    "title": "Summary (@nofinite/markon — v1.1.1)",
-    "description": "@nofinite/markon is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text w...",
+    "title": "Summary (Markon Releases)",
+    "description": "Markon is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text with format...",
     "href": "/markon/releases#summary",
     "pkg": "markon",
     "priority": 58.5
@@ -2591,7 +2584,7 @@
   },
   {
     "title": "Who is this for? (Introduction)",
-    "description": "@nofinite/markon is designed for:",
+    "description": "Markon is designed for:",
     "href": "/markon#who-is-this-for",
     "pkg": "markon",
     "priority": 58.5

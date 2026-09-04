@@ -60,7 +60,7 @@ The CDN build exposes a global function named `JSMarkon`.
 
 # Installation
 
-This page covers how to install `@nofinite/markon` in your project.
+This page covers how to install **Markon** in your project.
 
 ---
 
@@ -135,7 +135,7 @@ export function Example() {
 
 # Introduction
 
-`@nofinite/markon` is a lightweight content formatting library for JavaScript and React environments.  
+**Markon** is a lightweight content formatting library for JavaScript and React environments.  
 It provides a simple, rule-based syntax for converting structured text into HTML, enabling controlled formatting without the overhead of a full Markdown parser.
 
 Markon is optimized for predictable output, minimal dependencies, and ease of integration across platforms.
@@ -144,7 +144,7 @@ Markon is optimized for predictable output, minimal dependencies, and ease of in
 
 ## Who is this for?
 
-`@nofinite/markon` is designed for:
+**Markon** is designed for:
 
 - Developers who need simple text formatting without Markdown complexity
 - Applications rendering CMS or user-generated content
@@ -184,7 +184,7 @@ Markon is built with the following goals:
 
 ## Framework Compatibility
 
-`@nofinite/markon` works in:
+**Markon** works in:
 
 - React applications using `ReactMarkon`
 - Plain HTML and JavaScript environments using `JSMarkon`
@@ -216,17 +216,17 @@ No additional configuration is required for supported environments.
 
 ### Document: markon/releases/page.mdx
 
-# @nofinite/markon — v1.1.1
+# Markon Releases
 
-**Release date:** 01 February 2024
+**Latest version:** `v1.1.1` (01 February 2024)
 
-This release of `@nofinite/markon` represents the most recent published version of the library.
+This release of **Markon** represents the most recent published version of the library.
 
 ---
 
 ## Summary
 
-`@nofinite/markon` is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text with formatting elements such as bold, underline, links, lists, emphasis, and line breaks.
+**Markon** is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text with formatting elements such as bold, underline, links, lists, emphasis, and line breaks.
 
 ---
 
