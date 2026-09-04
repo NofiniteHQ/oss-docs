@@ -16,11 +16,14 @@ import { Toast } from '@nofinite/nui';
 
 A **fully accessible, animated toast notification system** built with React + TypeScript. Supports **multiple variants**, **auto-dismiss with pause-on-hover**, **manual dismissal**, **stacked layout**, and **SSR-friendly portal rendering**.
 
+> [!TIP]
+> **Programmatic API (`nui.*`):** Want to trigger toasts without React hooks or JSX? Use `nui.toast()`, `nui.success()`, `nui.error()`, or `nui.warn()` directly from any event handler or API interceptor. See the [**Programmatic API (`nui.*`)**](/nui/programmatic) guide.
+
 ---
 
 ## Usage
 
-### Basic usage
+### Basic Usage
 
 ```tsx id="toast-basic"
 import { ToastProvider, useToast } from '@nofinite/nui';

@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/nui',
     '/nui/getting-started',
+    '/nui/programmatic',
     '/nui/theming',
     '/nuicss',
     '/nuicss/installation',

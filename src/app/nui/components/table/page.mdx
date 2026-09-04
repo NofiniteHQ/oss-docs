@@ -1,4 +1,4 @@
-# Table
+# Data Table
 
 A composable, accessible Table component for modern React applications.
 
@@ -14,192 +14,155 @@ import { Table } from '@nofinite/nui';
 
 ---
 
-A generic, fully typed data table component supporting column configuration, sorting, custom cell rendering, alignment control, and responsive overflow handling.
+A polymorphic table component that supports both **Plug and Play (PnP) Smart Mode** with automatic sorting and typed cell formatters, and **Composable Compound Primitives** for full layout flexibility.
 
 ---
 
 ## Usage
 
-### Basic usage
+### 1. Plug and Play (PnP) Smart Mode — Zero Boilerplate
+
+Pass `columns` and `data` arrays directly to `<Table>`. NUI automatically builds the table headers, rows, sortable header triggers, and empty states:
 
 ```tsx
-import { Table } from '@nofinite/nui';
+import { Table, Badge } from '@nofinite/nui';
 
-<Table
-  columns={[
-    { key: 'name', label: 'Name' },
-    { key: 'age', label: 'Age' },
-  ]}
-  data={data}
-  rowKey="id"
-/>;
+interface User {
+  id: string;
+  name: string;
+  role: string;
+  status: 'Active' | 'Inactive';
+}
+
+const users: User[] = [
+  { id: '1', name: 'Alice Johnson', role: 'Engineering Lead', status: 'Active' },
+  { id: '2', name: 'Bob Smith', role: 'Product Manager', status: 'Active' },
+  { id: '3', name: 'Charlie Brown', role: 'Designer', status: 'Inactive' },
+];
+
+export function QuickTable() {
+  return (
+    <Table
+      data={users}
+      rowKey="id"
+      columns={[
+        { key: 'name', label: 'Full Name', sortable: true },
+        { key: 'role', label: 'Role', sortable: true },
+        {
+          key: 'status',
+          label: 'Status',
+          render: (user) => (
+            <Badge variant={user.status === 'Active' ? 'success' : 'warning'}>
+              {user.status}
+            </Badge>
+          ),
+        },
+      ]}
+    />
+  );
+}
 ```
 
-### Sortable columns
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom table rows, grouped headers, or customized cell markup, assemble the compound primitives directly:
 
 ```tsx
-<Table
-  columns={[
-    { key: 'name', label: 'Name', sortable: true },
-    { key: 'age', label: 'Age', sortable: true },
-  ]}
-  data={data}
-  rowKey="id"
-/>
+import { Table, Badge } from '@nofinite/nui';
+
+export function CustomTable() {
+  return (
+    <Table>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>Name</Table.Head>
+          <Table.Head>Role</Table.Head>
+          <Table.Head>Status</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell className="font-medium">Alice Johnson</Table.Cell>
+          <Table.Cell>Engineering Lead</Table.Cell>
+          <Table.Cell><Badge variant="success">Active</Badge></Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell className="font-medium">Bob Smith</Table.Cell>
+          <Table.Cell>Product Manager</Table.Cell>
+          <Table.Cell><Badge variant="success">Active</Badge></Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  );
+}
 ```
 
-### Custom render cells
+---
+
+### Custom Sorting & Column Alignment
+
+In Smart PnP mode, you can customize the alignment and sorting logic:
 
 ```tsx
 <Table
+  data={data}
   columns={[
+    { key: 'product', label: 'Product' },
+    { key: 'price', label: 'Price', align: 'right', sortable: true },
     {
-      key: 'status',
-      label: 'Status',
-      render: (row) => <Badge>{row.status}</Badge>,
+      key: 'revenue',
+      label: 'Annual Revenue',
+      align: 'right',
+      render: (row) => `$${row.revenue.toLocaleString()}`,
     },
   ]}
-  data={data}
-  rowKey="id"
-/>
-```
-
-### Custom sort function
-
-```tsx
-<Table
-  columns={[
-    {
-      key: 'price',
-      label: 'Price',
-      sortable: true,
-      sortFn: (a, b) => a.price - b.price,
-    },
-  ]}
-  data={data}
-  rowKey="id"
 />
 ```
 
 ---
 
----
+## Props Reference
 
-## Column Definition
+### Table (Root)
 
-| Field    | Type                          | Description          |
-| -------- | ----------------------------- | -------------------- |
-| `key`      | `keyof T`                       | Data accessor key    |
-| `label`    | `string`                        | Column header label  |
-| `sortable` | `boolean`                       | Enables sorting      |
-| `align`    | `'left' \| 'center' \| 'right'` | Cell alignment       |
-| `render`   | `(row:T)=>ReactNode`            | Custom cell renderer |
-| `sortFn`   | `(a:T,b:T)=>number`             | Custom sorting logic |
+| Prop        | Type                 | Default | Description                                                               |
+| ----------- | -------------------- | ------- | ------------------------------------------------------------------------- |
+| `data`      | `T[]`                | —       | **Plug and Play Mode:** Array of row objects to render.                   |
+| `columns`   | `TableColumn<T>[]`   | —       | **Plug and Play Mode:** Column definitions with keys, sorting, and render.|
+| `rowKey`    | `keyof T \| fn`      | `'id'`  | Unique key property or resolver function for each row.                    |
+| `emptyText` | `ReactNode`          | `'No data available'` | Displayed when `data` array is empty.      |
+| `children`  | `ReactNode`          | —       | Compound primitives (used in compound mode).                              |
 
----
+### TableColumn Configuration
 
-## Variants
-
-### Sorting variants
-
-```tsx
-<Table columns={[{ key:'name', label:'Name', sortable:true }]} />
-<Table columns={[{ key:'name', label:'Name' }]} />
-```
-
-### Alignment variants
-
-```tsx
-<Table columns={[{ key:'amount', label:'Amount', align:'right' }]} />
-<Table columns={[{ key:'status', label:'Status', align:'center' }]} />
-```
-
-### Rendering variants
-
-```tsx
-<Table columns={[{ key:'avatar', label:'User', render:(r)=> <Avatar /> }]} />
-<Table columns={[{ key:'name', label:'Name' }]} />
-```
-
-### State variants
-
-```tsx
-<Table data={[]} />
-<Table emptyText="Nothing found" />
-```
-
-**Available variants**
-
-- Sortable table
-- Non-sortable table
-- Custom rendered table
-- Aligned table
-- Empty state table
-- Custom sort logic table
-- Responsive overflow table
-
-**Guidelines**
-
-- Use custom renderers for complex cells
-- Prefer numeric sortFn for precision sorting
-- Align numeric data right for readability
-- Provide empty state messaging
-- Keep column count reasonable for mobile
+| Property   | Type                          | Description                                             |
+| ---------- | ----------------------------- | ------------------------------------------------------- |
+| `key`      | `keyof T`                     | Object key to extract cell value from.                  |
+| `label`    | `string`                      | Text label displayed in column header.                  |
+| `sortable` | `boolean`                     | Enables interactive click-to-sort on the header.         |
+| `align`    | `'left' \| 'center' \| 'right'`| Content alignment for header and cells.                 |
+| `render`   | `(row: T) => ReactNode`       | Custom cell renderer callback.                          |
+| `sortFn`   | `(a: T, b: T) => number`      | Custom comparison function overriding default sort.     |
 
 ---
 
-## States
+## Subcomponents
 
-- Default
-- Hover row
-- Sort ascending
-- Sort descending
-- Unsorted
-- Empty state
-- Focus-visible header button
-
----
-
-## Keyboard Interaction
-
-- Tab → focuses sortable headers
-- Enter / Space → toggles sort
-- Focus-visible ring on header button
-- Screen readers announce sort direction
+- `Table.Header`
+- `Table.Body`
+- `Table.Row`
+- `Table.Head`
+- `Table.Cell`
 
 ---
 
 ## Accessibility
 
-- Semantic `<table>` structure
-- `scope="col"` for headers
-- `aria-sort` reflects sorting state
-- Sort button ensures keyboard sorting
-- Focus-visible styling for headers
-- Empty state conveyed within table body
-- Responsive overflow preserves semantics
-
----
-
----
-
-## Best Practices
-
-### Do
-
-- Use custom renderers for interactive cells
-- Keep rowKey stable and unique
-- Add sortFn for dates and derived values
-- Align numeric columns right
-- Use responsive container for overflow
-
-### Don’t
-
-- Use index as rowKey
-- Overload table with too many columns
-- Use heavy components inside cells unnecessarily
-- Rely on string sorting for numeric values
-- Hide important actions inside render without affordance
+- Strict semantic HTML table elements (`<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`).
+- Sortable headers provide proper `role="columnheader"` and accessible labels.
+- Responsive horizontal scroll wrapper prevents layout overflow on mobile screens.
 
 ---
 

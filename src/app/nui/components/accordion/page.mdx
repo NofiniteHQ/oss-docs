@@ -14,153 +14,141 @@ import { Accordion } from '@nofinite/nui';
 
 ---
 
-An **accessible, WAI-ARIA–compliant accordion component** for showing and hiding sections of related content. Supports **single or multiple open panels** with smooth CSS animations, keyboard navigation, and focus management.
+An accessible, WAI-ARIA–compliant accordion component for showing and hiding sections of related content. Supports **single or multiple open panels** with smooth animated transitions, keyboard navigation, and focus management.
+
+NUI provides a **Dual-Mode Architecture**: use **Plug and Play (PnP)** mode to pass a clean data array, or use **Composable Compound Primitives** for full layout flexibility.
 
 ---
 
 ## Usage
 
-### Basic Accordion
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
+
+Pass an array of items via the `data` prop. NUI automatically constructs the accordion panels, handles expand/collapse animations, and configures ARIA disclosure states with zero boilerplate:
 
 ```tsx
 import { Accordion } from '@nofinite/nui';
 
-<Accordion
-  items={[
+export function QuickAccordion() {
+  const faqs = [
     {
       id: 'faq1',
       title: 'Do you offer refunds?',
-      content: 'Yes, refunds are available within 30 days.',
+      content: 'Yes, full refunds are available within 30 days of purchase.',
     },
     {
       id: 'faq2',
-      title: 'Do you provide customer support?',
-      content: 'Absolutely! Support is 24/7.',
+      title: 'Do you provide 24/7 customer support?',
+      content: 'Absolutely! Our engineering support team is available around the clock.',
     },
-  ]}
-/>;
+    {
+      id: 'faq3',
+      title: 'Can I self-host NUI on enterprise infrastructure?',
+      content: 'Yes, NUI is completely open source and self-hostable with zero external server dependencies.',
+    },
+  ];
+
+  return <Accordion data={faqs} defaultOpenId="faq1" />;
+}
 ```
 
-### With default open item
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom icons in headers, badge indicators, or custom panel layouts, assemble the compound primitives directly:
 
 ```tsx
-<Accordion
-  defaultOpenId="faq1"
-  items={[
-    {
-      id: 'faq1',
-      title: 'Do you offer refunds?',
-      content: 'Yes, refunds are available within 30 days.',
-    },
-    {
-      id: 'faq2',
-      title: 'Do you provide customer support?',
-      content: 'Absolutely! Support is 24/7.',
-    },
-  ]}
-/>
+import { Accordion, Badge } from '@nofinite/nui';
+
+export function CustomAccordion() {
+  return (
+    <Accordion defaultOpenId="sec1">
+      <Accordion.Item value="sec1">
+        <Accordion.Trigger>
+          <div className="flex items-center justify-between w-full pr-4">
+            <span>Security & Authentication</span>
+            <Badge variant="success">Compliant</Badge>
+          </div>
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Manage multi-factor authentication, SSO configurations, and API access tokens.
+        </Accordion.Content>
+      </Accordion.Item>
+
+      <Accordion.Item value="sec2">
+        <Accordion.Trigger>
+          <div className="flex items-center justify-between w-full pr-4">
+            <span>Billing Details</span>
+            <Badge variant="warning">Action Needed</Badge>
+          </div>
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Your monthly invoice is ready for review.
+        </Accordion.Content>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
 ```
 
-### Multiple open items
+---
+
+### Multiple Open Panels
+
+To allow multiple panels to remain open simultaneously, pass `multiple`:
 
 ```tsx
-<Accordion
-  multiple
-  items={[
-    {
-      id: 'faq1',
-      title: 'Do you offer refunds?',
-      content: 'Yes, refunds are available within 30 days.',
-    },
-    {
-      id: 'faq2',
-      title: 'Do you provide customer support?',
-      content: 'Absolutely! Support is 24/7.',
-    },
-  ]}
-/>
+<Accordion data={faqs} multiple />
 ```
 
 ---
 
+## Props Reference
+
+### Accordion (Root)
+
+| Prop            | Type                 | Default   | Description                                                                    |
+| --------------- | -------------------- | --------- | ------------------------------------------------------------------------------ |
+| `data`          | `AccordionItem[]`    | —         | **Plug and Play Mode:** Array of items `{ id, title, content }`.               |
+| `defaultOpenId` | `string`             | —         | ID of the item that should be open by default.                                 |
+| `multiple`      | `boolean`            | `false`   | If true, allows multiple panels to be expanded simultaneously.                 |
+| `children`      | `ReactNode`          | —         | Compound primitives (used in compound mode).                                   |
+
+### Accordion.Item
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `value`    | `string`    | **required** Unique identifier matching the panel state.   |
+| `children` | `ReactNode` | Compound `<Accordion.Trigger>` and `<Accordion.Content>`. |
+
+### Accordion.Trigger
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `children` | `ReactNode` | Clickable header content. Automatically includes chevron. |
+
+### Accordion.Content
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `children` | `ReactNode` | Collapsible body content. Smoothly animates height.       |
+
 ---
 
-## Variants
+## Subcomponents
 
-Accordion does not provide visual variants via props. **Styling is controlled via CSS classes and design tokens**:
-
-- `.nui-accordion`
-- `.nui-accordion__item`
-- `.nui-accordion__header`
-- `.nui-accordion__title`
-- `.nui-accordion__icon`
-- `.nui-accordion__panel`
-- `.nui-accordion__content`
-
-> Use `className` for custom overrides or `data-state` attributes (`open` / `closed`) for custom styling.
-
----
-
-## States
-
-- **Collapsed** – Panel content is hidden (default).
-- **Expanded** – Panel content is visible.
-- **Single open mode** – Only one panel can be open (`multiple=false`).
-- **Multiple open mode** – Multiple panels can be expanded (`multiple=true`).
+- `Accordion.Item`
+- `Accordion.Trigger`
+- `Accordion.Content`
 
 ---
 
 ## Accessibility
 
-- **Header buttons**:
-
-  - Render as `<button>`.
-  - Use `aria-expanded` to indicate open/closed state.
-  - Linked to panels via `aria-controls`.
-
-- **Panels**:
-
-  - Render as `<div role="region">`.
-  - Linked back to headers via `aria-labelledby`.
-
-- Keyboard support:
-
-  - `Enter` or `Space` toggles panel expansion.
-  - `Tab` moves focus between headers.
-
----
-
-## Layout & Behavior
-
-- Block-level, full-width by default.
-- Smooth height animation using `grid-template-rows`.
-- Chevron icon rotates when the panel is open.
-- Panel content is **always rendered**, hidden via CSS for animation.
-
----
-
-ze for header and panel content         |
-| `--weight-medium`  | Header font weight                             |
-| `--fg-default`     | Default text color                             |
-| `--fg-subtle`      | Subtle text color (icons, hover, content)      |
-| `--color-primary`  | Focus outline color                            |
-| `--border-default` | Border color for items and accordion container |
-
----
-
-## Best Practices
-
-### Do
-
-- Use clear, concise titles for each section.
-- Keep related content together.
-- Use `multiple` only when needed for comparison.
-
-### Don’t
-
-- Nest accordions excessively.
-- Hide critical information inside collapsed panels.
-- Rely on accordion state for essential navigation.
+- **WAI-ARIA Pattern:** Adheres to the WAI-ARIA Accordion disclosure pattern.
+- **Header & Panel Linkage:** Each trigger has `aria-controls` linked to its panel ID, and each panel has `aria-labelledby` linked to its trigger.
+- **Keyboard Navigation:** `Enter` or `Space` toggles the focused accordion trigger.
 
 ---
 

@@ -69,26 +69,11 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         id: 'getting-started-section',
         label: 'Getting Started',
         children: [
+          { id: 'introduction', label: 'Introduction', href: '/nui' },
           { id: 'getting-started', label: 'Installation & Setup', href: '/nui/getting-started' },
+          { id: 'programmatic', label: 'Programmatic API (nui.*)', href: '/nui/programmatic' },
           { id: 'nuiprovider', label: 'NUI Provider', href: '/nui/components/nuiprovider' },
           { id: 'theming', label: 'Theming & Design Tokens', href: '/nui/theming' }
-        ]
-      },
-      {
-        id: 'data-driven-section',
-        label: 'Data-Driven & Plug & Play',
-        children: [
-          { id: 'table', label: 'Data Table', href: '/nui/components/table' },
-          { id: 'treeview', label: 'Tree View', href: '/nui/components/treeview' },
-          { id: 'transferlist', label: 'Transfer List', href: '/nui/components/transferlist' },
-          { id: 'timeline', label: 'Timeline', href: '/nui/components/timeline' },
-          { id: 'virtuallist', label: 'Virtual List', href: '/nui/components/virtuallist' },
-          { id: 'statcard', label: 'Stat Card', href: '/nui/components/statcard' },
-          { id: 'emptystate', label: 'Empty State', href: '/nui/components/emptystate' },
-          { id: 'fileuploader', label: 'File Uploader', href: '/nui/components/fileuploader' },
-          { id: 'attachment', label: 'Attachment', href: '/nui/components/attachment' },
-          { id: 'carousel', label: 'Carousel', href: '/nui/components/carousel' },
-          { id: 'stepper', label: 'Stepper', href: '/nui/components/stepper' },
         ]
       },
       {
@@ -116,20 +101,35 @@ export function getDocsNavigation(pkg: string): NavItem[] {
         ]
       },
       {
+        id: 'navigation-section',
+        label: 'Navigation',
+        children: [
+          { id: 'breadcrumbs', label: 'Breadcrumbs', href: '/nui/components/breadcrumbs' },
+          { id: 'link', label: 'Link', href: '/nui/components/link' },
+          { id: 'megamenu', label: 'Mega Menu', href: '/nui/components/megamenu' },
+          { id: 'pagination', label: 'Pagination', href: '/nui/components/pagination' },
+          { id: 'segmentedcontrol', label: 'Segmented Control', href: '/nui/components/segmentedcontrol' },
+          { id: 'stepper', label: 'Stepper', href: '/nui/components/stepper' },
+          { id: 'tabs', label: 'Tabs', href: '/nui/components/tabs' },
+          { id: 'treeview', label: 'Tree View', href: '/nui/components/treeview' },
+        ]
+      },
+      {
         id: 'inputs-section',
         label: 'Inputs & Forms',
         children: [
           { id: 'checkbox', label: 'Checkbox', href: '/nui/components/checkbox' },
+          { id: 'fileuploader', label: 'File Uploader', href: '/nui/components/fileuploader' },
           { id: 'form', label: 'Form', href: '/nui/components/form' },
           { id: 'input', label: 'Input', href: '/nui/components/input' },
           { id: 'numberinput', label: 'Number Input', href: '/nui/components/numberinput' },
           { id: 'passwordinput', label: 'Password Input', href: '/nui/components/passwordinput' },
           { id: 'pininput', label: 'Pin Input', href: '/nui/components/pininput' },
           { id: 'radiogroup', label: 'Radio Group', href: '/nui/components/radiogroup' },
-          { id: 'segmentedcontrol', label: 'Segmented Control', href: '/nui/components/segmentedcontrol' },
           { id: 'slider', label: 'Slider', href: '/nui/components/slider' },
           { id: 'switch', label: 'Switch', href: '/nui/components/switch' },
           { id: 'textarea', label: 'Textarea', href: '/nui/components/textarea' },
+          { id: 'transferlist', label: 'Transfer List', href: '/nui/components/transferlist' },
         ]
       },
       {
@@ -146,17 +146,6 @@ export function getDocsNavigation(pkg: string): NavItem[] {
           { id: 'select', label: 'Select', href: '/nui/components/select' },
           { id: 'timepicker', label: 'Time Picker', href: '/nui/components/timepicker' },
           { id: 'timerangepicker', label: 'Time Range Picker', href: '/nui/components/timerangepicker' },
-        ]
-      },
-      {
-        id: 'navigation-section',
-        label: 'Navigation',
-        children: [
-          { id: 'breadcrumbs', label: 'Breadcrumbs', href: '/nui/components/breadcrumbs' },
-          { id: 'link', label: 'Link', href: '/nui/components/link' },
-          { id: 'megamenu', label: 'Mega Menu', href: '/nui/components/megamenu' },
-          { id: 'pagination', label: 'Pagination', href: '/nui/components/pagination' },
-          { id: 'tabs', label: 'Tabs', href: '/nui/components/tabs' },
         ]
       },
       {
@@ -186,13 +175,20 @@ export function getDocsNavigation(pkg: string): NavItem[] {
       },
       {
         id: 'media-section',
-        label: 'Media & Content',
+        label: 'Data Display & Media',
         children: [
+          { id: 'attachment', label: 'Attachment', href: '/nui/components/attachment' },
           { id: 'avatar', label: 'Avatar', href: '/nui/components/avatar' },
+          { id: 'carousel', label: 'Carousel', href: '/nui/components/carousel' },
           { id: 'clipboard', label: 'Clipboard', href: '/nui/components/clipboard' },
           { id: 'codeblock', label: 'Code Block', href: '/nui/components/codeblock' },
+          { id: 'table', label: 'Data Table', href: '/nui/components/table' },
+          { id: 'emptystate', label: 'Empty State', href: '/nui/components/emptystate' },
           { id: 'image', label: 'Image', href: '/nui/components/image' },
+          { id: 'statcard', label: 'Stat Card', href: '/nui/components/statcard' },
+          { id: 'timeline', label: 'Timeline', href: '/nui/components/timeline' },
           { id: 'video', label: 'Video Player', href: '/nui/components/video' },
+          { id: 'virtuallist', label: 'Virtual List', href: '/nui/components/virtuallist' },
         ]
       }
     ];

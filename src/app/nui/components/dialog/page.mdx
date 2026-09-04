@@ -16,20 +16,14 @@ import { Dialog } from '@nofinite/nui';
 
 Global infrastructure component responsible for orchestrating **imperative dialogs and toast bridging** across the application.
 
-It subscribes to a centralized store and renders a modal dialog dynamically for:
-
-- `alert` dialogs (informational acknowledgement)
-- `confirm` dialogs (decision-based flows)
-- destructive confirmation patterns
-- toast bridge between vanilla JS API and React Toast system
-
-This enables a **promise-driven UX pattern**, where application logic pauses until the user resolves a dialog.
+> [!TIP]
+> **Programmatic API (`nui.*`):** Looking for `nui.confirm()`, `nui.alert()`, or zero-JSX imperative modals? See the dedicated [**Programmatic API (`nui.*`)**](/nui/programmatic) documentation.
 
 ---
 
 ## Usage
 
-### Provider setup
+### Provider Setup
 
 Place once at application root.
 

@@ -835,153 +835,135 @@ import { Accordion } from '@nofinite/nui';
 
 ---
 
-An **accessible, WAI-ARIA–compliant accordion component** for showing and hiding sections of related content. Supports **single or multiple open panels** with smooth CSS animations, keyboard navigation, and focus management.
+An accessible, WAI-ARIA–compliant accordion component for showing and hiding sections of related content. Supports **single or multiple open panels** with smooth animated transitions, keyboard navigation, and focus management.
+
+NUI provides a **Dual-Mode Architecture**: use **Plug and Play (PnP)** mode to pass a clean data array, or use **Composable Compound Primitives** for full layout flexibility.
 
 ---
 
 ## Usage
 
-### Basic Accordion
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
+
+Pass an array of items via the `data` prop. NUI automatically constructs the accordion panels, handles expand/collapse animations, and configures ARIA disclosure states with zero boilerplate:
 
 ```tsx
 import { Accordion } from '@nofinite/nui';
 
-<Accordion
-  items={[
+export function QuickAccordion() {
+  const faqs = [
     {
       id: 'faq1',
       title: 'Do you offer refunds?',
-      content: 'Yes, refunds are available within 30 days.',
+      content: 'Yes, full refunds are available within 30 days of purchase.',
     },
     {
       id: 'faq2',
-      title: 'Do you provide customer support?',
-      content: 'Absolutely! Support is 24/7.',
+      title: 'Do you provide 24/7 customer support?',
+      content: 'Absolutely! Our engineering support team is available around the clock.',
     },
-  ]}
-/>;
+    {
+      id: 'faq3',
+      title: 'Can I self-host NUI on enterprise infrastructure?',
+      content: 'Yes, NUI is completely open source and self-hostable with zero external server dependencies.',
+    },
+  ];
+
+  return <Accordion data={faqs} defaultOpenId="faq1" />;
+}
 ```
 
-### With default open item
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom icons in headers, badge indicators, or custom panel layouts, assemble the compound primitives directly:
 
 ```tsx
-<Accordion
-  defaultOpenId="faq1"
-  items={[
-    {
-      id: 'faq1',
-      title: 'Do you offer refunds?',
-      content: 'Yes, refunds are available within 30 days.',
-    },
-    {
-      id: 'faq2',
-      title: 'Do you provide customer support?',
-      content: 'Absolutely! Support is 24/7.',
-    },
-  ]}
-/>
+import { Accordion, Badge } from '@nofinite/nui';
+
+export function CustomAccordion() {
+  return (
+    <Accordion defaultOpenId="sec1">
+      <Accordion.Item value="sec1">
+        <Accordion.Trigger>
+          
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Manage multi-factor authentication, SSO configurations, and API access tokens.
+        </Accordion.Content>
+      </Accordion.Item>
+
+      <Accordion.Item value="sec2">
+        <Accordion.Trigger>
+          
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Your monthly invoice is ready for review.
+        </Accordion.Content>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
 ```
 
-### Multiple open items
+---
+
+### Multiple Open Panels
+
+To allow multiple panels to remain open simultaneously, pass `multiple`:
 
 ```tsx
-<Accordion
-  multiple
-  items={[
-    {
-      id: 'faq1',
-      title: 'Do you offer refunds?',
-      content: 'Yes, refunds are available within 30 days.',
-    },
-    {
-      id: 'faq2',
-      title: 'Do you provide customer support?',
-      content: 'Absolutely! Support is 24/7.',
-    },
-  ]}
-/>
+<Accordion data={faqs} multiple />
 ```
 
 ---
 
+## Props Reference
+
+### Accordion (Root)
+
+| Prop            | Type                 | Default   | Description                                                                    |
+| --------------- | -------------------- | --------- | ------------------------------------------------------------------------------ |
+| `data`          | `AccordionItem[]`    | —         | **Plug and Play Mode:** Array of items `{ id, title, content }`.               |
+| `defaultOpenId` | `string`             | —         | ID of the item that should be open by default.                                 |
+| `multiple`      | `boolean`            | `false`   | If true, allows multiple panels to be expanded simultaneously.                 |
+| `children`      | `ReactNode`          | —         | Compound primitives (used in compound mode).                                   |
+
+### Accordion.Item
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `value`    | `string`    | **required** Unique identifier matching the panel state.   |
+| `children` | `ReactNode` | Compound `<Accordion.Trigger>` and `<Accordion.Content>`. |
+
+### Accordion.Trigger
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `children` | `ReactNode` | Clickable header content. Automatically includes chevron. |
+
+### Accordion.Content
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `children` | `ReactNode` | Collapsible body content. Smoothly animates height.       |
+
 ---
 
-## Variants
+## Subcomponents
 
-Accordion does not provide visual variants via props. **Styling is controlled via CSS classes and design tokens**:
-
-- `.nui-accordion`
-- `.nui-accordion__item`
-- `.nui-accordion__header`
-- `.nui-accordion__title`
-- `.nui-accordion__icon`
-- `.nui-accordion__panel`
-- `.nui-accordion__content`
-
-> Use `className` for custom overrides or `data-state` attributes (`open` / `closed`) for custom styling.
-
----
-
-## States
-
-- **Collapsed** – Panel content is hidden (default).
-- **Expanded** – Panel content is visible.
-- **Single open mode** – Only one panel can be open (`multiple=false`).
-- **Multiple open mode** – Multiple panels can be expanded (`multiple=true`).
+- `Accordion.Item`
+- `Accordion.Trigger`
+- `Accordion.Content`
 
 ---
 
 ## Accessibility
 
-- **Header buttons**:
-
-  - Render as `<button>`.
-  - Use `aria-expanded` to indicate open/closed state.
-  - Linked to panels via `aria-controls`.
-
-- **Panels**:
-
-  - Render as `<div role="region">`.
-  - Linked back to headers via `aria-labelledby`.
-
-- Keyboard support:
-
-  - `Enter` or `Space` toggles panel expansion.
-  - `Tab` moves focus between headers.
-
----
-
-## Layout & Behavior
-
-- Block-level, full-width by default.
-- Smooth height animation using `grid-template-rows`.
-- Chevron icon rotates when the panel is open.
-- Panel content is **always rendered**, hidden via CSS for animation.
-
----
-
-ze for header and panel content         |
-| `--weight-medium`  | Header font weight                             |
-| `--fg-default`     | Default text color                             |
-| `--fg-subtle`      | Subtle text color (icons, hover, content)      |
-| `--color-primary`  | Focus outline color                            |
-| `--border-default` | Border color for items and accordion container |
-
----
-
-## Best Practices
-
-### Do
-
-- Use clear, concise titles for each section.
-- Keep related content together.
-- Use `multiple` only when needed for comparison.
-
-### Don’t
-
-- Nest accordions excessively.
-- Hide critical information inside collapsed panels.
-- Rely on accordion state for essential navigation.
+- **WAI-ARIA Pattern:** Adheres to the WAI-ARIA Accordion disclosure pattern.
+- **Header & Panel Linkage:** Each trigger has `aria-controls` linked to its panel ID, and each panel has `aria-labelledby` linked to its trigger.
+- **Keyboard Navigation:** `Enter` or `Space` toggles the focused accordion trigger.
 
 ---
 
@@ -1567,127 +1549,121 @@ import { Breadcrumbs } from '@nofinite/nui';
 
 ---
 
-A **navigation aid component** that displays the user’s current location within a hierarchical structure.
-Supports **interactive links, custom separators, responsive collapsing, and accessibility-friendly navigation semantics**.
+A navigation aid component that displays the user’s location within a hierarchical structure. Supports **interactive links, custom separators, responsive collapsing, and accessibility-friendly navigation semantics**.
+
+NUI provides a **Dual-Mode Architecture**: use **Plug and Play (PnP)** mode to pass a clean data array with automatic truncation, or assemble the **Composable Compound Primitives** for full layout customization.
 
 ---
 
 ## Usage
 
-### Basic Breadcrumbs
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
+
+Pass an array of crumbs via the `data` prop. NUI automatically links items, renders separators, highlights the active current page, and truncates long paths with an ellipsis when exceeding `maxItems`:
 
 ```tsx
 import { Breadcrumbs } from '@nofinite/nui';
 
-<Breadcrumbs
-  items={[
+export function QuickBreadcrumbs() {
+  const crumbs = [
     { label: 'Home', href: '/' },
-    { label: 'Dashboard', href: '/dashboard' },
-    { label: 'Settings' },
-  ]}
-/>;
+    { label: 'Engineering', href: '/engineering' },
+    { label: 'Projects', href: '/engineering/projects' },
+    { label: 'Design System' },
+  ];
+
+  return <Breadcrumbs data={crumbs} maxItems={4} />;
+}
 ```
 
-### Breadcrumbs with Click Handlers
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom icons, dropdown menus inside breadcrumbs, or specific markup wrappers, assemble the compound primitives directly:
+
+```tsx
+import { Breadcrumbs } from '@nofinite/nui';
+import Link from 'next/link';
+
+export function CustomBreadcrumbs() {
+  return (
+    <Breadcrumbs separator="/">
+      <Breadcrumbs.Item>
+        <Link href="/">Home</Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator />
+      <Breadcrumbs.Item>
+        <Link href="/settings">Settings</Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator />
+      <Breadcrumbs.Item isCurrent>
+        API Keys
+      </Breadcrumbs.Item>
+    </Breadcrumbs>
+  );
+}
+```
+
+---
+
+### Truncation with `maxItems`
+
+When paths get too long, NUI automatically truncates the middle items into an ellipsis:
 
 ```tsx
 <Breadcrumbs
-  items={[
-    { label: 'Home', onClick: () => console.log('Home') },
-    { label: 'Profile', onClick: () => console.log('Profile') },
-    { label: 'Edit Profile' },
+  maxItems={3}
+  data={[
+    { label: 'Home', href: '/' },
+    { label: 'Cloud', href: '/cloud' },
+    { label: 'Clusters', href: '/clusters' },
+    { label: 'Production-US-East' },
   ]}
 />
 ```
 
-### Collapsed Breadcrumbs
+---
 
-```tsx
-<Breadcrumbs
-  maxItems={4}
-  items={[
-    { label: 'Home', href: '/' },
-    { label: 'Products', href: '/products' },
-    { label: 'Electronics', href: '/electronics' },
-    { label: 'Mobiles', href: '/mobiles' },
-    { label: 'iPhone 15' },
-  ]}
-/>
-```
+## Props Reference
 
-### Custom Separator
+### Breadcrumbs (Root)
 
-```tsx
-<Breadcrumbs
-  separator="/"
-  items={[
-    { label: 'Home', href: '/' },
-    { label: 'Docs', href: '/docs' },
-    { label: 'Breadcrumbs' },
-  ]}
-/>
-```
+| Prop        | Type                 | Default | Description                                                               |
+| ----------- | -------------------- | ------- | ------------------------------------------------------------------------- |
+| `data`      | `BreadcrumbItem[]`   | —       | **Plug and Play Mode:** Array of items `{ label, href, onClick }`.        |
+| `maxItems`  | `number`             | `5`     | Maximum items before collapsing intermediate crumbs into an ellipsis `…`.|
+| `separator` | `ReactNode`          | `'›'`   | Custom separator icon or character between crumbs.                        |
+| `children`  | `ReactNode`          | —       | Compound primitives (used in compound mode).                              |
+
+### Breadcrumbs.Item
+
+| Prop        | Type        | Default | Description                                             |
+| ----------- | ----------- | ------- | ------------------------------------------------------- |
+| `isCurrent` | `boolean`   | `false` | Marks the item as current page (`aria-current="page"`). |
+| `children`  | `ReactNode` | —       | Link or label content.                                  |
+
+### Breadcrumbs.Separator
+
+| Prop       | Type        | Description                                                       |
+| ---------- | ----------- | ----------------------------------------------------------------- |
+| `children` | `ReactNode` | Custom separator node. Defaults to parent `separator` configured. |
 
 ---
 
----
+## Subcomponents
 
-## BreadcrumbItem
-
-| Prop      | Type                            | Default | Description                              |
-| --------- | ------------------------------- | ------- | ---------------------------------------- |
-| `label`   | `React.ReactNode`               | —       | Visible breadcrumb content               |
-| `href`    | `string`                        | —       | Link destination                         |
-| `onClick` | `(e: React.MouseEvent) => void` | —       | Click handler for interactive breadcrumb |
-
----
-
-## Collapse Behavior
-
-When `items.length > maxItems`:
-
-- First item is always visible (typically **Home**)
-- Last two items remain visible (parent + current)
-- Middle items collapse into an ellipsis
-
-Example:
-
-```
-Home › … › Parent › Current
-```
-
----
+- `Breadcrumbs.Item`
+- `Breadcrumbs.Separator`
 
 ---
 
 ## Accessibility
 
-- Uses semantic `<nav>` with `aria-label="Breadcrumb"`
-- Ordered list `<ol>` conveys hierarchy
-- Current page uses `aria-current="page"`
-- Ellipsis is hidden from screen readers (`aria-hidden="true"`)
-- Interactive items render as `<a>` links
-- Current item is non-interactive with pointer events disabled
-- Separator is hidden from assistive technologies
-
----
-
-## Best Practices
-
-### Do
-
-- Use breadcrumbs for hierarchical navigation
-- Keep labels short and meaningful
-- Place breadcrumbs near the top of page content
-- Use collapsing for deep navigation structures
-- Provide clear separators for readability
-
-### Don’t
-
-- Use breadcrumbs as primary navigation
-- Include excessive hierarchy levels without collapsing
-- Make the current page clickable
-- Hide critical navigation only inside ellipsis
+- Wrapped in `<nav aria-label="Breadcrumb">` for screen readers.
+- Renders ordered list structure (`<ol>`, `<li>`) for navigation semantics.
+- Current page crumb automatically receives `aria-current="page"`.
+- Visual separators are marked with `aria-hidden="true"`.
 
 ---
 
@@ -3338,20 +3314,14 @@ import { Dialog } from '@nofinite/nui';
 
 Global infrastructure component responsible for orchestrating **imperative dialogs and toast bridging** across the application.
 
-It subscribes to a centralized store and renders a modal dialog dynamically for:
-
-- `alert` dialogs (informational acknowledgement)
-- `confirm` dialogs (decision-based flows)
-- destructive confirmation patterns
-- toast bridge between vanilla JS API and React Toast system
-
-This enables a **promise-driven UX pattern**, where application logic pauses until the user resolves a dialog.
+> [!TIP]
+> **Programmatic API (`nui.*`):** Looking for `nui.confirm()`, `nui.alert()`, or zero-JSX imperative modals? See the dedicated [**Programmatic API (`nui.*`)**](/nui/programmatic) documentation.
 
 ---
 
 ## Usage
 
-### Provider setup
+### Provider Setup
 
 Place once at application root.
 
@@ -3815,48 +3785,69 @@ import { Dropdown } from '@nofinite/nui';
 A compound menu component for contextual actions anchored to a trigger.
 Implements controlled open state via internal context, keyboard navigation, focus restoration, and outside-click dismissal.
 
-Architecture follows a **compound component pattern** with context-driven state propagation.
+NUI provides a **Dual-Mode Architecture** for Dropdown: use **Plug and Play (PnP)** mode for rapid data-driven menus, or **Compound Primitives** for complete custom layout control.
 
 ---
 
 ## Usage
 
-### Basic
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
 
-```tsx id="dd1">
-import { Dropdown } from '@nofinite/nui';
-<Dropdown>
-  <Dropdown.Trigger>Options</Dropdown.Trigger>
-  <Dropdown.Menu>
-    <Dropdown.Item>Profile</Dropdown.Item>
-    <Dropdown.Item>Settings</Dropdown.Item>
-    <Dropdown.Item>Logout</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+Pass an array of items directly via the `data` prop. NUI automatically constructs the menu, renders items, handles separators, disabled states, and keyboard navigation without requiring manual subcomponent declarations:
+
+```tsx
+import { Dropdown, Button } from '@nofinite/nui';
+
+export function QuickDropdown() {
+  const items = [
+    { label: 'View Profile', onClick: () => console.log('Profile') },
+    { label: 'Account Settings', onClick: () => console.log('Settings') },
+    { type: 'separator' as const },
+    { label: 'Billing & Invoices', onClick: () => console.log('Billing') },
+    { label: 'Admin Dashboard', disabled: true },
+    { type: 'separator' as const },
+    { label: 'Log Out', onClick: () => console.log('Logout') },
+  ];
+
+  return (
+    <Dropdown data={items}>
+      <Button variant="outline">Quick Actions</Button>
+    </Dropdown>
+  );
+}
 ```
 
 ---
 
-### Custom trigger (Button component)
+### 2. Composable Compound Mode — Full Structural Control
 
-```tsx id="dd2">
-<Dropdown>
-  <Dropdown.Trigger>
-    <Button variant="ghost">Menu</Button>
-  </Dropdown.Trigger>
+When you need custom item markup, badges, custom header blocks, or specific icon layouts, assemble the compound primitives directly:
 
-  <Dropdown.Menu>
-    <Dropdown.Item>Account</Dropdown.Item>
-    <Dropdown.Item>Billing</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+```tsx
+import { Dropdown, Button } from '@nofinite/nui';
+
+export function CustomDropdown() {
+  return (
+    <Dropdown>
+      <Dropdown.Trigger>
+        <Button variant="primary">Options</Button>
+      </Dropdown.Trigger>
+
+      <Dropdown.Menu>
+        <Dropdown.Item onClick={() => console.log('Profile')}>Profile</Dropdown.Item>
+        <Dropdown.Item onClick={() => console.log('Settings')}>Settings</Dropdown.Item>
+        <Dropdown.Item onClick={() => console.log('Logout')}>Logout</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
 ```
 
 ---
 
-### End-aligned menu
+### End-Aligned Menu
 
-```tsx id="dd3">
+```tsx
 <Dropdown>
   <Dropdown.Trigger>More</Dropdown.Trigger>
   <Dropdown.Menu align="end">
@@ -3868,200 +3859,53 @@ import { Dropdown } from '@nofinite/nui';
 
 ---
 
-### With action handlers
+## Props Reference
 
-```tsx id="dd4">
-<Dropdown>
-  <Dropdown.Trigger>Actions</Dropdown.Trigger>
-  <Dropdown.Menu>
-    <Dropdown.Item onSelect={() => save()}>Save</Dropdown.Item>
-    <Dropdown.Item onSelect={() => remove()}>Delete</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-```
+### Dropdown (Root)
 
----
+| Prop      | Type                 | Default   | Description                                                                 |
+| --------- | -------------------- | --------- | --------------------------------------------------------------------------- |
+| `data`    | `DropdownDataItem[]` | —         | **Plug and Play Mode:** Array of menu items, separators, and callbacks.     |
+| `align`   | `'start' \| 'end'`   | `'start'` | Menu alignment relative to trigger.                                         |
+| `children`| `ReactNode`          | —         | Trigger element (in PnP mode) or compound children (in compound mode).      |
 
----
+### Dropdown.Trigger
 
-### Trigger
+| Prop       | Type        | Description                                                          |
+| ---------- | ----------- | -------------------------------------------------------------------- |
+| `children` | `ReactNode` | Element to act as the menu trigger. Automatically cloned with props. |
 
-| Prop     | Type      | Description                |
-| -------- | --------- | -------------------------- |
-| children | ReactNode | Trigger element or content |
+### Dropdown.Menu
 
-Behavior:
+| Prop        | Type               | Default     | Description                                |
+| ----------- | ------------------ | ----------- | ------------------------------------------ |
+| `align`     | `'start' \| 'end'` | `'start'`   | Horizontal alignment relative to trigger.  |
+| `children`  | `ReactNode`        | —           | Collection of `<Dropdown.Item />` elements. |
 
-- Accepts element cloning (preserves child props)
-- Injects ARIA attributes
-- Toggles open state
+### Dropdown.Item
 
----
-
-### Menu
-
-| Prop      | Type                 | Default    | Description          |
-| --------- | -------------------- | ---------- | -------------------- |
-| align     | `'start'   \| 'end'` | "start"    | Horizontal alignment |
-| className | string               | —          | Menu override        |
-| children  | ReactNode            | Menu items |                      |
-
-Extends `HTMLAttributes<HTMLDivElement>`.
-
----
-
-### Item
-
-| Prop      | Type       | Description        |
-| --------- | ---------- | ------------------ |
-| onSelect  | () => void | Selection callback |
-| className | string     | Style override     |
-| children  | ReactNode  | Item content       |
-
-Extends `HTMLAttributes<HTMLDivElement>`.
+| Prop       | Type                  | Description                                 |
+| ---------- | --------------------- | ------------------------------------------- |
+| `onClick`  | `(e) => void`         | Click handler. Closes dropdown upon firing. |
+| `disabled` | `boolean`             | If true, dims item and prevents click.      |
+| `children` | `ReactNode`           | Content to render inside the menu item.     |
 
 ---
 
 ## Subcomponents
 
-- Dropdown.Trigger
-- Dropdown.Menu
-- Dropdown.Item
-
-Compound composition is required.
-
----
-
-## Variants
-
-```tsx
-<Dropdown.Menu align="start" />
-<Dropdown.Menu align="end" />
-<Dropdown.Item />
-<Dropdown.Item className="nui-text-danger" />
-```
-
-**Available variants:**
-
-- start (default)
-- end
-- default item
-- danger item
-
-**Guidelines:**
-
-- Use start alignment for inline actions
-- Use end alignment for corner anchored menus
-- Use danger items for destructive actions
-
----
-
-## Sizes
-
-Intrinsic sizing model:
-
-| Element | Behavior         |
-| ------- | ---------------- |
-| Menu    | min-width: 180px |
-| Item    | full-width row   |
-| Trigger | inline-flex      |
-
-Width should be extended via utilities.
-
----
-
-## Shapes / Modes
-
-**States**
-
-- Closed (unmounted)
-- Open (mounted)
-- Outside-click dismissed
-- Escape dismissed
-- Keyboard navigated
-- Focus restored to trigger
-
-**Interaction modes**
-
-- Mouse selection
-- Keyboard arrow navigation
-- Enter/Space activation
-
----
-
-Z-index: `1000`
+- `Dropdown.Trigger`
+- `Dropdown.Menu`
+- `Dropdown.Item`
 
 ---
 
 ## Accessibility
 
-Implemented:
-
-- Trigger
-  - `aria-haspopup="menu"`
-  - `aria-expanded`
-- Menu
-  - `role="menu"`
-- Items
-  - `role="menuitem"`
-  - Programmatic focus via roving arrow navigation
-- Keyboard navigation
-  - Escape closes
-  - ArrowUp / ArrowDown cycling
-  - Enter / Space activation
-- Focus restoration to trigger
-- Outside click dismissal
-
-Limitations:
-
-- No typeahead search
-- No roving tab index pattern (arrow-only navigation)
-- No submenu support
-- No aria-activedescendant model
-
----
-
-## Animation model
-
-Entry animation:
-
-- Scale + translateY fade-in
-- Duration: 150ms
-- Transform origin: top-left
-- GPU accelerated
-
-Unmount on close (no exit animation).
-
----
-
-## Architectural notes
-
-Design characteristics:
-
-- Compound context architecture
-- Element cloning trigger injection
-- Ref composition strategy
-- DOM query for focusable menu items
-- Controlled focus lifecycle
-- Lightweight state model (boolean open)
-
----
-
-## Best practices
-
-### Do
-
-- Use compound composition
-- Keep menu lightweight
-- Provide semantic labels inside items
-- Use danger state for destructive actions
-
-### Don’t
-
-- Nest dropdowns (no submenu support)
-- Use heavy layout content inside menu
-- Remove trigger element from DOM during open state
-- Disable focus styling
+- **WAI-ARIA Pattern:** Adheres strictly to the WAI-ARIA Menu button pattern.
+- **Keyboard Navigation:** `ArrowDown` / `ArrowUp` cycles through menu items; `Escape` closes the menu and restores focus to the trigger button.
+- **Outside Click:** Automatically closes when clicking anywhere outside the menu.
+- **Focus Restoration:** Focus is cleanly returned to the trigger element when the menu closes.
 
 ---
 
@@ -8219,7 +8063,7 @@ import { Switch } from '@nofinite/nui';
 
 ### Document: nui/components/table/page.mdx
 
-# Table
+# Data Table
 
 A composable, accessible Table component for modern React applications.
 
@@ -8235,192 +8079,155 @@ import { Table } from '@nofinite/nui';
 
 ---
 
-A generic, fully typed data table component supporting column configuration, sorting, custom cell rendering, alignment control, and responsive overflow handling.
+A polymorphic table component that supports both **Plug and Play (PnP) Smart Mode** with automatic sorting and typed cell formatters, and **Composable Compound Primitives** for full layout flexibility.
 
 ---
 
 ## Usage
 
-### Basic usage
+### 1. Plug and Play (PnP) Smart Mode — Zero Boilerplate
+
+Pass `columns` and `data` arrays directly to `<Table>`. NUI automatically builds the table headers, rows, sortable header triggers, and empty states:
 
 ```tsx
-import { Table } from '@nofinite/nui';
+import { Table, Badge } from '@nofinite/nui';
 
-<Table
-  columns={[
-    { key: 'name', label: 'Name' },
-    { key: 'age', label: 'Age' },
-  ]}
-  data={data}
-  rowKey="id"
-/>;
+interface User {
+  id: string;
+  name: string;
+  role: string;
+  status: 'Active' | 'Inactive';
+}
+
+const users: User[] = [
+  { id: '1', name: 'Alice Johnson', role: 'Engineering Lead', status: 'Active' },
+  { id: '2', name: 'Bob Smith', role: 'Product Manager', status: 'Active' },
+  { id: '3', name: 'Charlie Brown', role: 'Designer', status: 'Inactive' },
+];
+
+export function QuickTable() {
+  return (
+    <Table
+      data={users}
+      rowKey="id"
+      columns={[
+        { key: 'name', label: 'Full Name', sortable: true },
+        { key: 'role', label: 'Role', sortable: true },
+        {
+          key: 'status',
+          label: 'Status',
+          render: (user) => (
+            <Badge variant={user.status === 'Active' ? 'success' : 'warning'}>
+              {user.status}
+            </Badge>
+          ),
+        },
+      ]}
+    />
+  );
+}
 ```
 
-### Sortable columns
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom table rows, grouped headers, or customized cell markup, assemble the compound primitives directly:
 
 ```tsx
-<Table
-  columns={[
-    { key: 'name', label: 'Name', sortable: true },
-    { key: 'age', label: 'Age', sortable: true },
-  ]}
-  data={data}
-  rowKey="id"
-/>
+import { Table, Badge } from '@nofinite/nui';
+
+export function CustomTable() {
+  return (
+    <Table>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>Name</Table.Head>
+          <Table.Head>Role</Table.Head>
+          <Table.Head>Status</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell className="font-medium">Alice Johnson</Table.Cell>
+          <Table.Cell>Engineering Lead</Table.Cell>
+          <Table.Cell><Badge variant="success">Active</Badge></Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell className="font-medium">Bob Smith</Table.Cell>
+          <Table.Cell>Product Manager</Table.Cell>
+          <Table.Cell><Badge variant="success">Active</Badge></Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  );
+}
 ```
 
-### Custom render cells
+---
+
+### Custom Sorting & Column Alignment
+
+In Smart PnP mode, you can customize the alignment and sorting logic:
 
 ```tsx
 <Table
+  data={data}
   columns={[
+    { key: 'product', label: 'Product' },
+    { key: 'price', label: 'Price', align: 'right', sortable: true },
     {
-      key: 'status',
-      label: 'Status',
-      render: (row) => <Badge>{row.status}</Badge>,
+      key: 'revenue',
+      label: 'Annual Revenue',
+      align: 'right',
+      render: (row) => `$${row.revenue.toLocaleString()}`,
     },
   ]}
-  data={data}
-  rowKey="id"
-/>
-```
-
-### Custom sort function
-
-```tsx
-<Table
-  columns={[
-    {
-      key: 'price',
-      label: 'Price',
-      sortable: true,
-      sortFn: (a, b) => a.price - b.price,
-    },
-  ]}
-  data={data}
-  rowKey="id"
 />
 ```
 
 ---
 
----
+## Props Reference
 
-## Column Definition
+### Table (Root)
 
-| Field    | Type                          | Description          |
-| -------- | ----------------------------- | -------------------- |
-| `key`      | `keyof T`                       | Data accessor key    |
-| `label`    | `string`                        | Column header label  |
-| `sortable` | `boolean`                       | Enables sorting      |
-| `align`    | `'left' \| 'center' \| 'right'` | Cell alignment       |
-| `render`   | `(row:T)=>ReactNode`            | Custom cell renderer |
-| `sortFn`   | `(a:T,b:T)=>number`             | Custom sorting logic |
+| Prop        | Type                 | Default | Description                                                               |
+| ----------- | -------------------- | ------- | ------------------------------------------------------------------------- |
+| `data`      | `T[]`                | —       | **Plug and Play Mode:** Array of row objects to render.                   |
+| `columns`   | `TableColumn<T>[]`   | —       | **Plug and Play Mode:** Column definitions with keys, sorting, and render.|
+| `rowKey`    | `keyof T \| fn`      | `'id'`  | Unique key property or resolver function for each row.                    |
+| `emptyText` | `ReactNode`          | `'No data available'` | Displayed when `data` array is empty.      |
+| `children`  | `ReactNode`          | —       | Compound primitives (used in compound mode).                              |
 
----
+### TableColumn Configuration
 
-## Variants
-
-### Sorting variants
-
-```tsx
-<Table columns={[{ key:'name', label:'Name', sortable:true }]} />
-<Table columns={[{ key:'name', label:'Name' }]} />
-```
-
-### Alignment variants
-
-```tsx
-<Table columns={[{ key:'amount', label:'Amount', align:'right' }]} />
-<Table columns={[{ key:'status', label:'Status', align:'center' }]} />
-```
-
-### Rendering variants
-
-```tsx
-<Table columns={[{ key:'avatar', label:'User', render:(r)=> <Avatar /> }]} />
-<Table columns={[{ key:'name', label:'Name' }]} />
-```
-
-### State variants
-
-```tsx
-<Table data={[]} />
-<Table emptyText="Nothing found" />
-```
-
-**Available variants**
-
-- Sortable table
-- Non-sortable table
-- Custom rendered table
-- Aligned table
-- Empty state table
-- Custom sort logic table
-- Responsive overflow table
-
-**Guidelines**
-
-- Use custom renderers for complex cells
-- Prefer numeric sortFn for precision sorting
-- Align numeric data right for readability
-- Provide empty state messaging
-- Keep column count reasonable for mobile
+| Property   | Type                          | Description                                             |
+| ---------- | ----------------------------- | ------------------------------------------------------- |
+| `key`      | `keyof T`                     | Object key to extract cell value from.                  |
+| `label`    | `string`                      | Text label displayed in column header.                  |
+| `sortable` | `boolean`                     | Enables interactive click-to-sort on the header.         |
+| `align`    | `'left' \| 'center' \| 'right'`| Content alignment for header and cells.                 |
+| `render`   | `(row: T) => ReactNode`       | Custom cell renderer callback.                          |
+| `sortFn`   | `(a: T, b: T) => number`      | Custom comparison function overriding default sort.     |
 
 ---
 
-## States
+## Subcomponents
 
-- Default
-- Hover row
-- Sort ascending
-- Sort descending
-- Unsorted
-- Empty state
-- Focus-visible header button
-
----
-
-## Keyboard Interaction
-
-- Tab → focuses sortable headers
-- Enter / Space → toggles sort
-- Focus-visible ring on header button
-- Screen readers announce sort direction
+- `Table.Header`
+- `Table.Body`
+- `Table.Row`
+- `Table.Head`
+- `Table.Cell`
 
 ---
 
 ## Accessibility
 
-- Semantic `<table>` structure
-- `scope="col"` for headers
-- `aria-sort` reflects sorting state
-- Sort button ensures keyboard sorting
-- Focus-visible styling for headers
-- Empty state conveyed within table body
-- Responsive overflow preserves semantics
-
----
-
----
-
-## Best Practices
-
-### Do
-
-- Use custom renderers for interactive cells
-- Keep rowKey stable and unique
-- Add sortFn for dates and derived values
-- Align numeric columns right
-- Use responsive container for overflow
-
-### Don’t
-
-- Use index as rowKey
-- Overload table with too many columns
-- Use heavy components inside cells unnecessarily
-- Rely on string sorting for numeric values
-- Hide important actions inside render without affordance
+- Strict semantic HTML table elements (`<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`).
+- Sortable headers provide proper `role="columnheader"` and accessible labels.
+- Responsive horizontal scroll wrapper prevents layout overflow on mobile screens.
 
 ---
 
@@ -8447,210 +8254,127 @@ import { Tabs } from '@nofinite/nui';
 
 ---
 
-A composable, accessible tabs component implementing **compound component architecture**, controlled/uncontrolled state, roving tabindex keyboard navigation, ARIA-linked triggers and panels, and responsive overflow handling.
+A composable, accessible tabs component implementing **Dual-Mode Architecture**, controlled and uncontrolled state, roving tabindex keyboard navigation, and ARIA-linked triggers and panels.
+
+NUI lets you choose between **Plug and Play (PnP)** mode for rapid data-driven tab rendering, or **Composable Compound Primitives** for full layout customization.
 
 ---
 
 ## Usage
 
-### Basic usage
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
+
+Pass an array of tab definitions directly via the `data` prop. NUI automatically constructs the tab bar, keyboard navigation, and panel visibility without manual subcomponent declarations:
 
 ```tsx
 import { Tabs } from '@nofinite/nui';
 
-<Tabs defaultValue="account">
-  <Tabs.List>
-    <Tabs.Trigger value="account">Account</Tabs.Trigger>
-    <Tabs.Trigger value="password">Password</Tabs.Trigger>
-  </Tabs.List>
+export function QuickTabs() {
+  const tabs = [
+    { value: 'account', label: 'Account', content:  },
+    { value: 'password', label: 'Password', content:  },
+    { value: 'billing', label: 'Billing', content:  },
+  ];
 
-  <Tabs.Content value="account">Account content</Tabs.Content>
-  <Tabs.Content value="password">Password content</Tabs.Content>
-</Tabs>;
-```
-
-### Controlled usage
-
-```tsx
-const [tab, setTab] = useState('account');
-
-<Tabs value={tab} onChange={setTab}>
-  <Tabs.List>
-    <Tabs.Trigger value="account">Account</Tabs.Trigger>
-    <Tabs.Trigger value="billing">Billing</Tabs.Trigger>
-  </Tabs.List>
-
-  <Tabs.Content value="account">Account</Tabs.Content>
-  <Tabs.Content value="billing">Billing</Tabs.Content>
-</Tabs>;
-```
-
-### Disabled tab
-
-```tsx
-<Tabs defaultValue="a">
-  <Tabs.List>
-    <Tabs.Trigger value="a">A</Tabs.Trigger>
-    <Tabs.Trigger value="b" disabled>
-      B
-    </Tabs.Trigger>
-  </Tabs.List>
-
-  <Tabs.Content value="a">Content A</Tabs.Content>
-</Tabs>
-```
-
-### Scrollable mobile tabs
-
-```tsx
-<Tabs defaultValue="tab1">
-  <Tabs.List>
-    {items.map((i) => (
-      <Tabs.Trigger key={i} value={i}>
-        {i}
-      </Tabs.Trigger>
-    ))}
-  </Tabs.List>
-</Tabs>
+  return <Tabs data={tabs} defaultValue="account" />;
+}
 ```
 
 ---
 
----
+### 2. Composable Compound Mode — Full Structural Control
 
-### Tabs List
-
-| Prop      | Type      | Default | Description      |
-| --------- | --------- | ------- | ---------------- |
-| children  | ReactNode | —       | Tab triggers     |
-| className | string    | —       | Styling override |
-
----
-
-### Tabs Trigger
-
-| Prop      | Type    | Default | Description          |
-| --------- | ------- | ------- | -------------------- |
-| value     | string  | —       | Associated tab value |
-| disabled  | boolean | false   | Disables trigger     |
-| className | string  | —       | Styling override     |
-
----
-
-### Tabs Content
-
-| Prop      | Type   | Default | Description      |
-| --------- | ------ | ------- | ---------------- |
-| value     | string | —       | Panel value      |
-| className | string | —       | Styling override |
-
----
-
-## Variants
-
-### Control variants
+When you need custom layouts, right-aligned toolbar buttons, or customized trigger styles, assemble the compound primitives directly:
 
 ```tsx
-<Tabs defaultValue="a" />
-<Tabs value="a" onChange={()=>{}} />
+import { Tabs } from '@nofinite/nui';
+
+export function CustomTabs() {
+  return (
+    <Tabs defaultValue="account">
+      <Tabs.List>
+        <Tabs.Trigger value="account">Account</Tabs.Trigger>
+        <Tabs.Trigger value="password">Password</Tabs.Trigger>
+        <Tabs.Trigger value="billing">Billing</Tabs.Trigger>
+      </Tabs.List>
+
+      <Tabs.Content value="account">Account content</Tabs.Content>
+      <Tabs.Content value="password">Password content</Tabs.Content>
+      <Tabs.Content value="billing">Billing content</Tabs.Content>
+    </Tabs>
+  );
+}
 ```
-
-### Trigger variants
-
-```tsx
-<Tabs.Trigger value="a" />
-<Tabs.Trigger value="b" disabled />
-```
-
-### Layout variants
-
-```tsx
-<Tabs.List />
-<Tabs.List className="scrollable" />
-```
-
-### Content rendering variants
-
-```tsx
-<Tabs.Content value="a" />
-<Tabs.Content value="b" />
-```
-
-**Available variants**
-
-- Controlled tabs
-- Uncontrolled tabs
-- Disabled trigger tabs
-- Scrollable mobile tabs
-- Auto-select on focus tabs
-- Animated content tabs
-- Compound composition tabs
-
-**Guidelines**
-
-- Prefer controlled mode for router-driven tabs
-- Use disabled triggers for unavailable sections
-- Keep tab count reasonable on mobile
-- Provide semantic labels for accessibility
-- Avoid heavy mounting cost inside tab content
 
 ---
 
-## States
+### Controlled State
 
-- Default
-- Hover trigger
-- Selected trigger
-- Disabled trigger
-- Focus-visible trigger
-- Content mounted
-- Content transitioning
+```tsx
+import { useState } from 'react';
+import { Tabs } from '@nofinite/nui';
+
+export function ControlledTabs() {
+  const [activeTab, setActiveTab] = useState('account');
+
+  return (
+    <Tabs value={activeTab} onChange={setActiveTab}>
+      <Tabs.List>
+        <Tabs.Trigger value="account">Account</Tabs.Trigger>
+        <Tabs.Trigger value="billing">Billing</Tabs.Trigger>
+      </Tabs.List>
+
+      <Tabs.Content value="account">Current: {activeTab}</Tabs.Content>
+      <Tabs.Content value="billing">Current: {activeTab}</Tabs.Content>
+    </Tabs>
+  );
+}
+```
 
 ---
 
-## Keyboard Interaction
+## Props Reference
 
-- ArrowRight → next tab
-- ArrowLeft → previous tab
-- Home → first tab
-- End → last tab
-- Tab → moves into panel
-- Focus automatically activates tab (roving tabindex)
+### Tabs (Root)
+
+| Prop           | Type                 | Default | Description                                                               |
+| -------------- | -------------------- | ------- | ------------------------------------------------------------------------- |
+| `data`         | `TabDataItem[]`      | —       | **Plug and Play Mode:** Array of tab items `{ value, label, content }`.   |
+| `defaultValue` | `string`             | —       | The initial active tab value (uncontrolled).                              |
+| `value`        | `string`             | —       | Controlled active tab value.                                              |
+| `onChange`     | `(val: string) => void` | —    | Callback fired when the active tab changes.                               |
+| `children`     | `ReactNode`          | —       | Compound primitives (used in compound mode).                              |
+
+### Tabs.Trigger
+
+| Prop       | Type        | Default | Description                                             |
+| ---------- | ----------- | ------- | ------------------------------------------------------- |
+| `value`    | `string`    | **required** | Unique identifier matching corresponding `Tabs.Content`.|
+| `disabled` | `boolean`   | `false` | If true, disables tab and skips in keyboard sequence.   |
+| `children` | `ReactNode` | —       | Tab label or icon content.                              |
+
+### Tabs.Content
+
+| Prop       | Type        | Default | Description                                             |
+| ---------- | ----------- | ------- | ------------------------------------------------------- |
+| `value`    | `string`    | **required** | Unique identifier matching corresponding `Tabs.Trigger`.|
+| `children` | `ReactNode` | —       | Panel content rendered when active.                     |
+
+---
+
+## Subcomponents
+
+- `Tabs.List`
+- `Tabs.Trigger`
+- `Tabs.Content`
 
 ---
 
 ## Accessibility
 
-- Compound ARIA tab pattern
-- `role="tablist"`, `role="tab"`, `role="tabpanel"`
-- `aria-selected` reflects state
-- `aria-controls` links trigger → panel
-- `aria-labelledby` links panel → trigger
-- Stable ID prefix ensures SR compatibility
-- Only active tab is tabbable
-- Disabled tabs excluded from roving navigation
-
----
-
----
-
-## Best Practices
-
-### Do
-
-- Use controlled tabs for URL-sync navigation
-- Keep tab labels concise
-- Mount heavy content lazily if expensive
-- Provide disabled state when needed
-- Use unique tab values
-
-### Don’t
-
-- Duplicate tab values
-- Use index as value
-- Nest interactive elements inside triggers
-- Hide essential actions inside non-selected panels
-- Mount large data grids inside all panels simultaneously
+- **Roving Tabindex:** Arrow keys cycle through tabs; only the active tab has `tabIndex={0}`.
+- **WAI-ARIA Attributes:** `role="tablist"`, `role="tab"`, and `role="tabpanel"` are automatically configured with `aria-controls` and `aria-labelledby`.
+- **Keyboard Navigation:** `ArrowLeft` / `ArrowRight` seamlessly move between tabs.
 
 ---
 
@@ -9263,11 +8987,14 @@ import { Toast } from '@nofinite/nui';
 
 A **fully accessible, animated toast notification system** built with React + TypeScript. Supports **multiple variants**, **auto-dismiss with pause-on-hover**, **manual dismissal**, **stacked layout**, and **SSR-friendly portal rendering**.
 
+> [!TIP]
+> **Programmatic API (`nui.*`):** Want to trigger toasts without React hooks or JSX? Use `nui.toast()`, `nui.success()`, `nui.error()`, or `nui.warn()` directly from any event handler or API interceptor. See the [**Programmatic API (`nui.*`)**](/nui/programmatic) guide.
+
 ---
 
 ## Usage
 
-### Basic usage
+### Basic Usage
 
 ```tsx id="toast-basic"
 import { ToastProvider, useToast } from '@nofinite/nui';
@@ -10297,24 +10024,13 @@ Fundamental interactive elements and action triggers.
 
 ### Document: nui/getting-started/page.mdx
 
-# Getting Started with NUI
+# Installation & Setup
 
-Everything you need to install, configure, and build with the NUI component library.
-
----
-
-## Introduction
-
-NUI is a lightweight, performance-first React UI component library designed for building accessible, highly customizable design systems and enterprise web applications.
-
-- **Performance-first**: Minimal runtime overhead, optimized rendering, and zero-bloat primitives.
-- **Composable APIs**: Low-level building blocks that can be combined freely without restrictive abstractions.
-- **Semantic Theming**: Native dark mode and full design token control via **NUICSS**.
-- **Accessibility by Default**: Strict WAI-ARIA compliance, focus rings, and full keyboard navigation.
+Complete technical guide to installing and configuring NUI in Next.js, Vite, and modern React environments.
 
 ---
 
-## Installation
+## Package Installation
 
 NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.
 
@@ -10993,6 +10709,108 @@ Contextual overlays, modal windows, drawers, and floating panels.
 ---
 
 
+### Document: nui/page.mdx
+
+# Introduction to NUI
+
+**NUI** is a lightweight, high-performance React UI component library engineered for modern web applications and scalable design systems. It delivers strictly accessible, beautifully styled UI primitives with zero runtime styling overhead.
+
+---
+
+## The Philosophy: Why NUI?
+
+Most modern UI libraries force developers into a painful trade-off:
+
+1. **Monolithic UI Kits:** Fast to set up, but rigid and inflexible. Customizing layout, swapping subcomponents, or adapting to custom design tokens quickly becomes a nightmare of CSS overrides.
+2. **Headless Primitive Libraries:** Completely flexible, but extremely verbose. Building a simple dropdown or tab bar requires assembling 6 separate primitives, writing 30 lines of boilerplate JSX, and wiring up state manually.
+
+**NUI eliminates this compromise through its Dual-Mode Architecture:**
+
+> **The NUI Dual-Mode Promise:** Build instantly using **Plug-and-Play (PnP)** data props for 90% of your everyday views, or switch to **Composable Compound Primitives** when you need 100% granular JSX control.
+
+---
+
+## Plug-and-Play (PnP) vs. Composable Primitives
+
+For composite components—such as **Dropdown**, **Tabs**, **Accordion**, **Table**, and **Breadcrumbs**—NUI gives you the best of both worlds:
+
+### 1. Plug-and-Play (PnP) Mode — Zero Boilerplate
+When you need speed and simplicity, you pass a clean data array and NUI automatically generates the entire DOM structure, ARIA roles, focus management, and keyboard event handlers out of the box:
+
+```tsx
+import { Dropdown, Button } from '@nofinite/nui';
+
+export function QuickMenu() {
+  return (
+    <Dropdown
+      data={[
+        { label: 'Profile Settings', onClick: () => navigate('/profile') },
+        { label: 'Billing & Plans', onClick: () => navigate('/billing') },
+        { type: 'separator' },
+        { label: 'Sign Out', onClick: () => auth.logout() },
+      ]}
+    >
+      <Button variant="outline">Options</Button>
+    </Dropdown>
+  );
+}
+```
+
+### 2. Composable Compound Mode — Complete Structural Control
+When your design system demands custom header slots, rich interactive rows, customized badges, or specialized layout wrappers, simply deconstruct the component into its compound primitives:
+
+```tsx
+import { Dropdown, Button, Badge } from '@nofinite/nui';
+
+export function CustomMenu() {
+  return (
+    <Dropdown>
+      <Dropdown.Trigger>
+        <Button variant="primary">Manage Account</Button>
+      </Dropdown.Trigger>
+
+      <Dropdown.Menu align="end">
+        
+        
+        <Dropdown.Item onClick={() => navigate('/pro')}>
+          <span className="flex items-center justify-between w-full">
+            Pro Plan <Badge variant="success">Active</Badge>
+          </span>
+        </Dropdown.Item>
+
+        <Dropdown.Item onClick={() => navigate('/settings')}>
+          Security & Keys
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
+```
+
+---
+
+## Core Pillars of NUI
+
+- **Self-Contained Styling:** All NUI components come with pre-compiled CSS. You do not need to install complex build plugins or Tailwind presets just to render a button.
+- **Optional NUICSS Pairing:** While completely independent, NUI seamlessly pairs with [**NUICSS**](/nuicss) for responsive layout grids, flex containers, and utility-first page styling while sharing identical design tokens and dark mode.
+- **Accessibility by Default:** Every component strictly adheres to WAI-ARIA authoring practices with automatic keyboard navigation, roving tabindex, ARIA live regions, and focus restoration.
+- **Programmatic Control:** With the built-in [**Programmatic API (`nui.*`)**](/nui/programmatic), you can fire confirmation dialogs and toasts from vanilla TypeScript or event handlers without declaring any JSX.
+- **Minimal Bundle Size:** Tree-shakeable ES modules ensure that you only ship the components you actually import.
+
+---
+
+## Getting Started
+
+Ready to integrate NUI into your application? Follow the guides below:
+
+1. [**Installation & Setup**](/nui/getting-started) — Step-by-step setup for Next.js App Router, Vite, and React SPAs.
+2. [**Programmatic API (`nui.*`)**](/nui/programmatic) — Learn how to trigger toasts and confirm dialogs imperatively.
+3. [**Theming & Design Tokens**](/nui/theming) — Configure color scales, radii, and dark mode.
+4. [**Component Library**](/nui/components/button) — Explore all 68 production-ready primitives.
+
+---
+
+
 ### Document: nui/pickers-and-selects/page.mdx
 
 # Pickers & Selects
@@ -11093,6 +10911,200 @@ Components for selection menus, search dropdowns, and date/time pickers.
 - [Select](/nui/components/select)
 - [TimePicker](/nui/components/timepicker)
 - [TimeRangePicker](/nui/components/timerangepicker)
+
+---
+
+
+### Document: nui/programmatic/page.mdx
+
+# Programmatic API (`nui.*`)
+
+NUI features a built-in imperative API (`nui.*`) that allows you to trigger **confirmation dialogs**, **alerts**, and **toast notifications** programmatically from anywhere in your codebase—without mounting or managing any JSX markup.
+
+```tsx
+import { nui } from '@nofinite/nui';
+```
+
+---
+
+## Why Use the Programmatic API?
+
+In standard React development, showing an alert modal or triggering a toast usually requires declaring local state (`const [open, setOpen] = useState(false)`), placing modal components in JSX, and wiring up props.
+
+With `nui.*`, you get:
+- **Zero JSX in your components**: Trigger modals and toasts with a single function call.
+- **Promise-based async/await flow**: `await nui.confirm()` pauses execution and resolves when the user clicks Confirm or Cancel!
+- **Usable outside React components**: Call `nui.error()` or `nui.confirm()` directly from API interceptors, state management stores (Zustand, Redux), utility functions, and non-React files.
+
+---
+
+## One-Time Setup
+
+To enable the programmatic API across your entire application, mount `<DialogProvider />` inside your `<ToastProvider>` in your root layout:
+
+```tsx
+// app/providers.tsx or src/App.tsx
+'use client';
+
+import { NUIProvider, ToastProvider, DialogProvider } from '@nofinite/nui';
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <NUIProvider>
+      <ToastProvider>
+        {/* Mount DialogProvider once at the root */}
+        <DialogProvider />
+        {children}
+      </ToastProvider>
+    </NUIProvider>
+  );
+}
+```
+
+---
+
+## Confirmation Dialogs (`nui.confirm`)
+
+`nui.confirm` displays an accessible modal dialog and returns a `Promise<boolean>` that resolves to `true` if the user confirms, or `false` if they cancel.
+
+### Basic Confirmation
+
+```tsx
+import { nui, Button } from '@nofinite/nui';
+
+export function DeleteButton() {
+  const handleDelete = async () => {
+    const confirmed = await nui.confirm('Are you sure you want to delete this repository?');
+    if (!confirmed) return;
+
+    await deleteRepository();
+    nui.success('Repository deleted successfully.');
+  };
+
+  return (
+    <Button variant="danger" onClick={handleDelete}>
+      Delete Repository
+    </Button>
+  );
+}
+```
+
+### Custom Dialog Options
+
+You can customize the title, button labels, and destructive styling:
+
+```tsx
+const confirmed = await nui.confirm(
+  'This action is irreversible and will permanently purge all cloud backups.',
+  {
+    title: 'Purge Cloud Backups',
+    confirmText: 'Yes, Purge Now',
+    cancelText: 'Keep Backups',
+    isDanger: true,
+  }
+);
+
+if (confirmed) {
+  await purgeBackups();
+}
+```
+
+---
+
+## Alert Dialogs (`nui.alert`)
+
+`nui.alert` displays an informational or blocking alert modal that resolves when the user acknowledges it:
+
+```tsx
+import { nui } from '@nofinite/nui';
+
+async function handleCheckout() {
+  try {
+    await processPayment();
+  } catch (error) {
+    await nui.alert('Payment processing failed. Please check your card balance and try again.', {
+      title: 'Checkout Error',
+      confirmText: 'Understood',
+      isDanger: true,
+    });
+  }
+}
+```
+
+---
+
+## Programmatic Toasts (`nui.toast`)
+
+NUI connects `nui.*` directly into your application's `<ToastProvider>`. You can fire animated toasts instantly without declaring `useToast()`:
+
+### Toast Variants
+
+```tsx
+import { nui } from '@nofinite/nui';
+
+// Default notification
+nui.toast('New update available', {
+  description: 'Version 3.1 is ready for installation.',
+  duration: 5000,
+});
+
+// Success notification
+nui.success('Settings saved', {
+  description: 'Your workspace preferences were updated.',
+});
+
+// Warning notification
+nui.warn('Approaching quota', {
+  description: 'You have used 85% of your storage limit.',
+});
+
+// Error notification
+nui.error('Network timeout', {
+  description: 'Could not connect to the database cluster.',
+});
+```
+
+---
+
+## Real-World Example: API Client Interceptor
+
+Because `nui.*` does not rely on React hooks, you can invoke notifications directly inside API interceptors (e.g., Axios or Fetch wrappers):
+
+```ts
+// lib/api.ts
+import axios from 'axios';
+import { nui } from '@nofinite/nui';
+
+export const api = axios.create({ baseURL: '/api' });
+
+api.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const status = error.response?.status;
+
+    if (status === 401) {
+      const reauth = await nui.confirm('Your session has expired. Would you like to log in again?', {
+        title: 'Session Expired',
+        confirmText: 'Log In',
+      });
+      if (reauth) window.location.href = '/login';
+    } else if (status >= 500) {
+      nui.error('Server Error', {
+        description: 'Internal server error occurred. Our team has been notified.',
+      });
+    }
+
+    return Promise.reject(error);
+  }
+);
+```
+
+---
+
+## Related Components
+
+- [**Dialog**](/nui/components/dialog) — React declarative modal dialog primitive.
+- [**Toast**](/nui/components/toast) — Declarative toast notifications and `useToast` hook.
 
 ---
 

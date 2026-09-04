@@ -17,48 +17,69 @@ import { Dropdown } from '@nofinite/nui';
 A compound menu component for contextual actions anchored to a trigger.
 Implements controlled open state via internal context, keyboard navigation, focus restoration, and outside-click dismissal.
 
-Architecture follows a **compound component pattern** with context-driven state propagation.
+NUI provides a **Dual-Mode Architecture** for Dropdown: use **Plug and Play (PnP)** mode for rapid data-driven menus, or **Compound Primitives** for complete custom layout control.
 
 ---
 
 ## Usage
 
-### Basic
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
 
-```tsx id="dd1">
-import { Dropdown } from '@nofinite/nui';
-<Dropdown>
-  <Dropdown.Trigger>Options</Dropdown.Trigger>
-  <Dropdown.Menu>
-    <Dropdown.Item>Profile</Dropdown.Item>
-    <Dropdown.Item>Settings</Dropdown.Item>
-    <Dropdown.Item>Logout</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+Pass an array of items directly via the `data` prop. NUI automatically constructs the menu, renders items, handles separators, disabled states, and keyboard navigation without requiring manual subcomponent declarations:
+
+```tsx
+import { Dropdown, Button } from '@nofinite/nui';
+
+export function QuickDropdown() {
+  const items = [
+    { label: 'View Profile', onClick: () => console.log('Profile') },
+    { label: 'Account Settings', onClick: () => console.log('Settings') },
+    { type: 'separator' as const },
+    { label: 'Billing & Invoices', onClick: () => console.log('Billing') },
+    { label: 'Admin Dashboard', disabled: true },
+    { type: 'separator' as const },
+    { label: 'Log Out', onClick: () => console.log('Logout') },
+  ];
+
+  return (
+    <Dropdown data={items}>
+      <Button variant="outline">Quick Actions</Button>
+    </Dropdown>
+  );
+}
 ```
 
 ---
 
-### Custom trigger (Button component)
+### 2. Composable Compound Mode — Full Structural Control
 
-```tsx id="dd2">
-<Dropdown>
-  <Dropdown.Trigger>
-    <Button variant="ghost">Menu</Button>
-  </Dropdown.Trigger>
+When you need custom item markup, badges, custom header blocks, or specific icon layouts, assemble the compound primitives directly:
 
-  <Dropdown.Menu>
-    <Dropdown.Item>Account</Dropdown.Item>
-    <Dropdown.Item>Billing</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+```tsx
+import { Dropdown, Button } from '@nofinite/nui';
+
+export function CustomDropdown() {
+  return (
+    <Dropdown>
+      <Dropdown.Trigger>
+        <Button variant="primary">Options</Button>
+      </Dropdown.Trigger>
+
+      <Dropdown.Menu>
+        <Dropdown.Item onClick={() => console.log('Profile')}>Profile</Dropdown.Item>
+        <Dropdown.Item onClick={() => console.log('Settings')}>Settings</Dropdown.Item>
+        <Dropdown.Item onClick={() => console.log('Logout')}>Logout</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
 ```
 
 ---
 
-### End-aligned menu
+### End-Aligned Menu
 
-```tsx id="dd3">
+```tsx
 <Dropdown>
   <Dropdown.Trigger>More</Dropdown.Trigger>
   <Dropdown.Menu align="end">
@@ -70,200 +91,53 @@ import { Dropdown } from '@nofinite/nui';
 
 ---
 
-### With action handlers
+## Props Reference
 
-```tsx id="dd4">
-<Dropdown>
-  <Dropdown.Trigger>Actions</Dropdown.Trigger>
-  <Dropdown.Menu>
-    <Dropdown.Item onSelect={() => save()}>Save</Dropdown.Item>
-    <Dropdown.Item onSelect={() => remove()}>Delete</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-```
+### Dropdown (Root)
 
----
+| Prop      | Type                 | Default   | Description                                                                 |
+| --------- | -------------------- | --------- | --------------------------------------------------------------------------- |
+| `data`    | `DropdownDataItem[]` | —         | **Plug and Play Mode:** Array of menu items, separators, and callbacks.     |
+| `align`   | `'start' \| 'end'`   | `'start'` | Menu alignment relative to trigger.                                         |
+| `children`| `ReactNode`          | —         | Trigger element (in PnP mode) or compound children (in compound mode).      |
 
----
+### Dropdown.Trigger
 
-### Trigger
+| Prop       | Type        | Description                                                          |
+| ---------- | ----------- | -------------------------------------------------------------------- |
+| `children` | `ReactNode` | Element to act as the menu trigger. Automatically cloned with props. |
 
-| Prop     | Type      | Description                |
-| -------- | --------- | -------------------------- |
-| children | ReactNode | Trigger element or content |
+### Dropdown.Menu
 
-Behavior:
+| Prop        | Type               | Default     | Description                                |
+| ----------- | ------------------ | ----------- | ------------------------------------------ |
+| `align`     | `'start' \| 'end'` | `'start'`   | Horizontal alignment relative to trigger.  |
+| `children`  | `ReactNode`        | —           | Collection of `<Dropdown.Item />` elements. |
 
-- Accepts element cloning (preserves child props)
-- Injects ARIA attributes
-- Toggles open state
+### Dropdown.Item
 
----
-
-### Menu
-
-| Prop      | Type                 | Default    | Description          |
-| --------- | -------------------- | ---------- | -------------------- |
-| align     | `'start'   \| 'end'` | "start"    | Horizontal alignment |
-| className | string               | —          | Menu override        |
-| children  | ReactNode            | Menu items |                      |
-
-Extends `HTMLAttributes<HTMLDivElement>`.
-
----
-
-### Item
-
-| Prop      | Type       | Description        |
-| --------- | ---------- | ------------------ |
-| onSelect  | () => void | Selection callback |
-| className | string     | Style override     |
-| children  | ReactNode  | Item content       |
-
-Extends `HTMLAttributes<HTMLDivElement>`.
+| Prop       | Type                  | Description                                 |
+| ---------- | --------------------- | ------------------------------------------- |
+| `onClick`  | `(e) => void`         | Click handler. Closes dropdown upon firing. |
+| `disabled` | `boolean`             | If true, dims item and prevents click.      |
+| `children` | `ReactNode`           | Content to render inside the menu item.     |
 
 ---
 
 ## Subcomponents
 
-- Dropdown.Trigger
-- Dropdown.Menu
-- Dropdown.Item
-
-Compound composition is required.
-
----
-
-## Variants
-
-```tsx
-<Dropdown.Menu align="start" />
-<Dropdown.Menu align="end" />
-<Dropdown.Item />
-<Dropdown.Item className="nui-text-danger" />
-```
-
-**Available variants:**
-
-- start (default)
-- end
-- default item
-- danger item
-
-**Guidelines:**
-
-- Use start alignment for inline actions
-- Use end alignment for corner anchored menus
-- Use danger items for destructive actions
-
----
-
-## Sizes
-
-Intrinsic sizing model:
-
-| Element | Behavior         |
-| ------- | ---------------- |
-| Menu    | min-width: 180px |
-| Item    | full-width row   |
-| Trigger | inline-flex      |
-
-Width should be extended via utilities.
-
----
-
-## Shapes / Modes
-
-**States**
-
-- Closed (unmounted)
-- Open (mounted)
-- Outside-click dismissed
-- Escape dismissed
-- Keyboard navigated
-- Focus restored to trigger
-
-**Interaction modes**
-
-- Mouse selection
-- Keyboard arrow navigation
-- Enter/Space activation
-
----
-
-Z-index: `1000`
+- `Dropdown.Trigger`
+- `Dropdown.Menu`
+- `Dropdown.Item`
 
 ---
 
 ## Accessibility
 
-Implemented:
-
-- Trigger
-  - `aria-haspopup="menu"`
-  - `aria-expanded`
-- Menu
-  - `role="menu"`
-- Items
-  - `role="menuitem"`
-  - Programmatic focus via roving arrow navigation
-- Keyboard navigation
-  - Escape closes
-  - ArrowUp / ArrowDown cycling
-  - Enter / Space activation
-- Focus restoration to trigger
-- Outside click dismissal
-
-Limitations:
-
-- No typeahead search
-- No roving tab index pattern (arrow-only navigation)
-- No submenu support
-- No aria-activedescendant model
-
----
-
-## Animation model
-
-Entry animation:
-
-- Scale + translateY fade-in
-- Duration: 150ms
-- Transform origin: top-left
-- GPU accelerated
-
-Unmount on close (no exit animation).
-
----
-
-## Architectural notes
-
-Design characteristics:
-
-- Compound context architecture
-- Element cloning trigger injection
-- Ref composition strategy
-- DOM query for focusable menu items
-- Controlled focus lifecycle
-- Lightweight state model (boolean open)
-
----
-
-## Best practices
-
-### Do
-
-- Use compound composition
-- Keep menu lightweight
-- Provide semantic labels inside items
-- Use danger state for destructive actions
-
-### Don’t
-
-- Nest dropdowns (no submenu support)
-- Use heavy layout content inside menu
-- Remove trigger element from DOM during open state
-- Disable focus styling
+- **WAI-ARIA Pattern:** Adheres strictly to the WAI-ARIA Menu button pattern.
+- **Keyboard Navigation:** `ArrowDown` / `ArrowUp` cycles through menu items; `Escape` closes the menu and restores focus to the trigger button.
+- **Outside Click:** Automatically closes when clicking anywhere outside the menu.
+- **Focus Restoration:** Focus is cleanly returned to the trigger element when the menu closes.
 
 ---
 

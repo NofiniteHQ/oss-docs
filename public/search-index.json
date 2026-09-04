@@ -282,9 +282,15 @@
     "pkg": "nui"
   },
   {
-    "title": "Layout & Behavior (Accordion)",
-    "description": "- Block-level, full-width by default.",
-    "href": "/nui/components/accordion#layout-behavior",
+    "title": "Props Reference (Accordion)",
+    "description": "",
+    "href": "/nui/components/accordion#props-reference",
+    "pkg": "nui"
+  },
+  {
+    "title": "Subcomponents (Accordion)",
+    "description": "- `Accordion.Item`",
+    "href": "/nui/components/accordion#subcomponents",
     "pkg": "nui"
   },
   {
@@ -402,15 +408,15 @@
     "pkg": "nui"
   },
   {
-    "title": "BreadcrumbItem (Breadcrumbs)",
-    "description": "| Prop      | Type                            | Default | Description                              |",
-    "href": "/nui/components/breadcrumbs#breadcrumbitem",
+    "title": "Props Reference (Breadcrumbs)",
+    "description": "",
+    "href": "/nui/components/breadcrumbs#props-reference",
     "pkg": "nui"
   },
   {
-    "title": "Collapse Behavior (Breadcrumbs)",
-    "description": "When `items.length > maxItems`:",
-    "href": "/nui/components/breadcrumbs#collapse-behavior",
+    "title": "Subcomponents (Breadcrumbs)",
+    "description": "- `Breadcrumbs.Item`",
+    "href": "/nui/components/breadcrumbs#subcomponents",
     "pkg": "nui"
   },
   {
@@ -774,27 +780,15 @@
     "pkg": "nui"
   },
   {
+    "title": "Props Reference (Dropdown)",
+    "description": "",
+    "href": "/nui/components/dropdown#props-reference",
+    "pkg": "nui"
+  },
+  {
     "title": "Subcomponents (Dropdown)",
-    "description": "- Dropdown.Trigger",
+    "description": "- `Dropdown.Trigger`",
     "href": "/nui/components/dropdown#subcomponents",
-    "pkg": "nui"
-  },
-  {
-    "title": "Shapes / Modes (Dropdown)",
-    "description": "**States**",
-    "href": "/nui/components/dropdown#shapes-modes",
-    "pkg": "nui"
-  },
-  {
-    "title": "Animation model (Dropdown)",
-    "description": "Entry animation:",
-    "href": "/nui/components/dropdown#animation-model",
-    "pkg": "nui"
-  },
-  {
-    "title": "Architectural notes (Dropdown)",
-    "description": "Design characteristics:",
-    "href": "/nui/components/dropdown#architectural-notes",
     "pkg": "nui"
   },
   {
@@ -1458,27 +1452,27 @@
     "pkg": "nui"
   },
   {
-    "title": "Table",
+    "title": "Data Table",
     "description": "A composable, accessible Table component for modern React applications.",
     "href": "/nui/components/table",
     "pkg": "nui"
   },
   {
-    "title": "Interactive Preview (Table)",
+    "title": "Interactive Preview (Data Table)",
     "description": "",
     "href": "/nui/components/table#interactive-preview",
     "pkg": "nui"
   },
   {
-    "title": "Column Definition (Table)",
-    "description": "| Field    | Type                          | Description          |",
-    "href": "/nui/components/table#column-definition",
+    "title": "Props Reference (Data Table)",
+    "description": "",
+    "href": "/nui/components/table#props-reference",
     "pkg": "nui"
   },
   {
-    "title": "Keyboard Interaction (Table)",
-    "description": "- Tab → focuses sortable headers",
-    "href": "/nui/components/table#keyboard-interaction",
+    "title": "Subcomponents (Data Table)",
+    "description": "- `Table.Header`",
+    "href": "/nui/components/table#subcomponents",
     "pkg": "nui"
   },
   {
@@ -1494,9 +1488,15 @@
     "pkg": "nui"
   },
   {
-    "title": "Keyboard Interaction (Tabs)",
-    "description": "- ArrowRight → next tab",
-    "href": "/nui/components/tabs#keyboard-interaction",
+    "title": "Props Reference (Tabs)",
+    "description": "",
+    "href": "/nui/components/tabs#props-reference",
+    "pkg": "nui"
+  },
+  {
+    "title": "Subcomponents (Tabs)",
+    "description": "- `Tabs.List`",
+    "href": "/nui/components/tabs#subcomponents",
     "pkg": "nui"
   },
   {
@@ -1734,37 +1734,31 @@
     "pkg": "nui"
   },
   {
-    "title": "Getting Started with NUI",
-    "description": "Everything you need to install, configure, and build with the NUI component library.",
+    "title": "Installation & Setup",
+    "description": "Complete technical guide to installing and configuring NUI in Next.js, Vite, and modern React environments.",
     "href": "/nui/getting-started",
     "pkg": "nui"
   },
   {
-    "title": "Introduction (Getting Started with NUI)",
-    "description": "NUI is a lightweight, performance-first React UI component library designed for building accessible, highly customizable design systems and enterprise web applications.",
-    "href": "/nui/getting-started#introduction",
-    "pkg": "nui"
-  },
-  {
-    "title": "Installation (Getting Started with NUI)",
+    "title": "Package Installation (Installation & Setup)",
     "description": "NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.",
-    "href": "/nui/getting-started#installation",
+    "href": "/nui/getting-started#package-installation",
     "pkg": "nui"
   },
   {
-    "title": "Root Provider Setup (Getting Started with NUI)",
+    "title": "Root Provider Setup (Installation & Setup)",
     "description": "NUI uses a root `NUIProvider` to manage global theme context, portals, and toast notifications. We recommend creating a dedicated `Providers` component.",
     "href": "/nui/getting-started#root-provider-setup",
     "pkg": "nui"
   },
   {
-    "title": "Theming & Dark Mode (Getting Started with NUI)",
+    "title": "Theming & Dark Mode (Installation & Setup)",
     "description": "NUI includes a theme engine that syncs with OS preferences and persists user choices.",
     "href": "/nui/getting-started#theming-dark-mode",
     "pkg": "nui"
   },
   {
-    "title": "TypeScript CSS Import Notice (Getting Started with NUI)",
+    "title": "TypeScript CSS Import Notice (Installation & Setup)",
     "description": "If importing CSS files causes a TypeScript error (`Cannot find module '*.css'`), ensure you have a `global.d.ts` declaration in your project:",
     "href": "/nui/getting-started#typescript-css-import-notice",
     "pkg": "nui"
@@ -1800,9 +1794,87 @@
     "pkg": "nui"
   },
   {
+    "title": "Introduction to NUI",
+    "description": "**NUI** is a lightweight, high-performance React UI component library engineered for modern web applications and scalable design systems. It delivers strictly accessible, beautifully styled UI primitives with zero runtime styling overhead.",
+    "href": "/nui",
+    "pkg": "nui"
+  },
+  {
+    "title": "The Philosophy: Why NUI? (Introduction to NUI)",
+    "description": "Most modern UI libraries force developers into a painful trade-off:",
+    "href": "/nui#the-philosophy-why-nui",
+    "pkg": "nui"
+  },
+  {
+    "title": "Plug-and-Play (PnP) vs. Composable Primitives (Introduction to NUI)",
+    "description": "For composite components—such as **Dropdown**, **Tabs**, **Accordion**, **Table**, and **Breadcrumbs**—NUI gives you the best of both worlds:",
+    "href": "/nui#plug-and-play-pnp-vs-composable-primitives",
+    "pkg": "nui"
+  },
+  {
+    "title": "Core Pillars of NUI (Introduction to NUI)",
+    "description": "- **Self-Contained Styling:** All NUI components come with pre-compiled CSS. You do not need to install complex build plugins or Tailwind presets just to render a button.",
+    "href": "/nui#core-pillars-of-nui",
+    "pkg": "nui"
+  },
+  {
+    "title": "Getting Started (Introduction to NUI)",
+    "description": "Ready to integrate NUI into your application? Follow the guides below:",
+    "href": "/nui#getting-started",
+    "pkg": "nui"
+  },
+  {
     "title": "Pickers & Selects",
     "description": "Components for selection menus, search dropdowns, and date/time pickers.",
     "href": "/nui/pickers-and-selects",
+    "pkg": "nui"
+  },
+  {
+    "title": "Programmatic API (`nui.*`)",
+    "description": "NUI features a built-in imperative API (`nui.*`) that allows you to trigger **confirmation dialogs**, **alerts**, and **toast notifications** programmatically from anywhere in your codebase—without mounting or managing any JSX markup.",
+    "href": "/nui/programmatic",
+    "pkg": "nui"
+  },
+  {
+    "title": "Why Use the Programmatic API? (Programmatic API (`nui.*`))",
+    "description": "In standard React development, showing an alert modal or triggering a toast usually requires declaring local state (`const [open, setOpen] = useState(false)`), placing modal components in JSX, and wiring up props.",
+    "href": "/nui/programmatic#why-use-the-programmatic-api",
+    "pkg": "nui"
+  },
+  {
+    "title": "One-Time Setup (Programmatic API (`nui.*`))",
+    "description": "To enable the programmatic API across your entire application, mount `<DialogProvider />` inside your `<ToastProvider>` in your root layout:",
+    "href": "/nui/programmatic#one-time-setup",
+    "pkg": "nui"
+  },
+  {
+    "title": "Confirmation Dialogs (`nui.confirm`) (Programmatic API (`nui.*`))",
+    "description": "`nui.confirm` displays an accessible modal dialog and returns a `Promise<boolean>` that resolves to `true` if the user confirms, or `false` if they cancel.",
+    "href": "/nui/programmatic#confirmation-dialogs-nui-confirm",
+    "pkg": "nui"
+  },
+  {
+    "title": "Alert Dialogs (`nui.alert`) (Programmatic API (`nui.*`))",
+    "description": "`nui.alert` displays an informational or blocking alert modal that resolves when the user acknowledges it:",
+    "href": "/nui/programmatic#alert-dialogs-nui-alert",
+    "pkg": "nui"
+  },
+  {
+    "title": "Programmatic Toasts (`nui.toast`) (Programmatic API (`nui.*`))",
+    "description": "NUI connects `nui.*` directly into your application's `<ToastProvider>`. You can fire animated toasts instantly without declaring `useToast()`:",
+    "href": "/nui/programmatic#programmatic-toasts-nui-toast",
+    "pkg": "nui"
+  },
+  {
+    "title": "Real-World Example: API Client Interceptor (Programmatic API (`nui.*`))",
+    "description": "Because `nui.*` does not rely on React hooks, you can invoke notifications directly inside API interceptors (e.g., Axios or Fetch wrappers):",
+    "href": "/nui/programmatic#real-world-example-api-client-interceptor",
+    "pkg": "nui"
+  },
+  {
+    "title": "Related Components (Programmatic API (`nui.*`))",
+    "description": "- [**Dialog**](/nui/components/dialog) — React declarative modal dialog primitive.",
+    "href": "/nui/programmatic#related-components",
     "pkg": "nui"
   },
   {
