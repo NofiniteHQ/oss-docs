@@ -3,18 +3,20 @@ import '@nofinite/nui/styles.css';
 import './globals.css';
 import { NUIProvider, ToastProvider } from '@nofinite/nui';
 import { Navbar } from '@/components/Navbar';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 
 import type { Metadata } from 'next';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: '--font-plus-jakarta',
   subsets: ['latin'],
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -43,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`nui-reset antialiased bg-page text-default min-h-screen flex flex-col ${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`nui-reset antialiased bg-page text-default min-h-screen flex flex-col ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}>
         <NUIProvider>
           <ToastProvider>
             <Navbar />
