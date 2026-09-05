@@ -24,25 +24,27 @@ const options = {
   },
 };
 
-const components = rdts.withCustomConfig(path.resolve(__dirname, '../../stack/packages/nui/tsconfig.json'), options);
+const TSCONFIG_PATH = path.resolve(__dirname, '../../stack/packages/nui/tsconfig.json');
 
 function extractProps() {
   console.log('Extracting props from NUI components...');
-  // Find all .tsx files in NUI components directory
-  const files = [];
-  function findFiles(dir) {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      if (entry.isDirectory()) {
-        findFiles(fullPath);
-      } else if (entry.isFile() && fullPath.endsWith('.tsx') && !fullPath.endsWith('.stories.tsx') && !fullPath.endsWith('.test.tsx')) {
-        files.push(fullPath);
+
+  if (fs.existsSync(NUI_SRC_DIR) && fs.existsSync(TSCONFIG_PATH)) {
+    const components = rdts.withCustomConfig(TSCONFIG_PATH, options);
+    // Find all .tsx files in NUI components directory
+    const files = [];
+    function findFiles(dir) {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          findFiles(fullPath);
+        } else if (entry.isFile() && fullPath.endsWith('.tsx') && !fullPath.endsWith('.stories.tsx') && !fullPath.endsWith('.test.tsx')) {
+          files.push(fullPath);
+        }
       }
     }
-  }
-  
-  if (fs.existsSync(NUI_SRC_DIR)) {
+
     findFiles(NUI_SRC_DIR);
     const parsed = components.parse(files);
     
@@ -65,7 +67,13 @@ function extractProps() {
     fs.writeFileSync(OUT_FILE, JSON.stringify(output, null, 2));
     console.log('Saved extracted props to', OUT_FILE);
   } else {
-    console.error('NUI source directory not found:', NUI_SRC_DIR);
+    if (fs.existsSync(OUT_FILE)) {
+      console.log('NUI source directory not found (standalone CI/CD build). Using bundled component-props.json.');
+    } else {
+      fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
+      fs.writeFileSync(OUT_FILE, JSON.stringify({}, null, 2));
+      console.log('Created empty component-props.json for standalone build.');
+    }
   }
 }
 
