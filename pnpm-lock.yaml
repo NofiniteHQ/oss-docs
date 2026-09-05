@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@nofinite/nui':
-        specifier: file:..\stack\packages\nui\nofinite-nui-3.0.5.tgz
-        version: file:../stack/packages/nui/nofinite-nui-3.0.5.tgz(@types/react@18.3.31)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: ^3.0.7
+        version: 3.0.7(@types/react@18.3.31)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@nofinite/nuicss':
-        specifier: file:D:/stack/packages/nuicss/nofinite-nuicss-3.0.5.tgz
-        version: file:../stack/packages/nuicss/nofinite-nuicss-3.0.5.tgz(postcss@8.5.26)(typescript@5.9.3)(vite@8.2.2(@types/node@20.19.43)(jiti@2.7.0))
+        specifier: ^3.0.6
+        version: 3.0.6(postcss@8.5.26)(typescript@5.9.3)(vite@8.2.2(@types/node@20.19.43)(jiti@2.7.0))
       '@stackblitz/sdk':
         specifier: ^1.11.1
         version: 1.11.1
@@ -420,17 +420,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@nofinite/nui@file:../stack/packages/nui/nofinite-nui-3.0.5.tgz':
-    resolution: {integrity: sha512-Lmm9J4x0xwXTwZnIjuKIKEOCiAdtr7fTp8uLmegfI3c66beccfiFJ1ZEW550FjrsgB4KA+JrIqz/P2fYMZ0azA==, tarball: file:../stack/packages/nui/nofinite-nui-3.0.5.tgz}
-    version: 3.0.5
+  '@nofinite/nui@3.0.7':
+    resolution: {integrity: sha512-dIuFlDcaBMnpuuG9NQLavB222G2to3QlBFeGQDD1ivYndkvv6Tx9yVqaeXeJznh2VXoOiuVjVaES87xKQL4DqA==}
     engines: {node: '>=18'}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
 
-  '@nofinite/nuicss@file:../stack/packages/nuicss/nofinite-nuicss-3.0.5.tgz':
-    resolution: {integrity: sha512-1qDOiCvaEBm+mz2aeOVfgPhmMA+SdHwPFh+qANJnt9rbnzRwzcgZvnO5KEKr9sfhoUToC7dp637jHF1iyFAm3Q==, tarball: file:../stack/packages/nuicss/nofinite-nuicss-3.0.5.tgz}
-    version: 3.0.5
+  '@nofinite/nuicss@3.0.6':
+    resolution: {integrity: sha512-JPNnxO/rFdhISpAnQ6JNRtVM0qJJru66pW+CyTj39RxjOAPtQRBzrL9WdCr59ueJkG3zdWnP9t3feQ7WY/d6yw==}
     engines: {node: '>=18'}
 
   '@oxc-parser/binding-android-arm-eabi@0.131.0':
@@ -2198,7 +2196,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@16.3.2':
     optional: true
 
-  '@nofinite/nui@file:../stack/packages/nui/nofinite-nui-3.0.5.tgz(@types/react@18.3.31)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@nofinite/nui@3.0.7(@types/react@18.3.31)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@floating-ui/react-dom': 2.1.9(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@vidstack/react': 1.15.6(@types/react@18.3.31)(react@19.2.8)
@@ -2218,7 +2216,7 @@ snapshots:
       - '@emotion/is-prop-valid'
       - '@types/react'
 
-  '@nofinite/nuicss@file:../stack/packages/nuicss/nofinite-nuicss-3.0.5.tgz(postcss@8.5.26)(typescript@5.9.3)(vite@8.2.2(@types/node@20.19.43)(jiti@2.7.0))':
+  '@nofinite/nuicss@3.0.6(postcss@8.5.26)(typescript@5.9.3)(vite@8.2.2(@types/node@20.19.43)(jiti@2.7.0))':
     dependencies:
       '@unocss/config': 66.8.1
       '@unocss/postcss': 66.8.1(postcss@8.5.26)

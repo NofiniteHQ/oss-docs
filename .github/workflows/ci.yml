@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-verify:
+    name: Build & Verify Documentation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: TypeScript Check
+        run: pnpm run typecheck
+
+      - name: Run Next.js Linter
+        run: pnpm run lint
+
+      - name: Pre-build Pipeline & Search Index
+        run: |
+          node scripts/clean_frontmatter.mjs
+          node scripts/build_versions.mjs
+          node scripts/extract_props.mjs
+          node scripts/build_registry.mjs
+          node scripts/generate_ai_docs.mjs
+          node scripts/build-search.mjs
+
+      - name: Build Next.js Production App
+        run: pnpm run build
+
+      - name: Verify Build Artifacts
+        shell: bash
+        run: |
+          test -f public/versions.json || { echo "Error: public/versions.json is missing!"; exit 1; }
+          test -f public/search-index.json || { echo "Error: public/search-index.json is missing!"; exit 1; }
+          test -f public/llms.txt || { echo "Error: public/llms.txt is missing!"; exit 1; }
+          test -d .next || { echo "Error: .next build directory is missing!"; exit 1; }
+          echo "All critical documentation build artifacts verified successfully."
