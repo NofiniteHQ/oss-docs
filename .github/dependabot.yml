@@ -1,3 +1,4 @@
+# Dependabot configuration for Nofinite OSS Docs
 version: 2
 updates:
   - package-ecosystem: "npm"
