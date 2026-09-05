@@ -8,11 +8,11 @@ The official documentation platform for the **Nofinite Open Source Ecosystem**, 
 
 `oss-docs` provides comprehensive guides, interactive component playgrounds, and API references for all open-source libraries maintained by Nofinite:
 
-- **[NUI (`@nofinite/nui`)](https://nofinite.com/nui)**: A complete, accessible React component library featuring 68+ UI primitives, compound components, and headless hooks.
-- **[NUICSS (`@nofinite/nuicss`)](https://nofinite.com/nuicss)**: Modern, high-performance atomic utility CSS engine with zero-runtime overhead.
-- **[Locale (`@nofinite/locale`)](https://nofinite.com/locale)**: Ultra-fast country metadata, flag icons, phone codes, and internationalization utilities.
-- **[Utils (`@nofinite/utils`)](https://nofinite.com/utils)**: Production-grade isomorphic helpers for cryptography, token verification, string formatting, and system utilities.
-- **[Markon (`@nofinite/markon`)](https://nofinite.com/markon)**: High-speed Markdown parser and formatting pipeline.
+- **[NUI (`@nofinite/nui`)](https://opensource.nofinite.com/nui)**: A complete, accessible React component library featuring 68+ UI primitives, compound components, and headless hooks.
+- **[NUICSS (`@nofinite/nuicss`)](https://opensource.nofinite.com/nuicss)**: Modern, high-performance atomic utility CSS engine with zero-runtime overhead.
+- **[Locale (`@nofinite/locale`)](https://opensource.nofinite.com/locale)**: Ultra-fast country metadata, flag icons, phone codes, and internationalization utilities.
+- **[Utils (`@nofinite/utils`)](https://opensource.nofinite.com/utils)**: Production-grade isomorphic helpers for cryptography, token verification, string formatting, and system utilities.
+- **[Markon (`@nofinite/markon`)](https://opensource.nofinite.com/markon)**: High-speed Markdown parser and formatting pipeline.
 
 ---
 

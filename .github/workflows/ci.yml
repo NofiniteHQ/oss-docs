@@ -89,9 +89,9 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Production
-      url: https://oss.nofinite.com
+      url: https://opensource.nofinite.com
     steps:
       - name: Register Production Deployment
         run: |
           echo "Production deployment registered on GitHub for commit ${{ github.sha }}."
-          echo "Website URL: https://oss.nofinite.com"
+          echo "Website URL: https://opensource.nofinite.com"

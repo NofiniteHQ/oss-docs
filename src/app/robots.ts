@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://oss.nofinite.com';
+  const baseUrl = 'https://opensource.nofinite.com';
 
   return {
     rules: {

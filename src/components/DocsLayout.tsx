@@ -251,7 +251,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
   );
 
   const pageTitle = activeItem?.label || currentPackage.label;
-  const canonicalUrl = `https://nofinite.com${pathname}`;
+  const canonicalUrl = `https://opensource.nofinite.com${pathname}`;
 
   // Rich Snippet JSON-LD Schema (SoftwareApplication & SoftwareSourceCode)
   const jsonLd = {

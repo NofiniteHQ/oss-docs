@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nofinite.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://opensource.nofinite.com';
 const APP_DIR = path.join(process.cwd(), 'src/app');
 
 interface SitemapEntry {
