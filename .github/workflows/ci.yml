@@ -81,3 +81,17 @@ jobs:
           test -f public/llms.txt || { echo "Error: public/llms.txt is missing!"; exit 1; }
           test -d .next || { echo "Error: .next build directory is missing!"; exit 1; }
           echo "All critical documentation build artifacts verified successfully."
+
+  track-deployment:
+    name: Production Deployment
+    needs: build-and-verify
+    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+      url: https://oss.nofinite.com
+    steps:
+      - name: Register Production Deployment
+        run: |
+          echo "Production deployment registered on GitHub for commit ${{ github.sha }}."
+          echo "Website URL: https://oss.nofinite.com"
