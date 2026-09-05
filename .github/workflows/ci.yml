@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -33,7 +33,7 @@ jobs:
           node-version: 22
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           run_install: false
 
@@ -79,6 +79,7 @@ jobs:
           test -f public/search-index.json || { echo "Error: public/search-index.json is missing!"; exit 1; }
           test -f public/llms.txt || { echo "Error: public/llms.txt is missing!"; exit 1; }
           test -d .next || { echo "Error: .next build directory is missing!"; exit 1; }
+          test -d out || { echo "Error: out static build directory is missing!"; exit 1; }
           echo "All critical documentation build artifacts verified successfully."
 
   track-deployment:
