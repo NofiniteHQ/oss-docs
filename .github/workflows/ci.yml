@@ -84,7 +84,7 @@ jobs:
   track-deployment:
     name: Production Deployment
     needs: build-and-verify
-    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     environment:
       name: Production
