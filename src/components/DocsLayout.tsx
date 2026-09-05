@@ -132,11 +132,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                         key={child.id}
                         href={child.href || '#'}
                         onClick={() => isMobile && setMobileMenuOpen(false)}
-                        className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
-                          isActive
-                            ? 'bg-primary/10 text-primary font-semibold shadow-xs'
-                            : 'text-muted hover:text-primary hover:bg-primary/5'
-                        }`}
+                        className={`nav-link-base ${isActive ? 'nav-link-active shadow-xs' : 'nav-link-item'}`}
                       >
                         <span className="truncate">{child.label}</span>
                       </Link>
@@ -156,9 +152,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
               <button
                 type="button"
                 onClick={() => toggleSection(item.id)}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-xs font-bold uppercase tracking-wider transition-colors group cursor-pointer ${
-                  isOpen ? 'text-primary bg-primary/10' : 'text-muted hover:text-primary hover:bg-primary/5'
-                }`}
+                className={`nav-category-trigger ${isOpen ? 'nav-category-open' : 'nav-category-closed'}`}
                 aria-expanded={isOpen}
               >
                 <span className="truncate">{item.label}</span>
@@ -172,9 +166,9 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className={`transition-transform duration-200 text-muted group-hover:text-primary flex-shrink-0 ${
-                    isOpen ? 'rotate-90' : ''
-                  }`}
+                  className={`transition-transform duration-200 ${
+                    isOpen ? 'rotate-90 text-primary' : 'text-muted'
+                  } flex-shrink-0`}
                 >
                   <path d="m9 18 6-6-6-6" />
                 </svg>
@@ -187,11 +181,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                     <Link
                       href={item.href}
                       onClick={() => isMobile && setMobileMenuOpen(false)}
-                      className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
-                        pathname === item.href
-                          ? 'bg-primary/10 text-primary font-semibold shadow-xs'
-                          : 'text-muted hover:text-primary hover:bg-primary/5'
-                      }`}
+                      className={`nav-link-base ${pathname === item.href ? 'nav-link-active shadow-xs' : 'nav-link-item'}`}
                     >
                       <span className="truncate">Introduction</span>
                     </Link>
@@ -214,10 +204,8 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                                   key={sub.id}
                                   href={sub.href || '#'}
                                   onClick={() => isMobile && setMobileMenuOpen(false)}
-                                  className={`px-3 py-1.5 rounded-md text-xs transition-all ${
-                                    isSubActive
-                                      ? 'bg-primary/10 text-primary font-semibold shadow-xs'
-                                      : 'text-muted hover:text-primary hover:bg-primary/5'
+                                  className={`px-3 py-1.5 rounded-md text-xs transition-all block truncate ${
+                                    isSubActive ? 'nav-link-active shadow-xs' : 'nav-link-item'
                                   }`}
                                 >
                                   <span className="truncate">{sub.label}</span>
@@ -235,11 +223,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                         key={child.id}
                         href={child.href || '#'}
                         onClick={() => isMobile && setMobileMenuOpen(false)}
-                        className={`px-3 py-1.5 rounded-md text-sm transition-all flex items-center justify-between ${
-                          isActive
-                            ? 'bg-primary/10 text-primary font-semibold shadow-xs'
-                            : 'text-muted hover:text-primary hover:bg-primary/5'
-                        }`}
+                        className={`nav-link-base ${isActive ? 'nav-link-active shadow-xs' : 'nav-link-item'}`}
                       >
                         <span className="truncate">{child.label}</span>
                       </Link>
@@ -257,11 +241,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
             key={item.id}
             href={item.href || '#'}
             onClick={() => isMobile && setMobileMenuOpen(false)}
-            className={`px-3 py-2 rounded-md text-sm transition-all ${
-              isActive
-                ? 'bg-primary/10 text-primary font-bold shadow-xs'
-                : 'text-muted hover:text-primary hover:bg-primary/5'
-            }`}
+            className={`nav-link-base ${isActive ? 'nav-link-active shadow-xs' : 'nav-link-item'}`}
           >
             {item.label}
           </Link>
@@ -399,7 +379,7 @@ export function DocsLayout({ children, navData }: { children: React.ReactNode, n
                       onClick={() => setMobileMenuOpen(false)}
                       className={`text-xs px-2.5 py-1.5 rounded-md font-semibold transition-colors ${
                         isPkgActive
-                          ? 'bg-primary text-primary-fg shadow-xs'
+                          ? 'bg-primary text-white shadow-xs'
                           : 'bg-subtle text-muted hover:text-primary hover:bg-subtle/80'
                       }`}
                     >
