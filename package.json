@@ -2,6 +2,7 @@
   "name": "oss-docs",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.23.0",
   "scripts": {
     "dev": "node scripts/clean_frontmatter.mjs && node scripts/build_versions.mjs && node scripts/extract_props.mjs && node scripts/build_registry.mjs && node scripts/build-search.mjs && next dev",
     "build": "node scripts/clean_frontmatter.mjs && node scripts/build_versions.mjs && node scripts/extract_props.mjs && node scripts/build_registry.mjs && node scripts/generate_ai_docs.mjs && node scripts/build-search.mjs && next build",
