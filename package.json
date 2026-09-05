@@ -15,6 +15,7 @@
     "@nofinite/nuicss": "^3.0.6",
     "@stackblitz/sdk": "^1.11.1",
     "fuse.js": "^7.5.0",
+    "lucide-react": "^1.41.0",
     "next": "16.3.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
