@@ -1,0 +1,164 @@
+# Combobox
+
+A composable, accessible Combobox component for modern React applications.
+
+```tsx
+import { Combobox } from '@nofinite/nui';
+```
+
+---
+
+## Interactive Preview
+
+<Preview name="combobox" />
+
+---
+
+A **searchable dropdown input component** that allows users to filter and select options from a list.
+Supports **controlled/uncontrolled usage, keyboard navigation, icons, custom rendering, filtering, and accessibility-compliant listbox behavior**.
+
+---
+
+## Usage
+
+### Basic Combobox
+
+```tsx
+import { Combobox } from '@nofinite/nui';
+
+<Combobox
+  options={[
+    { label: "React", value: "react" },
+    { label: "Vue", value: "vue" },
+    { label: "Angular", value: "angular" }
+  ]}
+/>
+```
+
+### Controlled Combobox
+
+```tsx
+const [value, setValue] = useState("");
+
+<Combobox
+  value={value}
+  onChange={setValue}
+  options={options}
+/>
+```
+
+### Combobox with Icons
+
+```tsx
+<Combobox
+  leftIcon={<Icon />}
+  rightIcon={<Icon />}
+  options={options}
+/>
+```
+
+### Custom Option Rendering
+
+```tsx
+<Combobox
+  options={options}
+  renderOption={(opt, active) => (
+    <span style={{ fontWeight: active ? 600 : 400 }}>
+      {opt.label}
+    </span>
+  )}
+/>
+```
+
+### Custom Filter
+
+```tsx
+<Combobox
+  options={options}
+  filter={(input, option) =>
+    option.label.toLowerCase().startsWith(input.toLowerCase())
+  }
+/>
+```
+
+---
+
+---
+
+## Variants
+
+`Combobox` supports interaction-based variants.
+
+```tsx
+<Combobox options={options} />              // Default combobox
+<Combobox disabled options={options} />     // Disabled combobox
+<Combobox leftIcon={<Icon />} />            // With icons
+<Combobox renderOption={() => {}} />        // Custom rendered options
+```
+
+**Available variants:**
+
+* `default` – Standard searchable combobox
+* `disabled` – Non-interactive combobox
+* `icon` – Combobox with input icons
+* `custom-render` – Combobox with custom option rendering
+
+**Guidelines:**
+
+* Use `default` for general dropdown selection.
+* Use `disabled` to prevent interaction when unavailable.
+* Use `icon` for contextual affordances.
+* Use `custom-render` for complex option UI.
+
+---
+
+## States
+
+| State      | Description                 |
+| ---------- | --------------------------- |
+| `default`  | Closed combobox             |
+| `open`     | Dropdown visible            |
+| `active`   | Keyboard-highlighted option |
+| `selected` | Currently selected option   |
+| `empty`    | No results state            |
+
+---
+
+---
+
+## Accessibility
+
+* Uses **ARIA combobox + listbox pattern**
+* Supports full keyboard navigation
+
+  * Arrow keys for navigation
+  * Enter for selection
+  * Escape to close
+* `aria-expanded`, `aria-controls`, and `aria-activedescendant` ensure screen reader support
+* Click-outside handling prevents accidental focus loss
+* Option selection correctly updates `aria-selected`
+
+---
+
+## Best Practices
+
+### Do
+
+* Use combobox for searchable selections
+* Provide meaningful empty state message
+* Use custom filter for large datasets
+* Keep option labels concise
+* Use icons for recognition
+
+### Don’t
+
+* Use combobox for very small lists without search need
+* Hide essential information inside custom renderers
+* Disable keyboard navigation
+* Overload options with long content
+
+---
+
+## API Reference
+
+<PropsTable name="Combobox" />

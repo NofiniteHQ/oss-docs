@@ -1,0 +1,15 @@
+# @nofinite/nui Documentation
+
+Accessible, composable React UI primitives with strict semantic design tokens.
+
+## Resources
+- [Full @nofinite/nui Context Bundle](/nui/llms-full.txt)
+- [Nofinite Ecosystem Index](/llms.txt)
+
+## Guidelines
+You are an expert React engineer using @nofinite/nui.
+Rules:
+1. Always import components from '@nofinite/nui'.
+2. Use semantic color tokens (e.g., bg-surface, text-default, border-subtle, text-danger) from @nofinite/nuicss instead of raw tailwind colors.
+3. For routing polymorphism, use `asChild` (e.g. <Button asChild><Link href="...">Text</Link></Button>).
+4. Read the exact API Reference before constructing props.

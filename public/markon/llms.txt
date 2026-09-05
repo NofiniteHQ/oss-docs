@@ -1,0 +1,10 @@
+# @nofinite/markon Documentation
+
+High-speed AST-based Markdown and MDX processing toolkit.
+
+## Resources
+- [Full @nofinite/markon Context Bundle](/markon/llms-full.txt)
+- [Nofinite Ecosystem Index](/llms.txt)
+
+## Guidelines
+You are using @nofinite/markon for syntax parsing and document conversion.

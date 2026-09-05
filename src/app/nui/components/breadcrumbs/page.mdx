@@ -1,0 +1,137 @@
+# Breadcrumbs
+
+A composable, accessible Breadcrumbs component for modern React applications.
+
+```tsx
+import { Breadcrumbs } from '@nofinite/nui';
+```
+
+---
+
+## Interactive Preview
+
+<Preview name="breadcrumbs" />
+
+---
+
+A navigation aid component that displays the user’s location within a hierarchical structure. Supports **interactive links, custom separators, responsive collapsing, and accessibility-friendly navigation semantics**.
+
+NUI provides a **Dual-Mode Architecture**: use **Plug and Play (PnP)** mode to pass a clean data array with automatic truncation, or assemble the **Composable Compound Primitives** for full layout customization.
+
+---
+
+## Usage
+
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
+
+Pass an array of crumbs via the `data` prop. NUI automatically links items, renders separators, highlights the active current page, and truncates long paths with an ellipsis when exceeding `maxItems`:
+
+```tsx
+import { Breadcrumbs } from '@nofinite/nui';
+
+export function QuickBreadcrumbs() {
+  const crumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Engineering', href: '/engineering' },
+    { label: 'Projects', href: '/engineering/projects' },
+    { label: 'Design System' },
+  ];
+
+  return <Breadcrumbs data={crumbs} maxItems={4} />;
+}
+```
+
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom icons, dropdown menus inside breadcrumbs, or specific markup wrappers, assemble the compound primitives directly:
+
+```tsx
+import { Breadcrumbs } from '@nofinite/nui';
+import Link from 'next/link';
+
+export function CustomBreadcrumbs() {
+  return (
+    <Breadcrumbs separator="/">
+      <Breadcrumbs.Item>
+        <Link href="/">Home</Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator />
+      <Breadcrumbs.Item>
+        <Link href="/settings">Settings</Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator />
+      <Breadcrumbs.Item isCurrent>
+        API Keys
+      </Breadcrumbs.Item>
+    </Breadcrumbs>
+  );
+}
+```
+
+---
+
+### Truncation with `maxItems`
+
+When paths get too long, NUI automatically truncates the middle items into an ellipsis:
+
+```tsx
+<Breadcrumbs
+  maxItems={3}
+  data={[
+    { label: 'Home', href: '/' },
+    { label: 'Cloud', href: '/cloud' },
+    { label: 'Clusters', href: '/clusters' },
+    { label: 'Production-US-East' },
+  ]}
+/>
+```
+
+---
+
+## Props Reference
+
+### Breadcrumbs (Root)
+
+| Prop        | Type                 | Default | Description                                                               |
+| ----------- | -------------------- | ------- | ------------------------------------------------------------------------- |
+| `data`      | `BreadcrumbItem[]`   | —       | **Plug and Play Mode:** Array of items `{ label, href, onClick }`.        |
+| `maxItems`  | `number`             | `5`     | Maximum items before collapsing intermediate crumbs into an ellipsis `…`.|
+| `separator` | `ReactNode`          | `'›'`   | Custom separator icon or character between crumbs.                        |
+| `children`  | `ReactNode`          | —       | Compound primitives (used in compound mode).                              |
+
+### Breadcrumbs.Item
+
+| Prop        | Type        | Default | Description                                             |
+| ----------- | ----------- | ------- | ------------------------------------------------------- |
+| `isCurrent` | `boolean`   | `false` | Marks the item as current page (`aria-current="page"`). |
+| `children`  | `ReactNode` | —       | Link or label content.                                  |
+
+### Breadcrumbs.Separator
+
+| Prop       | Type        | Description                                                       |
+| ---------- | ----------- | ----------------------------------------------------------------- |
+| `children` | `ReactNode` | Custom separator node. Defaults to parent `separator` configured. |
+
+---
+
+## Subcomponents
+
+- `Breadcrumbs.Item`
+- `Breadcrumbs.Separator`
+
+---
+
+## Accessibility
+
+- Wrapped in `<nav aria-label="Breadcrumb">` for screen readers.
+- Renders ordered list structure (`<ol>`, `<li>`) for navigation semantics.
+- Current page crumb automatically receives `aria-current="page"`.
+- Visual separators are marked with `aria-hidden="true"`.
+
+---
+
+## API Reference
+
+<PropsTable name="Breadcrumbs" />

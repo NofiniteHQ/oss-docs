@@ -1,78 +1,105 @@
-<div align="center">
+# Nofinite Open Source Documentation (`oss-docs`)
 
-# Nofinite Open Source
-
-**Documentation for Nofinite's open-source libraries.**
-
-**[opensource.nofinite.com](https://opensource.nofinite.com)**
-
-</div>
+The official documentation platform for the **Nofinite Open Source Ecosystem**, built with modern web technologies: **Next.js 16 (Turbopack)**, **`@nofinite/nui`**, and **`@nofinite/nuicss`**.
 
 ---
 
-## Overview
+## 🌟 Overview
 
-This repository houses the documentation website for the entire Nofinite open-source ecosystem. It provides comprehensive guides, API references, and installation instructions for our core libraries.
+`oss-docs` provides comprehensive guides, interactive component playgrounds, and API references for all open-source libraries maintained by Nofinite:
 
-> **Note:** This repository contains *only* the documentation website. The actual source code for these libraries is maintained in their respective repositories.
-
-### Documented Libraries
-
-* **NUI:** A high-performance React UI library featuring accessible, composable component primitives.
-* **NUI CSS:** A utility-first CSS framework built for rapid styling and semantic consistency.
-* **Utils:** High-performance logic and security helpers for authentication, encryption, and environment handling.
-* **Locale:** A lightweight localization library providing SVG flags, accurate country metadata, and international dialing codes.
-* **Markon:** A lightweight JavaScript library designed for easy content formatting, styling, and text manipulation.
+- **[NUI (`@nofinite/nui`)](https://opensource.nofinite.com/nui)**: A complete, accessible React component library featuring 68+ UI primitives, compound components, and headless hooks.
+- **[NUICSS (`@nofinite/nuicss`)](https://opensource.nofinite.com/nuicss)**: Modern, high-performance atomic utility CSS engine with zero-runtime overhead.
+- **[Locale (`@nofinite/locale`)](https://opensource.nofinite.com/locale)**: Ultra-fast country metadata, flag icons, phone codes, and internationalization utilities.
+- **[Utils (`@nofinite/utils`)](https://opensource.nofinite.com/utils)**: Production-grade isomorphic helpers for cryptography, token verification, string formatting, and system utilities.
+- **[Markon (`@nofinite/markon`)](https://opensource.nofinite.com/markon)**: High-speed Markdown parser and formatting pipeline.
 
 ---
 
-## Local Development
+## 🚀 Architecture & Tech Stack
 
-This website is built using [Docusaurus v3](https://docusaurus.io/), a modern static website generator. We use `pnpm` for package management.
+This documentation platform is engineered for maximum performance, SEO, and static hosting compatibility:
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router, Turbopack, React 19)
+- **UI Components**: [`@nofinite/nui`](https://github.com/NofiniteHQ/stack/tree/main/packages/nui)
+- **Styling**: [`@nofinite/nuicss`](https://github.com/NofiniteHQ/stack/tree/main/packages/nuicss)
+- **Content Engine**: Native `@next/mdx` with `mdxRs` compiler acceleration
+- **Search**: Fast client-side fuzzy search powered by [Fuse.js](https://fusejs.io/) with build-time indexing
+- **Typography**: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) (UI) & [JetBrains Mono](https://www.jetbrains.com/lp/mono/) (Code)
+- **Static Hosting**: 100% prerendered static pages compatible with **Cloudflare Pages**, **Vercel**, or standard CDNs.
+
+---
+
+## 📁 Repository Structure
+
+```text
+oss-docs/
+├── public/                 # Static assets, favicon, generated versions.json & search index
+├── scripts/                # Automated build-time generators:
+│   ├── build-search.mjs            # Generates fuzzy search index (370+ entries)
+│   ├── build_versions.mjs          # Statically resolves current package versions
+│   ├── build_registry.mjs          # Generates component playground registry
+│   ├── extract_props.mjs           # Extracts TypeScript props from component types
+│   └── generate_ai_docs.mjs        # Generates llms.txt and llms-full.txt for AI agents
+├── src/
+│   ├── app/                # Next.js App Router routes & MDX pages
+│   │   ├── nui/            # NUI component documentation & guides
+│   │   ├── nuicss/         # NUICSS utility classes & architecture guides
+│   │   ├── locale/         # Locale documentation & country lookups
+│   │   ├── utils/          # Utility helpers documentation
+│   │   ├── markon/         # Markon parser guides
+│   │   ├── globals.css     # Design tokens, Electric Indigo palette & font definitions
+│   │   └── layout.tsx      # Root application layout with NUIProvider & font setup
+│   ├── components/         # Reusable docs components:
+│   │   ├── DocsLayout.tsx          # Responsive sticky sidebar, breadcrumbs & navigation
+│   │   ├── Navbar.tsx              # Top navigation bar with package selector & theme toggle
+│   │   ├── ComponentPreview.tsx    # Interactive live component preview with code toggle
+│   │   ├── PropsTable.tsx          # Extracted TypeScript prop tables
+│   │   └── DocSearch.tsx           # Global search dialog (Ctrl+K)
+│   ├── registry/           # Interactive live preview examples for all 68+ components
+│   └── utils/              # Navigation tree definitions & shared helpers
+├── nuicss.config.ts        # NUICSS compiler configuration & content scanning pipeline
+└── package.json            # Project dependencies & npm scripts
+```
+
+---
+
+## 🛠️ Development
 
 ### Prerequisites
-* Node.js (v18 or newer)
-* pnpm (v8 or newer)
 
-### Setup
+- **Node.js**: `v20+`
+- **Package Manager**: `pnpm` (recommended), `npm`, or `yarn`
 
-1. **Install dependencies:**
-   ```bash
-   pnpm install
-   ```
+### Installation
 
-2. **Start the local development server:**
-   ```bash
-   pnpm start
-   ```
-   This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+```bash
+# Clone the repository
+git clone https://github.com/NofiniteHQ/oss-docs.git
+cd oss-docs
 
-3. **Build for production:**
-   ```bash
-   pnpm build
-   ```
-   This command generates static content into the `build` directory and can be served using any static hosting service.
+# Install dependencies
+pnpm install
+```
 
----
+### Running Locally
 
-## Repository Structure
+```bash
+pnpm run dev
+```
 
-* `/docs` - Contains the Markdown (`.md` and `.mdx`) files for all library documentation. 
-* `/src/pages` - Custom React pages, including the main landing page (`index.tsx`).
-* `/static` - Static assets like images, icons, and logos.
-* `docusaurus.config.ts` - The main configuration file for the site navigation, theme, and plugins.
-* `sidebars.ts` - Dictates the sidebar routing and document hierarchy.
+The dev script automatically runs the pre-build pipeline (version generator, prop extractor, registry builder, and search indexer) and starts the Next.js Turbopack development server on [http://localhost:3000](http://localhost:3000).
 
----
+### Building for Production
 
-## Deployment
+```bash
+pnpm run build
+```
 
-This documentation hub is automatically built and deployed to **Cloudflare Pages**, and is served live at **[opensource.nofinite.com](https://opensource.nofinite.com)**. 
-
-Any pushes or merged Pull Requests to the `main` branch will trigger an automated production deployment via Cloudflare's GitHub integration. No manual deployment commands are required.
+Generates an optimized, fully prerendered static build of all 120+ pages in seconds.
 
 ---
 
-## License
+## 📄 License
 
-The documentation content and website source code in this repository are distributed under the [Apache License, Version 2.0](./LICENSE).
+This documentation and all associated Nofinite open-source packages are licensed under the [MIT License](LICENSE).

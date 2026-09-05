@@ -1,0 +1,461 @@
+# PACKAGE: @nofinite/markon
+
+High-speed AST-based Markdown and MDX processing toolkit.
+
+You are using @nofinite/markon for syntax parsing and document conversion.
+
+---
+
+
+
+### Document: markon/getting-started/cdn/page.mdx
+
+# CDN Usage
+
+Load the Markon bundle directly from the CDN.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@nofinite/markon@1.1.1/dist/index.min.js"></script>
+```
+
+The CDN build exposes a global function named `JSMarkon`.
+
+---
+
+## Basic Example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Markon CDN Example</title>
+  </head>
+  <body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@nofinite/markon@1.1.1/dist/index.min.js"></script>
+    <script>
+      const content = '#b[Hello]# World';
+      const html = JSMarkon(content);
+
+      document.getElementById('output').innerHTML = html;
+    </script>
+  </body>
+</html>
+```
+
+## Notes and Limitations
+
+- The CDN build does not provide TypeScript types.
+- Output is a raw HTML string.
+- Styling must be handled by the consumer.
+- Markon does not sanitize HTML; input should be trusted or sanitized externally.
+- For complex applications, package-based installation is preferred.
+
+---
+
+
+### Document: markon/getting-started/installation/page.mdx
+
+# Installation
+
+This page covers how to install **Markon** in your project.
+
+---
+
+## Package Installation
+
+Install the package using your preferred package manager.
+
+### npm
+
+```bash
+npm install @nofinite/markon
+```
+
+### yarn
+
+```bash
+yarn add @nofinite/markon
+```
+
+### pnpm
+
+```bash
+pnpm add @nofinite/markon
+```
+
+---
+
+## Requirements
+
+- Node.js 16 or later (recommended)
+- Works in both React and non-React environments
+
+No additional peer dependencies are required.
+
+---
+
+
+### Document: markon/getting-started/setup/page.mdx
+
+# Setup
+
+This page explains how to set up Markon in a React application.
+
+---
+
+## React Setup
+
+Use `ReactMarkon` to render Markon-formatted content.
+
+```tsx
+import { ReactMarkon } from '@nofinite/markon';
+
+const content = '#b[Hello]# World';
+
+export function Example() {
+  return <ReactMarkon content={content} />;
+}
+```
+
+---
+
+## Notes
+
+- No provider or global configuration is required.
+- Markon performs deterministic string-to-HTML transformation.
+- Styling is fully controlled by the consumer.
+
+---
+
+
+### Document: markon/page.mdx
+
+# Introduction
+
+**Markon** is a lightweight content formatting library for JavaScript and React environments.  
+It provides a simple, rule-based syntax for converting structured text into HTML, enabling controlled formatting without the overhead of a full Markdown parser.
+
+Markon is optimized for predictable output, minimal dependencies, and ease of integration across platforms.
+
+---
+
+## Who is this for?
+
+**Markon** is designed for:
+
+- Developers who need simple text formatting without Markdown complexity
+- Applications rendering CMS or user-generated content
+- React and non-React environments
+- Teams that prioritize performance and deterministic formatting
+
+---
+
+## Design Philosophy
+
+Markon is built with the following goals:
+
+- **Simplicity**: Clear, minimal syntax with no ambiguity
+- **Performance**: Lightweight parsing with minimal overhead
+- **Predictability**: Consistent output for the same input
+- **Framework-agnostic**: Works in React and standard JavaScript
+- **Control**: Focused formatting features without excess
+
+---
+
+## What this library is
+
+- A utility to transform Markon syntax into HTML
+- A solution for controlled rich text rendering
+- A predictable formatting layer in content systems
+- A foundation for UI content pipelines
+
+---
+
+## What this library is not
+
+- A full Markdown or MDX parser
+- A rich text editor or interactive content engine
+- A layout or styling framework
+
+---
+
+## Framework Compatibility
+
+**Markon** works in:
+
+- React applications using `ReactMarkon`
+- Plain HTML and JavaScript environments using `JSMarkon`
+- Server-rendered applications
+- Static content generation workflows
+
+No additional configuration is required for supported environments.
+
+---
+
+## Production Readiness
+
+- Zero external dependencies
+- TypeScript support with built-in typings
+- Deterministic and fast parsing
+- Suitable for production content workflows
+- Small bundle footprint
+
+---
+
+## Next Steps
+
+- Continue to the **Getting Started** guide for installation and basic usage
+- Review the **Syntax Reference** for supported formatting patterns
+- Explore examples in React and vanilla JavaScript
+
+---
+
+
+### Document: markon/releases/page.mdx
+
+# Markon Releases
+
+**Latest version:** `v1.1.1` (01 February 2024)
+
+This release of **Markon** represents the most recent published version of the library.
+
+---
+
+## Summary
+
+**Markon** is a lightweight text formatting utility for both browser and React environments. It provides a simple, explicit syntax for enhancing text with formatting elements such as bold, underline, links, lists, emphasis, and line breaks.
+
+---
+
+## Included
+
+- Core Markon text formatting syntax
+- `ReactMarkon` component for React usage
+- `JSMarkon` function for browser/vanilla JavaScript usage
+- Distribution builds for ESM and browser environments
+- Minimal, predictable parsing behavior
+- MIT licensed package
+
+---
+
+## Notes
+
+- This version is the **latest published release** available on the repository.
+- The library is designed for deterministic parsing of Markon syntax into HTML.
+- No breaking changes were documented prior to this release.
+
+---
+
+## Release Metadata
+
+- Repository: [NofiniteHQ/markon on GitHub]
+- License: MIT
+- Latest tag: `v1.1.1` (as of Feb 1, 2024)
+
+---
+
+
+### Document: markon/usage/markon-syntax/page.mdx
+
+# Markon Syntax
+
+This page documents all supported Markon syntax rules.
+Markon uses an explicit, bracket-based syntax designed for predictable and controlled text formatting.
+
+Each syntax rule is processed independently and does not support nesting.
+
+---
+
+## Bold
+
+Wrap text with `#b[...]#` to render bold content.
+
+**Syntax**
+
+```
+
+#b[Text]#
+
+```
+
+**Example**
+
+```
+
+Hello #b[World]#
+
+```
+
+**Output**
+
+```html
+Hello <b>World</b>
+```
+
+---
+
+## Underline
+
+Wrap text with `#u[...]#` to underline content.
+
+**Syntax**
+
+```
+#u[Text]#
+```
+
+**Example**
+
+```
+#u[Important]#
+```
+
+**Output**
+
+```html
+<u>Important</u>
+```
+
+---
+
+## Emphasis
+
+Use `#e[...]#` to emphasize text.
+
+**Syntax**
+
+```
+#e[Text]#
+```
+
+**Example**
+
+```
+This is #e[important]#.
+```
+
+**Output**
+
+```html
+<em>important</em>
+```
+
+---
+
+## Line Break
+
+Insert a line break using `#br#`.
+
+**Syntax**
+
+```
+#br#
+```
+
+**Example**
+
+```
+Line one #br# Line two
+```
+
+**Output**
+
+```html
+Line one <br />
+Line two
+```
+
+---
+
+## Link
+
+Create a hyperlink using `#link[Text, URL]#`.
+
+**Syntax**
+
+```
+#link[Text, URL]#
+```
+
+**Example**
+
+```
+#link[Visit GitHub, https://github.com]#
+```
+
+**Output**
+
+```html
+<a href="https://github.com" target="_blank">Visit GitHub</a>
+```
+
+---
+
+## List
+
+Render a list using `#list[...]#`.
+
+Items are comma-separated.
+
+**Syntax**
+
+```
+#list[Item 1, Item 2, Item 3]#
+```
+
+**Example**
+
+```
+#list[Apple, Banana, Orange]#
+```
+
+**Output**
+
+```html
+<ul>
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Orange</li>
+</ul>
+```
+
+---
+
+## Combined Example
+
+```text
+#b[Markon]# #br#
+#e[Lightweight formatting library]# #br#
+#list[Fast, Simple, Predictable]# #br#
+#link[View Repository, https://github.com/NofiniteHQ/markon]#
+```
+
+---
+
+## Parsing Rules
+
+- Syntax rules do not support nesting.
+- Formatting is applied in a single pass.
+- Input is treated as plain text unless matched by a Markon rule.
+- Invalid or incomplete syntax is ignored.
+
+---
+
+## Security Considerations
+
+- Markon does **not** sanitize HTML output.
+- Only trusted input should be rendered directly.
+- For user-generated content, sanitize output before rendering.
+
+---
+
+## Notes
+
+- Markon is intentionally minimal by design.
+- No configuration or plugins are supported.
+- Output structure is stable and deterministic.
+
+---

@@ -1,56 +1,38 @@
 {
-  "name": "@nofinite/oss-docs",
-  "version": "1.0.0",
+  "name": "oss-docs",
+  "version": "0.1.0",
   "private": true,
-  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.23.0",
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "wrangler pages deploy build --project-name oss-docs --branch main",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "dev": "node scripts/clean_frontmatter.mjs && node scripts/build_versions.mjs && node scripts/extract_props.mjs && node scripts/build_registry.mjs && node scripts/build-search.mjs && next dev",
+    "build": "node scripts/clean_frontmatter.mjs && node scripts/build_versions.mjs && node scripts/extract_props.mjs && node scripts/build_registry.mjs && node scripts/generate_ai_docs.mjs && node scripts/build-search.mjs && next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@docusaurus/core": "3.9.2",
-    "@docusaurus/preset-classic": "3.9.2",
-    "@docusaurus/theme-live-codeblock": "^3.9.2",
-    "@mdx-js/react": "^3.1.1",
-    "clsx": "^2.1.1",
-    "prism-react-renderer": "^2.4.1",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "@nofinite/nui": "^3.0.7",
+    "@nofinite/nuicss": "^3.0.6",
+    "@stackblitz/sdk": "^1.11.1",
+    "fuse.js": "^7.5.0",
+    "lucide-react": "^1.41.0",
+    "next": "16.3.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-icons": "^5.7.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/tsconfig": "3.9.2",
-    "@docusaurus/types": "3.9.2",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "typescript": "~5.6.2"
-  },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 5 safari version"
-    ]
-  },
-  "engines": {
-    "node": ">=20.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "lodash": "4.17.21"
-    }
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.3.2",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "jsdom": "^29.1.1",
+    "postcss": "^8",
+    "react-docgen-typescript": "^2.4.0",
+    "typescript": "^5"
   }
 }

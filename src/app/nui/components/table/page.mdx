@@ -1,0 +1,171 @@
+# Data Table
+
+A composable, accessible Table component for modern React applications.
+
+```tsx
+import { Table } from '@nofinite/nui';
+```
+
+---
+
+## Interactive Preview
+
+<Preview name="table" />
+
+---
+
+A polymorphic table component that supports both **Plug and Play (PnP) Smart Mode** with automatic sorting and typed cell formatters, and **Composable Compound Primitives** for full layout flexibility.
+
+---
+
+## Usage
+
+### 1. Plug and Play (PnP) Smart Mode — Zero Boilerplate
+
+Pass `columns` and `data` arrays directly to `<Table>`. NUI automatically builds the table headers, rows, sortable header triggers, and empty states:
+
+```tsx
+import { Table, Badge } from '@nofinite/nui';
+
+interface User {
+  id: string;
+  name: string;
+  role: string;
+  status: 'Active' | 'Inactive';
+}
+
+const users: User[] = [
+  { id: '1', name: 'Alice Johnson', role: 'Engineering Lead', status: 'Active' },
+  { id: '2', name: 'Bob Smith', role: 'Product Manager', status: 'Active' },
+  { id: '3', name: 'Charlie Brown', role: 'Designer', status: 'Inactive' },
+];
+
+export function QuickTable() {
+  return (
+    <Table
+      data={users}
+      rowKey="id"
+      columns={[
+        { key: 'name', label: 'Full Name', sortable: true },
+        { key: 'role', label: 'Role', sortable: true },
+        {
+          key: 'status',
+          label: 'Status',
+          render: (user) => (
+            <Badge variant={user.status === 'Active' ? 'success' : 'warning'}>
+              {user.status}
+            </Badge>
+          ),
+        },
+      ]}
+    />
+  );
+}
+```
+
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom table rows, grouped headers, or customized cell markup, assemble the compound primitives directly:
+
+```tsx
+import { Table, Badge } from '@nofinite/nui';
+
+export function CustomTable() {
+  return (
+    <Table>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>Name</Table.Head>
+          <Table.Head>Role</Table.Head>
+          <Table.Head>Status</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell className="font-medium">Alice Johnson</Table.Cell>
+          <Table.Cell>Engineering Lead</Table.Cell>
+          <Table.Cell><Badge variant="success">Active</Badge></Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell className="font-medium">Bob Smith</Table.Cell>
+          <Table.Cell>Product Manager</Table.Cell>
+          <Table.Cell><Badge variant="success">Active</Badge></Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  );
+}
+```
+
+---
+
+### Custom Sorting & Column Alignment
+
+In Smart PnP mode, you can customize the alignment and sorting logic:
+
+```tsx
+<Table
+  data={data}
+  columns={[
+    { key: 'product', label: 'Product' },
+    { key: 'price', label: 'Price', align: 'right', sortable: true },
+    {
+      key: 'revenue',
+      label: 'Annual Revenue',
+      align: 'right',
+      render: (row) => `$${row.revenue.toLocaleString()}`,
+    },
+  ]}
+/>
+```
+
+---
+
+## Props Reference
+
+### Table (Root)
+
+| Prop        | Type                 | Default | Description                                                               |
+| ----------- | -------------------- | ------- | ------------------------------------------------------------------------- |
+| `data`      | `T[]`                | —       | **Plug and Play Mode:** Array of row objects to render.                   |
+| `columns`   | `TableColumn<T>[]`   | —       | **Plug and Play Mode:** Column definitions with keys, sorting, and render.|
+| `rowKey`    | `keyof T \| fn`      | `'id'`  | Unique key property or resolver function for each row.                    |
+| `emptyText` | `ReactNode`          | `'No data available'` | Displayed when `data` array is empty.      |
+| `children`  | `ReactNode`          | —       | Compound primitives (used in compound mode).                              |
+
+### TableColumn Configuration
+
+| Property   | Type                          | Description                                             |
+| ---------- | ----------------------------- | ------------------------------------------------------- |
+| `key`      | `keyof T`                     | Object key to extract cell value from.                  |
+| `label`    | `string`                      | Text label displayed in column header.                  |
+| `sortable` | `boolean`                     | Enables interactive click-to-sort on the header.         |
+| `align`    | `'left' \| 'center' \| 'right'`| Content alignment for header and cells.                 |
+| `render`   | `(row: T) => ReactNode`       | Custom cell renderer callback.                          |
+| `sortFn`   | `(a: T, b: T) => number`      | Custom comparison function overriding default sort.     |
+
+---
+
+## Subcomponents
+
+- `Table.Header`
+- `Table.Body`
+- `Table.Row`
+- `Table.Head`
+- `Table.Cell`
+
+---
+
+## Accessibility
+
+- Strict semantic HTML table elements (`<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`).
+- Sortable headers provide proper `role="columnheader"` and accessible labels.
+- Responsive horizontal scroll wrapper prevents layout overflow on mobile screens.
+
+---
+
+## API Reference
+
+<PropsTable name="Table" />

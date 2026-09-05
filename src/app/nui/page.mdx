@@ -1,0 +1,98 @@
+# Introduction to NUI
+
+**NUI** is a lightweight, high-performance React UI component library engineered for modern web applications and scalable design systems. It delivers strictly accessible, beautifully styled UI primitives with zero runtime styling overhead.
+
+---
+
+## The Philosophy: Why NUI?
+
+Most modern UI libraries force developers into a painful trade-off:
+
+1. **Monolithic UI Kits:** Fast to set up, but rigid and inflexible. Customizing layout, swapping subcomponents, or adapting to custom design tokens quickly becomes a nightmare of CSS overrides.
+2. **Headless Primitive Libraries:** Completely flexible, but extremely verbose. Building a simple dropdown or tab bar requires assembling 6 separate primitives, writing 30 lines of boilerplate JSX, and wiring up state manually.
+
+**NUI eliminates this compromise through its Dual-Mode Architecture:**
+
+> **The NUI Dual-Mode Promise:** Build instantly using **Plug-and-Play (PnP)** data props for 90% of your everyday views, or switch to **Composable Compound Primitives** when you need 100% granular JSX control.
+
+---
+
+## Plug-and-Play (PnP) vs. Composable Primitives
+
+For composite components—such as **Dropdown**, **Tabs**, **Accordion**, **Table**, and **Breadcrumbs**—NUI gives you the best of both worlds:
+
+### 1. Plug-and-Play (PnP) Mode — Zero Boilerplate
+When you need speed and simplicity, you pass a clean data array and NUI automatically generates the entire DOM structure, ARIA roles, focus management, and keyboard event handlers out of the box:
+
+```tsx
+import { Dropdown, Button } from '@nofinite/nui';
+
+export function QuickMenu() {
+  return (
+    <Dropdown
+      data={[
+        { label: 'Profile Settings', onClick: () => navigate('/profile') },
+        { label: 'Billing & Plans', onClick: () => navigate('/billing') },
+        { type: 'separator' },
+        { label: 'Sign Out', onClick: () => auth.logout() },
+      ]}
+    >
+      <Button variant="outline">Options</Button>
+    </Dropdown>
+  );
+}
+```
+
+### 2. Composable Compound Mode — Complete Structural Control
+When your design system demands custom header slots, rich interactive rows, customized badges, or specialized layout wrappers, simply deconstruct the component into its compound primitives:
+
+```tsx
+import { Dropdown, Button, Badge } from '@nofinite/nui';
+
+export function CustomMenu() {
+  return (
+    <Dropdown>
+      <Dropdown.Trigger>
+        <Button variant="primary">Manage Account</Button>
+      </Dropdown.Trigger>
+
+      <Dropdown.Menu align="end">
+        <div className="px-3 py-2 border-b border-default text-xs text-muted">
+          Signed in as <strong>alex@nofinite.com</strong>
+        </div>
+        
+        <Dropdown.Item onClick={() => navigate('/pro')}>
+          <span className="flex items-center justify-between w-full">
+            Pro Plan <Badge variant="success">Active</Badge>
+          </span>
+        </Dropdown.Item>
+
+        <Dropdown.Item onClick={() => navigate('/settings')}>
+          Security & Keys
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
+```
+
+---
+
+## Core Pillars of NUI
+
+- **Self-Contained Styling:** All NUI components come with pre-compiled CSS. You do not need to install complex build plugins or Tailwind presets just to render a button.
+- **Optional NUICSS Pairing:** While completely independent, NUI seamlessly pairs with [**NUICSS**](/nuicss) for responsive layout grids, flex containers, and utility-first page styling while sharing identical design tokens and dark mode.
+- **Accessibility by Default:** Every component strictly adheres to WAI-ARIA authoring practices with automatic keyboard navigation, roving tabindex, ARIA live regions, and focus restoration.
+- **Programmatic Control:** With the built-in [**Programmatic API (`nui.*`)**](/nui/programmatic), you can fire confirmation dialogs and toasts from vanilla TypeScript or event handlers without declaring any JSX.
+- **Minimal Bundle Size:** Tree-shakeable ES modules ensure that you only ship the components you actually import.
+
+---
+
+## Getting Started
+
+Ready to integrate NUI into your application? Follow the guides below:
+
+1. [**Installation & Setup**](/nui/getting-started) — Step-by-step setup for Next.js App Router, Vite, and React SPAs.
+2. [**Programmatic API (`nui.*`)**](/nui/programmatic) — Learn how to trigger toasts and confirm dialogs imperatively.
+3. [**Theming & Design Tokens**](/nui/theming) — Configure color scales, radii, and dark mode.
+4. [**Component Library**](/nui/components/button) — Explore all 68 production-ready primitives.

@@ -1,0 +1,51 @@
+# Flags
+
+Country flags are provided as SVGs through CSS classes.
+
+## Import Styles
+
+### JavaScript / TypeScript
+
+```ts
+import '@nofinite/locale/style';
+```
+
+### HTML (CDN)
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@nofinite/locale/dist/style.css"
+/>
+```
+
+### Flag Classes
+
+| Class            | Description                    |
+| ---------------- | ------------------------------ |
+| `.nf-flag`       | Base flag class (required)     |
+| `.nf-flag-{iso}` | ISO-2 country code (lowercase) |
+| `.square`        | Optional square (1:1) ratio    |
+
+### Examples
+
+**Standard Flag (4:3)**
+
+```html
+<span class="nf-flag nf-flag-us"></span>
+```
+
+**Square Flag (1:1)**
+
+```html
+<span class="nf-flag nf-flag-jp square"></span>
+```
+
+**Usage Inside UI Elements**
+
+```html
+<button>
+  <span class="nf-flag nf-flag-fr square"></span>
+  Select Language
+</button>
+```

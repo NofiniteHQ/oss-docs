@@ -1,0 +1,59 @@
+# Effects & Filters Utilities
+
+Utilities for applying drop shadows, opacity, backdrop blurs, transitions, and animations in NUICSS.
+
+---
+
+## Box Shadow
+
+| Class | Properties |
+| --- | --- |
+| `shadow-none` | `box-shadow: none;` |
+| `shadow-xs` | `box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);` |
+| `shadow-sm` | `box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);` |
+| `shadow` | `box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);` |
+| `shadow-md` | `box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);` |
+| `shadow-lg` | `box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);` |
+| `shadow-xl` | `box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);` |
+
+---
+
+## Opacity
+
+| Class | Properties |
+| --- | --- |
+| `opacity-0` | `opacity: 0;` |
+| `opacity-25` | `opacity: 0.25;` |
+| `opacity-50` | `opacity: 0.5;` |
+| `opacity-75` | `opacity: 0.75;` |
+| `opacity-90` | `opacity: 0.9;` |
+| `opacity-100` | `opacity: 1;` |
+
+---
+
+## Backdrop Blur
+
+| Class | Properties |
+| --- | --- |
+| `backdrop-blur-none` | `backdrop-filter: blur(0);` |
+| `backdrop-blur-sm` | `backdrop-filter: blur(4px);` |
+| `backdrop-blur` | `backdrop-filter: blur(8px);` |
+| `backdrop-blur-md` | `backdrop-filter: blur(12px);` |
+| `backdrop-blur-lg` | `backdrop-filter: blur(16px);` |
+
+---
+
+## Transitions & Animation
+
+| Class | Properties |
+| --- | --- |
+| `transition` | `transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;` |
+| `transition-colors` | `transition-property: color, background-color, border-color;` |
+| `transition-opacity` | `transition-property: opacity;` |
+| `transition-transform` | `transition-property: transform;` |
+| `duration-150` | `transition-duration: 150ms;` |
+| `duration-200` | `transition-duration: 200ms;` |
+| `duration-300` | `transition-duration: 300ms;` |
+| `ease-in-out` | `transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);` |
+| `animate-spin` | `animation: spin 1s linear infinite;` |
+| `animate-pulse` | `animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;` |

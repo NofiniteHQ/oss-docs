@@ -1,0 +1,10 @@
+# @nofinite/utils Documentation
+
+Shared TypeScript helpers, class name merge (cn), formatters, and custom hooks.
+
+## Resources
+- [Full @nofinite/utils Context Bundle](/utils/llms-full.txt)
+- [Nofinite Ecosystem Index](/llms.txt)
+
+## Guidelines
+You are using @nofinite/utils. Use `cn(...classes)` for conditional class joining.

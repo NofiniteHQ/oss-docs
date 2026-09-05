@@ -1,0 +1,157 @@
+# Accordion
+
+A composable, accessible Accordion component for modern React applications.
+
+```tsx
+import { Accordion } from '@nofinite/nui';
+```
+
+---
+
+## Interactive Preview
+
+<Preview name="accordion" />
+
+---
+
+An accessible, WAI-ARIA–compliant accordion component for showing and hiding sections of related content. Supports **single or multiple open panels** with smooth animated transitions, keyboard navigation, and focus management.
+
+NUI provides a **Dual-Mode Architecture**: use **Plug and Play (PnP)** mode to pass a clean data array, or use **Composable Compound Primitives** for full layout flexibility.
+
+---
+
+## Usage
+
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
+
+Pass an array of items via the `data` prop. NUI automatically constructs the accordion panels, handles expand/collapse animations, and configures ARIA disclosure states with zero boilerplate:
+
+```tsx
+import { Accordion } from '@nofinite/nui';
+
+export function QuickAccordion() {
+  const faqs = [
+    {
+      id: 'faq1',
+      title: 'Do you offer refunds?',
+      content: 'Yes, full refunds are available within 30 days of purchase.',
+    },
+    {
+      id: 'faq2',
+      title: 'Do you provide 24/7 customer support?',
+      content: 'Absolutely! Our engineering support team is available around the clock.',
+    },
+    {
+      id: 'faq3',
+      title: 'Can I self-host NUI on enterprise infrastructure?',
+      content: 'Yes, NUI is completely open source and self-hostable with zero external server dependencies.',
+    },
+  ];
+
+  return <Accordion data={faqs} defaultOpenId="faq1" />;
+}
+```
+
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom icons in headers, badge indicators, or custom panel layouts, assemble the compound primitives directly:
+
+```tsx
+import { Accordion, Badge } from '@nofinite/nui';
+
+export function CustomAccordion() {
+  return (
+    <Accordion defaultOpenId="sec1">
+      <Accordion.Item value="sec1">
+        <Accordion.Trigger>
+          <div className="flex items-center justify-between w-full pr-4">
+            <span>Security & Authentication</span>
+            <Badge variant="success">Compliant</Badge>
+          </div>
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Manage multi-factor authentication, SSO configurations, and API access tokens.
+        </Accordion.Content>
+      </Accordion.Item>
+
+      <Accordion.Item value="sec2">
+        <Accordion.Trigger>
+          <div className="flex items-center justify-between w-full pr-4">
+            <span>Billing Details</span>
+            <Badge variant="warning">Action Needed</Badge>
+          </div>
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Your monthly invoice is ready for review.
+        </Accordion.Content>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+```
+
+---
+
+### Multiple Open Panels
+
+To allow multiple panels to remain open simultaneously, pass `multiple`:
+
+```tsx
+<Accordion data={faqs} multiple />
+```
+
+---
+
+## Props Reference
+
+### Accordion (Root)
+
+| Prop            | Type                 | Default   | Description                                                                    |
+| --------------- | -------------------- | --------- | ------------------------------------------------------------------------------ |
+| `data`          | `AccordionItem[]`    | —         | **Plug and Play Mode:** Array of items `{ id, title, content }`.               |
+| `defaultOpenId` | `string`             | —         | ID of the item that should be open by default.                                 |
+| `multiple`      | `boolean`            | `false`   | If true, allows multiple panels to be expanded simultaneously.                 |
+| `children`      | `ReactNode`          | —         | Compound primitives (used in compound mode).                                   |
+
+### Accordion.Item
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `value`    | `string`    | **required** Unique identifier matching the panel state.   |
+| `children` | `ReactNode` | Compound `<Accordion.Trigger>` and `<Accordion.Content>`. |
+
+### Accordion.Trigger
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `children` | `ReactNode` | Clickable header content. Automatically includes chevron. |
+
+### Accordion.Content
+
+| Prop       | Type        | Description                                               |
+| ---------- | ----------- | --------------------------------------------------------- |
+| `children` | `ReactNode` | Collapsible body content. Smoothly animates height.       |
+
+---
+
+## Subcomponents
+
+- `Accordion.Item`
+- `Accordion.Trigger`
+- `Accordion.Content`
+
+---
+
+## Accessibility
+
+- **WAI-ARIA Pattern:** Adheres to the WAI-ARIA Accordion disclosure pattern.
+- **Header & Panel Linkage:** Each trigger has `aria-controls` linked to its panel ID, and each panel has `aria-labelledby` linked to its trigger.
+- **Keyboard Navigation:** `Enter` or `Space` toggles the focused accordion trigger.
+
+---
+
+## API Reference
+
+<PropsTable name="Accordion" />

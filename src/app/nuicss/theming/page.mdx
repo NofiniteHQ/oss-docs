@@ -1,0 +1,63 @@
+# Theming & Design Tokens
+
+NUICSS features an aesthetic, token-first design system completely driven by CSS custom properties. It aligns directly with **NUI** components for seamless cross-package consistency.
+
+---
+
+## Semantic Color Scale
+
+NUICSS uses semantic token names rather than static hex codes, making dark mode transitions automatic and effortless.
+
+| Utility Class | CSS Variable | Description |
+| --- | --- | --- |
+| `bg-page` | `--bg-page` | Application root canvas background |
+| `bg-surface` | `--bg-surface` | Container, card, and modal background |
+| `bg-subtle` | `--bg-subtle` | Hover states and subtle backgrounds |
+| `bg-muted` | `--bg-muted` | Inactive elements, secondary chips |
+| `text-default` | `--fg-default` | Primary text and headings |
+| `text-muted` | `--fg-muted` | Supporting copy, placeholders, captions |
+| `border-default` | `--border-default` | Standard component borders |
+| `border-subtle` | `--border-subtle` | Subtle dividers and table row borders |
+
+---
+
+## Brand & Feedback Colors
+
+| Color Role | Background Utility | Text Utility | Border Utility |
+| --- | --- | --- | --- |
+| **Primary** | `bg-primary` | `text-primary` | `border-primary` |
+| **Success** | `bg-success` | `text-success` | `border-success` |
+| **Warning** | `bg-warning` | `text-warning` | `border-warning` |
+| **Danger** | `bg-danger` | `text-danger` | `border-danger` |
+
+---
+
+## Border Radius Tokens
+
+| Utility Class | Variable | Size |
+| --- | --- | --- |
+| `rounded-sm` | `--radius-sm` | `4px` |
+| `rounded-md` | `--radius-md` | `8px` |
+| `rounded-lg` | `--radius-lg` | `12px` |
+| `rounded-xl` | `--radius-xl` | `16px` |
+| `rounded-full` | `--radius-full` | `9999px` |
+
+---
+
+## Dark Mode
+
+NUICSS applies dark theme styles automatically when the `.dark` class is present on the root `<html>` tag:
+
+```html
+<!-- Light Mode -->
+<html class="light">
+  <body class="bg-page text-default">...</body>
+</html>
+
+<!-- Dark Mode -->
+<html class="dark">
+  <body class="bg-page text-default">...</body>
+</html>
+```
+
+All semantic tokens (`bg-page`, `bg-surface`, `text-default`, `border-default`) invert automatically.

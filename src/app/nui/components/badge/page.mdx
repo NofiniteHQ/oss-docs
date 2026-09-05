@@ -1,0 +1,175 @@
+# Badge
+
+A composable, accessible Badge component for modern React applications.
+
+```tsx
+import { Badge } from '@nofinite/nui';
+```
+
+---
+
+## Interactive Preview
+
+<Preview name="badge" />
+
+---
+
+A **compact status or indicator component** that can display numbers, icons, or small labels. Supports **variants, sizes, pill shapes, dot mode, and interactive behavior** (links or buttons).
+
+---
+
+## Usage
+
+### Basic Badge
+
+```tsx
+import { Badge } from '@nofinite/nui';
+
+<Badge>New</Badge>
+<Badge variant="primary">Primary</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="warning">Warning</Badge>
+<Badge variant="danger">Danger</Badge>
+<Badge variant="outline">Outline</Badge>
+```
+
+### Badge with Count
+
+```tsx
+<Badge count={5} />
+<Badge count={120} max={99} />  {/* Displays 99+ */}
+```
+
+### Dot Badge
+
+```tsx
+<Badge dot variant="success" />
+```
+
+### Pill Badge
+
+```tsx
+<Badge pill variant="primary">
+  Premium
+</Badge>
+```
+
+### Interactive Badge
+
+```tsx
+<Badge onClick={() => alert('Clicked!')} variant="primary">
+  Click Me
+</Badge>
+
+<Badge href="https://example.com" variant="primary">
+  Go to Link
+</Badge>
+```
+
+### Badge with Icons
+
+```tsx
+<Badge iconLeft={<Icon />} iconRight={<Icon />} variant="success">
+  Messages
+</Badge>
+```
+
+---
+
+---
+
+## BadgeGroup
+
+Groups multiple badges and optionally displays a `+n` overflow indicator.
+
+### Usage
+
+```tsx
+import { Badge, BadgeGroup } from '@nofinite/nui';
+
+<BadgeGroup max={3}>
+  <Badge variant="success">Online</Badge>
+  <Badge variant="warning">Away</Badge>
+  <Badge variant="danger">Busy</Badge>
+  <Badge variant="primary">Admin</Badge>
+</BadgeGroup>;
+```
+
+---
+
+### Props
+
+| Prop        | Type                                   | Default | Description                                      |
+| ----------- | -------------------------------------- | ------- | ------------------------------------------------ |
+| `children`  | `React.ReactNode[]`                    | —       | Badge components to group                        |
+| `max`       | `number`                               | `3`     | Maximum badges to show; excess displayed as `+n` |
+| `className` | `string`                               | `""`    | Additional CSS classes for the group container   |
+| `...rest`   | `React.HTMLAttributes<HTMLDivElement>` | —       | Other native props                               |
+
+---
+
+## Variants
+
+| Variant   | Description                        |
+| --------- | ---------------------------------- |
+| `default` | Neutral / gray                     |
+| `primary` | Brand / accent color               |
+| `success` | Success / green                    |
+| `warning` | Warning / amber                    |
+| `danger`  | Error / red                        |
+| `outline` | Transparent background with border |
+
+---
+
+## Sizes
+
+| Size | Height | Font Size | Notes                           |
+| ---- | ------ | --------- | ------------------------------- |
+| `sm` | 20px   | 12px      | Compact badges for tight spaces |
+| `md` | 24px   | 14px      | Default size                    |
+| `lg` | 28px   | 14px      | Slightly larger for emphasis    |
+
+---
+
+## Shapes
+
+- **Pill** – Fully rounded with `pill={true}`
+- **Dot** – Small circular badge, hides content with `dot={true}`
+
+---
+
+---
+
+## Accessibility
+
+- **Role and interactive elements**
+
+  - Non-interactive badges render as `<span>`.
+  - `href` badges render as `<a>` (link role).
+  - `onClick` badges render as `<button>` (button role).
+
+- Icons and counts are visible to screen readers.
+- Dot badges are visual-only; use `aria-label` via `...rest` if necessary.
+
+---
+
+## Best Practices
+
+### Do
+
+- Use badges to indicate status, counts, or labels.
+- Keep badge text short (1–2 words).
+- Use `max` in groups to prevent overflow.
+- Use `dot` for subtle notifications or status.
+
+### Don’t
+
+- Place essential information only inside dot badges.
+- Overload groups with too many badges; use `max` for overflow.
+- Use badges for primary navigation.
+
+---
+
+## API Reference
+
+<PropsTable name="Badge" />

@@ -1,0 +1,233 @@
+# Programmatic API
+
+NUI provides a built-in imperative API (`nui.*`) that allows you to trigger **promise-driven confirmation dialogs**, **alert modals**, and **status toast notifications** directly from JavaScript and TypeScript—without mounting JSX or declaring React hooks.
+
+```ts
+import { nui } from '@nofinite/nui';
+```
+
+---
+
+## Interactive Preview
+
+Test how the programmatic API behaves in real-time. Watch the live console track Promise resolution lifecycle and imperative event dispatches:
+
+<Preview name="programmatic" hideCode />
+
+---
+
+## Why Use the Programmatic API?
+
+Traditionally, when developers need a quick confirmation or alert in vanilla logic, they face a frustrating trade-off:
+
+1. **Ugly Native Browser Dialogs (`window.confirm`, `window.alert`):**
+   - Freeze browser execution across tabs.
+   - Look dated, unstyled, and unbranded.
+   - Cannot support dark mode, icons, or design tokens.
+   - Break accessibility and cannot be customized.
+
+2. **React Hook Limitations (`useToast`, `useDialog`):**
+   - Cannot be called outside React component bodies.
+   - Fail in plain `.ts` files, Axios/fetch interceptors, utility helpers, and state store actions.
+
+**NUI's Programmatic API solves both problems:**
+- `await nui.confirm(...)` replaces `window.confirm()` with an animated, themed modal that pauses execution and resolves to `true` or `false`.
+- `await nui.alert(...)` replaces `window.alert()` with an accessible, branded modal.
+- `nui.success()`, `nui.error()`, `nui.warn()`, and `nui.toast()` dispatch instant notifications from anywhere in your codebase.
+
+---
+
+## One-Time Root Setup
+
+To enable the programmatic API across your entire application, mount `<DialogProvider />` inside your `<ToastProvider>` in your root layout:
+
+```tsx
+// app/providers.tsx or src/App.tsx
+'use client';
+
+import { NUIProvider, ToastProvider, DialogProvider } from '@nofinite/nui';
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <NUIProvider>
+      <ToastProvider>
+        {/* Mount DialogProvider once at the root */}
+        <DialogProvider />
+        {children}
+      </ToastProvider>
+    </NUIProvider>
+  );
+}
+```
+
+> **How It Works:** `<DialogProvider />` mounts a persistent headless bridge in the React tree that subscribes to NUI's external store. When `nui.*` methods are invoked anywhere in your project, the bridge catches the event and renders the modal or toast with zero overhead.
+
+---
+
+## API Reference
+
+### Methods
+
+| Method | Type Signature | Return Type | Description |
+| :--- | :--- | :--- | :--- |
+| `nui.confirm(message, options?)` | `(message: ReactNode, options?: DialogOptions)` | `Promise<boolean>` | Displays a confirmation modal with Confirm and Cancel buttons. Resolves to `true` if confirmed, `false` if cancelled. |
+| `nui.alert(message, options?)` | `(message: ReactNode, options?: DialogOptions)` | `Promise<boolean>` | Displays an informational modal with a single acknowledge button. Resolves when dismissed. |
+| `nui.success(message, options?)` | `(message: ReactNode, options?: ToastOptions)` | `void` | Triggers a green success toast notification. |
+| `nui.error(message, options?)` | `(message: ReactNode, options?: ToastOptions)` | `void` | Triggers a red error toast notification. |
+| `nui.warn(message, options?)` | `(message: ReactNode, options?: ToastOptions)` | `void` | Triggers an amber warning toast notification. |
+| `nui.toast(message, options?)` | `(message: ReactNode, options?: ToastOptions)` | `void` | Triggers a neutral default toast notification. |
+
+---
+
+### `DialogOptions`
+
+Options passed to `nui.confirm(message, options)` and `nui.alert(message, options)`:
+
+| Property | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `title` | `string` | `'Confirm'` / `'Alert'` | The title displayed in the dialog header. |
+| `confirmText` | `string` | `'Confirm'` / `'OK'` | Label text for the primary action button. |
+| `cancelText` | `string` | `'Cancel'` | Label text for the cancel button (`nui.confirm` only). |
+| `isDanger` | `boolean` | `false` | When `true`, styles the confirmation button with destructive (red) styling. |
+
+```ts
+const confirmed = await nui.confirm('Are you sure you want to permanently delete this repository?', {
+  title: 'Delete Repository',
+  confirmText: 'Yes, Delete',
+  cancelText: 'Keep Repository',
+  isDanger: true,
+});
+
+if (confirmed) {
+  // User confirmed action
+}
+```
+
+---
+
+### `ToastOptions`
+
+Options passed to `nui.success`, `nui.error`, `nui.warn`, and `nui.toast`:
+
+| Property | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `description` | `ReactNode` | `undefined` | Secondary supporting text displayed underneath the main message. |
+| `duration` | `number` | `4000` | Auto-dismiss duration in milliseconds. |
+
+```ts
+nui.success('Invoice Generated', {
+  description: 'Invoice #INV-2024-001 has been sent to the billing contact.',
+  duration: 6000,
+});
+```
+
+---
+
+## Real-World Production Patterns
+
+### 1. HTTP Client / API Interceptors
+
+Because `nui.*` does not require React hooks, you can call it directly inside Axios or Fetch interceptors to handle authentication timeouts or server errors:
+
+```ts
+// lib/api.ts
+import axios from 'axios';
+import { nui } from '@nofinite/nui';
+
+export const api = axios.create({ baseURL: '/api' });
+
+api.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const status = error.response?.status;
+
+    if (status === 401) {
+      const shouldLogin = await nui.confirm('Your session has expired. Would you like to log in again?', {
+        title: 'Session Expired',
+        confirmText: 'Log In',
+      });
+      if (shouldLogin) {
+        window.location.href = '/login';
+      }
+    } else if (status >= 500) {
+      nui.error('Server Error', {
+        description: 'Internal server error. Our engineering team has been notified.',
+      });
+    }
+
+    return Promise.reject(error);
+  }
+);
+```
+
+---
+
+### 2. Global State Stores (Zustand / Redux)
+
+Trigger notifications from async store actions without passing dispatch functions or prop drilling:
+
+```ts
+// stores/projectStore.ts
+import { create } from 'zustand';
+import { nui } from '@nofinite/nui';
+
+export const useProjectStore = create((set, get) => ({
+  projects: [],
+  deleteProject: async (id: string) => {
+    const confirmed = await nui.confirm('Delete this project and all associated deployments?', {
+      title: 'Delete Project',
+      isDanger: true,
+      confirmText: 'Delete Project',
+    });
+
+    if (!confirmed) return;
+
+    try {
+      await api.delete(`/projects/${id}`);
+      set((state) => ({ projects: state.projects.filter((p) => p.id !== id) }));
+      nui.success('Project deleted successfully.');
+    } catch (err) {
+      nui.error('Failed to delete project.');
+    }
+  },
+}));
+```
+
+---
+
+### 3. Asynchronous Business Workflows
+
+Streamline multistep workflows with clean `async`/`await` control flow without nesting modal state:
+
+```ts
+async function handlePublishArticle(articleId: string) {
+  const publish = await nui.confirm('Publish article to live production feeds?', {
+    title: 'Confirm Publication',
+    confirmText: 'Publish Now',
+  });
+
+  if (!publish) return;
+
+  try {
+    await api.post(`/articles/${articleId}/publish`);
+    nui.success('Article published!');
+  } catch (err) {
+    await nui.alert('Publishing failed due to validation errors. Please check the review tab.', {
+      title: 'Publication Blocked',
+      isDanger: true,
+    });
+  }
+}
+```
+
+---
+
+## Primitives vs. Programmatic API
+
+| Feature | Programmatic API (`nui.*`) | Declarative Components ([`Dialog`](/nui/components/dialog) / [`Toast`](/nui/components/toast)) |
+| :--- | :--- | :--- |
+| **Best For** | Quick alerts, confirmations, status messages, non-React logic | Custom form inputs, complex wizards, multi-tab modals |
+| **Usage Context** | Anywhere (`.ts`, `.tsx`, hooks, stores, interceptors) | JSX component trees (`.tsx`) only |
+| **Control Flow** | Promise-based (`const ok = await nui.confirm()`) | State-driven (`<Modal open={isOpen}>`) |
+| **Custom Children** | Simple messages or string nodes | Arbitrary complex JSX, inputs, tables, media |
+

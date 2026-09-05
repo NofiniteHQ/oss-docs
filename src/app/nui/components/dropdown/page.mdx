@@ -1,0 +1,146 @@
+# Dropdown
+
+A composable, accessible Dropdown component for modern React applications.
+
+```tsx
+import { Dropdown } from '@nofinite/nui';
+```
+
+---
+
+## Interactive Preview
+
+<Preview name="dropdown" />
+
+---
+
+A compound menu component for contextual actions anchored to a trigger.
+Implements controlled open state via internal context, keyboard navigation, focus restoration, and outside-click dismissal.
+
+NUI provides a **Dual-Mode Architecture** for Dropdown: use **Plug and Play (PnP)** mode for rapid data-driven menus, or **Compound Primitives** for complete custom layout control.
+
+---
+
+## Usage
+
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
+
+Pass an array of items directly via the `data` prop. NUI automatically constructs the menu, renders items, handles separators, disabled states, and keyboard navigation without requiring manual subcomponent declarations:
+
+```tsx
+import { Dropdown, Button } from '@nofinite/nui';
+
+export function QuickDropdown() {
+  const items = [
+    { label: 'View Profile', onClick: () => console.log('Profile') },
+    { label: 'Account Settings', onClick: () => console.log('Settings') },
+    { type: 'separator' as const },
+    { label: 'Billing & Invoices', onClick: () => console.log('Billing') },
+    { label: 'Admin Dashboard', disabled: true },
+    { type: 'separator' as const },
+    { label: 'Log Out', onClick: () => console.log('Logout') },
+  ];
+
+  return (
+    <Dropdown data={items}>
+      <Button variant="outline">Quick Actions</Button>
+    </Dropdown>
+  );
+}
+```
+
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom item markup, badges, custom header blocks, or specific icon layouts, assemble the compound primitives directly:
+
+```tsx
+import { Dropdown, Button } from '@nofinite/nui';
+
+export function CustomDropdown() {
+  return (
+    <Dropdown>
+      <Dropdown.Trigger>
+        <Button variant="primary">Options</Button>
+      </Dropdown.Trigger>
+
+      <Dropdown.Menu>
+        <Dropdown.Item onClick={() => console.log('Profile')}>Profile</Dropdown.Item>
+        <Dropdown.Item onClick={() => console.log('Settings')}>Settings</Dropdown.Item>
+        <Dropdown.Item onClick={() => console.log('Logout')}>Logout</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
+```
+
+---
+
+### End-Aligned Menu
+
+```tsx
+<Dropdown>
+  <Dropdown.Trigger>More</Dropdown.Trigger>
+  <Dropdown.Menu align="end">
+    <Dropdown.Item>Edit</Dropdown.Item>
+    <Dropdown.Item>Delete</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+---
+
+## Props Reference
+
+### Dropdown (Root)
+
+| Prop      | Type                 | Default   | Description                                                                 |
+| --------- | -------------------- | --------- | --------------------------------------------------------------------------- |
+| `data`    | `DropdownDataItem[]` | —         | **Plug and Play Mode:** Array of menu items, separators, and callbacks.     |
+| `align`   | `'start' \| 'end'`   | `'start'` | Menu alignment relative to trigger.                                         |
+| `children`| `ReactNode`          | —         | Trigger element (in PnP mode) or compound children (in compound mode).      |
+
+### Dropdown.Trigger
+
+| Prop       | Type        | Description                                                          |
+| ---------- | ----------- | -------------------------------------------------------------------- |
+| `children` | `ReactNode` | Element to act as the menu trigger. Automatically cloned with props. |
+
+### Dropdown.Menu
+
+| Prop        | Type               | Default     | Description                                |
+| ----------- | ------------------ | ----------- | ------------------------------------------ |
+| `align`     | `'start' \| 'end'` | `'start'`   | Horizontal alignment relative to trigger.  |
+| `children`  | `ReactNode`        | —           | Collection of `<Dropdown.Item />` elements. |
+
+### Dropdown.Item
+
+| Prop       | Type                  | Description                                 |
+| ---------- | --------------------- | ------------------------------------------- |
+| `onClick`  | `(e) => void`         | Click handler. Closes dropdown upon firing. |
+| `disabled` | `boolean`             | If true, dims item and prevents click.      |
+| `children` | `ReactNode`           | Content to render inside the menu item.     |
+
+---
+
+## Subcomponents
+
+- `Dropdown.Trigger`
+- `Dropdown.Menu`
+- `Dropdown.Item`
+
+---
+
+## Accessibility
+
+- **WAI-ARIA Pattern:** Adheres strictly to the WAI-ARIA Menu button pattern.
+- **Keyboard Navigation:** `ArrowDown` / `ArrowUp` cycles through menu items; `Escape` closes the menu and restores focus to the trigger button.
+- **Outside Click:** Automatically closes when clicking anywhere outside the menu.
+- **Focus Restoration:** Focus is cleanly returned to the trigger element when the menu closes.
+
+---
+
+## API Reference
+
+<PropsTable name="Dropdown" />

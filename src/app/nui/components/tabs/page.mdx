@@ -1,0 +1,143 @@
+# Tabs
+
+A composable, accessible Tabs component for modern React applications.
+
+```tsx
+import { Tabs } from '@nofinite/nui';
+```
+
+---
+
+## Interactive Preview
+
+<Preview name="tabs" />
+
+---
+
+A composable, accessible tabs component implementing **Dual-Mode Architecture**, controlled and uncontrolled state, roving tabindex keyboard navigation, and ARIA-linked triggers and panels.
+
+NUI lets you choose between **Plug and Play (PnP)** mode for rapid data-driven tab rendering, or **Composable Compound Primitives** for full layout customization.
+
+---
+
+## Usage
+
+### 1. Plug and Play (PnP) Mode — Zero Boilerplate
+
+Pass an array of tab definitions directly via the `data` prop. NUI automatically constructs the tab bar, keyboard navigation, and panel visibility without manual subcomponent declarations:
+
+```tsx
+import { Tabs } from '@nofinite/nui';
+
+export function QuickTabs() {
+  const tabs = [
+    { value: 'account', label: 'Account', content: <div className="p-4">Account settings and profile details.</div> },
+    { value: 'password', label: 'Password', content: <div className="p-4">Update your password and security keys.</div> },
+    { value: 'billing', label: 'Billing', content: <div className="p-4">Invoices, payment methods, and plans.</div> },
+  ];
+
+  return <Tabs data={tabs} defaultValue="account" />;
+}
+```
+
+---
+
+### 2. Composable Compound Mode — Full Structural Control
+
+When you need custom layouts, right-aligned toolbar buttons, or customized trigger styles, assemble the compound primitives directly:
+
+```tsx
+import { Tabs } from '@nofinite/nui';
+
+export function CustomTabs() {
+  return (
+    <Tabs defaultValue="account">
+      <Tabs.List>
+        <Tabs.Trigger value="account">Account</Tabs.Trigger>
+        <Tabs.Trigger value="password">Password</Tabs.Trigger>
+        <Tabs.Trigger value="billing">Billing</Tabs.Trigger>
+      </Tabs.List>
+
+      <Tabs.Content value="account">Account content</Tabs.Content>
+      <Tabs.Content value="password">Password content</Tabs.Content>
+      <Tabs.Content value="billing">Billing content</Tabs.Content>
+    </Tabs>
+  );
+}
+```
+
+---
+
+### Controlled State
+
+```tsx
+import { useState } from 'react';
+import { Tabs } from '@nofinite/nui';
+
+export function ControlledTabs() {
+  const [activeTab, setActiveTab] = useState('account');
+
+  return (
+    <Tabs value={activeTab} onChange={setActiveTab}>
+      <Tabs.List>
+        <Tabs.Trigger value="account">Account</Tabs.Trigger>
+        <Tabs.Trigger value="billing">Billing</Tabs.Trigger>
+      </Tabs.List>
+
+      <Tabs.Content value="account">Current: {activeTab}</Tabs.Content>
+      <Tabs.Content value="billing">Current: {activeTab}</Tabs.Content>
+    </Tabs>
+  );
+}
+```
+
+---
+
+## Props Reference
+
+### Tabs (Root)
+
+| Prop           | Type                 | Default | Description                                                               |
+| -------------- | -------------------- | ------- | ------------------------------------------------------------------------- |
+| `data`         | `TabDataItem[]`      | —       | **Plug and Play Mode:** Array of tab items `{ value, label, content }`.   |
+| `defaultValue` | `string`             | —       | The initial active tab value (uncontrolled).                              |
+| `value`        | `string`             | —       | Controlled active tab value.                                              |
+| `onChange`     | `(val: string) => void` | —    | Callback fired when the active tab changes.                               |
+| `children`     | `ReactNode`          | —       | Compound primitives (used in compound mode).                              |
+
+### Tabs.Trigger
+
+| Prop       | Type        | Default | Description                                             |
+| ---------- | ----------- | ------- | ------------------------------------------------------- |
+| `value`    | `string`    | **required** | Unique identifier matching corresponding `Tabs.Content`.|
+| `disabled` | `boolean`   | `false` | If true, disables tab and skips in keyboard sequence.   |
+| `children` | `ReactNode` | —       | Tab label or icon content.                              |
+
+### Tabs.Content
+
+| Prop       | Type        | Default | Description                                             |
+| ---------- | ----------- | ------- | ------------------------------------------------------- |
+| `value`    | `string`    | **required** | Unique identifier matching corresponding `Tabs.Trigger`.|
+| `children` | `ReactNode` | —       | Panel content rendered when active.                     |
+
+---
+
+## Subcomponents
+
+- `Tabs.List`
+- `Tabs.Trigger`
+- `Tabs.Content`
+
+---
+
+## Accessibility
+
+- **Roving Tabindex:** Arrow keys cycle through tabs; only the active tab has `tabIndex={0}`.
+- **WAI-ARIA Attributes:** `role="tablist"`, `role="tab"`, and `role="tabpanel"` are automatically configured with `aria-controls` and `aria-labelledby`.
+- **Keyboard Navigation:** `ArrowLeft` / `ArrowRight` seamlessly move between tabs.
+
+---
+
+## API Reference
+
+<PropsTable name="Tabs" />

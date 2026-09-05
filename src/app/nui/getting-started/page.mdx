@@ -1,0 +1,161 @@
+# Installation & Setup
+
+Complete technical guide to installing and configuring NUI in Next.js, Vite, and modern React environments.
+
+---
+
+## Package Installation
+
+NUI is completely self-contained. All components include their own pre-compiled styles, with zero required styling peer dependencies.
+
+Install **NUI** using your package manager of choice:
+
+```bash
+# npm
+npm install @nofinite/nui
+
+# pnpm
+pnpm add @nofinite/nui
+
+# yarn
+yarn add @nofinite/nui
+
+# bun
+bun add @nofinite/nui
+```
+
+> **Layout & Custom Styling:** If you want utility-first styling for your custom layout designs, responsive grids, and page architecture, you can pair NUI with [**NUICSS**](/nuicss). NUI and NUICSS seamlessly share the exact same design tokens, color palette, and dark mode.
+
+---
+
+## Root Provider Setup
+
+NUI uses a root `NUIProvider` to manage global theme context, portals, and toast notifications. We recommend creating a dedicated `Providers` component.
+
+### 1. Create a Providers File
+
+Create `app/providers.tsx` (for Next.js App Router) or `src/providers.tsx` (for Vite / SPA):
+
+```tsx
+'use client';
+
+import React from 'react';
+import { NUIProvider, ToastProvider, DialogProvider } from '@nofinite/nui';
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <NUIProvider defaultTheme="system">
+      <ToastProvider>
+        <DialogProvider />
+        {children}
+      </ToastProvider>
+    </NUIProvider>
+  );
+}
+```
+
+### 2. Wrap Your Root Layout
+
+#### Next.js (App Router)
+
+Inside `app/layout.tsx`:
+
+```tsx
+import { Providers } from './providers';
+import '@nofinite/nui/styles.css';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+```
+
+#### Vite / React SPA
+
+Inside `src/main.tsx` or `src/App.tsx`:
+
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { Providers } from './providers';
+import '@nofinite/nui/styles.css';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <Providers>
+      <App />
+    </Providers>
+  </React.StrictMode>
+);
+```
+
+---
+
+## Theming & Dark Mode
+
+NUI includes a theme engine that syncs with OS preferences and persists user choices.
+
+### Using the `useTheme` Hook
+
+```tsx
+'use client';
+
+import React from 'react';
+import { useTheme, Button, Flex } from '@nofinite/nui';
+
+export function ThemeSwitcher() {
+  const { theme, resolvedTheme, setTheme } = useTheme();
+
+  return (
+    <Flex align="center" gap={8}>
+      <span>Active: {resolvedTheme}</span>
+      <Button size="sm" variant={theme === 'light' ? 'primary' : 'outline'} onClick={() => setTheme('light')}>
+        Light
+      </Button>
+      <Button size="sm" variant={theme === 'dark' ? 'primary' : 'outline'} onClick={() => setTheme('dark')}>
+        Dark
+      </Button>
+      <Button size="sm" variant={theme === 'system' ? 'primary' : 'outline'} onClick={() => setTheme('system')}>
+        System
+      </Button>
+    </Flex>
+  );
+}
+```
+
+---
+
+## TypeScript CSS Import Notice
+
+If importing CSS files causes a TypeScript error (`Cannot find module '*.css'`), ensure you have a `global.d.ts` declaration in your project:
+
+```ts
+// global.d.ts
+declare module '*.css';
+```
+
+And verify your `tsconfig.json` includes declaration files:
+
+```json
+{
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"]
+}
+```
+
+---
+
+## Next Steps
+
+- Explore all 68 primitives in the [Component Reference](/nui/components/button).
+- Learn about semantic design tokens in the [Nuicss Documentation](/nuicss).
+- Read about polymorphic rendering with the `asChild` prop on [Button](/nui/components/button) and [Link](/nui/components/link).

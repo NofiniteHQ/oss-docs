@@ -1,0 +1,126 @@
+# Installation & Setup
+
+Get started with **NUICSS** using your preferred package manager, a bundler plugin, or directly via CDN with zero build steps.
+
+---
+
+## 1. Package Installation
+
+Install **NUICSS** as a development dependency:
+
+```bash
+# npm
+npm install -D @nofinite/nuicss
+
+# pnpm
+pnpm add -D @nofinite/nuicss
+
+# yarn
+yarn add -D @nofinite/nuicss
+
+# bun
+bun add -D @nofinite/nuicss
+```
+
+---
+
+## 2. CDN Usage (Zero Build Setup)
+
+For rapid prototyping, static HTML pages, HTMX, or server-rendered templates, you can include NUICSS directly in your `<head>` tag without installing build tools:
+
+### Option A: JIT Runtime Script (Recommended for Prototyping)
+
+The JIT script automatically observes DOM mutations in real time and compiles utility classes on the fly:
+
+```html
+<!-- unpkg -->
+<script src="https://unpkg.com/@nofinite/nuicss"></script>
+
+<!-- or jsDelivr -->
+<script src="https://cdn.jsdelivr.net/npm/@nofinite/nuicss/dist/index.global.js"></script>
+```
+
+### Option B: Precompiled Stylesheet
+
+If you only need the static reset styles, typography base, and semantic design tokens:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nofinite/nuicss/dist/index.css" />
+```
+
+---
+
+## 3. Framework Integration
+
+### A. Vite Plugin (Recommended for SPAs)
+
+If you are using Vite (React, Vue, Svelte, or Vanilla), you do **not** need PostCSS. Use the built-in Vite plugin directly:
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { nuicssVitePlugin } from '@nofinite/nuicss';
+
+export default defineConfig({
+  plugins: [
+    react(),
+    nuicssVitePlugin(),
+  ],
+});
+```
+
+Import the virtual stylesheet in your application entry point:
+
+```ts
+// src/main.tsx or src/index.ts
+import '@nofinite/nuicss/virtual.css';
+```
+
+---
+
+### B. Next.js & PostCSS Pipeline
+
+If your framework uses a PostCSS pipeline (such as Next.js), add the `@nofinite/nuicss/postcss` plugin to your `postcss.config.js` (or `.mjs`):
+
+```js
+// postcss.config.mjs
+export default {
+  plugins: {
+    '@nofinite/nuicss/postcss': {},
+  },
+};
+```
+
+Then add the `@nuicss;` directive at the top of your global CSS file:
+
+```css
+/* src/app/globals.css */
+@nuicss;
+```
+
+---
+
+## 4. Configuration (`nuicss.config.ts`)
+
+Create an optional `nuicss.config.ts` in your project root to customize tokens, breakpoints, and file scanning rules:
+
+```ts
+// nuicss.config.ts
+import { defineConfig, nuicssPreset } from '@nofinite/nuicss';
+
+export default defineConfig({
+  presets: [
+    nuicssPreset() as any,
+  ],
+  content: {
+    pipeline: {
+      include: [
+        /\.(vue|svelte|[jt]sx|mdx?|html)($|\?)/,
+        'src/**/*.{js,ts,jsx,tsx,mdx}',
+      ],
+    },
+  },
+});
+```
+

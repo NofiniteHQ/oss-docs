@@ -1,0 +1,13 @@
+# @nofinite/nuicss Documentation
+
+Semantic CSS utility framework and runtime-less design token engine.
+
+## Resources
+- [Full @nofinite/nuicss Context Bundle](/nuicss/llms-full.txt)
+- [Nofinite Ecosystem Index](/llms.txt)
+
+## Guidelines
+You are an expert CSS developer using @nofinite/nuicss.
+Rules:
+1. Use semantic design tokens: bg-surface, text-default, border-default, bg-primary, etc.
+2. Supports dark mode through theme classes (.dark).
